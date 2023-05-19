@@ -1,0 +1,458 @@
+﻿<Window x:Class="NOTlazyZone.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NOTlazyZone"
+        mc:Ignorable="d"
+        
+        Title="NOTlazyZone" Height="800" Width="1200"
+        WindowState="Maximized">
+        
+    <Window.Resources>
+        <ResourceDictionary Source="MainWindowResources.xaml"/>
+    </Window.Resources>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" InputGestureText="Ctrl+N">
+                    <MenuItem.Icon>
+                        <ImageBrush ImageSource="/Views/icons/tab.png"/>
+                        <!--Create icons created by vinadbumi - Flaticon-->
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Open" InputGestureText="Ctrl+O">
+                    <MenuItem.Icon>
+                        <ImageBrush ImageSource="/Views/icons/open-folder.png" />
+                        <!--Redo icons created by Freepik - Flaticon-->
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Save" InputGestureText="Ctrl+S">
+                    <MenuItem.Icon>
+                        <ImageBrush ImageSource="/Views/icons/save-file.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="_Exit" InputGestureText="Alt+F4">
+                    <MenuItem.Icon>
+                        <ImageBrush ImageSource="/Views/icons/close.png" />
+                        <!--Redo icons created by Freepik - Flaticon-->
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Undo" InputGestureText="Ctrl+Z">
+                    <MenuItem.Icon>
+                        <ImageBrush ImageSource="/Views/icons/undo_1.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Redo" InputGestureText="Ctrl+Y">
+                    <MenuItem.Icon>
+                        <ImageBrush ImageSource="/Views/icons/redo_1.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="_Cut" InputGestureText="Ctrl+X">
+                    <MenuItem.Icon>
+                        <ImageBrush ImageSource="/Views/icons/cut.png" />
+                        <!--Redo icons created by Freepik - Flaticon-->
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Copy" InputGestureText="Ctrl+C">
+                    <MenuItem.Icon>
+                        <ImageBrush ImageSource="/Views/icons/copy.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Paste" InputGestureText="Ctrl+V">
+                    <MenuItem.Icon>
+                        <ImageBrush ImageSource="/Views/icons/paste.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="_Select All" InputGestureText="Ctrl+A">
+                    <MenuItem.Icon>
+                        <Image Source="/Views/icons/select-all.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="_View">
+                <MenuItem Header="_Zoom In" InputGestureText="Ctrl++">
+                    <MenuItem.Icon>
+                        <ImageBrush ImageSource="/Views/icons/zoom-in.png" />
+                        <!--Zoom In icons created by Freepik - Flaticon-->
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Zoom Out" InputGestureText="Ctrl+-">
+                    <MenuItem.Icon>
+                        <ImageBrush ImageSource="/Views/icons/zoom-out.png" />
+                        <!--Zoom Out icons created by Freepik - Flaticon-->
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Reset Zoom" InputGestureText="Ctrl+0">
+                    <MenuItem.Icon>
+                        <Image Source="/Views/icons/reset-zoom.png" />
+                        <!--Redo icons created by Freepik - Flaticon-->
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+
+
+            <MenuItem Header="_Tools">
+                <MenuItem Header="_Options" InputGestureText="Ctrl+Alt+O">
+                    <MenuItem.Icon>
+                        <Image Source="/Views/icons/settings.png" />
+                        <!--Redo icons created by Freepik - Flaticon-->
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Theme" InputGestureText="Ctrl+Alt+O">
+                    <MenuItem.Icon>
+                        <Image Source="/Views/icons/theme.png" />
+                        <!--Redo icons created by Rizki Ahmad Fauzi - Flaticon-->
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="_Help">
+                <MenuItem Header="_Help" InputGestureText="F1">
+                    <MenuItem.Icon>
+                        <Image Source="/Views/icons/help.png" Width="15" Height="15"/>
+                        <!--Disclaimer icons created by rizky adhitya pradana - Flaticon-->
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_About" InputGestureText="F1">
+                    <MenuItem.Icon>
+                        <Image Source="/Views/icons/about.png" />
+                        <!--Disclaimer icons created by rizky adhitya pradana - Flaticon-->
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+
+            <MenuItem>
+                <MenuItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Border BorderThickness="1" BorderBrush="Gray" CornerRadius="5">
+                            <TextBox Width="150"  Background="Transparent" BorderThickness="0"/>
+                        </Border>
+                        <Image Source="/Views/icons/find.png" Width="20" Height="20" HorizontalAlignment="Right"/>
+                        <!--Disclaimer icons created by Yuan Design - Flaticon-->
+                    </Grid>
+                </MenuItem.Header>
+                <MenuItem.ToolTip>
+                    <ToolTip Content="Search" />
+                </MenuItem.ToolTip>
+            </MenuItem>
+        </Menu>
+
+        <ToolBar DockPanel.Dock="Top" Background="#f1f1f1" Foreground="#F8F8F2">
+            <Button>
+                <Image Source="icons/undo_1.png" Width="15" Height="15"/>
+                <!--Redo icons created by Freepik - Flaticon-->
+                <Button.ToolTip>
+                    <ToolTip>
+                        Undo (Ctrl + Z)
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/redo_1.png" Width="15" Height="15"/>
+                <!--Redo icons created by Freepik - Flaticon-->
+                <Button.ToolTip>
+                    <ToolTip>
+                        Redo (Ctrl + Y)
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/tab.png" Width="15" Height="15"/>
+                <!--Create icons created by vinadbumi - Flaticon-->
+                <Button.ToolTip>
+                    <ToolTip>
+                        New File (Ctrl + N)
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/open-folder.png" Width="20" Height="18"/>
+                <!--Redo icons created by Freepik - Flaticon-->
+                <Button.ToolTip>
+                    <ToolTip>
+                        Open File (Ctrl + O)
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/save-file.png" Width="15" Height="15" Margin="0 0 5 0"/>
+                <Button.ToolTip>
+                    <ToolTip>
+                        Save File (Ctrl + S)
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Separator />
+            <Button>
+                <Image Source="icons/cut.png" Width="17" Height="18" Margin="5 0 0 0"/>
+                <Button.ToolTip>
+                    <ToolTip>
+                        Cut (Ctrl + X)
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/copy.png" Width="20" Height="20"/>
+                <!--Redo icons created by alkhalifi design - Flaticon-->
+                <Button.ToolTip>
+                    <ToolTip>
+                        Copy (Ctrl + C)
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/paste.png" Width="18" Height="20"/>
+                <!--Redo icons created by Freepik - Flaticon-->
+                <Button.ToolTip>
+                    <ToolTip>
+                        Paste (Ctrl + V)
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/delete.png" Width="18" Height="19" Margin="0 0 5 0"/>
+                <Button.ToolTip>
+                    <ToolTip>
+                        Delete (Del)
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Separator></Separator>
+            <Button>
+                <Image Source="icons/line-graph.png" Width="20" Height="19"  Margin="5 0 0 0"/>
+                <!--Redo icons created by Freepik - Flaticon-->
+                <Button.ToolTip>
+                    <ToolTip>
+                        Create Chart
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/table.png" Width="20" Height="20"  Margin="5 0 0 0"/>
+                <!--Redo icons created by th studio - Flaticon-->
+                <Button.ToolTip>
+                    <ToolTip>
+                        Create Table
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/database.png" Width="20" Height="20"  Margin="5 0 5 0"/>
+                <!--Redo icons created by Akalidz - Flaticon-->
+                <Button.ToolTip>
+                    <ToolTip>
+                        Database Settings
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Separator></Separator>
+            <Button>
+                <Image Source="icons/import.png" Width="20" Height="20"  Margin="5 0 5 0"/>
+                <!--Redo icons created by Freepik - Flaticon-->
+                <Button.ToolTip>
+                    <ToolTip>
+                        Create Table
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/export.png" Width="20" Height="20"  Margin="5 0 5 0"/>
+                <!--Redo icons created by Freepik - Flaticon-->
+                <Button.ToolTip>
+                    <ToolTip>
+                        Create Table
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Separator></Separator>
+            <Button>
+                <Image Source="icons/left-alignment.png" Width="20" Height="20"  Margin="5 0 0 0"/>
+                <Button.ToolTip>
+                    <ToolTip>
+                        Left Alignment (Ctrl + L)
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/text-alignment.png" Width="20" Height="20"  Margin="5 0 0 0"/>
+
+                <Button.ToolTip>
+                    <ToolTip>
+                        Text Alignment (Ctrl + E)
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/right-alignment.png" Width="20" Height="20"  Margin="5 0 0 0"/>
+                <Button.ToolTip>
+                    <ToolTip>
+                        Right Alignment (Ctrl + r)
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/justify-align.png" Width="20" Height="20"  Margin="5 0 5 0"/>
+                <Button.ToolTip>
+                    <ToolTip>
+                        Justify Align (Ctrl + J)
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Separator></Separator>
+            <Button>
+                <Image Source="icons/list_point.png" Width="20" Height="19"  Margin="5 0 5 0"/>
+                <Button.ToolTip>
+                    <ToolTip>
+                        Bullet List
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/list.png" Width="20" Height="19"  Margin="5 0 5 0"/>
+                <Button.ToolTip>
+                    <ToolTip>
+                        Numeric List
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Button>
+                <Image Source="icons/list_multilevel.png" Width="19" Height="19"  Margin="5 0 5 0"/>
+                <Button.ToolTip>
+                    <ToolTip>
+                        Multilevel List
+                    </ToolTip>
+                </Button.ToolTip>
+            </Button>
+            <Separator>
+            </Separator>
+        </ToolBar>
+        <StatusBar DockPanel.Dock="Bottom" Background="#1e202b" Foreground="#f8f8f2">
+            <StatusBarItem >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="right" >
+                    <Image Source="icons/user.png" Width="16" Height="16" Margin="0,0,5,0" />
+                    <TextBlock>Michał Kwaśniewki</TextBlock>
+                </StackPanel>
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem Width="960">
+                <TextBlock>Status Message: 0</TextBlock>
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="right" >
+                    <Image Source="icons/wifi.png" Width="16" Height="16" Margin="0,0,5,0" />
+                    <TextBlock>Connected</TextBlock>
+                </StackPanel>
+            </StatusBarItem>
+        </StatusBar>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="80*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left panel -->
+            <Border Grid.Column="0" Background="#1e202b">
+                <HeaderedContentControl
+                    Header=""
+                    Content="{Binding Commands}"
+                    ContentTemplate="{StaticResource CommandsTemplate}"
+                    
+                />  
+            </Border>
+
+
+            <!--<Border Grid.Column="0" Background="#1e202b">
+               
+                <StackPanel Margin="10">
+                    <TextBlock Foreground="#f8f8f2"/>
+                    <Button ToolTip="Messages" Width="25" Height="25" Margin="-5 0 0 15"  Background="#1e202b" BorderThickness ="0">
+                        <Image Source="icons/email.png"/>
+                        --><!--Email icons created by Ilham Fitrotul Hayat - Flaticon--><!--
+                    </Button>
+                    <Button ToolTip="Calendar" Width="25" Height="23" Margin="-5 0 0 15" Background="#1e202b" BorderThickness ="0">
+                        <Image Source="icons/calendar_1.png"/>
+                        --><!--Calendar icons created by Freepik - Flaticon--><!--
+                    </Button>
+                    <Button ToolTip="Statistics" Width="25" Height="25" Margin="-5 0 0 50" Background="#1e202b" BorderThickness ="0">
+                        <Image Source="icons/stats.png"/>
+                    </Button>
+                    <Button ToolTip="Scheduled meetings" Width="25" Height="25" Margin="-5 0 0 15" Background="#1e202b" BorderThickness ="0">
+                        <Image Source="icons/video-conference.png"/>
+                        --><!--Calendar icons created by Freepik - Flaticon--><!--
+                    </Button>
+                    <Button ToolTip="Exercise" Width="25" Height="25" Margin="-5 0 0 15" Background="#1e202b" BorderThickness ="0">
+                        <Image Source="icons/barbell.png"/>
+                        --><!--Calendar icons created by Freepik - Flaticon--><!--
+                    </Button>
+                    <Button ToolTip="Training Plan" Width="25" Height="25" Margin="-5 0 0 50" Background="#1e202b" BorderThickness ="0">
+                        <Image Source="icons/training_plan.png"/>
+                    </Button>
+                    <Button ToolTip="Lista ćwiczeń" Width="25" Height="25" Margin="-5 0 0 15" Background="#1e202b" BorderThickness ="0">
+                        <Image Source="icons/exercise-list.png"/>
+                    </Button>
+                    <Button ToolTip="Diet" Width="25" Height="25" Margin="-5 0 0 15" Background="#1e202b" BorderThickness ="0">
+                        <Image Source="icons/diet.png"/>
+                    </Button>
+                    <Button ToolTip="Calories Calculator" Width="25" Height="25" Margin="-5 0 0 15" Background="#1e202b" BorderThickness ="0">
+                        <Image Source="icons/kcal.png"/>
+                        --><!--Calories icons created by Us and Up - Flaticon--><!--
+                    </Button>
+                    <Button ToolTip="List Contact" Width="25" Height="25" Margin="-4 0 0 50" Background="#1e202b" BorderThickness ="0">
+                        <Image Source="icons/contact_list.png"/>
+                        --><!--contact list icons created by Freepik - Flaticon--><!--
+                    </Button>
+                    <Button ToolTip="Shopping" Width="25" Height="25" Margin="-3 0 0 15" Background="#1e202b" BorderThickness ="0">
+                        <Image Source="icons/shopping-cart.png"/>
+                        --><!--Smart cart icons created by Freepik - Flaticon--><!--
+                    </Button>
+                    <Button ToolTip="Discounts" Width="25" Height="25" Margin="-3 0 0 60" Background="#1e202b" BorderThickness ="0">
+                        <Image Source="icons/discounts.png"/>
+                        --><!--Discount icons created by Irfansusanto20--><!--
+                    </Button>
+                    <Button ToolTip="Settings" Width="25" Height="25" Margin="-3 0 0 15" Background="#1e202b" BorderThickness ="0">
+                        <Image Source="icons/setting.png"/>
+                    </Button>
+                </StackPanel>
+            </Border>-->
+
+            <!-- Main panel -->
+            <Border Grid.Column="1" Background="#282a36">
+                <StackPanel Margin="20">
+                    <!--<TextBlock Text="Treningi" FontSize="24" FontWeight="Bold" Margin="0 0 0 20" Foreground="#f8f8f2"/>
+                    <TextBlock Text="Witaj, trenerze!" Foreground="#f8f8f2"/>
+                    <Button Content="Nowy trening" Margin="0 20 0 0" Background="#50fa7b" Foreground="#f8f8f2"/>
+                    <Button Content="Dodaj ćwiczenie" Background="#50fa7b" Foreground="#f8f8f2"/>-->
+                    <HeaderedContentControl
+                    Header="Przestrzeń robocza"
+                    Content="{Binding Workspaces}"
+                    ContentTemplate="{StaticResource WorkspacesTemplate}"
+                    Style="{StaticResource MainHCCStyle}"
+                    />
+                </StackPanel>
+            </Border>
+
+            <!-- Right panel -->
+            <!--<Border Grid.Column="2" Background="#282a36">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Statystyki" FontSize="18" FontWeight="Bold" Margin="0 0 0 10" Foreground="#f8f8f2"/>
+                    <Button Content="Podsumowanie treningów" Background="#44475a" Foreground="#f8f8f2" Margin="0 0 0 10"/>
+                    <Button Content="Wykresy postępów" Background="#44475a" Foreground="#f8f8f2"/>
+                </StackPanel>
+            </Border>-->
+        </Grid>
+    </DockPanel>
+</Window>
