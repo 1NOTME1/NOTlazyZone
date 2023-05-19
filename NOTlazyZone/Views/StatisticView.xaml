@@ -7,16 +7,16 @@
              xmlns:local="clr-namespace:NOTlazyZone.Views"
              xmlns:resx="clr-namespace:NOTlazyZone.ViewResources"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="800" d:DesignWidth="800">
     <d:UserControl.DataContext>
         <vm:StatisticViewModel/>
     </d:UserControl.DataContext>
     <ScrollViewer HorizontalScrollBarVisibility="Visible">
-        <Grid Background="White">
+        <Grid Background="White" Height="800">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition/>
+                <RowDefinition  Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -160,10 +160,145 @@
             </GroupBox>-->
 
             <GroupBox Header="Dane kolejnego gridu" Grid.Row="2" Grid.ColumnSpan="2">
-                <Grid>
-                    <!-- Dodaj tutaj kod dla kolejnego gridu z danymi -->
+                <Grid Height="200">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Content="Trening siłowy" Grid.Row="0" Grid.Column="0"/>
+                    <CheckBox Grid.Row="0" Grid.Column="1" IsChecked="{Binding TreningSilowy}"/>
+                    <Label Content="Godziny treningu siłowego" Grid.Row="0" Grid.Column="2"/>
+                    <ComboBox Grid.Row="0" Grid.Column="3" SelectedItem="{Binding GodzinyTreninguSilowego}">
+                        <ComboBoxItem Content="7:00 - 8:00"/>
+                        <ComboBoxItem Content="10:00 - 11:00"/>
+                        <ComboBoxItem Content="14:00 - 15:00"/>
+                        <ComboBoxItem Content="18:00 - 19:00"/>
+                        <!-- Dodaj więcej godzin treningu siłowego tutaj -->
+                    </ComboBox>
+
+                    <Label Content="Trening siłowy" Grid.Row="0" Grid.Column="0"/>
+                    <CheckBox Grid.Row="0" Grid.Column="1" IsChecked="{Binding TreningSilowy}"/>
+                    <Label Content="Godziny treningu siłowego" Grid.Row="0" Grid.Column="2"/>
+                    <ComboBox Grid.Row="0" Grid.Column="3" SelectedItem="{Binding GodzinyTreninguSilowego}">
+                        <ComboBoxItem Content="7:00 - 8:00"/>
+                        <ComboBoxItem Content="10:00 - 11:00"/>
+                        <ComboBoxItem Content="14:00 - 15:00"/>
+                        <ComboBoxItem Content="18:00 - 19:00"/>
+                        <!-- Dodaj więcej godzin treningu siłowego tutaj -->
+                    </ComboBox>
+
+                    <Label Content="Dni treningu siłowego" Grid.Row="0" Grid.Column="4"/>
+                    <ComboBox Grid.Row="0" Grid.Column="5" SelectedItem="{Binding DniTreninguSilowego}">
+                        <ComboBoxItem Content="Poniedziałek"/>
+                        <ComboBoxItem Content="Wtorek"/>
+                        <ComboBoxItem Content="Środa"/>
+                        <ComboBoxItem Content="Czwartek"/>
+                        <ComboBoxItem Content="Piątek"/>
+                        <ComboBoxItem Content="Sobota"/>
+                        <ComboBoxItem Content="Niedziela"/>
+                    </ComboBox>
+
+                    <Label Content="Ćwiczenia treningu siłowego" Grid.Row="0" Grid.Column="6"/>
+                    <ComboBox Grid.Row="0" Grid.Column="7" SelectedItem="{Binding OpisTreninguSilowego}">
+                        <ComboBoxItem Content="Podciąganie na drążku"/>
+                        <ComboBoxItem Content="Przysiady ze sztangą"/>
+                        <ComboBoxItem Content="Martwy ciąg"/>
+                        <ComboBoxItem Content="Wyciskanie sztangi leżąc"/>
+                        <ComboBoxItem Content="Przysiad wykroczny"/>
+                        <ComboBoxItem Content="Pompki na poręczach"/>
+                        <ComboBoxItem Content="Wiosłowanie sztangą"/>
+                        <ComboBoxItem Content="Unoszenie hantli bokiem"/>
+                        <ComboBoxItem Content="Przyciąganie linki wyciągu dolnego"/>
+                    </ComboBox>
+
+                    <Label Content="Trening cardio" Grid.Row="1" Grid.Column="0"/>
+                    <CheckBox Grid.Row="1" Grid.Column="1" IsChecked="{Binding TreningCardio}"/>
+                    <Label Content="Godziny treningu cardio" Grid.Row="1" Grid.Column="2"/>
+                    <ComboBox Grid.Row="1" Grid.Column="3" SelectedItem="{Binding GodzinyTreninguCardio}">
+                        <ComboBoxItem Content="7:00 - 8:00"/>
+                        <ComboBoxItem Content="10:00 - 11:00"/>
+                        <ComboBoxItem Content="14:00 - 15:00"/>
+                        <ComboBoxItem Content="18:00 - 19:00"/>
+                        <!-- Dodaj więcej godzin treningu cardio tutaj -->
+                    </ComboBox>
+
+                    <Label Content="Dni treningu cardio" Grid.Row="1" Grid.Column="4"/>
+                    <ComboBox Grid.Row="1" Grid.Column="5" SelectedItem="{Binding DniTreninguCardio}">
+                        <ComboBoxItem Content="Poniedziałek"/>
+                        <ComboBoxItem Content="Środa"/>
+                        <ComboBoxItem Content="Czwartek"/>
+                        <ComboBoxItem Content="Sobota"/>
+                    </ComboBox>
+
+                    <Label Content="Opis treningu cardio" Grid.Row="1" Grid.Column="6"/>
+                    <ComboBox Grid.Row="1" Grid.Column="7" SelectedItem="{Binding OpisTreninguCardio}">
+                        <ComboBoxItem Content="Bieganie na bieżni"/>
+                        <ComboBoxItem Content="Skakanka"/>
+                        <ComboBoxItem Content="Cycling"/>
+                        <ComboBoxItem Content="Aerobik"/>
+                        <ComboBoxItem Content="Zumba"/>
+                        <ComboBoxItem Content="Pływanie"/>
+                        <ComboBoxItem Content="Taniec"/>
+                        <ComboBoxItem Content="Rower stacjonarny"/>
+                        <ComboBoxItem Content="Interwały"/>
+                    </ComboBox>
+
+                    <Label Content="Trening X" Grid.Row="2" Grid.Column="0"/>
+                    <CheckBox Grid.Row="2" Grid.Column="1" IsChecked="{Binding TreningX}"/>
+                    <Label Content="Godziny treningu X" Grid.Row="2" Grid.Column="2"/>
+                    <ComboBox Grid.Row="2" Grid.Column="3" SelectedItem="{Binding GodzinyTreninguX}">
+                        <ComboBoxItem Content="7:00 - 8:00"/>
+                        <ComboBoxItem Content="10:00 - 11:00"/>
+                        <ComboBoxItem Content="14:00 - 15:00"/>
+                        <ComboBoxItem Content="18:00 - 19:00"/>
+                        <!-- Dodaj więcej godzin treningu X tutaj -->
+                    </ComboBox>
+
+                    <Label Content="Dni treningu X" Grid.Row="2" Grid.Column="4"/>
+                    <ComboBox Grid.Row="2" Grid.Column="5" SelectedItem="{Binding DniTreninguX}">
+                        <ComboBoxItem Content="Poniedziałek"/>
+                        <ComboBoxItem Content="Wtorek"/>
+                        <ComboBoxItem Content="Środa"/>
+                        <ComboBoxItem Content="Czwartek"/>
+                        <ComboBoxItem Content="Piątek"/>
+                        <ComboBoxItem Content="Sobota"/>
+                        <ComboBoxItem Content="Niedziela"/>
+                    </ComboBox>
+
+                    <Label Content="Opis treningu X" Grid.Row="2" Grid.Column="6"/>
+                    <ComboBox Grid.Row="3" Grid.Column="7" SelectedItem="{Binding OpisTreninguX}">
+                        <ComboBoxItem Content="Trening bokserski"/>
+                        <ComboBoxItem Content="Joga"/>
+                        <ComboBoxItem Content="Pilates"/>
+                        <ComboBoxItem Content="Kalistenika"/>
+                        <ComboBoxItem Content="Taekwondo"/>
+                        <ComboBoxItem Content="Capoeira"/>
+                        <ComboBoxItem Content="Kangoo Jumps"/>
+                        <!-- Dodaj więcej rodzajów treningu X tutaj -->
+                    </ComboBox>
+
+
                 </Grid>
             </GroupBox>
+
+
+
+
+
+
+
 
         </Grid>
     </ScrollViewer>
