@@ -21,10 +21,11 @@ namespace NOTlazyZone.Model
         public double ProcentowyWzrostLiczbyKlientow { get; set; }
         public string OpisWzrostu { get; set; }
 
-        public Statistic(string nazwaSilowni, string adres)
+        public Statistic(string nazwaSilowni, string adres, int liczbaCzlonkow)
         {
             this.NazwaSilowni = nazwaSilowni;
             this.Adres = adres;
+            this.LiczbaCzlonkow = liczbaCzlonkow;
         }
     }
 }
