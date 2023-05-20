@@ -7,12 +7,15 @@
              xmlns:local="clr-namespace:NOTlazyZone.Views"
              xmlns:resx="clr-namespace:NOTlazyZone.ViewResources"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="800">
+             d:DesignHeight="800" d:DesignWidth="1200">
     <d:UserControl.DataContext>
         <vm:StatisticViewModel/>
     </d:UserControl.DataContext>
-    <ScrollViewer HorizontalScrollBarVisibility="Visible">
-        <Grid Background="White" Height="850">
+    <UserControl.Resources>
+        <ResourceDictionary Source="Styles.xaml"/>
+    </UserControl.Resources>
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+        <Grid Style="{StaticResource StatisticGrid}" Height="850">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -42,8 +45,9 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Label Content="Nazwa" />
+                    <Label Content="Nazwa"/>
                     <TextBox Grid.Column="1" Text="{Binding NazwaSilowni}"/>
+
                     <Button Content="Zmień nazwę" Grid.Column="1" Grid.Row="1"/>
                     <Label Content="Adres" Grid.Column="2"/>
                     <TextBox Grid.Column="3" Text="{Binding Adres}"/>
@@ -52,7 +56,7 @@
                     <Border Grid.Column="4" Grid.Row="1"  IsEnabled="False" Grid.RowSpan="2">
                         <StackPanel>
                             <CheckBox Content="Dostępne zajęcia grupowe" IsChecked="True"/>
-                            <CheckBox Content="Trening personalny"/>
+                            <CheckBox Content="Trening personalny" IsChecked="True"/>
                         </StackPanel>
                     </Border>
                     <Label Content="Ilość członków" Grid.Column="0" Grid.Row="2"/>
@@ -112,17 +116,18 @@
                 </Grid>
             </GroupBox>
 
-            <GroupBox Header="Wybierz opcję" Grid.Row="2" Grid.Column="1" Margin="10">
+            <!--<GroupBox Header="Wybierz opcję" Grid.Row="2" Grid.Column="1" Margin="10">
                 <StackPanel>
                     <RadioButton Content="Opcja 1"/>
                     <RadioButton Content="Opcja 2"/>
                     <RadioButton Content="Opcja 3"/>
                 </StackPanel>
-            </GroupBox>
+            </GroupBox>-->
 
             <GroupBox Header="Rodzaje możliwych treningów z trenerem personalnym" Grid.Row="2" Grid.ColumnSpan="2">
                 <Grid Height="200">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -146,7 +151,6 @@
                         <ComboBoxItem Content="10:00 - 11:00"/>
                         <ComboBoxItem Content="14:00 - 15:00"/>
                         <ComboBoxItem Content="18:00 - 19:00"/>
-                        <!-- Dodaj więcej godzin treningu siłowego tutaj -->
                     </ComboBox>
 
                     <Label Content="Trening siłowy" Grid.Row="0" Grid.Column="0"/>
@@ -157,7 +161,6 @@
                         <ComboBoxItem Content="10:00 - 11:00"/>
                         <ComboBoxItem Content="14:00 - 15:00"/>
                         <ComboBoxItem Content="18:00 - 19:00"/>
-                        <!-- Dodaj więcej godzin treningu siłowego tutaj -->
                     </ComboBox>
 
                     <Label Content="Dni treningu siłowego" Grid.Row="0" Grid.Column="4"/>
@@ -192,7 +195,6 @@
                         <ComboBoxItem Content="10:00 - 11:00"/>
                         <ComboBoxItem Content="14:00 - 15:00"/>
                         <ComboBoxItem Content="18:00 - 19:00"/>
-                        <!-- Dodaj więcej godzin treningu cardio tutaj -->
                     </ComboBox>
 
                     <Label Content="Dni treningu cardio" Grid.Row="1" Grid.Column="4"/>
@@ -216,15 +218,46 @@
                         <ComboBoxItem Content="Interwały"/>
                     </ComboBox>
 
+                    <Label Content="Trening Wytrzymałościowy" Grid.Row="3" Grid.Column="0"/>
+                    <CheckBox Grid.Row="3" Grid.Column="1" IsChecked="{Binding TreningX}"/>
+                    <Label Content="Godziny treningu wytrzymałościowego" Grid.Row="3" Grid.Column="2" Margin="0 0 10 0"/> <!--TODO: dodaj margin wszedzie-->
+                    <ComboBox Grid.Row="3" Grid.Column="3" SelectedItem="{Binding GodzinyTreninguX}">
+                        <ComboBoxItem Content="7:00 - 8:00"/>
+                        <ComboBoxItem Content="10:00 - 11:00"/>
+                        <ComboBoxItem Content="14:00 - 15:00"/>
+                        <ComboBoxItem Content="18:00 - 19:00"/>
+                    </ComboBox>
+
+                    <Label Content="Dni treningu wytrzymałościowego" Grid.Row="3" Grid.Column="4"/>
+                    <ComboBox Grid.Row="3" Grid.Column="5" SelectedItem="{Binding DniTreninguX}">
+                        <ComboBoxItem Content="Poniedziałek"/>
+                        <ComboBoxItem Content="Wtorek"/>
+                        <ComboBoxItem Content="Środa"/>
+                        <ComboBoxItem Content="Czwartek"/>
+                        <ComboBoxItem Content="Piątek"/>
+                        <ComboBoxItem Content="Sobota"/>
+                        <ComboBoxItem Content="Niedziela"/>
+                    </ComboBox>
+
+                    <Label Content="Ćwiczenia treningu funkcjonalnego" Grid.Row="3" Grid.Column="6"/>
+                    <ComboBox Grid.Row="3" Grid.Column="7" SelectedItem="{Binding OpisTreninguX}">
+                        <ComboBoxItem Content="Przysiady sumo"/>
+                        <ComboBoxItem Content="Wznoszenia bioder z leżenia"/>
+                        <ComboBoxItem Content="Plank"/>
+                        <ComboBoxItem Content="Mountain climbers"/>
+                        <ComboBoxItem Content="Bieg w miejscu z podskokami"/>
+                        <ComboBoxItem Content="Burpees"/>
+                        <ComboBoxItem Content="Skakanka"/>
+                    </ComboBox>
+
                     <Label Content="Trening funkcjonalny" Grid.Row="2" Grid.Column="0"/>
                     <CheckBox Grid.Row="2" Grid.Column="1" IsChecked="{Binding TreningX}"/>
-                    <Label Content="Godziny treningu X" Grid.Row="2" Grid.Column="2"/>
+                    <Label Content="Godziny treningu funkcjonalnego" Grid.Row="2" Grid.Column="2"/>
                     <ComboBox Grid.Row="2" Grid.Column="3" SelectedItem="{Binding GodzinyTreninguX}">
                         <ComboBoxItem Content="7:00 - 8:00"/>
                         <ComboBoxItem Content="10:00 - 11:00"/>
                         <ComboBoxItem Content="14:00 - 15:00"/>
                         <ComboBoxItem Content="18:00 - 19:00"/>
-                        <!-- Dodaj więcej godzin treningu X tutaj -->
                     </ComboBox>
 
                     <Label Content="Dni treningu funkcjonalnego" Grid.Row="2" Grid.Column="4"/>
@@ -239,7 +272,7 @@
                     </ComboBox>
 
                     <Label Content="Ćwiczenia treningu funkcjonalnego" Grid.Row="2" Grid.Column="6"/>
-                    <ComboBox Grid.Row="3" Grid.Column="7" SelectedItem="{Binding OpisTreninguX}">
+                    <ComboBox Grid.Row="2" Grid.Column="7" SelectedItem="{Binding OpisTreninguX}">
                         <ComboBoxItem Content="Przysiady sumo"/>
                         <ComboBoxItem Content="Wznoszenia bioder z leżenia"/>
                         <ComboBoxItem Content="Plank"/>
@@ -254,32 +287,43 @@
 
             <GroupBox Header="Trenerzy Personalni" Grid.Row="3" Grid.ColumnSpan="2">
                 <Grid>
-                    <StackPanel>
-                        <StackPanel Orientation="Horizontal">
-                            <Image Source="/Views/icons/user.png" Width="100" Height="100" Margin="10" />
-                            <StackPanel>
-                                <TextBlock Text="Wiktor Nowak" FontSize="18" FontWeight="Bold" />
-                                <TextBlock Text="Specjalizacja: Trening siłowy i kondycyjny" FontSize="14" Margin="0,5,0,0" />
-                                <TextBlock Text="Dodatkowe informacje o trenerze:" FontSize="14" Margin="0,5,0,0" />
-                            </StackPanel>
-                        </StackPanel>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                    </Grid.RowDefinitions>
 
-                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                            <Image Source="/Views/icons/user.png" Width="100" Height="100" Margin="10" />
-                            <StackPanel>
-                                <TextBlock Text="Patrycja Kowalska" FontSize="18" FontWeight="Bold" />
-                                <TextBlock Text="Specjalizacja: Trening odchudzający i redukcji tkanki tłuszczowej" FontSize="14" Margin="0,5,0,0" />
-                                <TextBlock Text="Dodatkowe informacje o trenerze:" FontSize="14" Margin="0,5,0,0" />
-                            </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0" Grid.Column="0">
+                        <Image Source="/Views/icons/user.png" Width="100" Height="100" Margin="10" />
+                        <StackPanel>
+                            <TextBlock Text="Wiktor Nowak" FontSize="18" FontWeight="Bold" />
+                            <TextBlock Text="Specjalizacja: Trening siłowy i kondycyjny" FontSize="14" Margin="0,5,0,0" />
+                            <TextBlock Text="Doświadczenie zawodowe: 5 lata" FontSize="14" Margin="0,5,0,0" />
+                            <TextBlock Text="Telefon: 543-432-657" FontSize="14" Margin="0,5,0,0" />
                         </StackPanel>
+                    </StackPanel>
 
-                        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                            <Image Source="/Views/icons/user.png" Width="100" Height="100" Margin="10" />
-                            <StackPanel>
-                                <TextBlock Text="Jan Kowalski" FontSize="18" FontWeight="Bold" />
-                                <TextBlock Text="Specjalizacja: Trening funkcjonalny" FontSize="14" Margin="0,5,0,0" />
-                                <TextBlock Text="Dodatkowe informacje o trenerze:" FontSize="14" Margin="0,5,0,0" />
-                            </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0" Grid.Column="1">
+                        <Image Source="/Views/icons/user.png" Width="100" Height="100" Margin="10" />
+                        <StackPanel>
+                            <TextBlock Text="Patrycja Kowalska" FontSize="18" FontWeight="Bold" />
+                            <TextBlock Text="Specjalizacja: Trening odchudzający i redukcji tkanki tłuszczowej" FontSize="14" Margin="0,5,0,0" />
+                            <TextBlock Text="Doświadczenie zawodowe: 3 lata" FontSize="14" Margin="0,5,0,0" />
+                            <TextBlock Text="Telefon: 542-333-879" FontSize="14" Margin="0,5,0,0" />
+
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0" Grid.Column="2">
+                        <Image Source="/Views/icons/user.png" Width="100" Height="100" Margin="10" />
+                        <StackPanel>
+                            <TextBlock Text="Jan Kowalski" FontSize="18" FontWeight="Bold" />
+                            <TextBlock Text="Specjalizacja: Trening funkcjonalny" FontSize="14" Margin="0,5,0,0" />
+                            <TextBlock Text="Doświadczenie zawodowe: 14 lat" FontSize="14" Margin="0,5,0,0" />
+                            <TextBlock Text="Telefon: 987-456-756" FontSize="14" Margin="0,5,0,0" />
+
                         </StackPanel>
                     </StackPanel>
                 </Grid>
