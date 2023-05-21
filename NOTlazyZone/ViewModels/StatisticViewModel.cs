@@ -25,43 +25,44 @@ namespace NOTlazyZone.ViewModels
                 }
             }
         }
-        public string GymName
-        {
-            get => Model.NazwaSilowni;
-            set
-            {
-                if (Model.NazwaSilowni != value)
-                {
-                    Model.NazwaSilowni = value;
-                    OnPropertyChanged(() => NazwaSilowni);
-                }
-            }
-        }
-        
-        public string Adres { get => Model.Adres; set{}}
-        //public string Test { get; set; }
-        //public string NazwaSilowni { get; set; }
-        //public string Adres { get; set; }
-        //public string Miasto { get; set; }
-        public int LiczbaCzlonkow { get => Model.LiczbaCzlonkow; set { } }
-        //public DateTime DataZalozenia { get; set; }
-        //public string TelefonKontaktowy { get; set; }
-        //public string EmailKontaktowy { get; set; }
-        //public string StronaInternetowa { get; set; }
-        //public string GodzinyOtwarcia { get; set; }
-        //public int LiczbaKlientow { get; set; }
-        //public int SredniaLiczbaOdwiedzinTygodniowo { get; set; }
-        //public string NajpopularniejszeZajecia { get; set; }
-        //public bool DostepnePosilkiDietetyczne { get; set; }
-        //public double ProcentowyWzrostLiczbyKlientow { get; set; }
-        //public string OpisWzrostu { get; set; }
+        public string Adres 
+        { get => Model.Adres; set{}}
+        public string Wlasciciel
+        { get => Model.Wlasciciel; set { } }
+        public string Miasto
+        { get => Model.Miasto; set{}}
+        public int LiczbaCzlonkow
+        { get => Model.LiczbaCzlonkow; set {}}
+        public DateTime DataZalozenia
+        { get => Model.DataZalozenia; set{}}
+        public string TelefonKontaktowy
+        { get => Model.TelefonKontaktowy; set{}}
+        public string EmailKontaktowy
+        { get => Model.EmailKontaktowy; set{}}
+        public string StronaInternetowa
+        { get => Model.StronaInternetowa; set{}}
+        public string GodzinyOtwarcia 
+        { get => Model.GodzinyOtwarcia; set{}}
+        public int LiczbaKlientow 
+        { get => Model.LiczbaKlientow; set{}}
+        public int SredniaLiczbaOdwiedzinTygodniowo 
+        { get => Model.SredniaLiczbaOdwiedzinTygodniowo; set{}}
+        public string NajpopularniejszeZajecia 
+        { get => Model.NajpopularniejszeZajecia; set{}}
+        public bool DostepnePosilkiDietetyczne 
+        { get => Model.DostepnePosilkiDietetyczne; set{}}
+        public double ProcentowyWzrostLiczbyKlientow 
+        { get => Model.ProcentowyWzrostLiczbyKlientow; set{}}
+        public string OpisWzrostu 
+        { get => Model.OpisWzrostu; set{}}
 
         public Statistic Model { get; set; }
 
         public StatisticViewModel() 
         {
             base.DisplayName = "Statystyki";
-            Model = new Statistic("NOTlazyZone", "Długa 20",13);
+            Model = new Statistic("NOTlazyZone", "Grochowska 32 Warszawa", "Michał Kwaśniewski" ,"Warszawa, Poznań, Kraków", 100, DateTime.Now, "456 645 323", "NOTlazyZone@gmail.com", "www.NOTlazyZone.com", "06:00 - 24:00", 50, 10, "Trening silowy", true, 10.5, "Opis");
+
         }
     }
     
