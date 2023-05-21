@@ -40,46 +40,60 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
-                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <Label Content="Nazwa"/>
-                    <TextBox Grid.Column="1" Text="{Binding NazwaSilowni}"/>
+                    <Label Content="Nazwa" Grid.Column="0" Grid.Row="0"/>
+                    <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding NazwaSilowni}" Margin="0,5,0,0"/>
 
-                    <Button Content="Zmień nazwę" Grid.Column="1" Grid.Row="1"/>
-                    <Label Content="Adres" Grid.Column="2"/>
-                    <TextBox Grid.Column="3" Text="{Binding Adres}"/>
-                    <Label Content="Miasto" Grid.Column="2" Grid.Row="1"/>
-                    <TextBox Text="{Binding Miasto}" Grid.Column="3" Grid.Row="1"/>
-                    <Border Grid.Column="4" Grid.Row="1"  IsEnabled="False" Grid.RowSpan="2">
+                    <Label Content="Właściciel" Grid.Column="0" Grid.Row="1"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Wlasciciel}" Margin="0,5,0,0"/>
+
+                    <Label Content="Adres" Grid.Column="0" Grid.Row="2"/>
+                    <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Adres}" Margin="0,5,0,0"/>
+
+                    <Label Content="Miasta" Grid.Column="0" Grid.Row="3"/>
+                    <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Miasto}" Margin="0,5,0,0"/>
+
+                    <Border Grid.Column="5" Grid.Row="0" Grid.RowSpan="4" IsEnabled="False">
                         <StackPanel>
                             <CheckBox Content="Dostępne zajęcia grupowe" IsChecked="True"/>
                             <CheckBox Content="Trening personalny" IsChecked="True"/>
                         </StackPanel>
                     </Border>
-                    <Label Content="Ilość członków" Grid.Column="0" Grid.Row="2"/>
-                    <TextBox Text="{Binding LiczbaCzlonkow}" Grid.Column="1" Grid.Row="2"/>
-                    <Label Content="Data założenia" Grid.Column="2" Grid.Row="2"/>
-                    <TextBox Text="{Binding DataZalozenia}" Grid.Column="3" Grid.Row="2"/>
+
+                    <Label Content="Liczba członków:" Grid.Column="3" Grid.Row="0"/>
+                    <TextBox Grid.Column="4" Grid.Row="0" Text="{Binding LiczbaCzlonkow}" Margin="0,5,0,0"/>
+
+                    <Label Content="Data założenia:" Grid.Column="3" Grid.Row="1"/>
+                    <TextBox Grid.Column="4" Grid.Row="1" Text="{Binding DataZalozenia}" Margin="0,5,0,0"/>
                 </Grid>
             </GroupBox>
+
 
             <GroupBox Header="Dane kontaktowe siłowni" Grid.Row="1">
                 <Grid>
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            <Label  Content="Telefon"/>
-                            <TextBox Text="{Binding TelefonKontaktowy}" Width="200"/>
-                            <Label Content="Adres e-mail"/>
-                            <TextBox Text="{Binding EmailKontaktowy}" Width="200"/>
+                            
+                            <Label Content="Strona internetowa:"/>
+                            <TextBox Text="{Binding StronaInternetowa}" Width="200" IsEnabled="False" Margin="0,5,0,0"/>
+
+                            <Label  Content="Godziny otwarcia:"/>
+                            <TextBox Text="{Binding GodzinyOtwarcia}" Width="200" Margin="0,5,0,0"/>
+                            
                         </StackPanel>
+                        
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="Strona internetowa"/>
-                            <TextBox Text="{Binding StronaInternetowa}" Width="200"/>
-                            <Label Content="Godziny otwarcia"/>
-                            <TextBox Text="{Binding GodzinyOtwarcia}" Width="200"/>
+
+                            <Label Content="Adres e-mail:" Margin="0,0,40,0"/>
+                            <TextBox Text="{Binding EmailKontaktowy}" Width="200" IsEnabled="False" Margin="0,5,0,0"/>
+
+                            <Label  Content="Numer telefonu:" Margin="0,0,10,0"/>
+                            <TextBox Text="{Binding TelefonKontaktowy}" Width="200" Margin="0,5,0,0"/>
+                           
                         </StackPanel>
                     </StackPanel>
                 </Grid>
@@ -104,15 +118,16 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Label HorizontalAlignment="Center" Content="Liczba klientów" Grid.Row="0"/>
+                    <Label HorizontalAlignment="Left" Content="Liczba klientów" Grid.Row="0"/>
                     <TextBox Grid.Row="1" IsEnabled="False" Text="{Binding LiczbaKlientow}"/>
-                    <Label HorizontalAlignment="Center" Content="Średnia liczba odwiedzin tygodniowo" Grid.Row="2"/>
+                    <Label HorizontalAlignment="Left" Content="Średnia liczba odwiedzin tygodniowo" Grid.Row="2"/>
                     <TextBox Grid.Row="3" Text="{Binding SredniaLiczbaOdwiedzinTygodniowo}"/>
-                    <Label HorizontalAlignment="Center" Content="Najpopularniejsze zajęcia" Grid.Row="4"/>
+                    <Label HorizontalAlignment="Left" Content="Najpopularniejsze zajęcia" Grid.Row="4"/>
                     <TextBox Grid.Row="5" IsEnabled="False" Text="{Binding NajpopularniejszeZajecia}"/>
                     <CheckBox Content="Posiłki dietetyczne dostępne" Grid.Row="6"/>
-                    <Label HorizontalAlignment="Center" Content="Procentowy wzrost liczby klientów" Grid.Row="8"/>
-                    <Label HorizontalAlignment="Center" Content="Opis wzrostu" Grid.Row="8" Grid.Column="1"/>
+                    <Label HorizontalAlignment="Left"  Content="Ilość wykupionych karentow" Grid.Row="8"/>
+                    <TextBox Grid.Row="9" IsEnabled="False" Text="{Binding NajpopularniejszeZajecia}"/>
+                    <Label HorizontalAlignment="Left" Content="Opis wzrostu" Grid.Row="8" Grid.Column="1"/>
                 </Grid>
             </GroupBox>
 

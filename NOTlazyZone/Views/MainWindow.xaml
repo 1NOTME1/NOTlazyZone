@@ -346,12 +346,12 @@
                 </StackPanel>
             </StatusBarItem>
             <Separator/>
-            <StatusBarItem Width="960">
+            <StatusBarItem Width="1690">
                 <TextBlock>Status Message: 0</TextBlock>
             </StatusBarItem>
             <Separator/>
             <StatusBarItem >
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="right" >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                     <Image Source="icons/wifi.png" Width="16" Height="16" Margin="0,0,5,0" />
                     <TextBlock>Connected</TextBlock>
                 </StackPanel>
