@@ -42,9 +42,7 @@ namespace NOTlazyZone.ViewModels
             { 
                 if(_Commands == null)
                 {
-                    //
                     List<CommandViewModel> cmds = CreateCommands();
-                    //i ...
                     _Commands = new ReadOnlyCollection<CommandViewModel>(cmds);
                 }
                 return _Commands; 
@@ -52,10 +50,8 @@ namespace NOTlazyZone.ViewModels
         }
         private List<CommandViewModel> CreateCommands()
         {
-            //tworze....
             return new List<CommandViewModel>
             {
-                //tu decyduje 
                 new CommandViewModel("Messages",new BaseCommand(CreateMessage)),
                 new CommandViewModel("Calendar",new BaseCommand(ShowTrainingPlan)),
                 new CommandViewModel("Statistics",new BaseCommand(ShowStatistic)),

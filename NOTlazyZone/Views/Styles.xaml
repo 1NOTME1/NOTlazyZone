@@ -102,4 +102,20 @@
         <Setter Property="Foreground" Value="white"/>
     </Style>
 
+    <!--TextBox-->
+    <Style TargetType="Button" x:Key="ButtonTrainingPlan">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Background" Value="#282a36"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="20"/>
+        
+    </Style>
+    <Style TargetType="TextBlock" x:Key="TextBlockTrainingPlan">
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
 </ResourceDictionary>

@@ -1,12 +1,115 @@
 ﻿<UserControl x:Class="NOTlazyZone.Views.TrainingPlanView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:NOTlazyZone.Views"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary Source="Styles.xaml"/>
+    </UserControl.Resources>
+
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="#1e202b">
+            <TextBlock Text="Training Plan" Foreground="White" FontSize="20" FontWeight="Bold"/>
+            <!-- Add any other header elements as needed -->
+        </StackPanel>
+
+        <!-- Content -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Calendar -->
+            <UniformGrid Grid.Column="0" Columns="7" Background="#1e202b">
+                <!-- Days of the Week -->
+                <TextBlock Text="Sun" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
+                <TextBlock Text="Mon" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
+                <TextBlock Text="Tue" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
+                <TextBlock Text="Wed" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
+                <TextBlock Text="Thu" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
+                <TextBlock Text="Fri" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
+                <TextBlock Text="Sat" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
+
+                <!-- Days of the Month -->
+                <!-- You can generate the day buttons dynamically based on the selected month and year -->
+                <Button Content="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="4" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="5" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="6" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="7" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="8" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="9" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="10" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="11" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="12" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="13" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="14" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="15" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="16" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="17" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="18" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="19" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="20" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="21" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="22" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="23" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="25" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="26" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="27" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="28" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="29" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="30" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="31" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+            </UniformGrid>
+
+            <!-- ListBox -->
+            <ListBox Grid.Column="2" Background="Transparent" BorderThickness="0" Margin="10">
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Exercise 1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Exercise 2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Exercise 3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Exercise 4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+                    </StackPanel>
+                </ListBoxItem>
+                <!-- Add more list items as needed -->
+            </ListBox>
+
+        </Grid>
+
+        <!-- Footer -->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="#1e202b">
+            <Button Content="Save" Foreground="White" Background="#FF34495E" Margin="5"/>
+            <Button Content="Cancel" Foreground="White" Background="#FF34495E" Margin="5"/>
+            <!-- Add any other footer elements as needed -->
+        </StackPanel>
     </Grid>
 </UserControl>

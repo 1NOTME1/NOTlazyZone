@@ -7,10 +7,8 @@ using System.Windows.Input;
 
 namespace NOTlazyZone.ViewModels
 {
-    //
     public class CommandViewModel : BaseViewModel
     {
-        //ka...
         #region Properties
         public string  DisplayName { get; set; }
         public ICommand Command { get; set; }
