@@ -17,22 +17,17 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Header -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" Background="#1e202b">
             <TextBlock Text="Training Plan" Foreground="White" FontSize="20" FontWeight="Bold"/>
-            <!-- Add any other header elements as needed -->
         </StackPanel>
 
-        <!-- Content -->
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Calendar -->
             <UniformGrid Grid.Column="0" Columns="7" Background="#1e202b">
-                <!-- Days of the Week -->
                 <TextBlock Text="Sun" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
                 <TextBlock Text="Mon" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
                 <TextBlock Text="Tue" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
@@ -41,66 +36,70 @@
                 <TextBlock Text="Fri" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
                 <TextBlock Text="Sat" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
 
-                <!-- Days of the Month -->
-                <!-- You can generate the day buttons dynamically based on the selected month and year -->
-                <Button Content="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="4" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="1" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanSilowy}"/>
+                <Button Content="2" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanCardio}"/>
+                <Button Content="3" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanFunkcjonalny}"/>
+                <Button Content="4" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanWytrzymalosiocwy}"/>
                 <Button Content="5" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="6" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="6" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanSilowy}"/>
                 <Button Content="7" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="8" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="9" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="10" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="11" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="8" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanSilowy}"/>
+                <Button Content="9" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanCardio}"/>
+                <Button Content="10" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanFunkcjonalny}"/>
+                <Button Content="11" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanWytrzymalosiocwy}"/>
                 <Button Content="12" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="13" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="13" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanSilowy}"/>
                 <Button Content="14" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="15" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="16" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="17" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="18" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="15" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanSilowy}"/>
+                <Button Content="16" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanCardio}"/>
+                <Button Content="17" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanFunkcjonalny}"/>
+                <Button Content="18" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanWytrzymalosiocwy}"/>
                 <Button Content="19" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="20" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="20" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanSilowy}"/>
                 <Button Content="21" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="22" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="23" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="25" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="22" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanSilowy}"/>
+                <Button Content="23" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanCardio}"/>
+                <Button Content="24" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanFunkcjonalny}"/>
+                <Button Content="25" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanWytrzymalosiocwy}"/>
                 <Button Content="26" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="27" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="27" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanSilowy}"/>
                 <Button Content="28" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="29" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="30" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
-                <Button Content="31" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlan}"/>
+                <Button Content="29" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanSilowy}"/>
+                <Button Content="30" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanCardio}"/>
+                <Button Content="31" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanFunkcjonalny}"/>
             </UniformGrid>
 
-            <!-- ListBox -->
-            <ListBox Grid.Column="2" Background="Transparent" BorderThickness="0" Margin="10">
+            <ListBox Grid.Column="2">
                 <ListBoxItem>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Exercise 1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Trening siłowy " Style="{StaticResource TextBlockTreningSilowy}"/>
+                        <CheckBox Content="Done" Style="{StaticResource CheckboxTraining}" />
                     </StackPanel>
                 </ListBoxItem>
                 <ListBoxItem>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Exercise 2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Trening Cardio " Style="{StaticResource TextBlockTreningCardio}"/>
+                        <CheckBox Content="Done" Style="{StaticResource CheckboxTraining}" />
                     </StackPanel>
                 </ListBoxItem>
                 <ListBoxItem>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Exercise 3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Trening Funkcjonalny " Style="{StaticResource TextBlockTreningFunkcjonalny}"/>
+                        <CheckBox Content="Done" Style="{StaticResource CheckboxTraining}" />
                     </StackPanel>
                 </ListBoxItem>
                 <ListBoxItem>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Exercise 4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Trening Wytrzymałościowy " Style="{StaticResource TextBlockTreningWytrzymalosciowy}"/>
+                        <CheckBox Content="Done" Style="{StaticResource CheckboxTraining}" />
                     </StackPanel>
                 </ListBoxItem>
-                <!-- Add more list items as needed -->
+                <ListBoxItem>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Dzień wolny " />
+                        <CheckBox Content="Done" Style="{StaticResource CheckboxTraining}" />
+                    </StackPanel>
+                </ListBoxItem>
             </ListBox>
 
         </Grid>
@@ -109,7 +108,9 @@
         <StackPanel Grid.Row="2" Orientation="Horizontal" Background="#1e202b">
             <Button Content="Save" Foreground="White" Background="#FF34495E" Margin="5"/>
             <Button Content="Cancel" Foreground="White" Background="#FF34495E" Margin="5"/>
+            <DatePicker SelectedDate="{Binding SelectedDate}" Margin="5"/>
             <!-- Add any other footer elements as needed -->
         </StackPanel>
+
     </Grid>
 </UserControl>

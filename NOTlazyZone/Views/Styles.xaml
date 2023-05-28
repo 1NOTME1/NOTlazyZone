@@ -75,10 +75,6 @@
         <Setter Property="Background" Value="#1e202b"/>
     </Style>
 
-    <!--TextBox-->
-    <!--<Style TargetType="TextBox" x:Key="TextBoxStati">
-        <Setter Property="Background" Value="#282a36"/>
-    </Style>-->
 
     <Style TargetType="{x:Type TextBox}">
         <Setter Property="Background" Value="#282a36"/>
@@ -89,20 +85,19 @@
         <Setter Property="Foreground" Value="WhiteSmoke"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Padding" Value="20"/>
-        
+
     </Style>
 
     <Style TargetType="{x:Type CheckBox}">
         <Setter Property="Foreground" Value="WhiteSmoke"/>
         <Setter Property="Margin" Value="6"/>
-        
+
     </Style>
 
     <Style TargetType="{x:Type Label}">
         <Setter Property="Foreground" Value="white"/>
     </Style>
 
-    <!--TextBox-->
     <Style TargetType="Button" x:Key="ButtonTrainingPlan">
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Background" Value="#282a36"/>
@@ -112,10 +107,100 @@
         <Setter Property="Width" Value="100"/>
         <Setter Property="Height" Value="50"/>
         <Setter Property="Margin" Value="20"/>
-        
+
     </Style>
     <Style TargetType="TextBlock" x:Key="TextBlockTrainingPlan">
         <Setter Property="Foreground" Value="White"/>
     </Style>
+
+    <Style TargetType="Button" x:Key="ButtonTrainingPlanSilowy">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Background" Value="#282a36"/>
+        <Setter Property="Foreground" Value="red"/>
+        <Setter Property="BorderBrush" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="20"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="ButtonTrainingPlanCardio">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Background" Value="#282a36"/>
+        <Setter Property="Foreground" Value="Green"/>
+        <Setter Property="BorderBrush" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="20"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="ButtonTrainingPlanFunkcjonalny">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Background" Value="#282a36"/>
+        <Setter Property="Foreground" Value="Blue"/>
+        <Setter Property="BorderBrush" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="20"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="ButtonTrainingPlanWytrzymalosiocwy">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Background" Value="#282a36"/>
+        <Setter Property="Foreground" Value="Orange"/>
+        <Setter Property="BorderBrush" Value="White"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="50"/>
+        <Setter Property="Margin" Value="20"/>
+    </Style>
+
+    <Style x:Key="DatePickerTraining" TargetType="DatePicker">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="#FF34495E"/>
+        <Setter Property="BorderBrush" Value="#FF34495E"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <Style TargetType="ListBoxItem">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="CheckboxTraining" TargetType="CheckBox">
+        <Setter Property="Foreground" Value="White"/>
+
+    </Style>
+
+    <Style TargetType="ListBox">
+        <Setter Property="Background" Value="#1e202b"/>
+    </Style>
+
+    <Style x:Key="TextBlockTreningSilowy" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="Red"/>
+    </Style>
+
+    <Style x:Key="TextBlockTreningCardio" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="Green"/>
+    </Style>
+
+    <Style x:Key="TextBlockTreningFunkcjonalny" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="Blue"/>
+    </Style>
+
+    <Style x:Key="TextBlockTreningWytrzymalosciowy" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="Orange"/>
+    </Style>
+
+
+    
+
 
 </ResourceDictionary>
