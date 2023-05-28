@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="NOTlazyZone.Views.ExerciseView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:NOTlazyZone.ViewModels"
+             xmlns:local="clr-namespace:NOTlazyZone.Views"
+             xmlns:resx="clr-namespace:NOTlazyZone.ViewResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200">
+            <UserControl.Resources>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </UserControl.Resources>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Content="Workout Planner" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" />
+
+        <Grid Grid.Row="1" Margin="0,20,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Exercise Details" Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Content="Exercise:" Grid.Row="0" Grid.Column="0"/>
+                    <ComboBox Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+                    <Label Content="Sets:" Grid.Row="1" Grid.Column="0"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+                    <Label Content="Reps:" Grid.Row="2" Grid.Column="0"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+                    <Label Content="Weight (kg):" Grid.Row="3" Grid.Column="0"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Margin="5"/>
+
+                    <Button Content="Add Exercise" Grid.Row="4" Grid.ColumnSpan="2" Margin="5"/>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Header="Workout Schedule" Grid.Column="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <CheckBox Content="Monday" Grid.Row="0"/>
+                    <CheckBox Content="Tuesday" Grid.Row="1"/>
+                    <CheckBox Content="Wednesday" Grid.Row="2"/>
+                    <CheckBox Content="Thursday" Grid.Row="3"/>
+                    <CheckBox Content="Friday" Grid.Row="4"/>
+                    <CheckBox Content="Saturday" Grid.Row="5"/>
+                    <CheckBox Content="Sunday" Grid.Row="6"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <Button Content="Generate Workout Plan" Grid.Row="2" Height="40" Margin="5"/>
+    </Grid>
+</UserControl>

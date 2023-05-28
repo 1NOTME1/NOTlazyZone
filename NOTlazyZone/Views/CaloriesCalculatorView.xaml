@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="NOTlazyZone.Views.CaloriesCalculatorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NOTlazyZone.Views"
+             xmlns:viewmodels="clr-namespace:NOTlazyZone.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Calorie Calculator" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" />
+
+        <Grid Grid.Row="1" Margin="0,20,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Content="Weight (kg):" Grid.Row="0" Grid.Column="0"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+            <Label Content="Height (cm):" Grid.Row="1" Grid.Column="0"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+            <Label Content="Age:" Grid.Row="2" Grid.Column="0"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Margin="5"/>
+
+            <Label Content="Gender:" Grid.Row="3" Grid.Column="0"/>
+            <ComboBox Grid.Row="3" Grid.Column="1" Margin="5">
+                <ComboBoxItem Content="Male"/>
+                <ComboBoxItem Content="Female"/>
+            </ComboBox>
+
+            <Label Content="Activity Level:" Grid.Row="4" Grid.Column="0"/>
+            <ComboBox Grid.Row="4" Grid.Column="1" Margin="5">
+                <ComboBoxItem Content="Sedentary"/>
+                <ComboBoxItem Content="Lightly active"/>
+                <ComboBoxItem Content="Moderately active"/>
+                <ComboBoxItem Content="Very active"/>
+                <ComboBoxItem Content="Extra active"/>
+            </ComboBox>
+        </Grid>
+
+        <Button Content="Calculate Calorie Intake" Grid.Row="2" Height="40" Margin="5"/>
+    </Grid>
+</UserControl>
