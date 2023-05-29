@@ -5,114 +5,329 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NOTlazyZone.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="800" d:DesignWidth="1200">
     <Grid>
         <TabControl>
-            <TabItem Header="Profile">
+            <TabItem Header="Profil">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <Label Content="Profile Settings" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Label Content="Ustawienia Profilu" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
 
-                    <StackPanel Grid.Row="1" Margin="10">
-                        <Label Content="Name:"/>
-                        <TextBox/>
+                    <ScrollViewer Grid.Row="1">
+                        <StackPanel Margin="10">
 
-                        <Label Content="Age:"/>
-                        <TextBox/>
+                            <Label Content="Waga (kg):"/>
+                            <TextBox/>
 
-                        <Label Content="Weight:"/>
-                        <TextBox/>
+                            <Label Content="Wzrost (cm):"/>
+                            <TextBox/>
 
-                        <Label Content="Height:"/>
-                        <TextBox/>
-                    </StackPanel>
+                            <Label Content="Procent tkanki tłuszczowej:"/>
+                            <Slider Minimum="1" Maximum="50" TickFrequency="1" IsSnapToTickEnabled="True"/>
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <Label Content="Nazwa:" Width="100" HorizontalAlignment="Right"/>
+                                <TextBox Width="200"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <Label Content="Hasło:" Width="100" HorizontalAlignment="Right"/>
+                                <PasswordBox Width="200"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <Label Content="Email:" Width="100" HorizontalAlignment="Right"/>
+                                <TextBox Width="200"/>
+                            </StackPanel>
+
+                            <Label Content="Zdjęcie profilowe:"/>
+                            <Image Source="/Views/icons/user.png" Width="100" Height="100" Margin="10" HorizontalAlignment="Center" />
+                            <Button Content="Zmień Zdjęcie" Margin="0,10,0,0"/>
+
+                            <Label Content="Język:"/>
+                            <ComboBox Margin="0,10,0,0">
+                                <ComboBoxItem Content="Polski"/>
+                                <ComboBoxItem Content="Angielski"/>
+                                <ComboBoxItem Content="Hiszpański"/>
+                                <ComboBoxItem Content="Rosyjski"/>
+                                <ComboBoxItem Content="Chiński"/>
+                                <ComboBoxItem Content="Portugalski"/>
+                            </ComboBox>
+
+                            <Button Content="Zapisz Profil" Margin="0,20,0,0"/>
+                        </StackPanel>
+                    </ScrollViewer>
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Training">
+
+            <TabItem Header="Trening">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="121*"/>
+                        <ColumnDefinition Width="1073*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="Ustawienia Treningu" FontSize="22" FontWeight="Bold" HorizontalAlignment="Left" Grid.Column="1" Margin="366,0,0,0"/>
+
+                    <ScrollViewer Grid.ColumnSpan="2" Margin="0,39,0,0" Grid.RowSpan="2">
+                        <StackPanel Margin="10">
+                            <Label Content="Preferowany rodzaj treningu:"/>
+                            <ComboBox>
+                                <ComboBoxItem Content="Siłowy"/>
+                                <ComboBoxItem Content="Kardio"/>
+                                <ComboBoxItem Content="Funkcjonalny"/>
+                                <ComboBoxItem Content="Wytrzymałościowy"/>
+                            </ComboBox>
+
+                            <Label Content="Częstotliwość treningów (dni/tydzień):"/>
+                            <Slider Minimum="1" Maximum="7" TickFrequency="1" IsSnapToTickEnabled="True"/>
+
+                            <Label Content="Preferowany czas trwania treningu (co 30 minut):"/>
+                            <Slider Minimum="10" Maximum="120" TickFrequency="10" IsSnapToTickEnabled="True"/>
+
+                            <Label Content="Intensywność ćwiczeń (1-10)"/>
+                            <Slider Minimum="1" Maximum="10" TickFrequency="1" IsSnapToTickEnabled="True"/>
+
+                            <Label Content="Czas odpoczynku między seriami (0,5 min):"/>
+                            <Slider Minimum="1" Maximum="10" TickFrequency="1" IsSnapToTickEnabled="True"/>
+
+                            <Label Content="Liczba serii (1-10)"/>
+                            <Slider Minimum="1" Maximum="10" TickFrequency="1" IsSnapToTickEnabled="True"/>
+
+                            <Label Content="Liczba powtórzeń na serię (1-20)"/>
+                            <Slider Minimum="1" Maximum="20" TickFrequency="1" IsSnapToTickEnabled="True"/>
+
+                            <Label Content="Poziom intensywności kardio (1-10)"/>
+                            <Slider Minimum="1" Maximum="10" TickFrequency="1" IsSnapToTickEnabled="True"/>
+
+                            <Label Content="Preferowany czas trwania cardio (co 10 minut):"/>
+                            <Slider Minimum="10" Maximum="120" TickFrequency="10" IsSnapToTickEnabled="True"/>
+
+                            <Label Content="Sprzęt do treningu siłowego:"/>
+                            <CheckBox Content="Szczotki"/>
+                            <CheckBox Content="Hantle"/>
+                            <CheckBox Content="Kettlebell"/>
+                            <CheckBox Content="Opaski elastyczne"/>
+
+                            <Label Content="Środowisko treningowe:"/>
+                            <RadioButton Content="Siłownia"/>
+                            <RadioButton Content="Dom"/>
+                            <RadioButton Content="Na zewnątrz"/>
+
+                            <Label Content="Plan treningowy:"/>
+                            <ListBox>
+                                <ListBoxItem Content="Początkujący"/>
+                                <ListBoxItem Content="Średniozaawansowany"/>
+                                <ListBoxItem Content="Zaawansowany"/>
+                            </ListBox>
+
+                            <Button Content="Zapisz Ustawienia Treningu" Margin="0,20,0,0"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+
+
+            <TabItem Header="Dieta">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Content="Ustawienia Diety" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
+
+                    <ScrollViewer Grid.Row="1">
+                        <StackPanel Margin="10">
+                            <Label Content="Preferowany rodzaj diety:"/>
+                            <ComboBox>
+                                <ComboBoxItem Content="Zrównoważona"/>
+                                <ComboBoxItem Content="Wysokobiałkowa"/>
+                                <ComboBoxItem Content="Niskowęglowodanowa"/>
+                                <ComboBoxItem Content="Wegańska"/>
+                                <ComboBoxItem Content="Vegetariańska"/>
+                                <ComboBoxItem Content="Paleo"/>
+                            </ComboBox>
+
+                            <Label Content="Dzienna kaloryczność (kcal):"/>
+                            <ComboBox>
+                                <ComboBoxItem Content="1500 kcal"/>
+                                <ComboBoxItem Content="1800 kcal"/>
+                                <ComboBoxItem Content="2000 kcal"/>
+                                <ComboBoxItem Content="2200 kcal"/>
+                                <ComboBoxItem Content="2500 kcal"/>
+                                <ComboBoxItem Content="3000 kcal"/>
+                                <ComboBoxItem Content="3500 kcal"/>
+                            </ComboBox>
+
+
+                            <Label Content="Dzienny spożycie białka (gramy):"/>
+                            <Slider Minimum="50" Maximum="300" TickFrequency="10" IsSnapToTickEnabled="True"/>
+
+                            <Label Content="Preferowane produkty spożywcze:"/>
+                            <ListBox SelectionMode="Multiple">
+                                <ListBoxItem>Warzywa</ListBoxItem>
+                                <ListBoxItem>Owoce</ListBoxItem>
+                                <ListBoxItem>Mięso</ListBoxItem>
+                                <ListBoxItem>Ryby</ListBoxItem>
+                                <ListBoxItem>Nabiał</ListBoxItem>
+                                <ListBoxItem>Orzechy</ListBoxItem>
+                                <ListBoxItem>Pełnoziarniste produkty</ListBoxItem>
+                            </ListBox>
+
+                            <Label Content="Dodatkowe uwagi dotyczące diety:"/>
+                            <TextBox TextWrapping="Wrap" AcceptsReturn="True"/>
+
+                            <Label Content="Posiłki na dzień:"/>
+                            <WrapPanel>
+                                <CheckBox Content="Śniadanie"/>
+                                <CheckBox Content="Drugie śniadanie"/>
+                                <CheckBox Content="Obiad"/>
+                                <CheckBox Content="Podwieczorek"/>
+                                <CheckBox Content="Kolacja"/>
+                            </WrapPanel>
+
+                            <Label Content="Spożycie wody (litry):"/>
+                            <Slider Minimum="1" Maximum="3" TickFrequency="0.5" IsSnapToTickEnabled="True"/>
+
+                            <Button Content="Zapisz Ustawienia Diety" Margin="0,20,0,0"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Powiadomienia" Margin="-2,0,-2,0">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <Label Content="Training Settings" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Label Content="Ustawienia Powiadomień" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
 
-                    <StackPanel Grid.Row="1" Margin="10">
-                        <Label Content="Preferred Training Type:"/>
-                        <ComboBox>
-                            <ComboBoxItem Content="Strength"/>
-                            <ComboBoxItem Content="Cardio"/>
-                            <ComboBoxItem Content="Functional"/>
-                            <ComboBoxItem Content="Endurance"/>
-                        </ComboBox>
+                    <ScrollViewer Grid.Row="1">
+                        <StackPanel Margin="10">
+                            <ListBox Margin="10">
+                                <ListBoxItem>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Otrzymuj przypomnienia o treningu" Width="250"/>
+                                        <CheckBox Content="Aplikacja"/>
+                                        <CheckBox Content="Telefon"/>
+                                        <CheckBox Content="E-mail"/>
+                                    </StackPanel>
+                                </ListBoxItem>
 
-                        <Label Content="Training Frequency:"/>
-                        <ComboBox>
-                            <ComboBoxItem Content="Daily"/>
-                            <ComboBoxItem Content="Every Other Day"/>
-                            <ComboBoxItem Content="Weekly"/>
-                        </ComboBox>
+                                <ListBoxItem>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Otrzymuj przypomnienia o posiłkach" Width="250"/>
+                                        <CheckBox Content="Aplikacja"/>
+                                        <CheckBox Content="Telefon"/>
+                                        <CheckBox Content="E-mail"/>
+                                    </StackPanel>
+                                </ListBoxItem>
 
-                        <Label Content="Favorite Exercises:"/>
-                        <TextBox/>
-                    </StackPanel>
+                                <ListBoxItem>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Otrzymuj aktualizacje postępów" Width="250"/>
+                                        <CheckBox Content="Aplikacja"/>
+                                        <CheckBox Content="Telefon"/>
+                                        <CheckBox Content="E-mail"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+
+                                <ListBoxItem>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Otrzymuj powiadomienia o nowych ćwiczeniach" Width="250"/>
+                                        <CheckBox Content="Aplikacja"/>
+                                        <CheckBox Content="Telefon"/>
+                                        <CheckBox Content="E-mail"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+
+                                <ListBoxItem>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Otrzymuj powiadomienia o aktualizacjach diet" Width="250"/>
+                                        <CheckBox Content="Aplikacja"/>
+                                        <CheckBox Content="Telefon"/>
+                                        <CheckBox Content="E-mail"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+
+                                <ListBoxItem>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Otrzymuj powiadomienia o wydarzeniach" Width="250"/>
+                                        <CheckBox Content="Aplikacja"/>
+                                        <CheckBox Content="Telefon"/>
+                                        <CheckBox Content="E-mail"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+
+
+                            </ListBox>
+
+                            <Label Content="Częstotliwość powiadomień:"/>
+                            <ComboBox Margin="0,10,0,0">
+                                <ComboBoxItem Content="Codziennie"/>
+                                <ComboBoxItem Content="Co drugi dzień"/>
+                                <ComboBoxItem Content="Tygodniowo"/>
+                            </ComboBox>
+
+                            <ListBoxItem>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Godzina otrzymywania powiadomień:" Width="250"/>
+                                    <ComboBox Width="60">
+                                        <ComboBoxItem Content="00"/>
+                                        <ComboBoxItem Content="01"/>
+                                        <ComboBoxItem Content="02"/>
+                                        <ComboBoxItem Content="03"/>
+                                        <ComboBoxItem Content="04"/>
+                                        <ComboBoxItem Content="05"/>
+                                        <ComboBoxItem Content="06"/>
+                                        <ComboBoxItem Content="07"/>
+                                        <ComboBoxItem Content="08"/>
+                                        <ComboBoxItem Content="09"/>
+                                        <ComboBoxItem Content="10"/>
+                                        <ComboBoxItem Content="11"/>
+                                        <ComboBoxItem Content="12"/>
+                                        <ComboBoxItem Content="13"/>
+                                        <ComboBoxItem Content="14"/>
+                                        <ComboBoxItem Content="15"/>
+                                        <ComboBoxItem Content="16"/>
+                                        <ComboBoxItem Content="17"/>
+                                        <ComboBoxItem Content="18" IsSelected="True"/>
+                                        <ComboBoxItem Content="19"/>
+                                        <ComboBoxItem Content="20"/>
+                                        <ComboBoxItem Content="21"/>
+                                        <ComboBoxItem Content="22"/>
+                                        <ComboBoxItem Content="23"/>
+                                    </ComboBox>
+                                    <ComboBox Width="60">
+                                        <ComboBoxItem Content="00" IsSelected="True"/>
+                                        <ComboBoxItem Content="15"/>
+                                        <ComboBoxItem Content="30"/>
+                                        <ComboBoxItem Content="45"/>
+                                    </ComboBox>
+                                </StackPanel>
+                            </ListBoxItem>
+
+
+                            <Label Content="Głośność przypomnień:"/>
+                            <Slider Minimum="0" Maximum="100" TickFrequency="10" IsSnapToTickEnabled="True"/>
+
+                            <Button Content="Zapisz Ustawienia Powiadomień" Margin="0,20,0,0"/>
+                        </StackPanel>
+                    </ScrollViewer>
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Diet">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-
-                    <Label Content="Diet Settings" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
-
-                    <StackPanel Grid.Row="1" Margin="10">
-                        <Label Content="Preferred Diet:"/>
-                        <ComboBox>
-                            <ComboBoxItem Content="Balanced"/>
-                            <ComboBoxItem Content="High-Protein"/>
-                            <ComboBoxItem Content="Low-Carb"/>
-                            <ComboBoxItem Content="Vegan"/>
-                        </ComboBox>
-
-                        <Label Content="Meal Frequency:"/>
-                        <ComboBox>
-                            <ComboBoxItem Content="3 Meals a Day"/>
-                            <ComboBoxItem Content="5 Small Meals"/>
-                            <ComboBoxItem Content="Intermittent Fasting"/>
-                        </ComboBox>
-
-                        <Label Content="Favorite Foods:"/>
-                        <TextBox/>
-                    </StackPanel>
-                </Grid>
-            </TabItem>
-
-            <TabItem Header="Notifications">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-
-                    <Label Content="Notification Settings" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
-
-                    <StackPanel Grid.Row="1" Margin="10">
-                        <CheckBox Content="Receive training reminders"/>
-
-                        <CheckBox Content="Receive meal reminders"/>
-
-                        <CheckBox Content="Receive progress updates"/>
-                    </StackPanel>
-                </Grid>
-            </TabItem>
         </TabControl>
     </Grid>
 </UserControl>
