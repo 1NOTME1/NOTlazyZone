@@ -187,15 +187,6 @@
                                 <ListBoxItem>Pełnoziarniste produkty</ListBoxItem>
                             </ListBox>
 
-                            <Label Content="Alergie:" Grid.Column="0"/>
-                            <ListBox SelectionMode="Multiple">
-                                <ListBoxItem>Orzeszki ziemne</ListBoxItem>
-                                <ListBoxItem>Gluten</ListBoxItem>
-                                <ListBoxItem>Laktoza</ListBoxItem>
-                                <ListBoxItem>Owoce morza</ListBoxItem>
-                                <ListBoxItem>Jajka</ListBoxItem>
-                            </ListBox>
-
                             <Label Content="Dodatkowe uwagi dotyczące diety:"/>
                             <TextBox TextWrapping="Wrap" AcceptsReturn="True"/>
 
