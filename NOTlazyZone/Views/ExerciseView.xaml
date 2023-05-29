@@ -48,7 +48,12 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Content="Ćwiczenie:" Grid.Row="0" Grid.Column="0"/>
-                    <ComboBox Grid.Row="0" Grid.Column="1" Margin="5"/>
+                    <ComboBox Grid.Row="0" Grid.Column="1" Margin="5" Background="Red">
+                        <ComboBoxItem Content="Ćwiczenie 1"/>
+                        <ComboBoxItem Content="Ćwiczenie 2"/>
+                        <ComboBoxItem Content="Ćwiczenie 3"/>
+                    </ComboBox>
+
 
                     <Label Content="Serii:" Grid.Row="1" Grid.Column="0"/>
                     <TextBox Grid.Row="1" Grid.Column="1" Margin="5"/>
@@ -63,7 +68,11 @@
                     <TextBox Grid.Row="4" Grid.Column="1" Margin="5"/>
 
                     <Label Content="Typ ćwiczenia:" Grid.Row="5" Grid.Column="0"/>
-                    <ComboBox Grid.Row="5" Grid.Column="1" Margin="5"/>
+                    <ComboBox Grid.Row="5" Grid.Column="1" Margin="5">
+                        <ComboBoxItem Content="Ćwiczenie 1"/>
+                        <ComboBoxItem Content="Ćwiczenie 2"/>
+                        <ComboBoxItem Content="Ćwiczenie 3"/>
+                    </ComboBox>
 
                     <Label Content="Ćwiczenie Cardio:" Grid.Row="6" Grid.Column="0"/>
                     <CheckBox Grid.Row="6" Grid.Column="1" Margin="5"/>
@@ -106,6 +115,6 @@
 
         </Grid>
 
-        <Button Content="Generuj Plan Treningowy" Grid.Row="2" Height="40" Margin="5"/>
+        <Button Content="Generuj Plan Treningowy" Grid.Row="2" Height="40" Margin="5" Style="{StaticResource Button}"/>
     </Grid>
 </UserControl>

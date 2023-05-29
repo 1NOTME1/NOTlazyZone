@@ -6,6 +6,13 @@
              xmlns:local="clr-namespace:NOTlazyZone.Views"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
         <TabControl>
             <TabItem Header="Profil">
@@ -27,7 +34,7 @@
                             <TextBox/>
 
                             <Label Content="Procent tkanki tłuszczowej:"/>
-                            <Slider Minimum="1" Maximum="50" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                            <Slider Minimum="1" Maximum="50" TickFrequency="1" />
 
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                 <Label Content="Nazwa:" Width="100" HorizontalAlignment="Right"/>
@@ -46,11 +53,11 @@
 
                             <Label Content="Zdjęcie profilowe:"/>
                             <Image Source="/Views/icons/user.png" Width="100" Height="100" Margin="10" HorizontalAlignment="Center" />
-                            <Button Content="Zmień Zdjęcie" Margin="0,10,0,0"/>
+                            <Button Content="Zmień Zdjęcie" Margin="0,10,0,0" Style="{StaticResource Button}"/>
 
                             <Label Content="Język:"/>
                             <ComboBox Margin="0,10,0,0">
-                                <ComboBoxItem Content="Polski"/>
+                                <ComboBoxItem Content="Polski" IsSelected="True"/>
                                 <ComboBoxItem Content="Angielski"/>
                                 <ComboBoxItem Content="Hiszpański"/>
                                 <ComboBoxItem Content="Rosyjski"/>
@@ -58,7 +65,7 @@
                                 <ComboBoxItem Content="Portugalski"/>
                             </ComboBox>
 
-                            <Button Content="Zapisz Profil" Margin="0,20,0,0"/>
+                            <Button Content="Zapisz Profil" Margin="0,20,0,0" Style="{StaticResource Button}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
@@ -82,55 +89,49 @@
                         <StackPanel Margin="10">
                             <Label Content="Preferowany rodzaj treningu:"/>
                             <ComboBox>
-                                <ComboBoxItem Content="Siłowy"/>
+                                <ComboBoxItem Content="Siłowy" IsSelected="True"/>
                                 <ComboBoxItem Content="Kardio"/>
                                 <ComboBoxItem Content="Funkcjonalny"/>
                                 <ComboBoxItem Content="Wytrzymałościowy"/>
                             </ComboBox>
 
-                            <Label Content="Częstotliwość treningów (dni/tydzień):"/>
-                            <Slider Minimum="1" Maximum="7" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                            <Label Content="Częstotliwość treningów (dni/tydzień):" />
 
-                            <Label Content="Preferowany czas trwania treningu (co 30 minut):"/>
-                            <Slider Minimum="10" Maximum="120" TickFrequency="10" IsSnapToTickEnabled="True"/>
+                            <Slider Minimum="1" Maximum="7" TickFrequency="1"/>
 
-                            <Label Content="Intensywność ćwiczeń (1-10)"/>
-                            <Slider Minimum="1" Maximum="10" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                            <Label Content="Preferowany czas trwania treningu (co 30 minut):" />
+                            <Slider Minimum="1" Maximum="10" TickFrequency="1"/>
 
-                            <Label Content="Czas odpoczynku między seriami (0,5 min):"/>
-                            <Slider Minimum="1" Maximum="10" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                            <Label Content="Intensywność ćwiczeń" />
+                            <Slider Minimum="1" Maximum="10" TickFrequency="1"/>
 
-                            <Label Content="Liczba serii (1-10)"/>
-                            <Slider Minimum="1" Maximum="10" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                            <Label Content="Czas odpoczynku między seriami (0,5 min):" />
+                            <Slider Minimum="1" Maximum="10" TickFrequency="1"/>
 
-                            <Label Content="Liczba powtórzeń na serię (1-20)"/>
-                            <Slider Minimum="1" Maximum="20" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                            <Label Content="Liczba serii" />
+                            <Slider Minimum="1" Maximum="10" TickFrequency="1"/>
 
-                            <Label Content="Poziom intensywności kardio (1-10)"/>
-                            <Slider Minimum="1" Maximum="10" TickFrequency="1" IsSnapToTickEnabled="True"/>
+                            <Label Content="Liczba powtórzeń na serię" />
+                            <Slider Minimum="1" Maximum="10" TickFrequency="1"/>
 
-                            <Label Content="Preferowany czas trwania cardio (co 10 minut):"/>
-                            <Slider Minimum="10" Maximum="120" TickFrequency="10" IsSnapToTickEnabled="True"/>
+                            <Label Content="Poziom intensywności kardio" />
+                            <Slider Minimum="1" Maximum="10" TickFrequency="1"/>
 
-                            <Label Content="Sprzęt do treningu siłowego:"/>
+                            <Label Content="Preferowany czas trwania cardio (co 20 minut):" />
+                            <Slider Minimum="1" Maximum="10" TickFrequency="1"/>
+
+                            <Label Content="Sprzęt do treningu siłowego:" />
                             <CheckBox Content="Szczotki"/>
                             <CheckBox Content="Hantle"/>
                             <CheckBox Content="Kettlebell"/>
                             <CheckBox Content="Opaski elastyczne"/>
 
                             <Label Content="Środowisko treningowe:"/>
-                            <RadioButton Content="Siłownia"/>
-                            <RadioButton Content="Dom"/>
-                            <RadioButton Content="Na zewnątrz"/>
+                            <RadioButton Content="Początkujący"/>
+                            <RadioButton Content="Średniozaawansowany"/>
+                            <RadioButton Content="Zaawansowany"/>
 
-                            <Label Content="Plan treningowy:"/>
-                            <ListBox>
-                                <ListBoxItem Content="Początkujący"/>
-                                <ListBoxItem Content="Średniozaawansowany"/>
-                                <ListBoxItem Content="Zaawansowany"/>
-                            </ListBox>
-
-                            <Button Content="Zapisz Ustawienia Treningu" Margin="0,20,0,0"/>
+                            <Button Content="Zapisz Ustawienia Treningu" Style="{StaticResource Button}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
@@ -143,13 +144,16 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
                     <Label Content="Ustawienia Diety" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
 
                     <ScrollViewer Grid.Row="1">
                         <StackPanel Margin="10">
                             <Label Content="Preferowany rodzaj diety:"/>
                             <ComboBox>
-                                <ComboBoxItem Content="Zrównoważona"/>
+                                <ComboBoxItem Content="Zrównoważona" IsSelected="True"/>
                                 <ComboBoxItem Content="Wysokobiałkowa"/>
                                 <ComboBoxItem Content="Niskowęglowodanowa"/>
                                 <ComboBoxItem Content="Wegańska"/>
@@ -162,7 +166,7 @@
                                 <ComboBoxItem Content="1500 kcal"/>
                                 <ComboBoxItem Content="1800 kcal"/>
                                 <ComboBoxItem Content="2000 kcal"/>
-                                <ComboBoxItem Content="2200 kcal"/>
+                                <ComboBoxItem Content="2200 kcal" IsSelected="True"/>
                                 <ComboBoxItem Content="2500 kcal"/>
                                 <ComboBoxItem Content="3000 kcal"/>
                                 <ComboBoxItem Content="3500 kcal"/>
@@ -170,7 +174,7 @@
 
 
                             <Label Content="Dzienny spożycie białka (gramy):"/>
-                            <Slider Minimum="50" Maximum="300" TickFrequency="10" IsSnapToTickEnabled="True"/>
+                            <Slider Minimum="50" Maximum="300" TickFrequency="10"/>
 
                             <Label Content="Preferowane produkty spożywcze:"/>
                             <ListBox SelectionMode="Multiple">
@@ -181,6 +185,15 @@
                                 <ListBoxItem>Nabiał</ListBoxItem>
                                 <ListBoxItem>Orzechy</ListBoxItem>
                                 <ListBoxItem>Pełnoziarniste produkty</ListBoxItem>
+                            </ListBox>
+
+                            <Label Content="Alergie:" Grid.Column="0"/>
+                            <ListBox SelectionMode="Multiple">
+                                <ListBoxItem>Orzeszki ziemne</ListBoxItem>
+                                <ListBoxItem>Gluten</ListBoxItem>
+                                <ListBoxItem>Laktoza</ListBoxItem>
+                                <ListBoxItem>Owoce morza</ListBoxItem>
+                                <ListBoxItem>Jajka</ListBoxItem>
                             </ListBox>
 
                             <Label Content="Dodatkowe uwagi dotyczące diety:"/>
@@ -196,9 +209,9 @@
                             </WrapPanel>
 
                             <Label Content="Spożycie wody (litry):"/>
-                            <Slider Minimum="1" Maximum="3" TickFrequency="0.5" IsSnapToTickEnabled="True"/>
+                            <Slider Minimum="1" Maximum="3" TickFrequency="0.5"/>
 
-                            <Button Content="Zapisz Ustawienia Diety" Margin="0,20,0,0"/>
+                            <Button Content="Zapisz Ustawienia Diety" Margin="0,20,0,0" Style="{StaticResource Button}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
@@ -275,7 +288,7 @@
 
                             <Label Content="Częstotliwość powiadomień:"/>
                             <ComboBox Margin="0,10,0,0">
-                                <ComboBoxItem Content="Codziennie"/>
+                                <ComboBoxItem Content="Codziennie" IsSelected="True"/>
                                 <ComboBoxItem Content="Co drugi dzień"/>
                                 <ComboBoxItem Content="Tygodniowo"/>
                             </ComboBox>
@@ -320,9 +333,9 @@
 
 
                             <Label Content="Głośność przypomnień:"/>
-                            <Slider Minimum="0" Maximum="100" TickFrequency="10" IsSnapToTickEnabled="True"/>
+                            <Slider Minimum="0" Maximum="100" TickFrequency="10" />
 
-                            <Button Content="Zapisz Ustawienia Powiadomień" Margin="0,20,0,0"/>
+                            <Button Content="Zapisz Ustawienia Powiadomień" Margin="0,20,0,0" Style="{StaticResource Button}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>

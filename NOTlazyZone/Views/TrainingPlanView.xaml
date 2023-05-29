@@ -106,11 +106,9 @@
 
         <!-- Footer -->
         <StackPanel Grid.Row="2" Orientation="Horizontal" Background="#1e202b">
-            <Button Content="Save" Foreground="White" Background="#FF34495E" Margin="5"/>
-            <Button Content="Cancel" Foreground="White" Background="#FF34495E" Margin="5"/>
+            <Button Content="Save"  Margin="5" Style="{StaticResource Button}"/>
+            <Button Content="Cancel"  Margin="5" Style="{StaticResource Button}"/>
             <DatePicker SelectedDate="{Binding SelectedDate}" Margin="5"/>
-            <!-- Add any other footer elements as needed -->
         </StackPanel>
-
     </Grid>
 </UserControl>

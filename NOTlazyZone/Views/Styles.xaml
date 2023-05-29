@@ -1,101 +1,119 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    
+    <!--Style globalne-->
+        <Style TargetType="{x:Type Grid}">
+            <Setter Property="Background" Value="#282a36"/>
+        </Style>
+
+        <Style TargetType="{x:Type RadioButton}">
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="#282a36"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+        </Style>
+
+        <Style TargetType="{x:Type PasswordBox}">
+            <Setter Property="Background" Value="#282a36"/>
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+        </Style>
+
+        <Style TargetType="{x:Type GroupBox}">
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="20"/>
+        </Style>
+
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="Foreground" Value="WhiteSmoke"/>
+            <Setter Property="Margin" Value="6"/>
+        </Style>
+
+        <Style TargetType="{x:Type Label}">
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
+        </Style>
+
+        <Style TargetType="{x:Type Slider}">
+            <Setter Property="IsSnapToTickEnabled" Value="True"/>
+            <Setter Property="TickPlacement" Value="BottomRight"/>
+        </Style>
+
+
     <!-- Styl dla MessagesView.xaml -->
-    <Style TargetType="Grid" x:Key="MessageGrid">
-        <Setter Property="Background" Value="#1e202b"/>
-        <Setter Property="Width" Value="1600"/>
-        <Setter Property="Height" Value="860"/>
-    </Style>
+        <Style TargetType="Grid" x:Key="MessageGrid">
+            <Setter Property="Background" Value="#1e202b"/>
+            <Setter Property="Width" Value="1600"/>
+            <Setter Property="Height" Value="860"/>
+        </Style>
 
-    <!--Label-->
-    <Style TargetType="Label" x:Key="HeaderLabel">
-        <Setter Property="FontSize" Value="18"/>
-        <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="Foreground" Value="#2a2b2b"/>
-        <Setter Property="Margin" Value="0,10,0,5"/>
-    </Style>
+        <!--Label-->
+        <Style TargetType="Label" x:Key="HeaderLabel">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#2a2b2b"/>
+            <Setter Property="Margin" Value="0,10,0,5"/>
+        </Style>
 
-    <!--TextBox-->
-    <Style TargetType="TextBox" x:Key="TextBox">
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Padding" Value="5"/>
-        <Setter Property="Margin" Value="5"/>
-        <Setter Property="MinWidth" Value="200"/>
-        <Setter Property="MinHeight" Value="30"/>
-        <Setter Property="Background" Value="#282a36"/>
-    </Style>
+        <!--TextBox-->
+        <Style TargetType="TextBox" x:Key="TextBox">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="MinWidth" Value="200"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="Background" Value="#282a36"/>
+        </Style>
 
-    <!--TextBoxMessage-->
-    <Style TargetType="TextBox" x:Key="TextBoxMessage">
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Padding" Value="5"/>
-        <Setter Property="Margin" Value="5"/>
-        <Setter Property="MinWidth" Value="200"/>
-        <Setter Property="MinHeight" Value="30"/>
-        <Setter Property="Height" Value="500"/>
-        <Setter Property="Background" Value="#282a36"/>
+        <!--TextBoxMessage-->
+        <Style TargetType="TextBox" x:Key="TextBoxMessage">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="MinWidth" Value="200"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="Height" Value="500"/>
+            <Setter Property="Background" Value="#282a36"/>
 
-        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
-    </Style>
+            <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        </Style>
 
 
-    <!--Button-->
-    <Style TargetType="Button" x:Key="Button">
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Padding" Value="10"/>
-        <Setter Property="Margin" Value="5 0 100 0"/>
-        <Setter Property="MinWidth" Value="100"/>
-        <Setter Property="MinHeight" Value="30"/>
-        <Setter Property="Background" Value="#0078D7"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="BorderBrush" Value="#0078D7"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Cursor" Value="Hand"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#005A9E"/>
-                <Setter Property="BorderBrush" Value="#005A9E"/>
-            </Trigger>
-        </Style.Triggers>
-    </Style>
+        <!--Button-->
+        <Style TargetType="Button" x:Key="Button">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="5 0 100 0"/>
+            <Setter Property="MinWidth" Value="100"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="Background" Value="#0078D7"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#0078D7"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#005A9E"/>
+                    <Setter Property="BorderBrush" Value="#005A9E"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
 
-    <!--Label (RecipientEmail, Subject, MessageContent)-->
-    <Style TargetType="Label" x:Key="Label">
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="Margin" Value="5"/>
-    </Style>
+        <!--Label (RecipientEmail, Subject, MessageContent)-->
+        <Style TargetType="Label" x:Key="Label">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
 
 
     <!-- Styl dla StatisticView.xaml -->
     <Style TargetType="Grid" x:Key="StatisticGrid">
         <Setter Property="Background" Value="#1e202b"/>
-    </Style>
-
-
-    <Style TargetType="{x:Type TextBox}">
-        <Setter Property="Background" Value="#282a36"/>
-        <Setter Property="Foreground" Value="WhiteSmoke"/>
-    </Style>
-
-    <Style TargetType="{x:Type GroupBox}">
-        <Setter Property="Foreground" Value="WhiteSmoke"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Padding" Value="20"/>
-
-    </Style>
-
-    <Style TargetType="{x:Type CheckBox}">
-        <Setter Property="Foreground" Value="WhiteSmoke"/>
-        <Setter Property="Margin" Value="6"/>
-
-    </Style>
-
-    <Style TargetType="{x:Type Label}">
-        <Setter Property="Foreground" Value="white"/>
     </Style>
 
     <Style TargetType="Button" x:Key="ButtonTrainingPlan">
@@ -108,99 +126,108 @@
         <Setter Property="Height" Value="50"/>
         <Setter Property="Margin" Value="20"/>
 
-    </Style>
-    <Style TargetType="TextBlock" x:Key="TextBlockTrainingPlan">
-        <Setter Property="Foreground" Value="White"/>
-    </Style>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="TextBlockTrainingPlan">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
 
-    <Style TargetType="Button" x:Key="ButtonTrainingPlanSilowy">
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Background" Value="#282a36"/>
-        <Setter Property="Foreground" Value="red"/>
-        <Setter Property="BorderBrush" Value="White"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Width" Value="100"/>
-        <Setter Property="Height" Value="50"/>
-        <Setter Property="Margin" Value="20"/>
-    </Style>
+        <Style TargetType="Button" x:Key="ButtonTrainingPlanSilowy">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="#282a36"/>
+            <Setter Property="Foreground" Value="red"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="20"/>
+        </Style>
 
-    <Style TargetType="Button" x:Key="ButtonTrainingPlanCardio">
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Background" Value="#282a36"/>
-        <Setter Property="Foreground" Value="Green"/>
-        <Setter Property="BorderBrush" Value="White"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Width" Value="100"/>
-        <Setter Property="Height" Value="50"/>
-        <Setter Property="Margin" Value="20"/>
-    </Style>
+        <Style TargetType="Button" x:Key="ButtonTrainingPlanCardio">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="#282a36"/>
+            <Setter Property="Foreground" Value="Green"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="20"/>
+        </Style>
 
-    <Style TargetType="Button" x:Key="ButtonTrainingPlanFunkcjonalny">
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Background" Value="#282a36"/>
-        <Setter Property="Foreground" Value="Blue"/>
-        <Setter Property="BorderBrush" Value="White"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Width" Value="100"/>
-        <Setter Property="Height" Value="50"/>
-        <Setter Property="Margin" Value="20"/>
-    </Style>
+        <Style TargetType="Button" x:Key="ButtonTrainingPlanFunkcjonalny">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="#282a36"/>
+            <Setter Property="Foreground" Value="Blue"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="20"/>
+        </Style>
 
-    <Style TargetType="Button" x:Key="ButtonTrainingPlanWytrzymalosiocwy">
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="Background" Value="#282a36"/>
-        <Setter Property="Foreground" Value="Orange"/>
-        <Setter Property="BorderBrush" Value="White"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Width" Value="100"/>
-        <Setter Property="Height" Value="50"/>
-        <Setter Property="Margin" Value="20"/>
-    </Style>
+        <Style TargetType="Button" x:Key="ButtonTrainingPlanWytrzymalosiocwy">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Background" Value="#282a36"/>
+            <Setter Property="Foreground" Value="Orange"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Margin" Value="20"/>
+        </Style>
 
-    <Style x:Key="DatePickerTraining" TargetType="DatePicker">
-        <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="Background" Value="#FF34495E"/>
-        <Setter Property="BorderBrush" Value="#FF34495E"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Margin" Value="5"/>
-    </Style>
+        <Style x:Key="DatePickerTraining" TargetType="DatePicker">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="#FF34495E"/>
+            <Setter Property="BorderBrush" Value="#FF34495E"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
 
-    <Style TargetType="ListBoxItem">
-        <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="Margin" Value="10"/>
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-    </Style>
+        <Style TargetType="ListBoxItem">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
 
-    <Style x:Key="CheckboxTraining" TargetType="CheckBox">
-        <Setter Property="Foreground" Value="White"/>
+        <Style x:Key="CheckboxTraining" TargetType="CheckBox">
+            <Setter Property="Foreground" Value="White"/>
 
-    </Style>
+        </Style>
 
-    <Style TargetType="ListBox">
-        <Setter Property="Background" Value="#1e202b"/>
-    </Style>
+        <Style TargetType="ListBox">
+            <Setter Property="Background" Value="#1e202b"/>
+        </Style>
 
-    <Style x:Key="TextBlockTreningSilowy" TargetType="TextBlock">
-        <Setter Property="Foreground" Value="Red"/>
-    </Style>
+        <Style x:Key="TextBlockTreningSilowy" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
 
-    <Style x:Key="TextBlockTreningCardio" TargetType="TextBlock">
-        <Setter Property="Foreground" Value="Green"/>
-    </Style>
+        <Style x:Key="TextBlockTreningCardio" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Green"/>
+        </Style>
 
-    <Style x:Key="TextBlockTreningFunkcjonalny" TargetType="TextBlock">
-        <Setter Property="Foreground" Value="Blue"/>
-    </Style>
+        <Style x:Key="TextBlockTreningFunkcjonalny" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Blue"/>
+        </Style>
 
-    <Style x:Key="TextBlockTreningWytrzymalosciowy" TargetType="TextBlock">
-        <Setter Property="Foreground" Value="Orange"/>
-    </Style>
+        <Style x:Key="TextBlockTreningWytrzymalosciowy" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Orange"/>
+        </Style>
 
 
+    <!--ExerciesView.xaml-->
+
+    <!--SettingView.xaml-->
     
+
+
+
+
+
+
 
 
 </ResourceDictionary>
