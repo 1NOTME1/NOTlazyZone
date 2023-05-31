@@ -1,0 +1,139 @@
+﻿<UserControl x:Class="NOTlazyZone.Views.ListContactView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:NOTlazyZone.ViewModels"
+             xmlns:local="clr-namespace:NOTlazyZone.Views"
+             xmlns:resx="clr-namespace:NOTlazyZone.ViewResources"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ResourceDictionary Source="Styles.xaml"/>
+    </UserControl.Resources>
+
+    <ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Basic Data -->
+            <GroupBox Header="{x:Static resx:GlobalResources.PodstawoweDane}" Grid.Row="0" Grid.Column="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="{x:Static resx:GlobalResources.Imie}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="Jan"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Content="{x:Static resx:GlobalResources.Nazwisko}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="Kowalski"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" Content="{x:Static resx:GlobalResources.Adres}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="ul. Przykładowa 123"/>
+
+                    <Label Grid.Row="3" Grid.Column="0" Content="{x:Static resx:GlobalResources.KodPocztowy}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="00-000"/>
+                </Grid>
+            </GroupBox>
+
+            <!-- Contact Details -->
+            <GroupBox Header="{x:Static resx:GlobalResources.DaneKontaktowe}" Grid.Row="1" Grid.Column="0">
+                <Grid>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{x:Static resx:GlobalResources.Telefon}"/>
+                            <TextBox Text="123456789"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{x:Static resx:GlobalResources.Email}"/>
+                            <TextBox Text="jan.kowalski@example.com"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{x:Static resx:GlobalResources.StronaWWW}"/>
+                            <TextBox Text="www.example.com"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+
+            <!-- Additional Fields -->
+            <GroupBox Header="{x:Static resx:GlobalResources.DodatkowePola}" Grid.Row="1" Grid.Column="1">
+                <Grid>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{x:Static resx:GlobalResources.Plec}"/>
+                            <TextBox Text="Mężczyzna"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{x:Static resx:GlobalResources.Wiek}"/>
+                            <TextBox Text="30"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{x:Static resx:GlobalResources.DataUrodzenia}"/>
+                            <TextBox Text="1993-01-01"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+
+            <!-- Transactional Info -->
+            <GroupBox Header="{x:Static resx:GlobalResources.InformacjeOTransakcji}" Grid.Row="2" Grid.Column="0">
+                <Grid>
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{x:Static resx:GlobalResources.OstatniaTransakcja}"/>
+                            <TextBox Text="2023-05-30"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{x:Static resx:GlobalResources.KwotaTransakcji}"/>
+                            <TextBox Text="500 zł"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{x:Static resx:GlobalResources.StatusKlienta}"/>
+                            <TextBox Text="Aktywny"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+
+            <!-- DataGrid -->
+            <DataGrid Grid.Row="3" Grid.ColumnSpan="2">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{x:Static resx:GlobalResources.Nazwa}"/>
+                    <DataGridTextColumn Header="{x:Static resx:GlobalResources.Telefon}"/>
+                    <DataGridTextColumn Header="{x:Static resx:GlobalResources.Email}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <!-- Additional Controls -->
+            <GroupBox Header="{x:Static resx:GlobalResources.DodatkoweKontrole}" Grid.Row="4" Grid.ColumnSpan="2">
+                <Grid>
+                    <Label Content="Dodatkowa kontrolka 1"/>
+                    <TextBox Text="Wartość 1"/>
+
+                    <Label Content="Dodatkowa kontrolka 2"/>
+                    <TextBox Text="Wartość 2"/>
+                </Grid>
+            </GroupBox>
+
+        </Grid>
+    </ScrollViewer>
+</UserControl>
