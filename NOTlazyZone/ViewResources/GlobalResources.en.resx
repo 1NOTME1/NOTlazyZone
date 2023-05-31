@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,19 +117,67 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="PodstawoweDane" xml:space="preserve">
+    <value>BasicData</value>
+  </data>
+  <data name="Imie" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="Nazwisko" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="Telefon" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="ImieINazwisko" xml:space="preserve">
+    <value>NameAndSurname</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="DaneKontaktowe" xml:space="preserve">
+    <value>contactDetails</value>
+  </data>
+  <data name="DodatkowePola" xml:space="preserve">
+    <value>AdditionalFields</value>
+  </data>
+  <data name="TrenerAktywny" xml:space="preserve">
+    <value>ActiveTrainer</value>
+  </data>
+  <data name="InformacjeOTransakcji" xml:space="preserve">
+    <value>TransactionInfo</value>
+  </data>
   <data name="Adres" xml:space="preserve">
     <value>Address</value>
   </data>
-  <data name="Adresy" xml:space="preserve">
-    <value>addresses</value>
+  <data name="KodPocztowy" xml:space="preserve">
+    <value>Postcode</value>
   </data>
-  <data name="DaneAdresoweKontrahenta" xml:space="preserve">
-    <value />
+  <data name="StronaWWW" xml:space="preserve">
+    <value>WebsiteWWW</value>
   </data>
-  <data name="DodatkoweInformacjeHandlowe" xml:space="preserve">
-    <value />
+  <data name="Plec" xml:space="preserve">
+    <value>Sex</value>
   </data>
-  <data name="EMail" xml:space="preserve">
-    <value />
+  <data name="Wiek" xml:space="preserve">
+    <value>Age</value>
+  </data>
+  <data name="DataUrodzenia" xml:space="preserve">
+    <value>Dateofbirth</value>
+  </data>
+  <data name="OstatniaTransakcja" xml:space="preserve">
+    <value>LastTransaction</value>
+  </data>
+  <data name="KwotaTransakcji" xml:space="preserve">
+    <value>TransactionAmount</value>
+  </data>
+  <data name="StatusKlienta" xml:space="preserve">
+    <value>CustomerStatus</value>
+  </data>
+  <data name="Nazwa" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="DodatkoweKontrole" xml:space="preserve">
+    <value>AdditionalChecks</value>
   </data>
 </root>
