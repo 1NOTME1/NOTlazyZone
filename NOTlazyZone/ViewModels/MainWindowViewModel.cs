@@ -61,7 +61,7 @@ namespace NOTlazyZone.ViewModels
                 new CommandViewModel("Training Plan",new BaseCommand(ShowCalendar)),
                 new CommandViewModel("Diet",new BaseCommand(ShowCalendar)),
                 new CommandViewModel("Calories Calculator",new BaseCommand(ShowCaloriesCalculator)),
-                new CommandViewModel("List Contact",new BaseCommand(ShowCalendar)),
+                new CommandViewModel("List Contact",new BaseCommand(ShowContactList)),
                 new CommandViewModel("Shopping",new BaseCommand(ShowCalendar)),
                 new CommandViewModel("Discounts",new BaseCommand(ShowCalendar)),
                 new CommandViewModel("Settings",new BaseCommand(ShowSettings)),
@@ -161,6 +161,17 @@ namespace NOTlazyZone.ViewModels
             if (workspace == null)
             {
                 workspace = new SettingViewModel();
+                Workspaces.Add(workspace);
+            }
+            SetActiveWorkspace(workspace);
+        }
+
+        private void ShowContactList()
+        {
+            ListContactViewModel workspace = Workspaces.FirstOrDefault(vm => vm is ListContactViewModel) as ListContactViewModel;
+            if (workspace == null)
+            {
+                workspace = new ListContactViewModel();
                 Workspaces.Add(workspace);
             }
             SetActiveWorkspace(workspace);
