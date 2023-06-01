@@ -53,7 +53,7 @@
 
                             <Label Content="Zdjęcie profilowe:"/>
                             <Image Source="/Views/icons/user.png" Width="100" Height="100" Margin="10" HorizontalAlignment="Center" />
-                            <Button Content="Zmień Zdjęcie" Margin="0,10,0,0" Style="{StaticResource Button}"/>
+                            <Button Content="Zmień Zdjęcie" Style="{StaticResource SettingsButton}"/>
 
                             <Label Content="Język:"/>
                             <ComboBox Margin="0,10,0,0">
@@ -65,7 +65,7 @@
                                 <ComboBoxItem Content="Portugalski"/>
                             </ComboBox>
 
-                            <Button Content="Zapisz Profil" Margin="0,20,0,0" Style="{StaticResource Button}"/>
+                            <Button Content="Zapisz Profil" Style="{StaticResource SettingsButton}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
