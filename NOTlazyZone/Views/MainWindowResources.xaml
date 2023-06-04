@@ -33,6 +33,10 @@
         <vw:ListContactView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:DietViewModel}">
+        <vw:DietView/>
+    </DataTemplate>
+
     <!--tu jest koniec laczenia View z ViewModel zakładekcccc-->
 
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">

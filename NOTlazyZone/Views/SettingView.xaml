@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NOTlazyZone.Views"
+             xmlns:resx="clr-namespace:NOTlazyZone.ViewResources"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200">
     <UserControl.Resources>
@@ -15,47 +16,47 @@
     </UserControl.Resources>
     <Grid>
         <TabControl>
-            <TabItem Header="Profil">
+            <TabItem Header="{x:Static resx:SettingResources.Profil}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <Label Content="Ustawienia Profilu" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Label Content="{x:Static resx:SettingResources.UstawieniaProfilu}" Style="{StaticResource LabelUstawieniaProfilu}"/>
 
                     <ScrollViewer Grid.Row="1">
-                        <StackPanel Margin="10">
+                        <StackPanel Margin="10" >
 
-                            <Label Content="Waga (kg):"/>
-                            <TextBox/>
+                            <Label Content="{x:Static resx:SettingResources.waga}" Style="{StaticResource LabelSetting}"/>
+                            <TextBox></TextBox>
 
-                            <Label Content="Wzrost (cm):"/>
-                            <TextBox/>
+                            <Label Content="{x:Static resx:SettingResources.wzrost}"  Style="{StaticResource LabelSetting}"/>
+                            <TextBox></TextBox>
 
-                            <Label Content="Procent tkanki tłuszczowej:"/>
+                            <Label Content="{x:Static resx:SettingResources.ProcentTkankiTłuszczowej}"  Style="{StaticResource LabelSetting}"/>
                             <Slider Minimum="1" Maximum="50" TickFrequency="1" />
 
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <Label Content="Nazwa:" Width="100" HorizontalAlignment="Right"/>
-                                <TextBox Width="200"/>
+                                <Label Content="{x:Static resx:SettingResources.Nazwa}" Style="{StaticResource LabelWStackPanelu}" />
+                                <TextBox Width="300"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <Label Content="Hasło:" Width="100" HorizontalAlignment="Right"/>
-                                <PasswordBox Width="200"/>
+                                <Label Content="{x:Static resx:SettingResources.Hasło}" Style="{StaticResource LabelWStackPanelu}"/>
+                                <PasswordBox Width="300"/>
                             </StackPanel>
 
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <Label Content="Email:" Width="100" HorizontalAlignment="Right"/>
-                                <TextBox Width="200"/>
+                                <Label Content="{x:Static resx:SettingResources.Email}" Style="{StaticResource LabelWStackPanelu}"/>
+                                <TextBox Width="300"/>
                             </StackPanel>
 
-                            <Label Content="Zdjęcie profilowe:"/>
+                            <Label Content="{x:Static resx:SettingResources.ZdjęcieProfilowe}" Style="{StaticResource LabelSetting}"/>
                             <Image Source="/Views/icons/user.png" Width="100" Height="100" Margin="10" HorizontalAlignment="Center" />
-                            <Button Content="Zmień Zdjęcie" Style="{StaticResource SettingsButton}"/>
+                            <Button Content="{x:Static resx:SettingResources.ZmienZdjęcie}" Style="{StaticResource SettingsButton}"/>
 
-                            <Label Content="Język:"/>
+                            <Label Content="{x:Static resx:SettingResources.Jezyk}" Style="{StaticResource LabelSetting}"/>
                             <ComboBox Margin="0,10,0,0">
                                 <ComboBoxItem Content="Polski" IsSelected="True"/>
                                 <ComboBoxItem Content="Angielski"/>
@@ -65,14 +66,14 @@
                                 <ComboBoxItem Content="Portugalski"/>
                             </ComboBox>
 
-                            <Button Content="Zapisz Profil" Style="{StaticResource SettingsButton}"/>
+                            <Button Content="{x:Static resx:SettingResources.ZapiszProfil}" Style="{StaticResource SettingsButton}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
             </TabItem>
 
 
-            <TabItem Header="Trening">
+            <TabItem Header="{x:Static resx:SettingResources.Trening}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="121*"/>
@@ -83,11 +84,11 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <Label Content="Ustawienia Treningu" FontSize="22" FontWeight="Bold" HorizontalAlignment="Left" Grid.Column="1" Margin="366,0,0,0"/>
+                    <Label Content="{x:Static resx:SettingResources.UstawieniaTreningu}"  Style="{StaticResource LabelUstawieniaProfilu}"  Grid.Column="1" />
 
-                    <ScrollViewer Grid.ColumnSpan="2" Margin="0,39,0,0" Grid.RowSpan="2">
+                    <ScrollViewer Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="0,40,0,0">
                         <StackPanel Margin="10">
-                            <Label Content="Preferowany rodzaj treningu:"/>
+                            <Label Content="{x:Static resx:SettingResources.PreferowanyRodzajTreningu}" Style="{StaticResource LabelSetting}"/>
                             <ComboBox>
                                 <ComboBoxItem Content="Siłowy" IsSelected="True"/>
                                 <ComboBoxItem Content="Kardio"/>
@@ -95,50 +96,50 @@
                                 <ComboBoxItem Content="Wytrzymałościowy"/>
                             </ComboBox>
 
-                            <Label Content="Częstotliwość treningów (dni/tydzień):" />
+                            <Label Content="{x:Static resx:SettingResources.CzestotliwoscTreningow}" />
 
                             <Slider Minimum="1" Maximum="7" TickFrequency="1"/>
 
-                            <Label Content="Preferowany czas trwania treningu (co 30 minut):" />
+                            <Label Content="{x:Static resx:SettingResources.PreferowanyCzasTrwaniaTreningu}" />
                             <Slider Minimum="1" Maximum="10" TickFrequency="1"/>
 
-                            <Label Content="Intensywność ćwiczeń" />
+                            <Label Content="{x:Static resx:SettingResources.intensywnoscCwiczen_}" />
                             <Slider Minimum="1" Maximum="10" TickFrequency="1"/>
 
-                            <Label Content="Czas odpoczynku między seriami (0,5 min):" />
+                            <Label Content="{x:Static resx:SettingResources.CzasOdpoczynkuMiędzySeriami}" />
                             <Slider Minimum="1" Maximum="10" TickFrequency="1"/>
 
-                            <Label Content="Liczba serii" />
+                            <Label Content="{x:Static resx:SettingResources.liczbaSerii}" />
                             <Slider Minimum="1" Maximum="10" TickFrequency="1"/>
 
-                            <Label Content="Liczba powtórzeń na serię" />
+                            <Label Content="{x:Static resx:SettingResources.liczbaPowtórzeńNaSerię}" />
                             <Slider Minimum="1" Maximum="10" TickFrequency="1"/>
 
-                            <Label Content="Poziom intensywności kardio" />
+                            <Label Content="{x:Static resx:SettingResources.poziomIntensywnościKardio}" />
                             <Slider Minimum="1" Maximum="10" TickFrequency="1"/>
 
-                            <Label Content="Preferowany czas trwania cardio (co 20 minut):" />
+                            <Label Content="{x:Static resx:SettingResources.preferowanyCzasTrwaniaCardio}" />
                             <Slider Minimum="1" Maximum="10" TickFrequency="1"/>
 
-                            <Label Content="Sprzęt do treningu siłowego:" />
+                            <Label Content="{x:Static resx:SettingResources.sprzetDoTreninguSilowego}" />
                             <CheckBox Content="Szczotki"/>
                             <CheckBox Content="Hantle"/>
                             <CheckBox Content="Kettlebell"/>
                             <CheckBox Content="Opaski elastyczne"/>
 
-                            <Label Content="Środowisko treningowe:"/>
+                            <Label Content="{x:Static resx:SettingResources.srodowiskoTreningowe}"/>
                             <RadioButton Content="Początkujący"/>
                             <RadioButton Content="Średniozaawansowany"/>
                             <RadioButton Content="Zaawansowany"/>
 
-                            <Button Content="Zapisz Ustawienia Treningu" Style="{StaticResource Button}"/>
+                            <Button Content="{x:Static resx:SettingResources.zapiszUstawieniaTreningu}" Style="{StaticResource Button}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
             </TabItem>
 
 
-            <TabItem Header="Dieta">
+            <TabItem Header="{x:Static resx:SettingResources.Dieta}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -147,11 +148,11 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Label Content="Ustawienia Diety" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Label Content="{x:Static resx:SettingResources.ustawieniaDiety}" Style="{StaticResource LabelUstawieniaProfilu}"/>
 
                     <ScrollViewer Grid.Row="1">
                         <StackPanel Margin="10">
-                            <Label Content="Preferowany rodzaj diety:"/>
+                            <Label Content="{x:Static resx:SettingResources.preferowanyRodzajDiety}" Style="{StaticResource LabelSetting}"/>
                             <ComboBox>
                                 <ComboBoxItem Content="Zrównoważona" IsSelected="True"/>
                                 <ComboBoxItem Content="Wysokobiałkowa"/>
@@ -161,7 +162,7 @@
                                 <ComboBoxItem Content="Paleo"/>
                             </ComboBox>
 
-                            <Label Content="Dzienna kaloryczność (kcal):"/>
+                            <Label Content="{x:Static resx:SettingResources.DziennaKalorycznosc}" Style="{StaticResource LabelSetting}"/>
                             <ComboBox>
                                 <ComboBoxItem Content="1500 kcal"/>
                                 <ComboBoxItem Content="1800 kcal"/>
@@ -173,10 +174,10 @@
                             </ComboBox>
 
 
-                            <Label Content="Dzienny spożycie białka (gramy):"/>
+                            <Label Content="{x:Static resx:SettingResources.dzienneSpozycieBialka}" Style="{StaticResource LabelSetting}"/>
                             <Slider Minimum="50" Maximum="300" TickFrequency="10"/>
 
-                            <Label Content="Preferowane produkty spożywcze:"/>
+                            <Label Content="{x:Static resx:SettingResources.preferowaneProduktySpozywcze}" Style="{StaticResource LabelSetting}"/>
                             <ListBox SelectionMode="Multiple">
                                 <ListBoxItem>Warzywa</ListBoxItem>
                                 <ListBoxItem>Owoce</ListBoxItem>
@@ -187,10 +188,10 @@
                                 <ListBoxItem>Pełnoziarniste produkty</ListBoxItem>
                             </ListBox>
 
-                            <Label Content="Dodatkowe uwagi dotyczące diety:"/>
+                            <Label Content="{x:Static resx:SettingResources.dodatkoweUwagiDotyczaceDiety}" Style="{StaticResource LabelSetting}"/>
                             <TextBox TextWrapping="Wrap" AcceptsReturn="True"/>
 
-                            <Label Content="Posiłki na dzień:"/>
+                            <Label Content="{x:Static resx:SettingResources.posilkiNaDzien}" Style="{StaticResource LabelSetting}"/>
                             <WrapPanel>
                                 <CheckBox Content="Śniadanie"/>
                                 <CheckBox Content="Drugie śniadanie"/>
@@ -199,30 +200,30 @@
                                 <CheckBox Content="Kolacja"/>
                             </WrapPanel>
 
-                            <Label Content="Spożycie wody (litry):"/>
+                            <Label Content="{x:Static resx:SettingResources.SpozycieWody}" Style="{StaticResource LabelSetting}"/>
                             <Slider Minimum="1" Maximum="3" TickFrequency="0.5"/>
 
-                            <Button Content="Zapisz Ustawienia Diety" Margin="0,20,0,0" Style="{StaticResource Button}"/>
+                            <Button Content="{x:Static resx:SettingResources.zapiszUstawieniaDiety}" Style="{StaticResource Button}" Margin="0,20,0,0"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
             </TabItem>
 
-            <TabItem Header="Powiadomienia" Margin="-2,0,-2,0">
+            <TabItem Header="{x:Static resx:SettingResources.Powiadomienia}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <Label Content="Ustawienia Powiadomień" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Label Content="{x:Static resx:SettingResources.ustawieniaPowiadomien}" Style="{StaticResource LabelUstawieniaProfilu}"/>
 
                     <ScrollViewer Grid.Row="1">
                         <StackPanel Margin="10">
                             <ListBox Margin="10">
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Otrzymuj przypomnienia o treningu" Width="250"/>
+                                        <Label Content="{x:Static resx:SettingResources.otrzymujPrzypomnieniaOTreningu}" Style="{StaticResource LabelSettingPowiadomienia}"/>
                                         <CheckBox Content="Aplikacja"/>
                                         <CheckBox Content="Telefon"/>
                                         <CheckBox Content="E-mail"/>
@@ -231,7 +232,7 @@
 
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Otrzymuj przypomnienia o posiłkach" Width="250"/>
+                                        <Label Content="{x:Static resx:SettingResources.otrzymujPrzypomnieniaOPosilkach}" Style="{StaticResource LabelSettingPowiadomienia}"/>
                                         <CheckBox Content="Aplikacja"/>
                                         <CheckBox Content="Telefon"/>
                                         <CheckBox Content="E-mail"/>
@@ -240,7 +241,16 @@
 
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Otrzymuj aktualizacje postępów" Width="250"/>
+                                        <Label Content="{x:Static resx:SettingResources.otrzymujAktualizacjePostepow}" Style="{StaticResource LabelSettingPowiadomienia}"/>
+                                        <CheckBox Content="Aplikacja" />
+                                        <CheckBox Content="Telefon"/>
+                                        <CheckBox Content="E-mail"/>
+                                    </StackPanel>
+                                </ListBoxItem>
+
+                                <ListBoxItem>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="{x:Static resx:SettingResources.otrzymujPowiadomieniaONowychCwiczeniach}" Style="{StaticResource LabelSettingPowiadomienia}"/>
                                         <CheckBox Content="Aplikacja"/>
                                         <CheckBox Content="Telefon"/>
                                         <CheckBox Content="E-mail"/>
@@ -249,7 +259,7 @@
 
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Otrzymuj powiadomienia o nowych ćwiczeniach" Width="250"/>
+                                        <Label Content="{x:Static resx:SettingResources.otrzymujPowiadomieniaOAktualizacjachDiet}" Style="{StaticResource LabelSettingPowiadomienia}"/>
                                         <CheckBox Content="Aplikacja"/>
                                         <CheckBox Content="Telefon"/>
                                         <CheckBox Content="E-mail"/>
@@ -258,26 +268,15 @@
 
                                 <ListBoxItem>
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content="Otrzymuj powiadomienia o aktualizacjach diet" Width="250"/>
+                                        <Label Content="{x:Static resx:SettingResources.otrzymujPowiadomieniaOWydarzeniach}" Style="{StaticResource LabelSettingPowiadomienia}"/>
                                         <CheckBox Content="Aplikacja"/>
                                         <CheckBox Content="Telefon"/>
                                         <CheckBox Content="E-mail"/>
                                     </StackPanel>
                                 </ListBoxItem>
-
-                                <ListBoxItem>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Content="Otrzymuj powiadomienia o wydarzeniach" Width="250"/>
-                                        <CheckBox Content="Aplikacja"/>
-                                        <CheckBox Content="Telefon"/>
-                                        <CheckBox Content="E-mail"/>
-                                    </StackPanel>
-                                </ListBoxItem>
-
-
                             </ListBox>
 
-                            <Label Content="Częstotliwość powiadomień:"/>
+                            <Label Content="{x:Static resx:SettingResources.czestotliwoscPowiadomien}" Style="{StaticResource LabelSettingPowiadomienia}"/>
                             <ComboBox Margin="0,10,0,0">
                                 <ComboBoxItem Content="Codziennie" IsSelected="True"/>
                                 <ComboBoxItem Content="Co drugi dzień"/>
@@ -286,7 +285,7 @@
 
                             <ListBoxItem>
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="Godzina otrzymywania powiadomień:" Width="250"/>
+                                    <Label Content="{x:Static resx:SettingResources.godzinaOtrzymywaniaPowiadomien}" FontSize="22"/>
                                     <ComboBox Width="60">
                                         <ComboBoxItem Content="00"/>
                                         <ComboBoxItem Content="01"/>
@@ -322,16 +321,14 @@
                                 </StackPanel>
                             </ListBoxItem>
 
-
-                            <Label Content="Głośność przypomnień:"/>
+                            <Label Content="{x:Static resx:SettingResources.glosnoscPrzypomnien}" FontSize="22"/>
                             <Slider Minimum="0" Maximum="100" TickFrequency="10" />
 
-                            <Button Content="Zapisz Ustawienia Powiadomień" Margin="0,20,0,0" Style="{StaticResource Button}"/>
+                            <Button Content="{x:Static resx:SettingResources.zapiszUstawieniaPowiadomien}" Margin="0,20,0,0" Style="{StaticResource Button}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-
         </TabControl>
     </Grid>
 </UserControl>

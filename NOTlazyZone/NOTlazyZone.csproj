@@ -297,6 +297,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>GlobalResources.resx</DependentUpon>
     </Compile>
+    <Compile Update="ViewResources\SettingResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SettingResources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -306,6 +311,10 @@
     <EmbeddedResource Update="ViewResources\GlobalResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>GlobalResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ViewResources\SettingResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SettingResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="UstawieniaProfilu" xml:space="preserve">
+    <value>Profile Settings</value>
+  </data>
+  <data name="waga" xml:space="preserve">
+    <value>Weight (kg):</value>
+  </data>
+  <data name="wzrost" xml:space="preserve">
+    <value>Height (kg):</value>
+  </data>
+  <data name="ProcentTkankiTłuszczowej" xml:space="preserve">
+    <value>Percentage of body fat:</value>
+  </data>
+  <data name="Nazwa" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="Hasło" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="ZdjęcieProfilowe" xml:space="preserve">
+    <value>Profile Picture:</value>
+  </data>
+  <data name="ZmienZdjęcie" xml:space="preserve">
+    <value>Change photo:</value>
+  </data>
+  <data name="ZapiszProfil" xml:space="preserve">
+    <value>Save Profile</value>
+  </data>
+  <data name="Trening" xml:space="preserve">
+    <value>Training</value>
+  </data>
+  <data name="UstawieniaTreningu" xml:space="preserve">
+    <value>Traning Settings</value>
+  </data>
+  <data name="PreferowanyRodzajTreningu" xml:space="preserve">
+    <value>Preferred type of training:</value>
+  </data>
+  <data name="Jezyk" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  <data name="CzestotliwoscTreningow" xml:space="preserve">
+    <value>Training frequency (days/week)</value>
+  </data>
+  <data name="PreferowanyCzasTrwaniaTreningu" xml:space="preserve">
+    <value>Preferred Training Duration:</value>
+  </data>
+  <data name="intensywnoscCwiczen " xml:space="preserve">
+    <value>Exercise Intensity </value>
+  </data>
+  <data name="CzasOdpoczynkuMiędzySeriami" xml:space="preserve">
+    <value>Rest time between sets (0.5 min)</value>
+  </data>
+  <data name="liczbaSerii" xml:space="preserve">
+    <value>number of sets </value>
+  </data>
+  <data name="liczbaPowtórzeńNaSerię" xml:space="preserve">
+    <value>number of repetitions per set</value>
+  </data>
+  <data name="poziomIntensywnościKardio" xml:space="preserve">
+    <value>cardio intensity level</value>
+  </data>
+  <data name="preferowanyCzasTrwaniaCardio" xml:space="preserve">
+    <value>preferredCardioDuration (every 20 minuts)</value>
+  </data>
+  <data name="sprzetDoTreninguSilowego" xml:space="preserve">
+    <value>strength training equipment:</value>
+  </data>
+  <data name="srodowiskoTreningowe" xml:space="preserve">
+    <value>training environment:</value>
+  </data>
+  <data name="zapiszUstawieniaTreningu" xml:space="preserve">
+    <value>Save training settings</value>
+  </data>
+  <data name="Dieta" xml:space="preserve">
+    <value>Diet</value>
+  </data>
+  <data name="ustawieniaDiety" xml:space="preserve">
+    <value>Diet Settings</value>
+  </data>
+  <data name="preferowanyRodzajDiety" xml:space="preserve">
+    <value>Preferred diet type</value>
+  </data>
+  <data name="DziennaKalorycznosc" xml:space="preserve">
+    <value>Daily Caloric Intake</value>
+  </data>
+  <data name="dzienneSpozycieBialka" xml:space="preserve">
+    <value>daily Protein Intake</value>
+  </data>
+  <data name="preferowaneProduktySpozywcze" xml:space="preserve">
+    <value>preferred food products </value>
+  </data>
+  <data name="dodatkoweUwagiDotyczaceDiety" xml:space="preserve">
+    <value>additional dietary notes </value>
+  </data>
+  <data name="posilkiNaDzien" xml:space="preserve">
+    <value>meals per day:</value>
+  </data>
+  <data name="SpozycieWody" xml:space="preserve">
+    <value>waterIntake:</value>
+  </data>
+  <data name="zapiszUstawieniaDiety" xml:space="preserve">
+    <value>save diet settings </value>
+  </data>
+  <data name="Powiadomienia" xml:space="preserve">
+    <value>Notifications </value>
+  </data>
+  <data name="ustawieniaPowiadomien" xml:space="preserve">
+    <value>notification Settings </value>
+  </data>
+  <data name="otrzymujPrzypomnieniaOTreningu" xml:space="preserve">
+    <value>receive Training Reminders </value>
+  </data>
+  <data name="otrzymujPrzypomnieniaOPosilkach" xml:space="preserve">
+    <value>receive Meal Reminders </value>
+  </data>
+  <data name="otrzymujAktualizacjePostepow" xml:space="preserve">
+    <value>receive Progress Updates </value>
+  </data>
+  <data name="otrzymujPowiadomieniaONowychCwiczeniach" xml:space="preserve">
+    <value>receive Notifications About New Exercises </value>
+  </data>
+  <data name="otrzymujPowiadomieniaOAktualizacjachDiet" xml:space="preserve">
+    <value>receive Notifications About Diet Updates </value>
+  </data>
+  <data name="otrzymujPowiadomieniaOWydarzeniach" xml:space="preserve">
+    <value>receive Event Notifications </value>
+  </data>
+  <data name="czestotliwoscPowiadomien" xml:space="preserve">
+    <value>notification Frequency </value>
+  </data>
+  <data name="godzinaOtrzymywaniaPowiadomien" xml:space="preserve">
+    <value>notification Receiving Time:</value>
+  </data>
+  <data name="glosnoscPrzypomnien" xml:space="preserve">
+    <value>reminder Volume </value>
+  </data>
+  <data name="zapiszUstawieniaPowiadomien" xml:space="preserve">
+    <value>save Notification Settings </value>
+  </data>
+  <data name="Profil" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+</root>

@@ -346,17 +346,37 @@
                 </StackPanel>
             </StatusBarItem>
             <Separator/>
-            <StatusBarItem Width="1690">
+            <StatusBarItem Width="1200">
                 <TextBlock>Status Message: 0</TextBlock>
+            </StatusBarItem>
+            <Separator/>
+            
+            <Separator/>
+            <StatusBarItem >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <Image Source="icons/clock.png" Width="16" Height="16" Margin="0,0,5,0" />
+                    <TextBlock>Local Time:</TextBlock>
+                    <TextBlock x:Name="LocalTime"></TextBlock>
+                </StackPanel>
             </StatusBarItem>
             <Separator/>
             <StatusBarItem >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
-                    <Image Source="icons/wifi.png" Width="16" Height="16" Margin="0,0,5,0" />
-                    <TextBlock>Connected</TextBlock>
+                    <Image Source="icons/battery.png" Width="16" Height="16" Margin="0,0,5,0" />
+                    <TextBlock>Battery Level:</TextBlock>
+                    <ProgressBar x:Name="BatteryLevel" Width="100" Height="10"></ProgressBar>
+                </StackPanel>
+            </StatusBarItem>
+            <Separator/>
+            <StatusBarItem >
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <Image Source="icons/notification.png" Width="16" Height="16" Margin="0,0,5,0" />
+                    <TextBlock>Notifications:</TextBlock>
+                    <TextBlock x:Name="NotificationsCount"></TextBlock>
                 </StackPanel>
             </StatusBarItem>
         </StatusBar>
+
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -432,10 +452,6 @@
             <!-- Main panel -->
             <Border Grid.Column="1" Background="#282a36">
                 <StackPanel Margin="20">
-                    <!--<TextBlock Text="Treningi" FontSize="24" FontWeight="Bold" Margin="0 0 0 20" Foreground="#f8f8f2"/>
-                    <TextBlock Text="Witaj, trenerze!" Foreground="#f8f8f2"/>
-                    <Button Content="Nowy trening" Margin="0 20 0 0" Background="#50fa7b" Foreground="#f8f8f2"/>
-                    <Button Content="Dodaj ćwiczenie" Background="#50fa7b" Foreground="#f8f8f2"/>-->
                     <HeaderedContentControl
                     Header="Przestrzeń robocza"
                     Content="{Binding Workspaces}"
@@ -444,15 +460,6 @@
                     />
                 </StackPanel>
             </Border>
-
-            <!-- Right panel -->
-            <!--<Border Grid.Column="2" Background="#282a36">
-                <StackPanel Margin="10">
-                    <TextBlock Text="Statystyki" FontSize="18" FontWeight="Bold" Margin="0 0 0 10" Foreground="#f8f8f2"/>
-                    <Button Content="Podsumowanie treningów" Background="#44475a" Foreground="#f8f8f2" Margin="0 0 0 10"/>
-                    <Button Content="Wykresy postępów" Background="#44475a" Foreground="#f8f8f2"/>
-                </StackPanel>
-            </Border>-->
         </Grid>
     </DockPanel>
 </Window>
