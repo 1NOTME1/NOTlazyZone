@@ -167,7 +167,7 @@
                                 <ComboBoxItem Content="1500 kcal"/>
                                 <ComboBoxItem Content="1800 kcal"/>
                                 <ComboBoxItem Content="2000 kcal"/>
-                                <ComboBoxItem Content="2200 kcal" IsSelected="True"/>
+                                <ComboBoxItem Content="2200 kcal" IsSelected="True" />
                                 <ComboBoxItem Content="2500 kcal"/>
                                 <ComboBoxItem Content="3000 kcal"/>
                                 <ComboBoxItem Content="3500 kcal"/>
