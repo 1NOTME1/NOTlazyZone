@@ -15,7 +15,7 @@ using NOTlazyZone.ViewModel;
 
 namespace NOTlazyZone.ViewModels
 {
-    public  class MainWindowViewModel : BaseViewModel
+    public class MainWindowViewModel : BaseViewModel
     {
         #region CommandsMenu
         public ICommand TowarCommand
@@ -25,46 +25,35 @@ namespace NOTlazyZone.ViewModels
                 return new BaseCommand(CreateMessage);
             }
         }
-        //public ICommand TowaryCommand
-        //{
-        //    get
-        //    {
-        //        return new BaseCommand(ShowAllTowar);
-        //    }
-        //}
         #endregion
-        //
         #region Commands
         private ReadOnlyCollection<CommandViewModel> _Commands;
         public ReadOnlyCollection<CommandViewModel> Commands
         {
-            get 
-            { 
-                if(_Commands == null)
+            get
+            {
+                if (_Commands == null)
                 {
                     List<CommandViewModel> cmds = CreateCommands();
                     _Commands = new ReadOnlyCollection<CommandViewModel>(cmds);
                 }
-                return _Commands; 
+                return _Commands;
             }
         }
         private List<CommandViewModel> CreateCommands()
         {
             return new List<CommandViewModel>
             {
-                new CommandViewModel("Messages",new BaseCommand(CreateMessage)),
-                new CommandViewModel("Calendar",new BaseCommand(ShowCalendar)),
-                new CommandViewModel("Statistics",new BaseCommand(ShowStatistic)),
+                new CommandViewModel("Statystki",new BaseCommand(ShowStatistic)),
+                new CommandViewModel("Dodaj Ćwiczenia",new BaseCommand(ShowExercies)),
+                new CommandViewModel("Kreator Diety",new BaseCommand(ShowDiet)),
+                new CommandViewModel("Wiadomości / Poczta",new BaseCommand(CreateMessage)),
                 new CommandViewModel("Zaplanowane spotkania",new BaseCommand(ShowCalendar)),
-                new CommandViewModel("Scheduled meetings",new BaseCommand(ShowCalendar)),
-                new CommandViewModel("Exercise",new BaseCommand(ShowExercies)),
-                new CommandViewModel("Training Plan",new BaseCommand(ShowCalendar)),
-                new CommandViewModel("Diet",new BaseCommand(ShowDiet)),
-                new CommandViewModel("Calories Calculator",new BaseCommand(ShowCaloriesCalculator)),
-                new CommandViewModel("List Contact",new BaseCommand(ShowContactList)),
-                new CommandViewModel("Shopping",new BaseCommand(ShowCalendar)),
-                new CommandViewModel("Discounts",new BaseCommand(ShowCalendar)),
-                new CommandViewModel("Settings",new BaseCommand(ShowSettings)),
+                new CommandViewModel("Kalendarz Treningowy",new BaseCommand(ShowCalendar)),
+                new CommandViewModel("Kalkulator Kalorii",new BaseCommand(ShowCaloriesCalculator)),
+                new CommandViewModel("Lista Kontaktów",new BaseCommand(ShowContactList)),
+                new CommandViewModel("Sklep",new BaseCommand(ShowCalendar)),
+                new CommandViewModel("Ustawienia",new BaseCommand(ShowSettings)),
 
             };
         }
@@ -73,15 +62,15 @@ namespace NOTlazyZone.ViewModels
         private ObservableCollection<WorkspaceViewModel> _Workspaces;
         public ObservableCollection<WorkspaceViewModel> Workspaces
         {
-            get 
-            { 
-                if(_Workspaces == null)
+            get
+            {
+                if (_Workspaces == null)
                 {
                     _Workspaces = new ObservableCollection<WorkspaceViewModel>();
                     _Workspaces.CollectionChanged += this.onWorkspacesChanged;
                 }
-                return _Workspaces; 
-            } 
+                return _Workspaces;
+            }
         }
         #endregion
 
@@ -108,7 +97,7 @@ namespace NOTlazyZone.ViewModels
         #region Funkcje wywolu.....
         private void CreateMessage()
         {
-            MessagesViewModel workspace=new MessagesViewModel();
+            MessagesViewModel workspace = new MessagesViewModel();
             Workspaces.Add(workspace);
             SetActiveWorkspace(workspace);
         }
