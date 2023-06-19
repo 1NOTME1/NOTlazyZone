@@ -6,18 +6,31 @@
              xmlns:local="clr-namespace:NOTlazyZone.Views"
              xmlns:viewmodels="clr-namespace:NOTlazyZone.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Margin="10">
+             d:DesignHeight="500" d:DesignWidth="850"
+             Background="#F0F8FF">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="15" Style="{StaticResource CalorieGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <Label Content="Calorie Calculator" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" />
+        <Label Content="Calorie Calculator" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" Grid.ColumnSpan="2" Style="{StaticResource LabelCalorieText}"/>
 
-        <Grid Grid.Row="1" Margin="0,20,0,0">
+        <Grid Grid.Row="1" Margin="0,30,0,0" Style="{StaticResource CalorieGrid}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -32,46 +45,82 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Content="Weight (kg):" Grid.Row="0" Grid.Column="0"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="5"/>
+            <Label Content="Waga (kg):" Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelCalorie}"/>
+            <TextBox Style="{StaticResource CalorieTextBox}" Grid.Row="0" Grid.Column="1" Margin="5"  />
 
-            <Label Content="Height (cm):" Grid.Row="1" Grid.Column="0"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="5"/>
+            <Label Content="Wzrost (cm):" Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelCalorie}"/>
+            <TextBox Style="{StaticResource CalorieTextBox}" Grid.Row="1" Grid.Column="1" Margin="5"/>
 
-            <Label Content="Age:" Grid.Row="2" Grid.Column="0"/>
-            <TextBox Grid.Row="2" Grid.Column="1" Margin="5"/>
+            <Label Content="Wiek:" Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelCalorie}"/>
+            <TextBox Style="{StaticResource CalorieTextBox}" Grid.Row="2" Grid.Column="1" Margin="5"/>
 
-            <Label Content="Gender:" Grid.Row="3" Grid.Column="0"/>
+            <Label Content="Płeć:" Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelCalorie}"/>
             <ComboBox Grid.Row="3" Grid.Column="1" Margin="5">
-                <ComboBoxItem Content="Male"/>
-                <ComboBoxItem Content="Female"/>
+                <ComboBoxItem Content="Wybierz" IsSelected="True"/>
+                <ComboBoxItem Content="Mężczyzna"/>
+                <ComboBoxItem Content="Kobieta"/>
             </ComboBox>
 
-            <Label Content="Activity Level:" Grid.Row="4" Grid.Column="0"/>
+            <Label Content="Poziom aktywności:" Grid.Row="4" Grid.Column="0" Style="{StaticResource LabelCalorie}"/>
             <ComboBox Grid.Row="4" Grid.Column="1" Margin="5">
-                <ComboBoxItem Content="Sedentary"/>
-                <ComboBoxItem Content="Lightly active"/>
-                <ComboBoxItem Content="Moderately active"/>
-                <ComboBoxItem Content="Very active"/>
-                <ComboBoxItem Content="Extra active"/>
+                <ComboBoxItem Content="Wybierz" IsSelected="True"/>
+                <ComboBoxItem Content="Siedzący tryb życia"/>
+                <ComboBoxItem Content="Lekko aktywny tryb życia"/>
+                <ComboBoxItem Content="Średnio aktywny tryb życia"/>
+                <ComboBoxItem Content="Bardzo aktywny tryb życia"/>
+                <ComboBoxItem Content="Bardzo intensywny tryb życia"/>
             </ComboBox>
-
-            <!-- Added Controls -->
-            <Label Content="Dietary Preferences:" Grid.Row="5" Grid.Column="0"/>
+            <Label Content="Preferencje żywieniowe:" Grid.Row="5" Grid.Column="0" Style="{StaticResource LabelCalorie}"/>
             <ComboBox Grid.Row="5" Grid.Column="1" Margin="5">
-                <ComboBoxItem Content="Omnivorous"/>
-                <ComboBoxItem Content="Vegetarian"/>
-                <ComboBoxItem Content="Vegan"/>
+                <ComboBoxItem Content="Wybierz" IsSelected="True"/>
+                <ComboBoxItem Content="Wszystkożerny"/>
+                <ComboBoxItem Content="Wegetarianin"/>
+                <ComboBoxItem Content="Weganin"/>
             </ComboBox>
 
-            <Label Content="Allergies:" Grid.Row="6" Grid.Column="0"/>
-            <TextBox Grid.Row="6" Grid.Column="1" Margin="5"/>
         </Grid>
 
-        <Button Content="Calculate Calorie Intake" Grid.Row="2" Height="40" Margin="5"/>
+        <Grid Grid.Row="1" Grid.Column="1" Margin="20,30,0,0" Style="{StaticResource CalorieGrid}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-        <!-- Added Controls -->
-        <Label Content="Estimated Calorie Intake:" Grid.Row="3" Grid.Column="0" Margin="5"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Margin="5"/>
+            <Label Content="Twoje BMI" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource LabelCalorieText}"/>
+
+            <ListBox Grid.Row="1" Margin="5" Style="{StaticResource CalorieListBox}">
+                <ListBoxItem Style="{StaticResource CalorieListBoxItem}">Niedowaga:  ≥18,5</ListBoxItem>
+                <ListBoxItem Style="{StaticResource CalorieListBoxItem}" IsSelected="True">Waga normalna: 18,5–24,9</ListBoxItem>
+                <ListBoxItem Style="{StaticResource CalorieListBoxItem}">Nadwaga: 25–29,9</ListBoxItem>
+                <ListBoxItem Style="{StaticResource CalorieListBoxItem}">Otyłość (klasa 1): 30–34,9</ListBoxItem>
+                <ListBoxItem Style="{StaticResource CalorieListBoxItem}">Otyłość (klasa 2): 35–39,9</ListBoxItem>
+                <ListBoxItem Style="{StaticResource CalorieListBoxItem}">Otyłość olbrzymia: ≥ 40</ListBoxItem>
+            </ListBox>
+
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1" Margin="20,30,0,0" Style="{StaticResource CalorieGrid}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Propozycje diet:" Grid.Row="0" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource LabelCalorieText}"/>
+
+            <ListBox Grid.Row="1" Margin="5" Style="{StaticResource CalorieListBox}">
+                <ListBoxItem Style="{StaticResource CalorieListBoxItem}" IsSelected="True">Dieta paleo: 2000 kcal</ListBoxItem>
+                <ListBoxItem Style="{StaticResource CalorieListBoxItem}">Wegetariańska: 1800 kcal</ListBoxItem>
+                <ListBoxItem Style="{StaticResource CalorieListBoxItem}">Wegańska: 1600 kcal</ListBoxItem>
+                <ListBoxItem Style="{StaticResource CalorieListBoxItem}">Dieta niskowęglowodanowa: 2200 kcal</ListBoxItem>
+                <ListBoxItem Style="{StaticResource CalorieListBoxItem}">Dieta wysokobiałkowa: 2200 kcal</ListBoxItem>
+            </ListBox>
+
+        </Grid>
+
+
+        <Button Content="Calculate Calorie Intake" Grid.Row="2" Grid.Column="0" Style="{StaticResource CalorieButton}"/>
+
+        <Label Content="Estimated Calorie Intake:" Grid.Row="3" Grid.Column="0" Margin="5" Foreground="#2F4F4F"/>
+        <TextBox Style="{StaticResource CalorieTextBox}" Grid.Row="3" Grid.Column="0" Margin="5"/>
     </Grid>
 </UserControl>

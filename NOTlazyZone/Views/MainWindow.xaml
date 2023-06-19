@@ -8,89 +8,89 @@
         
         Title="NOTlazyZone" Height="800" Width="1200"
         WindowState="Maximized">
-        
+
     <Window.Resources>
         <ResourceDictionary Source="MainWindowResources.xaml"/>
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_File">
-                <MenuItem Header="_New" InputGestureText="Ctrl+N">
+            <MenuItem Header="_Plik">
+                <MenuItem Header="_Nowy" InputGestureText="Ctrl+N">
                     <MenuItem.Icon>
-                        <ImageBrush ImageSource="/Views/icons/tab.png"/>
+                        <Image Source="/Views/icons/tab.png"/>
                         <!--Create icons created by vinadbumi - Flaticon-->
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Open" InputGestureText="Ctrl+O">
+                <MenuItem Header="_Otwórz" InputGestureText="Ctrl+O">
                     <MenuItem.Icon>
-                        <ImageBrush ImageSource="/Views/icons/open-folder.png" />
+                        <Image Source="/Views/icons/open-folder.png" />
                         <!--Redo icons created by Freepik - Flaticon-->
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Save" InputGestureText="Ctrl+S">
+                <MenuItem Header="_Zapisz" InputGestureText="Ctrl+S">
                     <MenuItem.Icon>
-                        <ImageBrush ImageSource="/Views/icons/save-file.png" />
+                        <Image Source="/Views/icons/save-file.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
-                <MenuItem Header="_Exit" InputGestureText="Alt+F4">
+                <MenuItem Header="_Wyjście" InputGestureText="Alt+F4">
                     <MenuItem.Icon>
-                        <ImageBrush ImageSource="/Views/icons/close.png" />
+                        <Image Source="/Views/icons/close.png" />
                         <!--Redo icons created by Freepik - Flaticon-->
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
 
-            <MenuItem Header="_Edit">
-                <MenuItem Header="_Undo" InputGestureText="Ctrl+Z">
+            <MenuItem Header="_Edycja">
+                <MenuItem Header="_Cofnij" InputGestureText="Ctrl+Z">
                     <MenuItem.Icon>
-                        <ImageBrush ImageSource="/Views/icons/undo_1.png" />
+                        <Image Source="/Views/icons/undo_1.png" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Redo" InputGestureText="Ctrl+Y">
+                <MenuItem Header="_Ponów" InputGestureText="Ctrl+Y">
                     <MenuItem.Icon>
-                        <ImageBrush ImageSource="/Views/icons/redo_1.png" />
+                        <Image Source="/Views/icons/redo_1.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
-                <MenuItem Header="_Cut" InputGestureText="Ctrl+X">
+                <MenuItem Header="_Wytnij" InputGestureText="Ctrl+X">
                     <MenuItem.Icon>
-                        <ImageBrush ImageSource="/Views/icons/cut.png" />
+                        <Image Source="/Views/icons/cut.png" />
                         <!--Redo icons created by Freepik - Flaticon-->
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Copy" InputGestureText="Ctrl+C">
+                <MenuItem Header="_Kopiuj" InputGestureText="Ctrl+C">
                     <MenuItem.Icon>
-                        <ImageBrush ImageSource="/Views/icons/copy.png" />
+                        <Image Source="/Views/icons/copy.png" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Paste" InputGestureText="Ctrl+V">
+                <MenuItem Header="_Wklej" InputGestureText="Ctrl+V">
                     <MenuItem.Icon>
-                        <ImageBrush ImageSource="/Views/icons/paste.png" />
+                        <Image Source="/Views/icons/paste.png" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator />
-                <MenuItem Header="_Select All" InputGestureText="Ctrl+A">
+                <MenuItem Header="_Zaznacz wszystko" InputGestureText="Ctrl+A">
                     <MenuItem.Icon>
                         <Image Source="/Views/icons/select-all.png" />
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
 
-            <MenuItem Header="_View">
-                <MenuItem Header="_Zoom In" InputGestureText="Ctrl++">
+            <MenuItem Header="_Widok">
+                <MenuItem Header="_Powiększ" InputGestureText="Ctrl++">
                     <MenuItem.Icon>
-                        <ImageBrush ImageSource="/Views/icons/zoom-in.png" />
+                        <Image Source="/Views/icons/zoom-in.png" />
                         <!--Zoom In icons created by Freepik - Flaticon-->
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Zoom Out" InputGestureText="Ctrl+-">
+                <MenuItem Header="_Pomniejsz" InputGestureText="Ctrl+-">
                     <MenuItem.Icon>
-                        <ImageBrush ImageSource="/Views/icons/zoom-out.png" />
+                        <Image Source="/Views/icons/zoom-out.png" />
                         <!--Zoom Out icons created by Freepik - Flaticon-->
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Reset Zoom" InputGestureText="Ctrl+0">
+                <MenuItem Header="_Resetuj powiększenie" InputGestureText="Ctrl+0">
                     <MenuItem.Icon>
                         <Image Source="/Views/icons/reset-zoom.png" />
                         <!--Redo icons created by Freepik - Flaticon-->
@@ -99,14 +99,14 @@
             </MenuItem>
 
 
-            <MenuItem Header="_Tools">
-                <MenuItem Header="_Options" InputGestureText="Ctrl+Alt+O">
+            <MenuItem Header="_Narzędzia">
+                <MenuItem Header="_Opcje" InputGestureText="Ctrl+Alt+O">
                     <MenuItem.Icon>
                         <Image Source="/Views/icons/settings.png" />
                         <!--Redo icons created by Freepik - Flaticon-->
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Theme" InputGestureText="Ctrl+Alt+O">
+                <MenuItem Header="_Motyw" InputGestureText="Ctrl+Alt+O">
                     <MenuItem.Icon>
                         <Image Source="/Views/icons/theme.png" />
                         <!--Redo icons created by Rizki Ahmad Fauzi - Flaticon-->
@@ -114,14 +114,14 @@
                 </MenuItem>
             </MenuItem>
 
-            <MenuItem Header="_Help">
-                <MenuItem Header="_Help" InputGestureText="F1">
+            <MenuItem Header="_Pomoc">
+                <MenuItem Header="_Pomoc" InputGestureText="F1">
                     <MenuItem.Icon>
                         <Image Source="/Views/icons/help.png" Width="15" Height="15"/>
                         <!--Disclaimer icons created by rizky adhitya pradana - Flaticon-->
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_About" InputGestureText="F1">
+                <MenuItem Header="_O programie" InputGestureText="F1">
                     <MenuItem.Icon>
                         <Image Source="/Views/icons/about.png" />
                         <!--Disclaimer icons created by rizky adhitya pradana - Flaticon-->
@@ -148,6 +148,7 @@
                 </MenuItem.ToolTip>
             </MenuItem>
         </Menu>
+
 
         <ToolBar DockPanel.Dock="Top" Background="#f1f1f1" Foreground="#F8F8F2">
             <Button>
@@ -350,13 +351,12 @@
                 <TextBlock>Status Message: 0</TextBlock>
             </StatusBarItem>
             <Separator/>
-            
+
             <Separator/>
             <StatusBarItem >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                     <Image Source="icons/clock.png" Width="16" Height="16" Margin="0,0,5,0" />
                     <TextBlock>Local Time:</TextBlock>
-                    <TextBlock x:Name="LocalTime"></TextBlock>
                 </StackPanel>
             </StatusBarItem>
             <Separator/>
@@ -364,34 +364,38 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                     <Image Source="icons/battery.png" Width="16" Height="16" Margin="0,0,5,0" />
                     <TextBlock>Battery Level:</TextBlock>
-                    <ProgressBar x:Name="BatteryLevel" Width="100" Height="10"></ProgressBar>
+                    <ProgressBar Width="100" Height="10" Margin="10,0,0,0">
+                        <ProgressBar.Template>
+                            <ControlTemplate>
+                                <Rectangle Fill="Lime"/>
+                            </ControlTemplate>
+                        </ProgressBar.Template>
+                    </ProgressBar>
                 </StackPanel>
             </StatusBarItem>
             <Separator/>
             <StatusBarItem >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                     <Image Source="icons/notification.png" Width="16" Height="16" Margin="0,0,5,0" />
-                    <TextBlock>Notifications:</TextBlock>
+                    <TextBlock>Notifications: 0</TextBlock>
                     <TextBlock x:Name="NotificationsCount"></TextBlock>
                 </StackPanel>
             </StatusBarItem>
         </StatusBar>
-
-
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="20*"/>
                 <ColumnDefinition Width="80*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Left panel -->
+            <!-- Panel zakładek -->
             <Border Grid.Column="0" Background="#1e202b">
                 <HeaderedContentControl
                     Header=""
                     Content="{Binding Commands}"
                     ContentTemplate="{StaticResource CommandsTemplate}"
                     
-                />  
+                />
             </Border>
 
 
@@ -401,22 +405,30 @@
                     <TextBlock Foreground="#f8f8f2"/>
                     <Button ToolTip="Messages" Width="25" Height="25" Margin="-5 0 0 15"  Background="#1e202b" BorderThickness ="0">
                         <Image Source="icons/email.png"/>
-                        --><!--Email icons created by Ilham Fitrotul Hayat - Flaticon--><!--
+                        -->
+            <!--Email icons created by Ilham Fitrotul Hayat - Flaticon-->
+            <!--
                     </Button>
                     <Button ToolTip="Calendar" Width="25" Height="23" Margin="-5 0 0 15" Background="#1e202b" BorderThickness ="0">
                         <Image Source="icons/calendar_1.png"/>
-                        --><!--Calendar icons created by Freepik - Flaticon--><!--
+                        -->
+            <!--Calendar icons created by Freepik - Flaticon-->
+            <!--
                     </Button>
                     <Button ToolTip="Statistics" Width="25" Height="25" Margin="-5 0 0 50" Background="#1e202b" BorderThickness ="0">
                         <Image Source="icons/stats.png"/>
                     </Button>
                     <Button ToolTip="Scheduled meetings" Width="25" Height="25" Margin="-5 0 0 15" Background="#1e202b" BorderThickness ="0">
                         <Image Source="icons/video-conference.png"/>
-                        --><!--Calendar icons created by Freepik - Flaticon--><!--
+                        -->
+            <!--Calendar icons created by Freepik - Flaticon-->
+            <!--
                     </Button>
                     <Button ToolTip="Exercise" Width="25" Height="25" Margin="-5 0 0 15" Background="#1e202b" BorderThickness ="0">
                         <Image Source="icons/barbell.png"/>
-                        --><!--Calendar icons created by Freepik - Flaticon--><!--
+                        -->
+            <!--Calendar icons created by Freepik - Flaticon-->
+            <!--
                     </Button>
                     <Button ToolTip="Training Plan" Width="25" Height="25" Margin="-5 0 0 50" Background="#1e202b" BorderThickness ="0">
                         <Image Source="icons/training_plan.png"/>
@@ -429,19 +441,27 @@
                     </Button>
                     <Button ToolTip="Calories Calculator" Width="25" Height="25" Margin="-5 0 0 15" Background="#1e202b" BorderThickness ="0">
                         <Image Source="icons/kcal.png"/>
-                        --><!--Calories icons created by Us and Up - Flaticon--><!--
+                        -->
+            <!--Calories icons created by Us and Up - Flaticon-->
+            <!--
                     </Button>
                     <Button ToolTip="List Contact" Width="25" Height="25" Margin="-4 0 0 50" Background="#1e202b" BorderThickness ="0">
                         <Image Source="icons/contact_list.png"/>
-                        --><!--contact list icons created by Freepik - Flaticon--><!--
+                        -->
+            <!--contact list icons created by Freepik - Flaticon-->
+            <!--
                     </Button>
                     <Button ToolTip="Shopping" Width="25" Height="25" Margin="-3 0 0 15" Background="#1e202b" BorderThickness ="0">
                         <Image Source="icons/shopping-cart.png"/>
-                        --><!--Smart cart icons created by Freepik - Flaticon--><!--
+                        -->
+            <!--Smart cart icons created by Freepik - Flaticon-->
+            <!--
                     </Button>
                     <Button ToolTip="Discounts" Width="25" Height="25" Margin="-3 0 0 60" Background="#1e202b" BorderThickness ="0">
                         <Image Source="icons/discounts.png"/>
-                        --><!--Discount icons created by Irfansusanto20--><!--
+                        -->
+            <!--Discount icons created by Irfansusanto20-->
+            <!--
                     </Button>
                     <Button ToolTip="Settings" Width="25" Height="25" Margin="-3 0 0 15" Background="#1e202b" BorderThickness ="0">
                         <Image Source="icons/setting.png"/>
@@ -449,7 +469,7 @@
                 </StackPanel>
             </Border>-->
 
-            <!-- Main panel -->
+            <!-- Panel głowny -->
             <Border Grid.Column="1" Background="#282a36">
                 <StackPanel Margin="20">
                     <HeaderedContentControl

@@ -7,6 +7,7 @@
     <!--tu bedziemy laczyc View z ViewModel zakładek-->
     <DataTemplate DataType="{x:Type vm:MessagesViewModel}">
         <vw:MessagesView/>
+
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type vm:StatisticViewModel}">
@@ -43,7 +44,7 @@
         <Setter Property="HeaderTemplate">
             <Setter.Value>
                 <DataTemplate>
-                   
+
                 </DataTemplate>
             </Setter.Value>
         </Setter>
@@ -91,6 +92,7 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Button Content="{Binding DisplayName}" Command="{Binding Path=Command}" Margin="6" Padding="5" Background="LightBlue" BorderThickness="0"/>
+
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

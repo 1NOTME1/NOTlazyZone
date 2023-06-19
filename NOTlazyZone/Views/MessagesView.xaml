@@ -17,11 +17,7 @@
         <Grid Style="{StaticResource MessageGrid}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <!-- Nagłówek -->
                 <RowDefinition Height="*"/>
-                <!-- Treść wiadomości -->
-                <RowDefinition Height="Auto"/>
-                <!-- Przyciski -->
             </Grid.RowDefinitions>
 
             <Menu Grid.Row="0">
@@ -280,44 +276,86 @@
                     <Separator />
                     <MenuItem Header="O programie NOTlazyZone" />
                 </MenuItem>
-
             </Menu>
 
+            <TabControl Grid.Row="1" TabStripPlacement="Left">
+
+                <TabItem Header="Napisz">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                            <StackPanel>
+                                <Label Style="{StaticResource Label}" Content="Do:"/>
+                                <TextBox Style="{StaticResource TextBox}" Text="{Binding RecipientEmail}"/>
+
+                                <Label Style="{StaticResource Label}" Content="Temat:"/>
+                                <TextBox Style="{StaticResource TextBox}" Text="{Binding Subject}"/>
+
+                                <Label Style="{StaticResource Label}" Content="Treść:"/>
+                                <TextBox Style="{StaticResource TextBoxMessage}" AcceptsReturn="True" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </ScrollViewer>
+
+                        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+                            <Button Style="{StaticResource Button}" Content="Anuluj"/>
+                            <Button Style="{StaticResource Button}" Content="Wyślij"/>
+                        </StackPanel>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Header="Otrzymane">
+                    <ScrollViewer>
+                        <StackPanel Background="#282a36">
+                            <TextBlock FontWeight="Bold" Text="Nadawca: Jan Kowalski" Foreground="White"/>
+                            <TextBlock FontWeight="Bold" Text="Temat: Spotkanie" Foreground="White"/>
+                            <TextBlock Text="Godzina: 10:00" Foreground="White"/>
+                            <TextBlock Text="Adres IP: 192.168.1.1" Foreground="White"/>
+                            <TextBlock TextWrapping="Wrap" Text="Zawartość: Spotkanie odbędzie się jutro o 10:00." Foreground="White"/>
+                            <Separator Margin="10,10"/>
+
+                            <!-- Tutaj powtarzamy powyższy schemat dla każdej wiadomości -->
+                            <TextBlock FontWeight="Bold" Text="Nadawca: Anna Nowak" Foreground="White"/>
+                            <TextBlock FontWeight="Bold" Text="Temat: Wycieczka" Foreground="White"/>
+                            <TextBlock Text="Godzina: 14:30" Foreground="White"/>
+                            <TextBlock Text="Adres IP: 192.168.1.2" Foreground="White"/>
+                            <TextBlock TextWrapping="Wrap" Text="Zawartość: Wycieczka odbędzie się w przyszłym tygodniu." Foreground="White"/>
+                            <Separator Margin="10,10"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
 
 
-            <!--<ToolBar Grid.Row="1">
-                    <Button Content="Wyślij" />
-                    <Separator />
-                    <Button Content="Zaszyfruj" />
-                    <Separator />
-                    <Menu>
-                        <MenuItem Header="Pisowanie">
-                             Podmenu Pisowania 
-                        </MenuItem>
-                        <Separator />
-                        <MenuItem Header="Zapisz jako">
-                             Podmenu Zapisz jako 
-                        </MenuItem>
-                    </Menu>
-                </ToolBar>-->
-            <ScrollViewer Grid.Row="1">
-                <StackPanel>
-                    <Label Style="{StaticResource Label}" Content="Do:"/>
-                    <TextBox Style="{StaticResource TextBox}" Text="{Binding RecipientEmail}"/>
 
-                    <Label Style="{StaticResource Label}" Content="Temat:"/>
-                    <TextBox Style="{StaticResource TextBox}" Text="{Binding Subject}"/>
 
-                    <Label Style="{StaticResource Label}" Content="Treść:"/>
-                    <TextBox Style="{StaticResource TextBoxMessage}"  AcceptsReturn="True" TextWrapping="Wrap"/>
-                </StackPanel>
-            </ScrollViewer>
 
-            <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
-                <Button Style="{StaticResource Button}" Content="Anuluj"/>
-                <Button Style="{StaticResource Button}" Content="Wyślij"/>
-            </StackPanel>
 
+
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Wysłane" VerticalAlignment="Center"/>
+                            <TextBlock Text=" (5)" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <ListView/>
+                </TabItem>
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Inny" VerticalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text=" (3)" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="White"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <ListView/>
+                </TabItem>
+            </TabControl>
         </Grid>
     </ScrollViewer>
 </UserControl>

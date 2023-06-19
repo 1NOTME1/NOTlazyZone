@@ -161,30 +161,24 @@
                         <ComboBoxItem>1 tydzień</ComboBoxItem>
                         <ComboBoxItem>2 tygodnie</ComboBoxItem>
                         <ComboBoxItem>3 tygodnie</ComboBoxItem>
-                        <!-- Dodaj więcej elementów ComboBox w zależności od potrzeb -->
                     </ComboBox>
 
                     <Label HorizontalAlignment="Left" Content="Zalecana ilość spożywanego białka (w gramach)" Grid.Row="12"/>
                     <Slider Grid.Row="13" Minimum="0" Maximum="200" TickFrequency="10" Value="{Binding ZalecanaIloscBialka}"/>
-                    <!-- Możesz dostosować wartości Minimum, Maximum, TickFrequency do swoich potrzeb -->
 
                     <Label HorizontalAlignment="Left" Content="Ilość spożywanych posiłków dziennie" Grid.Row="14"/>
                     <Slider Grid.Row="15" Minimum="1" Maximum="6" TickFrequency="1" Value="{Binding IloscPosilkowDziennie}"/>
-                    <!-- Możesz dostosować wartości Minimum, Maximum, TickFrequency do swoich potrzeb -->
 
-                    <CheckBox Content="Zakazane produkty spożywcze" Grid.Row="16"/>
-                    <CheckBox Content="Danie nr 1" Grid.Row="17"/>
-                    <CheckBox Content="Danie nr 2" Grid.Row="18"/>
-                    <!-- Dodaj więcej CheckBox w zależności od potrzeb -->
+                    <Label Content="Zakazane produkty spożywcze" Grid.Row="16"/>
+                    <CheckBox Content="Krewetki" Grid.Row="17"/>
+                    <CheckBox Content="Orzechy" Grid.Row="18"/>
 
                     <Label HorizontalAlignment="Left" Content="Czas trwania treningu (w minutach)" Grid.Row="19"/>
                     <Slider Grid.Row="20" Minimum="10" Maximum="120" TickFrequency="10" Value="{Binding CzasTrwaniaTreningu}"/>
-                    <!-- Możesz dostosować wartości Minimum, Maximum, TickFrequency do swoich potrzeb -->
 
                     <Label HorizontalAlignment="Left" Content="Zalecana ilość wypijanej wody (w litrach)" Grid.Row="21"/>
                     <Slider Grid.Row="22" Minimum="1" Maximum="3" TickFrequency="0.5" Value="{Binding ZalecanaIloscWody}"/>
-                    <!-- Możesz dostosować wartości Minimum, Maximum, TickFrequency do swoich potrzeb -->
-                    <Button Content="Zapisz" Grid.Row="23"/>
+                    <Button Content="Zapisz" Grid.Row="23" Style="{StaticResource CalorieButton}" />
                 </Grid>
             </GroupBox>
 

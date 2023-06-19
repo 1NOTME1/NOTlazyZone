@@ -19,7 +19,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <Label Content="Planner Treningowy" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" />
+        <Label Content="Planner Treningowy" FontSize="22" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource LabelCalorieText}"/>
 
         <Grid Grid.Row="1" Margin="0,20,0,0">
             <Grid.ColumnDefinitions>
@@ -48,12 +48,19 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Content="Ćwiczenie:" Grid.Row="0" Grid.Column="0"/>
-                    <ComboBox Grid.Row="0" Grid.Column="1" Margin="5" Background="Red">
-                        <ComboBoxItem Content="Ćwiczenie 1"/>
-                        <ComboBoxItem Content="Ćwiczenie 2"/>
-                        <ComboBoxItem Content="Ćwiczenie 3"/>
+                    <ComboBox Grid.Row="0" Grid.Column="1" Margin="5">
+                        <ComboBoxItem Content="Wybierz" IsSelected="True"/>
+                        <ComboBoxItem Content="Przysiady (Squat)" />
+                        <ComboBoxItem Content="Pompki (Push-ups)" />
+                        <ComboBoxItem Content="Martwy ciąg (Deadlift)"/>
+                        <ComboBoxItem Content="Wiosłowanie sztangą (Barbell Rows)"/>
+                        <ComboBoxItem Content="Wyciskanie sztangi leżąc (Bench Press)"/>
+                        <ComboBoxItem Content="Podciąganie na drążku (Pull-ups)"/>
+                        <ComboBoxItem Content="Przenoszenie kettlebell (Kettlebell Swings)"/>
+                        <ComboBoxItem Content="Skłony w leżeniu (Sit-ups)"/>
+                        <ComboBoxItem Content="Marsz na miejscu (High Knees)"/>
+                        <ComboBoxItem Content="Plank (Deska)"/>
                     </ComboBox>
-
 
                     <Label Content="Serii:" Grid.Row="1" Grid.Column="0"/>
                     <TextBox Grid.Row="1" Grid.Column="1" Margin="5"/>
@@ -69,10 +76,12 @@
 
                     <Label Content="Typ ćwiczenia:" Grid.Row="5" Grid.Column="0"/>
                     <ComboBox Grid.Row="5" Grid.Column="1" Margin="5">
-                        <ComboBoxItem Content="Ćwiczenie 1"/>
-                        <ComboBoxItem Content="Ćwiczenie 2"/>
-                        <ComboBoxItem Content="Ćwiczenie 3"/>
+                        <ComboBoxItem Content="Wybierz" IsSelected="True"/>
+                        <ComboBoxItem Content="Siłowe"/>
+                        <ComboBoxItem Content="Kardio"/>
+                        <ComboBoxItem Content="Rozciąganie"/>
                     </ComboBox>
+
 
                     <Label Content="Ćwiczenie Cardio:" Grid.Row="6" Grid.Column="0"/>
                     <CheckBox Grid.Row="6" Grid.Column="1" Margin="5"/>
@@ -86,7 +95,7 @@
                     <Label Content="Dodatkowe uwagi:" Grid.Row="9" Grid.Column="0"/>
                     <TextBox Grid.Row="9" Grid.Column="1" Margin="5"/>
 
-                    <Button Content="Dodaj Ćwiczenie" Grid.Row="10" Grid.ColumnSpan="2" Margin="5"/>
+                    <Button Content="Dodaj Ćwiczenie" Grid.Row="10" Grid.ColumnSpan="2" Margin="5" Style="{StaticResource CalorieButton}"/>
                 </Grid>
             </GroupBox>
 
@@ -115,6 +124,6 @@
 
         </Grid>
 
-        <Button Content="Generuj Plan Treningowy" Grid.Row="2" Height="40" Margin="5" Style="{StaticResource Button}"/>
+        <Button Content="Generuj Plan Treningowy" Grid.Row="2" Height="40" Margin="5" Style="{StaticResource CalorieButton}"/>
     </Grid>
 </UserControl>

@@ -77,15 +77,15 @@
                 <Grid>
                     <StackPanel>
                         <StackPanel Orientation="Horizontal">
-                            
+
                             <Label Content="Strona internetowa:"/>
                             <TextBox Text="{Binding StronaInternetowa}" Width="200" IsEnabled="False" Margin="0,5,0,0"/>
 
                             <Label  Content="Godziny otwarcia:"/>
                             <TextBox Text="{Binding GodzinyOtwarcia}" Width="200" Margin="0,5,0,0"/>
-                            
+
                         </StackPanel>
-                        
+
                         <StackPanel Orientation="Horizontal">
 
                             <Label Content="Adres e-mail:" Margin="0,0,40,0"/>
@@ -93,7 +93,7 @@
 
                             <Label  Content="Numer telefonu:" Margin="0,0,10,0"/>
                             <TextBox Text="{Binding TelefonKontaktowy}" Width="200" Margin="0,5,0,0"/>
-                           
+
                         </StackPanel>
                     </StackPanel>
                 </Grid>
@@ -130,14 +130,6 @@
                     <Label HorizontalAlignment="Left" Content="Opis wzrostu" Grid.Row="8" Grid.Column="1"/>
                 </Grid>
             </GroupBox>
-
-            <!--<GroupBox Header="Wybierz opcję" Grid.Row="2" Grid.Column="1" Margin="10">
-                <StackPanel>
-                    <RadioButton Content="Opcja 1"/>
-                    <RadioButton Content="Opcja 2"/>
-                    <RadioButton Content="Opcja 3"/>
-                </StackPanel>
-            </GroupBox>-->
 
             <GroupBox Header="Rodzaje możliwych treningów z trenerem personalnym" Grid.Row="2" Grid.ColumnSpan="2">
                 <Grid Height="200">
@@ -235,7 +227,8 @@
 
                     <Label Content="Trening Wytrzymałościowy" Grid.Row="3" Grid.Column="0"/>
                     <CheckBox Grid.Row="3" Grid.Column="1" IsChecked="{Binding TreningX}"/>
-                    <Label Content="Godziny treningu wytrzymałościowego" Grid.Row="3" Grid.Column="2" Margin="0 0 10 0"/> <!--TODO: dodaj margin wszedzie-->
+                    <Label Content="Godziny treningu wytrzymałościowego" Grid.Row="3" Grid.Column="2" Margin="0 0 10 0"/>
+                    <!--TODO: dodaj margin wszedzie-->
                     <ComboBox Grid.Row="3" Grid.Column="3" SelectedItem="{Binding GodzinyTreninguX}">
                         <ComboBoxItem Content="7:00 - 8:00"/>
                         <ComboBoxItem Content="10:00 - 11:00"/>
