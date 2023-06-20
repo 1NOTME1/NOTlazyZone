@@ -52,7 +52,7 @@ namespace NOTlazyZone.ViewModels
                 new CommandViewModel("Kalendarz Treningowy",new BaseCommand(ShowCalendar)),
                 new CommandViewModel("Kalkulator Kalorii",new BaseCommand(ShowCaloriesCalculator)),
                 new CommandViewModel("Lista Kontaktów",new BaseCommand(ShowContactList)),
-                new CommandViewModel("Sklep",new BaseCommand(ShowCalendar)),
+                new CommandViewModel("Sklep",new BaseCommand(ShowShop)),
                 new CommandViewModel("Ustawienia",new BaseCommand(ShowSettings)),
 
             };
@@ -172,6 +172,17 @@ namespace NOTlazyZone.ViewModels
             if (workspace == null)
             {
                 workspace = new DietViewModel();
+                Workspaces.Add(workspace);
+            }
+            SetActiveWorkspace(workspace);
+        }
+
+        private void ShowShop()
+        {
+            ShopViewModel workspace = Workspaces.FirstOrDefault(vm => vm is ShopViewModel) as ShopViewModel;
+            if (workspace == null)
+            {
+                workspace = new ShopViewModel();
                 Workspaces.Add(workspace);
             }
             SetActiveWorkspace(workspace);

@@ -7,7 +7,6 @@
     <!--tu bedziemy laczyc View z ViewModel zakładek-->
     <DataTemplate DataType="{x:Type vm:MessagesViewModel}">
         <vw:MessagesView/>
-
     </DataTemplate>
 
     <DataTemplate DataType="{x:Type vm:StatisticViewModel}">
@@ -36,6 +35,10 @@
 
     <DataTemplate DataType="{x:Type vm:DietViewModel}">
         <vw:DietView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:ShopViewModel}">
+        <vw:ShopView/>
     </DataTemplate>
 
     <!--tu jest koniec laczenia View z ViewModel zakładekcccc-->
