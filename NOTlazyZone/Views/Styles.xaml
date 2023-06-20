@@ -7,6 +7,14 @@
         <Setter Property="Background" Value="#282a36"/>
     </Style>
 
+    <!--<Style TargetType="{x:Type TabItem}">
+        <Setter Property="Header" Value="Dodaj kontakt"/>
+        <Setter Property="Background" Value="#282a36"/>
+        <Setter Property="Foreground" Value="Orange"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>-->
+
+
     <Style TargetType="{x:Type RadioButton}">
         <Setter Property="Foreground" Value="WhiteSmoke"/>
     </Style>
@@ -72,6 +80,95 @@
         <Setter Property="MinHeight" Value="30"/>
         <Setter Property="Background" Value="#282a36"/>
     </Style>
+
+    <Style TargetType="TextBlock" x:Key="TextBlockMessagesColor">
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Color="LightGreen" Offset="0.0" />
+                    <GradientStop Color="#0078D7" Offset="1.0" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TextBlockMessagesColorDate">
+        <Setter Property="Foreground">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Color="LightGreen" Offset="0.0" />
+                    <GradientStop Color="#0078D7" Offset="1.0" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="0,0,100,0"/>
+
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TextBlockMessages">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TextBlockMessages2">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TextBlockMessagesUsuniete">
+        <Setter Property="Foreground" Value="Red"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TextBlockMessagesUsuniete2">
+        <Setter Property="Foreground" Value="Red"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TextBlockMessagesUsuniete3">
+        <Setter Property="Foreground" Value="Red"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TextBlockMessagesColorDateUsuniete">
+        <Setter Property="Foreground" Value="Red"/>
+        <Setter Property="Margin" Value="0,0,100,0"/>
+    </Style>
+
+    <Style x:Key="BorderMessage" TargetType="Border">
+        <Setter Property="BorderBrush" Value="White"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Margin" Value="0,10"/>
+    </Style>
+
+    <Style x:Key="BorderMessageUsuniete" TargetType="Border">
+        <Setter Property="BorderBrush" Value="Red"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Margin" Value="0,10"/>
+    </Style>
+
+    <Style x:Key="BorderMaain" TargetType="Border">
+        <Setter Property="BorderBrush" Value="White"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Margin" Value="0,10"/>
+        <Setter Property="Padding" Value="20"/>
+        <Setter Property="Background" Value="#282a36"/>
+    </Style>
+
+
 
     <!--TextBoxMessage-->
     <Style TargetType="TextBox" x:Key="TextBoxMessage">
@@ -238,7 +335,9 @@
 
 
     <!--ExerciesView.xaml-->
-
+    <Style TargetType="Grid" x:Key="ExerciseGrid">
+        <Setter Property="Background" Value="#1e202b"/>
+    </Style>
     <!--SettingView.xaml-->
     <Style TargetType="Button" x:Key="SettingsButton">
         <Setter Property="Margin" Value="0,20,0,0"/>
@@ -415,7 +514,41 @@
 
     <Style TargetType="StackPanel" x:Key="ListContactStackPanel">
         <Setter Property="Background" Value="#282a36"/>
+        <Setter Property="Margin" Value="0,10,0,0"/>
     </Style>
+
+    <Style x:Key="ImageStyleListContact" TargetType="Image">
+        <Setter Property="Source" Value="/Views/icons/user.png"/>
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+
+    <Style x:Key="TextBlockListContract" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Margin" Value="0,5,0,0"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="ButtonListContract" TargetType="Button">
+        <Setter Property="Width" Value="50"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Margin" Value="5,0,0,0"/>
+    </Style>
+
+    <Style x:Key="TextBlockHeader" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="TextBoxListContactDodaj" TargetType="TextBox">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="0,0,0,10"/>
+    </Style>
+
+
+
 
 
 
