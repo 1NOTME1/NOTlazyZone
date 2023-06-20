@@ -8,12 +8,14 @@
              xmlns:resx="clr-namespace:NOTlazyZone.ViewResources"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200">
-    <d:UserControl.DataContext>
+    <!--<d:UserControl.DataContext>
         <vm:StatisticViewModel/>
-    </d:UserControl.DataContext>
+    </d:UserControl.DataContext>-->
+
     <UserControl.Resources>
         <ResourceDictionary Source="Styles.xaml"/>
     </UserControl.Resources>
+
     <ScrollViewer HorizontalScrollBarVisibility="Disabled">
         <Grid Style="{StaticResource StatisticGrid}" Height="850">
             <Grid.RowDefinitions>
@@ -228,7 +230,6 @@
                     <Label Content="Trening Wytrzymałościowy" Grid.Row="3" Grid.Column="0"/>
                     <CheckBox Grid.Row="3" Grid.Column="1" IsChecked="{Binding TreningX}"/>
                     <Label Content="Godziny treningu wytrzymałościowego" Grid.Row="3" Grid.Column="2" Margin="0 0 10 0"/>
-                    <!--TODO: dodaj margin wszedzie-->
                     <ComboBox Grid.Row="3" Grid.Column="3" SelectedItem="{Binding GodzinyTreninguX}">
                         <ComboBoxItem Content="7:00 - 8:00"/>
                         <ComboBoxItem Content="10:00 - 11:00"/>
