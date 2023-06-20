@@ -8,13 +8,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="850"
              Background="#F0F8FF">
+
     <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        <ResourceDictionary Source="Styles.xaml"/>
     </UserControl.Resources>
+
     <Grid Margin="15" Style="{StaticResource CalorieGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
