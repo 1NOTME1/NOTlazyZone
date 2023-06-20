@@ -7,12 +7,13 @@
              xmlns:local="clr-namespace:NOTlazyZone.Views"
              xmlns:resx="clr-namespace:NOTlazyZone.ViewResources"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1200">
+             d:DesignHeight="800" d:DesignWidth="1200"
+             >
     <UserControl.Resources>
         <ResourceDictionary Source="Styles.xaml"/>
     </UserControl.Resources>
 
-    <Grid Margin="10">
+    <Grid Style="{StaticResource ExerciseGrid}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
