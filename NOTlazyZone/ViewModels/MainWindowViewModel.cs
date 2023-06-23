@@ -18,14 +18,98 @@ namespace NOTlazyZone.ViewModels
     public class MainWindowViewModel : BaseViewModel
     {
         #region CommandsMenu
-        public ICommand TowarCommand
+        public ICommand MessageCommand
         {
             get
             {
-                return new BaseCommand(CreateMessage);
+                return new BaseCommand(_ => CreateMessage());
+
             }
         }
         #endregion
+
+        #region CommandsStatistic
+        public ICommand StatisticCommand
+        { 
+            get
+            {
+                return new BaseCommand(_ => ShowStatistic());
+
+            }
+        }
+        #endregion
+
+        #region CommandsExercise
+        public ICommand ExerciseCommand
+        {
+            get
+            {
+                return new BaseCommand(_ => ShowExercies());
+            }
+        }
+        #endregion
+
+        #region CommandsDiet
+        public ICommand DietCommand
+        {
+            get
+            {
+                return new BaseCommand(_ => ShowDiet());
+            }
+        }
+        #endregion
+
+        #region CommandsCalendar
+        public ICommand CalendarCommand
+        {
+            get
+            {
+                return new BaseCommand(_ => ShowCalendar());
+            }
+        }
+        #endregion
+
+        #region CommandsShowCaloriesCalculator
+        public ICommand CalculatorCalorieCommand
+        {
+            get
+            {
+                return new BaseCommand(_ => ShowCaloriesCalculator());
+            }
+        }
+        #endregion
+
+        #region CommandsContactList
+        public ICommand ContactListCommand
+        {
+            get
+            {
+                return new BaseCommand(_ => ShowContactList());
+            }
+        }
+        #endregion
+
+        #region CommandsShop
+        public ICommand ShopCommand
+        {
+            get
+            {
+                return new BaseCommand(_ => ShowShop());
+            }
+        }
+        #endregion
+
+        #region CommandsSettings
+        public ICommand SettingsCommand
+        {
+            get
+            {
+                return new BaseCommand(_ => ShowSettings());
+            }
+        }
+        #endregion
+
+
         #region Commands
         private ReadOnlyCollection<CommandViewModel> _Commands;
         public ReadOnlyCollection<CommandViewModel> Commands
@@ -43,20 +127,20 @@ namespace NOTlazyZone.ViewModels
         private List<CommandViewModel> CreateCommands()
         {
             return new List<CommandViewModel>
-            {
-                new CommandViewModel("Statystki",new BaseCommand(ShowStatistic)),
-                new CommandViewModel("Dodaj Ćwiczenia",new BaseCommand(ShowExercies)),
-                new CommandViewModel("Kreator Diety",new BaseCommand(ShowDiet)),
-                new CommandViewModel("Wiadomości / Poczta",new BaseCommand(CreateMessage)),
-                new CommandViewModel("Zaplanowane spotkania",new BaseCommand(ShowCalendar)),
-                new CommandViewModel("Kalendarz Treningowy",new BaseCommand(ShowCalendar)),
-                new CommandViewModel("Kalkulator Kalorii",new BaseCommand(ShowCaloriesCalculator)),
-                new CommandViewModel("Lista Kontaktów",new BaseCommand(ShowContactList)),
-                new CommandViewModel("Sklep",new BaseCommand(ShowShop)),
-                new CommandViewModel("Ustawienia",new BaseCommand(ShowSettings)),
-
-            };
+    {
+        new CommandViewModel("Statystyki", new BaseCommand(_ => ShowStatistic()), "icons/chart.png"),
+        new CommandViewModel("Dodaj Ćwiczenia", new BaseCommand(_ => ShowExercies()), "icons/barbell.png"),
+        new CommandViewModel("Kreator Diety", new BaseCommand(_ => ShowDiet()), "icons/diet.png"),
+        new CommandViewModel("Wiadomości / Poczta", new BaseCommand(_ => CreateMessage()), "icons/email.png"),
+        new CommandViewModel("Kalendarz Treningowy", new BaseCommand(_ => ShowCalendar()), "icons/calendar_1.png"),
+        new CommandViewModel("Kalkulator Kalorii", new BaseCommand(_ => ShowCaloriesCalculator()), "icons/kcal.png"),
+        new CommandViewModel("Lista Kontaktów", new BaseCommand(_ => ShowContactList()), "icons/contact_list.png"),
+        new CommandViewModel("Sklep", new BaseCommand(_ => ShowShop()), "icons/shopping_cart.png"),
+        new CommandViewModel("Ustawienia", new BaseCommand(_ => ShowSettings()), "icons/settings.png"),
+    };
         }
+
+
         #endregion
         #region Workspaces
         private ObservableCollection<WorkspaceViewModel> _Workspaces;
