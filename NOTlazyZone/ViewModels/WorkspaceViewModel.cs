@@ -21,7 +21,7 @@ namespace NOTlazyZone.ViewModel
             get
             {
                 if (_CloseCommand == null)
-                    _CloseCommand = new BaseCommand(OnRequestClose);//komenada...
+                    _CloseCommand = new BaseCommand(_ => OnRequestClose());//komenada...
                 return _CloseCommand;
             }
         }
