@@ -84,8 +84,6 @@
 
                 <Label Content="Szczegóły produktu" FontWeight="Bold" FontSize="24" />
 
-                <Image x:Name="productImage" Source="{Binding SelectedProduct.Image}" Height="200"/>
-
                 <TextBlock Text="Dodatkowe informacje" FontWeight="Bold" FontSize="22"/>
                 <TextBox x:Name="extraInfoBox" Text="Informacje dodatkowe tutaj..." IsReadOnly="True" TextWrapping="Wrap"/>
 
