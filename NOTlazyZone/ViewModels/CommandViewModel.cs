@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows;
 using System.Windows.Input;
 
 namespace NOTlazyZone.ViewModels
@@ -10,14 +6,17 @@ namespace NOTlazyZone.ViewModels
     public class CommandViewModel : BaseViewModel
     {
         #region Properties
-        public string  DisplayName { get; set; }
+        public string DisplayName { get; set; }
         public ICommand Command { get; set; }
+        public string Icon { get; set; }
         #endregion
-        #region Konstruktor
-        public CommandViewModel(string displayName,ICommand command)
+
+        #region Konstructor
+        public CommandViewModel(string displayName, ICommand command, string icon)
         {
-            DisplayName = displayName;  
+            DisplayName = displayName;
             Command = command;
+            Icon = icon;
         }
         #endregion
     }
