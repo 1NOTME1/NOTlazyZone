@@ -8,11 +8,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200">
     <UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Styles.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
+        <ResourceDictionary Source="Styles.xaml"/>
     </UserControl.Resources>
     <Grid>
         <TabControl>
@@ -65,13 +61,11 @@
                                 <ComboBoxItem Content="Chiński"/>
                                 <ComboBoxItem Content="Portugalski"/>
                             </ComboBox>
-
                             <Button Content="{x:Static resx:SettingResources.ZapiszProfil}" Style="{StaticResource SettingsButton}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-
 
             <TabItem Header="{x:Static resx:SettingResources.Trening}">
                 <Grid>
@@ -132,12 +126,11 @@
                             <RadioButton Content="Średniozaawansowany"/>
                             <RadioButton Content="Zaawansowany"/>
 
-                            <Button Content="{x:Static resx:SettingResources.zapiszUstawieniaTreningu}" Style="{StaticResource Button}"/>
+                            <Button Content="{x:Static resx:SettingResources.zapiszUstawieniaTreningu}" Style="{StaticResource SettingsButton}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
             </TabItem>
-
 
             <TabItem Header="{x:Static resx:SettingResources.Dieta}">
                 <Grid>
@@ -203,7 +196,7 @@
                             <Label Content="{x:Static resx:SettingResources.SpozycieWody}" Style="{StaticResource LabelSetting}"/>
                             <Slider Minimum="1" Maximum="3" TickFrequency="0.5"/>
 
-                            <Button Content="{x:Static resx:SettingResources.zapiszUstawieniaDiety}" Style="{StaticResource Button}" Margin="0,20,0,0"/>
+                            <Button Content="{x:Static resx:SettingResources.zapiszUstawieniaDiety}" Style="{StaticResource SettingsButton}" Margin="0,20,0,0"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
@@ -324,7 +317,7 @@
                             <Label Content="{x:Static resx:SettingResources.glosnoscPrzypomnien}" FontSize="22"/>
                             <Slider Minimum="0" Maximum="100" TickFrequency="10" />
 
-                            <Button Content="{x:Static resx:SettingResources.zapiszUstawieniaPowiadomien}" Margin="0,20,0,0" Style="{StaticResource Button}"/>
+                            <Button Content="{x:Static resx:SettingResources.zapiszUstawieniaPowiadomien}" Margin="0,20,0,0" Style="{StaticResource SettingsButton}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>

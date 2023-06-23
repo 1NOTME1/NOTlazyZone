@@ -51,7 +51,6 @@
                         <ComboBoxItem>Bezglutenowe</ComboBoxItem>
                     </ComboBox>
 
-
                     <Label HorizontalAlignment="Left" Content="Zapotrzebowanie kaloryczne" Grid.Row="2"/>
                     <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ZapotrzebowanieKaloryczne}"/>
 
@@ -72,7 +71,6 @@
                 </Grid>
             </GroupBox>
 
-
             <GroupBox Header="Dodatkowe informacje o diecie" Grid.Row="1" Grid.Column="0">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -91,33 +89,29 @@
                     </Grid.ColumnDefinitions>
 
                     <Label HorizontalAlignment="Left" Content="Typ posiłków" Grid.Row="0" Grid.Column="0"/>
-                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding TypPosilkow}"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" />
 
                     <Label HorizontalAlignment="Left" Content="Wykluczone składniki" Grid.Row="1" Grid.Column="0"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding WykluczoneSkladniki}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1"/>
 
                     <Label HorizontalAlignment="Left" Content="Czas trwania diety" Grid.Row="2" Grid.Column="0"/>
-                    <DatePicker Grid.Row="2" Grid.Column="1" SelectedDate="{Binding CzasTrwaniaDiety}"/>
+                    <DatePicker Grid.Row="2" Grid.Column="1"/>
 
                     <Label HorizontalAlignment="Left" Content="Zalecane aktywności fizyczne" Grid.Row="3" Grid.Column="0"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding ZalecaneAktywnosciFizyczne}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
 
                     <Label HorizontalAlignment="Left" Content="Zalecane nawyki żywieniowe" Grid.Row="4" Grid.Column="0"/>
-                    <TextBox Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding ZalecaneNawykiZywieniowe}"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
 
                     <Label HorizontalAlignment="Left" Content="Ilość spożywanego cukru (w gramach)" Grid.Row="5" Grid.Column="0"/>
-                    <Slider Grid.Row="5" Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding IloscSpozywanegoCukru}"/>
+                    <Slider Grid.Row="5" Grid.Column="1" Minimum="0" Maximum="100"/>
 
                     <Label HorizontalAlignment="Left" Content="Wartość energetyczna diety (w kcal)" Grid.Row="6" Grid.Column="0"/>
-                    <Slider Grid.Row="6" Grid.Column="1" Minimum="1000" Maximum="5000" TickFrequency="100" Value="{Binding WartoscEnergetycznaDiety}"/>
+                    <Slider Grid.Row="6" Grid.Column="1" Minimum="1000" Maximum="5000" TickFrequency="100"/>
 
                     <CheckBox Content="Posiłki bezglutenowe dostępne" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"/>
                 </Grid>
             </GroupBox>
-
-
-
-
             <GroupBox Header="Statystyki" Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -147,42 +141,40 @@
                     </Grid.RowDefinitions>
 
                     <Label HorizontalAlignment="Left" Content="Typ diety" Grid.Row="0"/>
-                    <TextBox Grid.Row="1" Text="{Binding TypDiety}"/>
+                    <TextBox Grid.Row="1"/>
                     <Label HorizontalAlignment="Left" Content="Kaloryczność diety" Grid.Row="2"/>
-                    <TextBox Grid.Row="3" Text="{Binding KalorycznoscDiety}"/>
+                    <TextBox Grid.Row="3"/>
                     <Label HorizontalAlignment="Left" Content="Częstotliwość spożywania posiłków" Grid.Row="4"/>
-                    <TextBox Grid.Row="5" Text="{Binding CzestotliwoscPosilkow}"/>
+                    <TextBox Grid.Row="5"/>
                     <CheckBox Content="Posiłki dietetyczne dostępne" Grid.Row="6"/>
                     <Label HorizontalAlignment="Left" Content="Ilość wykupionych planów dietetycznych" Grid.Row="7"/>
-                    <TextBox Grid.Row="8" IsEnabled="False" Text="{Binding IloscWykupionychPlanowDietetycznych}"/>
+                    <TextBox Grid.Row="8" IsEnabled="False"/>
                     <Label HorizontalAlignment="Left" Content="Opis zmian w diecie" Grid.Row="9"/>
                     <Label HorizontalAlignment="Left" Content="Średni czas trwania diety (w tygodniach)" Grid.Row="10"/>
-                    <ComboBox Grid.Row="11" SelectedItem="{Binding SredniCzasTrwaniaDiety}">
+                    <ComboBox Grid.Row="11">
                         <ComboBoxItem>1 tydzień</ComboBoxItem>
                         <ComboBoxItem>2 tygodnie</ComboBoxItem>
                         <ComboBoxItem>3 tygodnie</ComboBoxItem>
                     </ComboBox>
 
                     <Label HorizontalAlignment="Left" Content="Zalecana ilość spożywanego białka (w gramach)" Grid.Row="12"/>
-                    <Slider Grid.Row="13" Minimum="0" Maximum="200" TickFrequency="10" Value="{Binding ZalecanaIloscBialka}"/>
+                    <Slider Grid.Row="13" Minimum="0" Maximum="200" TickFrequency="10"/>
 
                     <Label HorizontalAlignment="Left" Content="Ilość spożywanych posiłków dziennie" Grid.Row="14"/>
-                    <Slider Grid.Row="15" Minimum="1" Maximum="6" TickFrequency="1" Value="{Binding IloscPosilkowDziennie}"/>
+                    <Slider Grid.Row="15" Minimum="1" Maximum="6" TickFrequency="1"/>
 
                     <Label Content="Zakazane produkty spożywcze" Grid.Row="16"/>
                     <CheckBox Content="Krewetki" Grid.Row="17"/>
                     <CheckBox Content="Orzechy" Grid.Row="18"/>
 
                     <Label HorizontalAlignment="Left" Content="Czas trwania treningu (w minutach)" Grid.Row="19"/>
-                    <Slider Grid.Row="20" Minimum="10" Maximum="120" TickFrequency="10" Value="{Binding CzasTrwaniaTreningu}"/>
+                    <Slider Grid.Row="20" Minimum="10" Maximum="120" TickFrequency="10"/>
 
                     <Label HorizontalAlignment="Left" Content="Zalecana ilość wypijanej wody (w litrach)" Grid.Row="21"/>
-                    <Slider Grid.Row="22" Minimum="1" Maximum="3" TickFrequency="0.5" Value="{Binding ZalecanaIloscWody}"/>
+                    <Slider Grid.Row="22" Minimum="1" Maximum="3" TickFrequency="0.5"/>
                     <Button Content="Zapisz" Grid.Row="23" Style="{StaticResource CalorieButton}" />
                 </Grid>
             </GroupBox>
-
-
         </Grid>
     </ScrollViewer>
 </UserControl>

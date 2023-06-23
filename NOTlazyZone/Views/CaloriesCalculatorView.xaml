@@ -5,9 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:NOTlazyZone.Views"
              xmlns:viewmodels="clr-namespace:NOTlazyZone.ViewModels"
+             Background="#F0F8FF"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="850"
-             Background="#F0F8FF">
+             d:DesignHeight="500" d:DesignWidth="850" >
 
     <UserControl.Resources>
         <ResourceDictionary Source="Styles.xaml"/>
@@ -44,13 +44,13 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="Waga (kg):" Grid.Row="0" Grid.Column="0" Style="{StaticResource LabelCalorie}"/>
-            <TextBox Style="{StaticResource CalorieTextBox}" Grid.Row="0" Grid.Column="1" Margin="5"  />
+            <TextBox Style="{StaticResource CalorieTextBox}" Grid.Row="0" Grid.Column="1"/>
 
             <Label Content="Wzrost (cm):" Grid.Row="1" Grid.Column="0" Style="{StaticResource LabelCalorie}"/>
-            <TextBox Style="{StaticResource CalorieTextBox}" Grid.Row="1" Grid.Column="1" Margin="5"/>
+            <TextBox Style="{StaticResource CalorieTextBox}" Grid.Row="1" Grid.Column="1" />
 
             <Label Content="Wiek:" Grid.Row="2" Grid.Column="0" Style="{StaticResource LabelCalorie}"/>
-            <TextBox Style="{StaticResource CalorieTextBox}" Grid.Row="2" Grid.Column="1" Margin="5"/>
+            <TextBox Style="{StaticResource CalorieTextBox}" Grid.Row="2" Grid.Column="1"/>
 
             <Label Content="Płeć:" Grid.Row="3" Grid.Column="0" Style="{StaticResource LabelCalorie}"/>
             <ComboBox Grid.Row="3" Grid.Column="1" Margin="5">
@@ -84,7 +84,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Label Content="Twoje BMI" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource LabelCalorieText}"/>
+            <Label Content="Twoje BMI" Style="{StaticResource LabelCalorieText}"/>
 
             <ListBox Grid.Row="1" Margin="5" Style="{StaticResource CalorieListBox}">
                 <ListBoxItem Style="{StaticResource CalorieListBoxItem}">Niedowaga:  ≥18,5</ListBoxItem>
@@ -103,7 +103,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Label Content="Propozycje diet:" Grid.Row="0" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource LabelCalorieText}"/>
+            <Label Content="Propozycje diet:" Grid.Row="0" Style="{StaticResource LabelCalorieText}"/>
 
             <ListBox Grid.Row="1" Margin="5" Style="{StaticResource CalorieListBox}">
                 <ListBoxItem Style="{StaticResource CalorieListBoxItem}" IsSelected="True">Dieta paleo: 2000 kcal</ListBoxItem>
@@ -112,9 +112,7 @@
                 <ListBoxItem Style="{StaticResource CalorieListBoxItem}">Dieta niskowęglowodanowa: 2200 kcal</ListBoxItem>
                 <ListBoxItem Style="{StaticResource CalorieListBoxItem}">Dieta wysokobiałkowa: 2200 kcal</ListBoxItem>
             </ListBox>
-
         </Grid>
-
 
         <Button Content="Calculate Calorie Intake" Grid.Row="2" Grid.Column="0" Style="{StaticResource CalorieButton}"/>
 
