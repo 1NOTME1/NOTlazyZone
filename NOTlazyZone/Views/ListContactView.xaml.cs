@@ -18,7 +18,7 @@ namespace NOTlazyZone.Views
     /// <summary>
     /// Interaction logic for ListContactView.xaml
     /// </summary>
-    public partial class ListContactView : UserControl
+    public partial class ListContactView : WszystkieViewBase
     {
         public ListContactView()
         {

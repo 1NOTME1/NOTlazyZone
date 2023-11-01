@@ -18,7 +18,7 @@ namespace NOTlazyZone.Views
     /// <summary>
     /// Interaction logic for StatisticView.xaml
     /// </summary>
-    public partial class StatisticView : UserControl
+    public partial class StatisticView : WszystkieViewBase
     {
         public StatisticView()
         {

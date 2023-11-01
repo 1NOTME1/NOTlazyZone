@@ -18,7 +18,7 @@ namespace NOTlazyZone.Views
     /// <summary>
     /// Interaction logic for ShopView.xaml
     /// </summary>
-    public partial class ShopView : UserControl
+    public partial class ShopView : WszystkieViewBase
     {
         public ShopView()
         {

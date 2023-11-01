@@ -1,17 +1,30 @@
-﻿using NOTlazyZone.ViewModel;
+﻿using NOTlazyZone.Models.Entities;
+using NOTlazyZone.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace NOTlazyZone.ViewModels
 {
-    class ListContactViewModel : WorkspaceViewModel
+    class ListContactViewModel : WszystkieViewModel<Kontakty>
     {
-        public ListContactViewModel()
+        public ListContactViewModel() : base("StatystykiSilowni")
         {
-            base.DisplayName = "Lista Kontaktów";
         }
+
+        #region Helpers
+        public override void load()
+        {
+            List = new ObservableCollection<Kontakty>
+                (
+                    //z bazy danych pobieram wszystkie dane
+                    notlazyzoneEntities.Kontakties
+                );
+        }
+        #endregion
+
     }
 }
