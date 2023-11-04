@@ -1,5 +1,4 @@
 ﻿using NOTlazyZone.Helpers;
-using NOTlazyZone.Model;
 using NOTlazyZone.Models.Context;
 using NOTlazyZone.Models.Entities;
 using NOTlazyZone.ViewModel;

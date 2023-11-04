@@ -1,51 +1,59 @@
 ﻿<local:WszystkieViewBase x:Class="NOTlazyZone.Views.ShopView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:NOTlazyZone.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="800">
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+         xmlns:local="clr-namespace:NOTlazyZone.Views"
+         mc:Ignorable="d" 
+         d:DesignHeight="800" d:DesignWidth="800">
 
     <UserControl.Resources>
         <ResourceDictionary Source="Styles.xaml"/>
     </UserControl.Resources>
 
-    <Grid Height="800">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*" />
-            <ColumnDefinition Width="3*" />
-        </Grid.ColumnDefinitions>
+    <TabControl>
+        <TabItem Header="Zakładka 1">
+            <Grid Height="800">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
 
-        <!-- Lista wszystkich zamówień -->
-        <StackPanel Grid.Column="0" Margin="10">
-            <TextBlock Text="Wszystkie zamówienia" FontWeight="Bold" Margin="5"/>
-            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id Zamówienia" Binding="{Binding ZaId}"/>
-                    <DataGridTextColumn Header="Id Użytkownika" Binding="{Binding ZaUsId}"/>
-                    <DataGridTextColumn Header="Id Produktu" Binding="{Binding ZaPrId}"/>
-                    <DataGridTextColumn Header="Ilość zamówień" Binding="{Binding ZaIlosc}"/>
-                    <DataGridTextColumn Header="Data złożenia zamówienia" Binding="{Binding ZaDataZamowienia}"/>
-                </DataGrid.Columns>
-            </DataGrid>
+                <!-- Lista wszystkich zamówień -->
+                <StackPanel Grid.Column="0" Margin="10">
+                    <TextBlock Text="Wszystkie zamówienia" FontWeight="Bold" Margin="5"/>
+                    <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id Zamówienia" Binding="{Binding ZaId}"/>
+                            <DataGridTextColumn Header="Id Użytkownika" Binding="{Binding ZaUsId}"/>
+                            <DataGridTextColumn Header="Id Produktu" Binding="{Binding ZaPrId}"/>
+                            <DataGridTextColumn Header="Ilość zamówień" Binding="{Binding ZaIlosc}"/>
+                            <DataGridTextColumn Header="Data złożenia zamówienia" Binding="{Binding ZaDataZamowienia}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
 
 
-        </StackPanel>
+                </StackPanel>
 
-        <!-- Szczegóły wybranego zamówienia -->
-        <StackPanel Grid.Column="1" Margin="10">
-            <TextBlock Text="Szczegóły zamówienia" FontWeight="Bold" Margin="5"/>
-            <DataGrid Name="OrderDetailsDataGrid" AutoGenerateColumns="True" Margin="5">
-                <!-- Będzie zbindowany do bazy danych -->
-            </DataGrid>
+                <!-- Szczegóły wybranego zamówienia -->
+                <StackPanel Grid.Column="1" Margin="10">
+                    <TextBlock Text="Szczegóły zamówienia" FontWeight="Bold" Margin="5"/>
+                    <DataGrid Name="OrderDetailsDataGrid" AutoGenerateColumns="True" Margin="5">
+                        <!-- Będzie zbindowany do bazy danych -->
+                    </DataGrid>
 
-            <TextBlock Text="Dodatkowe informacje" FontWeight="Bold" Margin="5"/>
-            <TextBox Name="AdditionalInfo" IsReadOnly="True" Margin="5"/>
+                    <TextBlock Text="Dodatkowe informacje" FontWeight="Bold" Margin="5"/>
+                    <TextBox Name="AdditionalInfo" IsReadOnly="True" Margin="5"/>
 
-            <TextBlock Text="Operacje" FontWeight="Bold" Margin="5"/>
-            <Button Content="Zatwierdź zamówienie" Margin="5" Style="{StaticResource CalorieButton}" />
-            <Button Content="Anuluj zamówienie" Margin="5" Style="{StaticResource CalorieButton}" />
-        </StackPanel>
-    </Grid>
+                    <TextBlock Text="Operacje" FontWeight="Bold" Margin="5"/>
+                    <Button Content="Zatwierdź zamówienie" Margin="5" Style="{StaticResource CalorieButton}" />
+                    <Button Content="Anuluj zamówienie" Margin="5" Style="{StaticResource CalorieButton}" />
+                </StackPanel>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Zakładka 2">
+            <local:AddShopView />
+        </TabItem>
+    </TabControl>
+
 </local:WszystkieViewBase>

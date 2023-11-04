@@ -11,6 +11,10 @@
         <vw:StatisticView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:AddShopViewModel}">
+        <vw:AddShopView/>
+    </DataTemplate>
+
     <DataTemplate DataType="{x:Type vm:TrainingPlanViewModel}">
         <vw:TrainingPlanView/>
     </DataTemplate>
