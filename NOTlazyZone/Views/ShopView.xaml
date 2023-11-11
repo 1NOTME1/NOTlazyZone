@@ -24,11 +24,11 @@
                     <TextBlock Text="Wszystkie zamówienia" FontWeight="Bold" Margin="5"/>
                     <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Id Zamówienia" Binding="{Binding ZaId}"/>
-                            <DataGridTextColumn Header="Id Użytkownika" Binding="{Binding ZaUsId}"/>
-                            <DataGridTextColumn Header="Id Produktu" Binding="{Binding ZaPrId}"/>
-                            <DataGridTextColumn Header="Ilość zamówień" Binding="{Binding ZaIlosc}"/>
-                            <DataGridTextColumn Header="Data złożenia zamówienia" Binding="{Binding ZaDataZamowienia}"/>
+                            <DataGridTextColumn Header="Id Zamówienia" Binding="{Binding IdZamowienia}"/>
+                            <DataGridTextColumn Header="Nazwa Użytkownika" Binding="{Binding nazwaUzytkownika}"/>
+                            <DataGridTextColumn Header="Nazwa Produktu" Binding="{Binding nazwaProduktu}"/>
+                            <DataGridTextColumn Header="Cena produtu" Binding="{Binding cenaProduktu}"/>
+                            <DataGridTextColumn Header="Data złożenia zamówienia" Binding="{Binding dataZamowienia}"/>
                         </DataGrid.Columns>
                     </DataGrid>
 

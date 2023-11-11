@@ -240,23 +240,7 @@
         </TabItem>
 
         <TabItem Header="Dodaj kontakt">
-            <StackPanel Margin="10" Style="{StaticResource ListContactStackPanel}">
-                <Label Content="Imię:"/>
-                <TextBox Style="{StaticResource TextBoxListContactDodaj}"/>
-
-                <Label Content="Nazwisko:"/>
-                <TextBox Style="{StaticResource TextBoxListContactDodaj}"/>
-
-                <Label Content="Specjalizacja:"/>
-                <TextBox Style="{StaticResource TextBoxListContactDodaj}"/>
-
-                <Label Content="Doświadczenie zawodowe:"/>
-                <TextBox Style="{StaticResource TextBoxListContactDodaj}"/>
-
-                <Label Content="Telefon:"/>
-                <TextBox Style="{StaticResource TextBoxListContactDodaj}"/>
-                <Button Content="Dodaj" Style="{StaticResource ListContactButton}"/>
-            </StackPanel>
+            <local:AddContactView />
         </TabItem>
     </TabControl>
 </local:WszystkieViewBase>

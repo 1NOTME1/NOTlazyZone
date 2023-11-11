@@ -7,6 +7,10 @@
         <vw:MessagesView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:AddListContactViewModel}">
+        <vw:AddContactView/>
+    </DataTemplate>
+
     <DataTemplate DataType="{x:Type vm:StatisticViewModel}">
         <vw:StatisticView/>
     </DataTemplate>

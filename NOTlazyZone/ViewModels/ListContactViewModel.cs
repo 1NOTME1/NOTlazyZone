@@ -9,22 +9,30 @@ using System.Threading.Tasks;
 
 namespace NOTlazyZone.ViewModels
 {
-    class ListContactViewModel : WszystkieViewModel<Kontakty>
+    class ListContactViewModel : WorkspaceViewModel
     {
-        public ListContactViewModel() : base("StatystykiSilowni")
+        public ListContactViewModel()
         {
+            base.DisplayName = "Kontakty";
         }
-
-        #region Helpers
-        public override void load()
-        {
-            List = new ObservableCollection<Kontakty>
-                (
-                    //z bazy danych pobieram wszystkie dane
-                    notlazyzoneEntities.Kontakties
-                );
-        }
-        #endregion
-
     }
+
+    //class ListContactViewModel : WszystkieViewModel<Kontakty>
+    //{
+    //    public ListContactViewModel() : base("Kontakty")
+    //    {
+    //    }
+
+    //    #region Helpers
+    //    public override void load()
+    //    {
+    //        List = new ObservableCollection<Kontakty>
+    //            (
+    //                //z bazy danych pobieram wszystkie dane
+    //                notlazyzoneEntities.Kontakties
+    //            );
+    //    }
+    //    #endregion
+
+    //}
 }
