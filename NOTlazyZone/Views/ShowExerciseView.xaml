@@ -1,0 +1,79 @@
+﻿<local:JedenViewBase x:Class="NOTlazyZone.Views.ShowExerciseView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NOTlazyZone.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Height="800">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Lista wszystkich zamówień -->
+        <StackPanel Grid.Column="0" Margin="10">
+            <TextBlock Text="Lista Cwiczen" FontWeight="Bold" Margin="5"/>
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Cwiczenia}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id Produktu" Binding="{Binding CwNazwa}"/>
+                    <DataGridTextColumn Header="Nazwa Produktu" Binding="{Binding CwSeria}"/>
+                    <DataGridTextColumn Header="Cena Produktu" Binding="{Binding CwPowtorzenie}"/>
+                    <DataGridTextColumn Header="Cena Produktu" Binding="{Binding CwCiezar}"/>
+                    <DataGridTextColumn Header="Cena Produktu" Binding="{Binding CwPrzerwa}"/>
+                    <DataGridTextColumn Header="Cena Produktu" Binding="{Binding CwCardio}"/>
+                    <DataGridTextColumn Header="Cena Produktu" Binding="{Binding CwTrudnosc}"/>
+                    <DataGridTextColumn Header="Cena Produktu" Binding="{Binding CwOpis}"/>
+                    <!-- więcej kolumn -->
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+
+        </StackPanel>
+
+        <!-- Szczegóły wybranego zamówienia -->
+        <!-- Szczegóły wybranego zamówienia -->
+        <StackPanel Grid.Column="1" Margin="10">
+            <TextBlock Text="Szczegóły zamówienia" FontWeight="Bold" Margin="5"/>
+            <DataGrid  AutoGenerateColumns="True" Margin="5">
+                <!-- Będzie zbindowany do bazy danych -->
+            </DataGrid>
+
+            <TextBlock Text="Dodatkowe informacje" FontWeight="Bold" Margin="5"/>
+            <TextBox  IsReadOnly="True" Margin="5"/>
+
+            <TextBlock Text="Operacje" FontWeight="Bold" Margin="5"/>
+            <Button Content="Zatwierdź zamówienie" Margin="5"  />
+            <Button Content="Anuluj zamówienie" Margin="5"  />
+
+            <!-- Sekcja do dodawania produktów -->
+            <TextBlock Text="Dodaj produkt" FontWeight="Bold" Margin="5"/>
+            <Grid Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Label Content="Id Produktu:" Grid.Row="0" Grid.Column="0"/>
+                <!--<TextBox x:Name="IdProduktuTextBox" Grid.Row="0" Grid.Column="1" Text="{Binding Path=IdProduktu, UpdateSourceTrigger=PropertyChanged}"/>-->
+
+                <Label Content="Nazwa Produktu:" Grid.Row="1" Grid.Column="0"/>
+                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Path=PrNazwa, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
+                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=PrCena, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+            <Button Content="Dodaj produkt"  Margin="5" />
+
+        </StackPanel>
+
+    </Grid>
+</local:JedenViewBase>

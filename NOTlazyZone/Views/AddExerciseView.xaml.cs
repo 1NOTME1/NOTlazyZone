@@ -1,5 +1,4 @@
-﻿using NOTlazyZone.Models.Entities;
-using NOTlazyZone.ViewModels;
+﻿using NOTlazyZone.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,11 +17,11 @@ using System.Windows.Shapes;
 namespace NOTlazyZone.Views
 {
     /// <summary>
-    /// Interaction logic for ExerciseView.xaml
+    /// Interaction logic for AddExerciseView.xaml
     /// </summary>
-    public partial class ExerciseView : WszystkieViewBase
+    public partial class AddExerciseView : JedenViewBase
     {
-        public ExerciseView()
+        public AddExerciseView()
         {
             InitializeComponent();
         }

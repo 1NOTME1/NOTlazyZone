@@ -18,7 +18,7 @@ namespace NOTlazyZone.Views
     /// <summary>
     /// Interaction logic for TrainingPlanView.xaml
     /// </summary>
-    public partial class TrainingPlanView : UserControl
+    public partial class TrainingPlanView : WszystkieViewBase
     {
         public TrainingPlanView()
         {

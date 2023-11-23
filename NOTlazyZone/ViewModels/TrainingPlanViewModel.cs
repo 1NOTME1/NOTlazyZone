@@ -1,35 +1,49 @@
-﻿using NOTlazyZone.ViewModel;
-
+﻿using NOTlazyZone.Models.Context;
+using NOTlazyZone.Models.EntitiesForView;
+using NOTlazyZone.ViewModel;
+using NOTlazyZone.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace NOTlazyZone.ViewModels
 {
-    public class TrainingPlanViewModel : WorkspaceViewModel
+    class TrainingPlanViewModel : WszystkieViewModel<CwiczeniaForView>
     {
-        private DateTime _selectedDate;
-
-        public DateTime SelectedDate
+        public TrainingPlanViewModel() : base("PlanTreningowy")
         {
-            get { return _selectedDate; }
-            set
-            {
-                if (_selectedDate != value)
-                {
-                    _selectedDate = value;
-                    OnPropertyChanged(() => SelectedDate);
-                }
-            }
+            load();
         }
 
-        public TrainingPlanViewModel()
+        #region Helpers
+
+        public override void load()
         {
-            base.DisplayName = "Plan treningowy";
-            SelectedDate = DateTime.Now;
+            List = new ObservableCollection<CwiczeniaForView>
+                (
+                    //dla kazdego zamowienia z bazy zamienia
+                    from Cwiczenium in notlazyzoneEntities.Cwiczenia
+                        //tworze nowa zamowieniaforview
+                    select new CwiczeniaForView
+                    {
+                        IdPlanu = Cwiczenium.CwPtId,
+                        IdCwiczenia = Cwiczenium.CwId,
+                        nazwaCwiczenia = Cwiczenium.CwNazwa,
+                        seriaCwiczenia = Cwiczenium.CwSeria,
+                        ciezarCwiczenia = Cwiczenium.CwCiezar,
+                        przerwaCwiczenia = Cwiczenium.CwPrzerwa,
+                        trudnoscCwiczenia = Cwiczenium.CwTrudnosc,
+                        nazwaUzytkownika = Cwiczenium.CwUs.UsImie + " "
+                        + Cwiczenium.CwUs.UsNazwisko
+
+                    }
+                );
         }
+        #endregion
     }
 }

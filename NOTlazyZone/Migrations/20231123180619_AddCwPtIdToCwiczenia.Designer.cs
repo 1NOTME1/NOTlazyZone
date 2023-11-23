@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NOTlazyZone.Models.Context;
 
@@ -11,9 +12,11 @@ using NOTlazyZone.Models.Context;
 namespace NOTlazyZone.Migrations
 {
     [DbContext(typeof(NOTlazyZoneEntities))]
-    partial class NOTlazyZoneEntitiesModelSnapshot : ModelSnapshot
+    [Migration("20231123180619_AddCwPtIdToCwiczenia")]
+    partial class AddCwPtIdToCwiczenia
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

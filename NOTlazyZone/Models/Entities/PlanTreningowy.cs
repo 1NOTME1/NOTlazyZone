@@ -32,4 +32,8 @@ public partial class PlanTreningowy
     [ForeignKey("PtUsId")]
     [InverseProperty("PlanTreningowies")]
     public virtual Uzytkownicy? PtUs { get; set; }
+
+    [InverseProperty("CwPt")]
+    public virtual ICollection<Cwiczenium> Cwiczenia { get; set; } = new List<Cwiczenium>();
+
 }

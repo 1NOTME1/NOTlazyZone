@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
 using NOTlazyZone.ViewModel;
+using NOTlazyZone.Views;
 
 namespace NOTlazyZone.ViewModels
 {
@@ -205,7 +206,6 @@ namespace NOTlazyZone.ViewModels
             }
             SetActiveWorkspace(workspace);
         }
-
         private void ShowExercies()
         {
             ExerciseViewModel workspace = Workspaces.FirstOrDefault(vm => vm is ExerciseViewModel) as ExerciseViewModel;

@@ -44,6 +44,14 @@ public partial class Cwiczenium
     [Column("cw_cardio")]
     public bool? CwCardio { get; set; }
 
+    [Column("cw_pt_id")]
+    public int? CwPtId { get; set; }
+
+    [ForeignKey("CwPtId")]
+    [InverseProperty("Cwiczenia")]
+    public virtual PlanTreningowy? CwPt { get; set; }
+
+
     [ForeignKey("CwCwtId")]
     [InverseProperty("Cwiczenia")]
     public virtual CwiczeniaTyp? CwCwt { get; set; }
