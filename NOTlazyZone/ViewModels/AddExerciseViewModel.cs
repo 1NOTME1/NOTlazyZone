@@ -32,7 +32,7 @@ namespace NOTlazyZone.ViewModels
         //dla kazdego elementu na interfejsie ktory bedzie dodawany tworzymy wlasciwosc
 
 
-        public String? cwNazwa
+        public String? CwNazwa
         {
             get
             {
@@ -43,12 +43,12 @@ namespace NOTlazyZone.ViewModels
                 if (item.CwNazwa != value)
                 {
                     item.CwNazwa = value;
-                    OnPropertyChanged(() => cwNazwa);
+                    OnPropertyChanged(() => CwNazwa);
                 }
             }
         }
 
-        public int? cwSeria
+        public int? CwSeria
         {
             get
             {
@@ -59,7 +59,7 @@ namespace NOTlazyZone.ViewModels
                 if (item.CwSeria != value)
                 {
                     item.CwSeria = value;
-                    OnPropertyChanged(() => cwSeria);
+                    OnPropertyChanged(() => CwSeria);
                 }
             }
         }

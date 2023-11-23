@@ -46,7 +46,7 @@
                     </Grid.ColumnDefinitions>
 
                     <Label Content="Ćwiczenie:" Grid.Row="0" Grid.Column="0"/>
-                    <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding Path=cwNazwa, UpdateSourceTrigger=PropertyChanged}"  Margin="5"/>
+                    <TextBox  Grid.Row="0" Grid.Column="1" Text="{Binding Path=CwNazwa, UpdateSourceTrigger=PropertyChanged}"  Margin="5"/>
                     <!--<ComboBox Grid.Row="0" Grid.Column="1" Margin="5">
                         <ComboBoxItem Content="Wybierz" IsSelected="True"/>
                         <ComboBoxItem Content="Przysiady (Squat)" />
@@ -62,7 +62,7 @@
                     </ComboBox>-->
 
                     <Label Content="Serii:" Grid.Row="1" Grid.Column="0"/>
-                    <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Path=cwSeria, UpdateSourceTrigger=PropertyChanged}"  Margin="5"/>
+                    <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Path=CwSeria, UpdateSourceTrigger=PropertyChanged}"  Margin="5"/>
 
                     <Label Content="Powtórzenia:" Grid.Row="2" Grid.Column="0"/>
                     <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=CwPowtorzenie, UpdateSourceTrigger=PropertyChanged}"  Margin="5"/>
