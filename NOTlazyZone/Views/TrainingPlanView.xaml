@@ -26,7 +26,20 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <UniformGrid Grid.Column="0" Columns="7" Background="#1e202b">
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Numer Planu" Binding="{Binding IdPlanu}"/>
+                    <DataGridTextColumn Header="Numer Ćwiczenia" Binding="{Binding IdCwiczenia}"/>
+                    <DataGridTextColumn Header="Nazwa Ćwiczenia" Binding="{Binding nazwaCwiczenia}"/>
+                    <DataGridTextColumn Header="Seria" Binding="{Binding seriaCwiczenia}"/>
+                    <DataGridTextColumn Header="Ciężar (kg.)" Binding="{Binding ciezarCwiczenia}"/>
+                    <DataGridTextColumn Header="Przerwa pomiędzy serią (sek.) " Binding="{Binding przerwaCwiczenia}"/>
+                    <DataGridTextColumn Header="Trudność Ćwiczenia" Binding="{Binding trudnoscCwiczenia}"/>
+                    <DataGridTextColumn Header="Podopieczny" Binding="{Binding nazwaUzytkownika}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <!--<UniformGrid Grid.Column="0" Columns="7" Background="#1e202b">
                 <TextBlock Text="Sun" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
                 <TextBlock Text="Mon" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
                 <TextBlock Text="Tue" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource TextBlockTrainingPlan}"/>
@@ -66,9 +79,9 @@
                 <Button Content="29" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanSilowy}"/>
                 <Button Content="30" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanCardio}"/>
                 <Button Content="31" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource ButtonTrainingPlanFunkcjonalny}"/>
-            </UniformGrid>
+            </UniformGrid>-->
 
-            <ListBox Grid.Column="2">
+            <!--<ListBox Grid.Column="2">
                 <ListBoxItem>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Trening siłowy " Style="{StaticResource TextBlockTreningSilowy}"/>
@@ -103,14 +116,14 @@
                         <CheckBox Content="Done" Style="{StaticResource CheckboxTraining}" />
                     </StackPanel>
                 </ListBoxItem>
-            </ListBox>
+            </ListBox>-->
 
         </Grid>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" Background="#1e202b">
+        <!--<StackPanel Grid.Row="2" Orientation="Horizontal" Background="#1e202b">
             <Button Content="Save"  Margin="5" Style="{StaticResource Button}"/>
             <Button Content="Cancel"  Margin="5" Style="{StaticResource Button}"/>
             <DatePicker SelectedDate="{Binding SelectedDate}" Margin="5"/>
-        </StackPanel>
+        </StackPanel>-->
     </Grid>
 </local:WszystkieViewBase>

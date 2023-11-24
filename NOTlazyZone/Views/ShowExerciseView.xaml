@@ -12,20 +12,18 @@
             <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
 
-        <!-- Lista wszystkich zamówień -->
         <StackPanel Grid.Column="0" Margin="10">
             <TextBlock Text="Lista Cwiczen" FontWeight="Bold" Margin="5"/>
             <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Cwiczenia}">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Id Produktu" Binding="{Binding CwNazwa}"/>
-                    <DataGridTextColumn Header="Nazwa Produktu" Binding="{Binding CwSeria}"/>
-                    <DataGridTextColumn Header="Cena Produktu" Binding="{Binding CwPowtorzenie}"/>
-                    <DataGridTextColumn Header="Cena Produktu" Binding="{Binding CwCiezar}"/>
-                    <DataGridTextColumn Header="Cena Produktu" Binding="{Binding CwPrzerwa}"/>
-                    <DataGridTextColumn Header="Cena Produktu" Binding="{Binding CwCardio}"/>
-                    <DataGridTextColumn Header="Cena Produktu" Binding="{Binding CwTrudnosc}"/>
-                    <DataGridTextColumn Header="Cena Produktu" Binding="{Binding CwOpis}"/>
-                    <!-- więcej kolumn -->
+                    <DataGridTextColumn Header="Nazwa Ćwiczenia" Binding="{Binding CwNazwa}"/>
+                    <DataGridTextColumn Header="Ilość serii na ćwiczenie" Binding="{Binding CwSeria}"/>
+                    <DataGridTextColumn Header="Ilość powtórzeń ćwiczenia" Binding="{Binding CwPowtorzenie}"/>
+                    <DataGridTextColumn Header="Ciężar (kg.)" Binding="{Binding CwCiezar}"/>
+                    <DataGridTextColumn Header="Przerwa w serii (sek.)" Binding="{Binding CwPrzerwa}"/>
+                    <DataGridTextColumn Header="Ćwiczenie Cardio" Binding="{Binding CwCardio}"/>
+                    <DataGridTextColumn Header="Trudność Ćwiczenia" Binding="{Binding CwTrudnosc}"/>
+                    <DataGridTextColumn Header="Opis Ćwiczenia" Binding="{Binding CwOpis}"/>
                 </DataGrid.Columns>
             </DataGrid>
 
@@ -33,13 +31,8 @@
 
         </StackPanel>
 
-        <!-- Szczegóły wybranego zamówienia -->
-        <!-- Szczegóły wybranego zamówienia -->
         <StackPanel Grid.Column="1" Margin="10">
-            <TextBlock Text="Szczegóły zamówienia" FontWeight="Bold" Margin="5"/>
-            <DataGrid  AutoGenerateColumns="True" Margin="5">
-                <!-- Będzie zbindowany do bazy danych -->
-            </DataGrid>
+            <TextBlock Text="Opis do planu treningowego" FontWeight="Bold" Margin="5"/>
 
             <TextBlock Text="Dodatkowe informacje" FontWeight="Bold" Margin="5"/>
             <TextBox  IsReadOnly="True" Margin="5"/>
@@ -48,8 +41,7 @@
             <Button Content="Zatwierdź zamówienie" Margin="5"  />
             <Button Content="Anuluj zamówienie" Margin="5"  />
 
-            <!-- Sekcja do dodawania produktów -->
-            <TextBlock Text="Dodaj produkt" FontWeight="Bold" Margin="5"/>
+            <TextBlock Text="DODAJ ĆWICZENIE DO PLANU TRENINGOWEGO" FontWeight="Bold" Margin="5" FontSize="23"/>
             <Grid Margin="5">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -60,18 +52,39 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Label Content="Id Produktu:" Grid.Row="0" Grid.Column="0"/>
-                <!--<TextBox x:Name="IdProduktuTextBox" Grid.Row="0" Grid.Column="1" Text="{Binding Path=IdProduktu, UpdateSourceTrigger=PropertyChanged}"/>-->
+                <Label Content="Numer Planu:" Grid.Row="0" Grid.Column="0"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=IdProduktu, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <Label Content="Nazwa Produktu:" Grid.Row="1" Grid.Column="0"/>
+                <Label Content="Numer Ćwiczenia:" Grid.Row="1" Grid.Column="0"/>
                 <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Path=PrNazwa, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
+                <Label Content="Nazwa Ćwiczenia:" Grid.Row="2" Grid.Column="0"/>
                 <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=PrCena, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Label Content="Seria:" Grid.Row="3" Grid.Column="0"/>
+                <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Path=PrCena, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Label Content="Ciężar (kg.):" Grid.Row="4" Grid.Column="0"/>
+                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Path=PrCena, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Label Content="Przerwa pomiędzy serią (sek.):" Grid.Row="5" Grid.Column="0"/>
+                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding Path=PrCena, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Label Content="Trudność Ćwiczenia:" Grid.Row="6" Grid.Column="0"/>
+                <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding Path=PrCena, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Label Content="Podopieczny:" Grid.Row="7" Grid.Column="0"/>
+                <TextBox  Grid.Row="7" Grid.Column="1" Text="{Binding Path=PrCena, UpdateSourceTrigger=PropertyChanged}"/>
+                
             </Grid>
-            <Button Content="Dodaj produkt"  Margin="5" />
+            <Button Content="DODJA DO PLANU TRENINGOWEGO"  Margin="5" />
 
         </StackPanel>
 
