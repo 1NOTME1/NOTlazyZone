@@ -15,11 +15,12 @@
         <TabItem Header="Zakładka 1">
             <Grid Height="800">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4*" />
-                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="117*" />
+                    <ColumnDefinition Width="337*"/>
+                    <ColumnDefinition Width="340*" />
                 </Grid.ColumnDefinitions>
 
-                <StackPanel Grid.Column="0" Margin="10">
+                <StackPanel Grid.Column="0" Margin="10,10,10,10" Grid.ColumnSpan="2">
                     <TextBlock Text="Wszystkie zamówienia" FontWeight="Bold" Margin="5"/>
                     <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
                         <DataGrid.Columns>
@@ -34,7 +35,7 @@
 
                 </StackPanel>
 
-                <StackPanel Grid.Column="1" Margin="10">
+                <StackPanel Grid.Column="2" Margin="10,10,10,10">
                     <TextBlock Text="Szczegóły zamówienia" FontWeight="Bold" Margin="5"/>
 
                     <TextBlock Text="Dodatkowe informacje" FontWeight="Bold" Margin="5"/>

@@ -9,19 +9,29 @@
     <Grid>
         <StackPanel Margin="10" >
             <Label Content="Imię:"/>
-            <TextBox/>
+            <TextBox Text="{Binding Path=UsImie, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Content="Nazwisko:"/>
-            <TextBox />
+            <TextBox Text="{Binding Path=UsNazwisko, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Content="Specjalizacja:"/>
-            <TextBox />
+            <TextBox Text="{Binding Path=UsPesel, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Content="Doświadczenie zawodowe:"/>
-            <TextBox />
+            <TextBox Text="{Binding Path=UsDataRozpoczeciaOd, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Content="Telefon:"/>
-            <TextBox />
+            <TextBox Text="{Binding Path=UsDataZakonczeniaDo, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label Content="Telefon:"/>
+            <TextBox Text="{Binding Path=UsOpis, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label Content="Telefon:"/>
+            <TextBox Text="{Binding Path=UsUwagi, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label Content="Telefon:"/>
+            <TextBox Text="{Binding Path=UsAktywny, UpdateSourceTrigger=PropertyChanged}"/>
+
             <Button Content="Dodaj" />
         </StackPanel>
     </Grid>

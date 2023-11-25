@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NOTlazyZone.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace NOTlazyZone.Views
     /// <summary>
     /// Interaction logic for MessagesView.xaml
     /// </summary>
-    public partial class MessagesView : UserControl
+    public partial class MessagesView : JedenViewBase
     {
         public MessagesView()
         {

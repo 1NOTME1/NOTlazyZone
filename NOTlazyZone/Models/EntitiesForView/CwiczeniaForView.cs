@@ -12,6 +12,7 @@ namespace NOTlazyZone.Models.EntitiesForView
         public int? IdPlanu { get; set; }
         public int IdCwiczenia { get; set; }
         public string? nazwaCwiczenia { get; set; }
+        public string? typCwiczenia { get; set; }
         public int? seriaCwiczenia { get; set; }
         //ponizsze pola beada zamist id produktu
         public decimal? ciezarCwiczenia { get; set; }

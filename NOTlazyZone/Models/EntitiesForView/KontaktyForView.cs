@@ -10,12 +10,16 @@ namespace NOTlazyZone.Models.EntitiesForView
     public class KontaktyForView
     {
         #region Dane
-        public int IdZamowienia { get; set; }
-        public DateTime? dataZamowienia { get; set; }
-        //ponizsze pola beada zamist id produktu
-        public string? nazwaProduktu { get; set; }
-        public decimal? cenaProduktu { get; set; }
+        public int IdKontaktu { get; set; }
+        public int? IdUzytkownika { get; set; }
         public string? nazwaUzytkownika { get; set; }
+        public DateTime? dataRozpoczecia { get; set; }
+        public DateTime? dataZakonczenia { get; set; }
+        public bool? czyUzytkownikAktywny { get; set; }
+        public int RolaUzytkownika { get; set; }
+        public string numerTelefonu { get; set; }
+        public string typUzytkownika { get; set; }
+
         #endregion
     }
 }

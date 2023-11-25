@@ -15,6 +15,7 @@ namespace NOTlazyZone.ViewModels
     //
     public class JedenViewModel<T> : WorkspaceViewModel
     {
+
         #region DB
         //cała BD
         protected NOTlazyZoneEntities notlazyzoneEntities;

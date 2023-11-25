@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="NOTlazyZone.Views.MessagesView"
+﻿<local:JedenViewBase x:Class="NOTlazyZone.Views.MessagesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -288,13 +288,13 @@
                         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                             <StackPanel>
                                 <Label Style="{StaticResource Label}" Content="Do:"/>
-                                <TextBox Style="{StaticResource TextBox}"/>
+                                <TextBox Style="{StaticResource TextBox}" Text="{Binding Path=WiDoOsoby, UpdateSourceTrigger=PropertyChanged}"/>
 
                                 <Label Style="{StaticResource Label}" Content="Temat:"/>
-                                <TextBox Style="{StaticResource TextBox}"/>
+                                <TextBox Style="{StaticResource TextBox}" Text="{Binding Path=WiTemat, UpdateSourceTrigger=PropertyChanged}"/>
 
                                 <Label Style="{StaticResource Label}" Content="Treść:"/>
-                                <TextBox Style="{StaticResource TextBoxMessage}" AcceptsReturn="True" TextWrapping="Wrap"/>
+                                <TextBox Style="{StaticResource TextBox}" Text="{Binding Path=WiZawartosc, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" TextWrapping="Wrap"/>
                             </StackPanel>
                         </ScrollViewer>
 
@@ -419,109 +419,7 @@
                 <TabItem Header="Wysłane">
                     <ScrollViewer>
                         <Border Style="{StaticResource BorderMaain}">
-                            <StackPanel>
-                                <Border Style="{StaticResource BorderMessage}">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                        </Grid.ColumnDefinitions>
-
-                                        <StackPanel Grid.Column="0">
-                                            <TextBlock Text="Odbiorca: Jan Kowalski" Style="{StaticResource TextBlockMessagesColor}"/>
-                                            <TextBlock Text="Temat: Projekt TUI" Style="{StaticResource TextBlockMessages}"/>
-                                            <TextBlock Text="Status: Bardzo ważny" Style="{StaticResource TextBlockMessages2}"/>
-                                            <TextBlock TextWrapping="Wrap" Text="Zawartość: Kod wysłany. Pozdrawiam" Style="{StaticResource TextBlockMessages2}"/>
-                                        </StackPanel>
-                                        <TextBlock Grid.Column="1" Text="Data: 24 czerwca, 2023 12:54"  Style="{StaticResource TextBlockMessagesColorDate}"/>
-                                    </Grid>
-                                </Border>
-
-                                <Border Style="{StaticResource BorderMessage}">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                        </Grid.ColumnDefinitions>
-
-                                        <StackPanel Grid.Column="0">
-                                            <TextBlock Text="Odbiorca: PI Wycieczka :)" Style="{StaticResource TextBlockMessagesColor}"/>
-                                            <TextBlock Style="{StaticResource TextBlockMessages}" Text="Temat: Wycieczka do Czarnogóry: kąpiele morskie, cudowne widoki, zakwaterowanie blisko plaży, przejazd przez 5 malowniczych krajów, 7 dni"/>
-                                            <TextBlock Text="Status: Najważniejszy :)" Style="{StaticResource TextBlockMessages2}"/>
-                                            <TextBlock TextWrapping="Wrap" Text="Zawartość: Dzień dobry, zgłaszam się na wycieczke" Style="{StaticResource TextBlockMessages2}"/>
-                                        </StackPanel>
-                                        <TextBlock Grid.Column="1" Text="Data: 15 czerwca, 2023 17:44"  Style="{StaticResource TextBlockMessagesColorDate}"/>
-                                    </Grid>
-                                </Border>
-
-                                <Border Style="{StaticResource BorderMessage}">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                        </Grid.ColumnDefinitions>
-
-                                        <StackPanel Grid.Column="0">
-                                            <TextBlock Text="Odbiorca: Joanna Kowalczyk" Style="{StaticResource TextBlockMessagesColor}"/>
-                                            <TextBlock Text="Temat: Zmiana terminu" Style="{StaticResource TextBlockMessages}"/>
-                                            <TextBlock Text="Status: Ważny" Style="{StaticResource TextBlockMessages2}"/>
-                                            <TextBlock TextWrapping="Wrap" Text="Zawartość: Dobrze, dziękuję za wiadomość." Style="{StaticResource TextBlockMessages2}"/>
-                                        </StackPanel>
-                                        <TextBlock Grid.Column="1" Text="Data: 14 czerwca, 2023 11:11" Style="{StaticResource TextBlockMessagesColorDate}"/>
-                                    </Grid>
-                                </Border>
-
-                                <Border Style="{StaticResource BorderMessage}">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                        </Grid.ColumnDefinitions>
-
-                                        <StackPanel Grid.Column="0">
-                                            <TextBlock Text="Odbiorca: Tomasz Nowakowski" Style="{StaticResource TextBlockMessagesColor}"/>
-                                            <TextBlock Text="Temat: Potwierdzenie spotkania" Style="{StaticResource TextBlockMessages}"/>
-                                            <TextBlock Text="Status: Normalny" Style="{StaticResource TextBlockMessages2}"/>
-                                            <TextBlock Text="Zawartość: Dziękuję, do zobaczneia" Style="{StaticResource TextBlockMessages2}"/>
-                                        </StackPanel>
-                                        <TextBlock Grid.Column="1" Text="Data: 11 czerwca, 2023 09:21" Style="{StaticResource TextBlockMessagesColorDate}"/>
-                                    </Grid>
-                                </Border>
-
-                                <Border Style="{StaticResource BorderMessage}">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                        </Grid.ColumnDefinitions>
-
-                                        <StackPanel Grid.Column="0">
-                                            <TextBlock Text="Odbiorca: Marek Łas" Style="{StaticResource TextBlockMessagesColor}"/>
-                                            <TextBlock Text="Temat: Spotkanie na lunch" Style="{StaticResource TextBlockMessages}"/>
-                                            <TextBlock Text="Status: Oczekujący" Style="{StaticResource TextBlockMessages2}"/>
-                                            <TextBlock TextWrapping="Wrap" Text="Zawartość: Potwierdzam obecność. Pozdrawiam, MK" Style="{StaticResource TextBlockMessages2}"/>
-                                        </StackPanel>
-                                        <TextBlock Grid.Column="1" Text="Data: 18 czerwca, 2023 11:15" Style="{StaticResource TextBlockMessagesColorDate}"/>
-                                    </Grid>
-                                </Border>
-
-                                <Border Style="{StaticResource BorderMessage}">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="Auto"/>
-                                        </Grid.ColumnDefinitions>
-
-                                        <StackPanel Grid.Column="0">
-                                            <TextBlock Text="Odbiorca: Anna Kowalska" Style="{StaticResource TextBlockMessagesColor}"/>
-                                            <TextBlock Text="Temat: Nowy projekt" Style="{StaticResource TextBlockMessages}"/>
-                                            <TextBlock Text="Status: Pilne" Style="{StaticResource TextBlockMessages2}"/>
-                                            <TextBlock TextWrapping="Wrap" Text="Zawartość: Tak, powinienem dać radę. Pozdarawiam MK"  Style="{StaticResource TextBlockMessages2}"/>
-                                        </StackPanel>
-                                        <TextBlock Grid.Column="1" Text="Data: 19 czerwca, 2023 09:45" Style="{StaticResource TextBlockMessagesColorDate}"/>
-                                    </Grid>
-                                </Border>
-                            </StackPanel>
+                            <local:ShowMessagesView />
                         </Border>
                     </ScrollViewer>
                 </TabItem>
@@ -574,4 +472,4 @@
             </TabControl>
         </Grid>
     </ScrollViewer>
-</UserControl>
+</local:JedenViewBase>

@@ -1,4 +1,5 @@
 ﻿using NOTlazyZone.Models.Context;
+using NOTlazyZone.Models.Entities;
 using NOTlazyZone.Models.EntitiesForView;
 using NOTlazyZone.ViewModel;
 using NOTlazyZone.ViewModels;
@@ -35,6 +36,7 @@ namespace NOTlazyZone.ViewModels
                         IdCwiczenia = Cwiczenium.CwId,
                         nazwaCwiczenia = Cwiczenium.CwNazwa,
                         seriaCwiczenia = Cwiczenium.CwSeria,
+                        typCwiczenia = Cwiczenium.CwCwt.CwtNazwa,
                         ciezarCwiczenia = Cwiczenium.CwCiezar,
                         przerwaCwiczenia = Cwiczenium.CwPrzerwa,
                         trudnoscCwiczenia = Cwiczenium.CwTrudnosc,

@@ -17,6 +17,12 @@ public partial class Wiadomosci
     [StringLength(255)]
     public string? WiZawartosc { get; set; }
 
+    [Column("wi_do_osoby")]
+    public string? WiDoOsoby { get; set; }
+
+    [Column("wi_temat")]
+    public string? WiTemat { get; set; }
+
     [Column("wi_data_otrzymania", TypeName = "datetime")]
     public DateTime? WiDataOtrzymania { get; set; }
 }

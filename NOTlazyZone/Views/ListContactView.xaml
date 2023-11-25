@@ -30,6 +30,8 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
@@ -41,20 +43,36 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
 
-                        <TextBox Grid.Column="0" Margin="10" Text="Szukaj po imieniu..."/>
-                        <Button Grid.Column="1" Margin="10" Content="Szukaj" Style="{StaticResource ListContactButton2}"/>
+                        <!--<TextBox Grid.Column="0" Margin="10" Text="Szukaj po imieniu..."/>-->
+                        <!--<Button Grid.Column="1" Margin="10" Content="Szukaj" Style="{StaticResource ListContactButton2}"/>-->
 
-                        <ComboBox Grid.Column="2" Margin="10" x:Name="SortByComboBox" Width="200">
+                        <!--<ComboBox Grid.Column="2" Margin="10" x:Name="SortByComboBox" Width="200">
                             <ComboBoxItem Content="Imie" IsSelected="True"/>
                             <ComboBoxItem Content="Nazwisko" IsSelected="True"/>
                             <ComboBoxItem Content="Specjalizacja"/>
                             <ComboBoxItem Content="Doświadczenie zawodowe"/>
                             <ComboBoxItem Content="Numer telefonu"/>
-                        </ComboBox>
-                        <Button Grid.Column="3" Content="Sortuj" Style="{StaticResource ListContactButton2}"/>
+                        </ComboBox>-->
+                        <!--<Button Grid.Column="3" Content="Sortuj" Style="{StaticResource ListContactButton2}"/>-->
                     </Grid>
+                    <StackPanel Grid.Column="0" Margin="10">
+                        <TextBlock Text="Wszystkie Kontakty" FontWeight="Bold" Margin="5"/>
+                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Liczba Kontaktu" Binding="{Binding IdKontaktu}"/>
+                                <DataGridTextColumn Header="Id Użytkownika" Binding="{Binding IdUzytkownika}"/>
+                                <DataGridTextColumn Header="Nazwa Użytkownika" Binding="{Binding nazwaUzytkownika}"/>
+                                <DataGridTextColumn Header="Data zapisania się na siłownie" Binding="{Binding dataRozpoczecia}"/>
+                                <DataGridTextColumn Header="Data zakończenia karnetu" Binding="{Binding dataZakonczenia}"/>
+                                <DataGridTextColumn Header="Czy Aktwyny" Binding="{Binding czyUzytkownikAktywny}"/>
+                                <DataGridTextColumn Header="Rola" Binding="{Binding typUzytkownika}"/>
+                                <DataGridTextColumn Header="Numer Użytkownika" Binding="{Binding numerTelefonu}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
 
-                    <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" Style="{StaticResource ListContactStackPanel}">
+
+                    </StackPanel>
+                    <!--<StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" Style="{StaticResource ListContactStackPanel}">
                         <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
                         <StackPanel Style="{StaticResource ListContactStackPanel}">
                             <TextBlock Text="Adam Nowak" Style="{StaticResource TextBlockHeader}"/>
@@ -66,9 +84,9 @@
                                 <Button Content="Usuń" Style="{StaticResource ListContactButton}"/>
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
+                    </StackPanel>-->
 
-                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1" Style="{StaticResource ListContactStackPanel}">
+                    <!--<StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1" Style="{StaticResource ListContactStackPanel}">
                         <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
                         <StackPanel Style="{StaticResource ListContactStackPanel}">
                             <TextBlock Text="Ewa Kowalska" Style="{StaticResource TextBlockHeader}"/>
@@ -80,9 +98,9 @@
                                 <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
+                    </StackPanel>-->
 
-                    <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="1" Style="{StaticResource ListContactStackPanel}">
+                    <!--<StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="1" Style="{StaticResource ListContactStackPanel}">
                         <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
                         <StackPanel Style="{StaticResource ListContactStackPanel}">
                             <TextBlock Text="Karolina Wiśniewska" Style="{StaticResource TextBlockHeader}"/>
@@ -94,9 +112,9 @@
                                 <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
+                    </StackPanel>-->
 
-                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Style="{StaticResource ListContactStackPanel}">
+                    <!--<StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Style="{StaticResource ListContactStackPanel}">
                         <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
                         <StackPanel Style="{StaticResource ListContactStackPanel}">
                             <TextBlock Text="Jan Kowalski" Style="{StaticResource TextBlockHeader}"/>
@@ -108,9 +126,9 @@
                                 <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
+                    </StackPanel>-->
 
-                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Style="{StaticResource ListContactStackPanel}">
+                    <!--<StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Style="{StaticResource ListContactStackPanel}">
                         <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
                         <StackPanel>
                             <TextBlock Text="Monika Nowak" Style="{StaticResource TextBlockHeader}"/>
@@ -122,9 +140,9 @@
                                 <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
+                    </StackPanel>-->
 
-                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Style="{StaticResource ListContactStackPanel}">
+                    <!--<StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Style="{StaticResource ListContactStackPanel}">
                         <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
                         <StackPanel>
                             <TextBlock Text="Aleksandra Kowalczyk" Style="{StaticResource TextBlockHeader}"/>
@@ -136,9 +154,9 @@
                                 <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
+                    </StackPanel>-->
 
-                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" Style="{StaticResource ListContactStackPanel}">
+                    <!--<StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" Style="{StaticResource ListContactStackPanel}">
                         <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
                         <StackPanel>
                             <TextBlock Text="Marek Wójcik" Style="{StaticResource TextBlockHeader}"/>
@@ -150,9 +168,9 @@
                                 <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
+                    </StackPanel>-->
 
-                    <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Style="{StaticResource ListContactStackPanel}">
+                    <!--<StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Style="{StaticResource ListContactStackPanel}">
                         <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
                         <StackPanel>
                             <TextBlock Text="Karol Kowalski" Style="{StaticResource TextBlockHeader}"/>
@@ -164,9 +182,9 @@
                                 <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
+                    </StackPanel>-->
 
-                    <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Style="{StaticResource ListContactStackPanel}">
+                    <!--<StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Style="{StaticResource ListContactStackPanel}">
                         <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
                         <StackPanel>
                             <TextBlock Text="Monika Kowalska" Style="{StaticResource TextBlockHeader}"/>
@@ -178,9 +196,9 @@
                                 <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
+                    </StackPanel>-->
 
-                    <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" Style="{StaticResource ListContactStackPanel}">
+                    <!--<StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" Style="{StaticResource ListContactStackPanel}">
                         <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
                         <StackPanel>
                             <TextBlock Text="Andrzej Nowak" Style="{StaticResource TextBlockHeader}"/>
@@ -192,49 +210,34 @@
                                 <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
+                    </StackPanel>-->
 
-                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="3" Style="{StaticResource ListContactStackPanel}">
-                        <StackPanel>
-                            <TextBlock Style="{StaticResource TextBlockHeader}">
-                                <Image Source="/Views/icons/settings.png" Style="{StaticResource ImageStyleListContact}" Width="30" Height="30" />Podręczne Ustawienia
-                            </TextBlock>
-                            <Border BorderBrush="white" BorderThickness="1" CornerRadius="4">
-                                <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <Button Content="Wyczyść" Style="{StaticResource ListContactButton}" Grid.Row="0" Grid.Column="0" Margin="5"/>
-                                    <Button Content="Opcja 2" Style="{StaticResource ListContactButton}" Grid.Row="0" Grid.Column="1" Margin="5"/>
-                                    <CheckBox Content="Motyw" Grid.Row="0" Grid.Column="2" Margin="5"/>
-                                    <ComboBox Grid.Row="0" Grid.Column="3" Margin="5">
-                                        <ComboBoxItem Content="Jasny" />
-                                        <ComboBoxItem Content="Ciemny" />
-                                        <ComboBoxItem Content="Systemowy" IsSelected="True" />
-                                    </ComboBox>
-                                    <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="5" Text="Blokuj numer:..." />
-                                    <CheckBox Content="Formatowanie imienia i nazwiska" Grid.Row="2" Grid.Column="0" Margin="5"/>
-                                    <Slider Grid.Row="2" Grid.Column="1" Margin="5" Minimum="0" Maximum="100" Value="50"/>
-                                    <Button Content="Zatwierdź" Grid.Row="2" Grid.Column="2" Margin="5" Style="{StaticResource ListContactButton}"/>
-                                    <DatePicker Grid.Row="2" Grid.Column="3" Margin="5"/>
-                                    <ListBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Margin="5">
-                                        <ListBoxItem Content="Najpierw imie" />
-                                        <ListBoxItem Content="Najpierw nazwisko" />
-                                        <ListBoxItem Content="Imie i naziwsko" />
-                                    </ListBox>
-                                </Grid>
-                            </Border>
-                        </StackPanel>
-                    </StackPanel>
+                    <!--<StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="3" Style="{StaticResource ListContactStackPanel}">
+
+                        <Label Content="Nazwa Produktu:" Grid.Row="1" Grid.Column="0"/>
+                        <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Path=UsImie, UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
+                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsNazwisko, UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
+                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsPesel, UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
+                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsDataRozpoczeciaOd, UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
+                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsDataZakonczeniaDo, UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
+                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsOpis, UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
+                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsUwagi, UpdateSourceTrigger=PropertyChanged}"/>
+
+                        <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
+                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsAktywny, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>-->
                 </Grid>
             </ScrollViewer>
         </TabItem>

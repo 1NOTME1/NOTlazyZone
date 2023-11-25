@@ -12,9 +12,9 @@ using System.Windows.Documents;
 
 namespace NOTlazyZone.ViewModels
 {
-    class ListContactViewModel : WszystkieViewModel<ZamowieniaForView>
+    class ListContactViewModel : WszystkieViewModel<KontaktyForView>
     {
-        public ListContactViewModel() : base("Sklep")
+        public ListContactViewModel() : base("Lista Kontaktow")
         {
             load();
         }
@@ -23,49 +23,31 @@ namespace NOTlazyZone.ViewModels
 
         public override void load()
         {
-            List = new ObservableCollection<ZamowieniaForView>
+            List = new ObservableCollection<KontaktyForView>
             (
             //dla kazdego zamowienia z bazy zamienia
-                    from Zamowienium in notlazyzoneEntities.Zamowienia
+                    from Kontakty in notlazyzoneEntities.Kontakties
                         //tworze nowa zamowieniaforview
-                    select new ZamowieniaForView
+                    select new KontaktyForView
                     {
-                        IdZamowienia = Zamowienium.ZaId,
-                        dataZamowienia = Zamowienium.ZaDataZamowienia,
-                        nazwaProduktu = Zamowienium.ZaPr.PrNazwa,
-                        cenaProduktu = Zamowienium.ZaPr.PrCena,
-                        nazwaUzytkownika = Zamowienium.ZaUs.UsImie + " "
-                        + Zamowienium.ZaUs.UsNazwisko
+                        IdKontaktu = Kontakty.KoId,
+                        IdUzytkownika = Kontakty.KoUsId,
+                        nazwaUzytkownika = Kontakty.KoUs.UsImie + " "
+                        + Kontakty.KoUs.UsNazwisko,
+                        dataRozpoczecia = Kontakty.KoUs.UsDataRozpoczeciaOd,
+                        dataZakonczenia = Kontakty.KoUs.UsDataRozpoczeciaOd,
+                        czyUzytkownikAktywny = Kontakty.KoUs.UsAktywny,
+                        numerTelefonu = Kontakty.KoUs.Telefons.Select(t => t.TnNumer).FirstOrDefault(),
+                        typUzytkownika = Kontakty.KoUs.RolaUzytkownikas.Select(r => r.RoRoleName).FirstOrDefault()
+
 
                     }
                 );
+
+
         }
+
         #endregion
     }
-    //class ListContactViewModel : WorkspaceViewModel
-    //{
-    //    public ListContactViewModel()
-    //    {
-    //        base.DisplayName = "Kontakty";
-    //    }
-    //}
-
-    //class ListContactViewModel : WszystkieViewModel<Kontakty>
-    //{
-    //    public ListContactViewModel() : base("Kontakty")
-    //    {
-    //    }
-
-    //    #region Helpers
-    //    public override void load()
-    //    {
-    //        List = new ObservableCollection<Kontakty>
-    //            (
-    //                //z bazy danych pobieram wszystkie dane
-    //                notlazyzoneEntities.Kontakties
-    //            );
-    //    }
-    //    #endregion
-
-    //}
+    
 }

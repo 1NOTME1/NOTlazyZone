@@ -31,6 +31,7 @@
                     <DataGridTextColumn Header="Numer Planu" Binding="{Binding IdPlanu}"/>
                     <DataGridTextColumn Header="Numer Ćwiczenia" Binding="{Binding IdCwiczenia}"/>
                     <DataGridTextColumn Header="Nazwa Ćwiczenia" Binding="{Binding nazwaCwiczenia}"/>
+                    <DataGridTextColumn Header="Typ Ćwiczenia" Binding="{Binding typCwiczenia}"/>
                     <DataGridTextColumn Header="Seria" Binding="{Binding seriaCwiczenia}"/>
                     <DataGridTextColumn Header="Ciężar (kg.)" Binding="{Binding ciezarCwiczenia}"/>
                     <DataGridTextColumn Header="Przerwa pomiędzy serią (sek.) " Binding="{Binding przerwaCwiczenia}"/>

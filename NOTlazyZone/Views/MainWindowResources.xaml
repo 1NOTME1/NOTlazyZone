@@ -47,6 +47,10 @@
         <vw:ShopView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:ShowMessagesViewModel}">
+        <vw:ShowMessagesView/>
+    </DataTemplate>
+
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">
             <Setter.Value>
