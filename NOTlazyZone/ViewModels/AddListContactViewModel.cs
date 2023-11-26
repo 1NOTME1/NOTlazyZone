@@ -9,155 +9,182 @@ using System.Threading.Tasks;
 
 namespace NOTlazyZone.ViewModels
 {
-    internal class AddListContactViewModel : JedenViewModel<Uzytkownicy>
+    internal class AddListContactViewModel : JedenViewModel<Kontakty>
     {
-        public ObservableCollection<Uzytkownicy> Uzytkonik { get; private set; } = new ObservableCollection<Uzytkownicy>();
+        public ObservableCollection<Kontakty> Kontakty { get; private set; } = new ObservableCollection<Kontakty>();
 
         public AddListContactViewModel() : base("Dodaj Cwiczenie")
         {
-            item = new Uzytkownicy();
-            LoadUzytkonik();
+            item = new Kontakty();
+            LoadKontakt();
         }
-        private void LoadUzytkonik()
+        private void LoadKontakt()
         {
-            var uzytkownicyFromDb = notlazyzoneEntities.Uzytkownicies.ToList();
-            foreach (var prod in uzytkownicyFromDb)
+            var kontaktyFromDb = notlazyzoneEntities.Kontakties.ToList();
+            foreach (var prod in kontaktyFromDb)
             {
-                Uzytkonik.Add(prod);
+                Kontakty.Add(prod);
             }
         }
 
         #region Dane
         //dla kazdego elementu na interfejsie ktory bedzie dodawany tworzymy wlasciwosc
 
-
-        public String? UsImie
+        public int? KoUsId
         {
             get
             {
-                return item.UsImie;
+                return item.KoUsId;
             }
             set
             {
-                if (item.UsImie != value)
+                if (item.KoUsId != value)
                 {
-                    item.UsImie = value;
-                    OnPropertyChanged(() => UsImie);
+                    item.KoUsId = value;
+                    OnPropertyChanged(() => KoUsId);
                 }
             }
         }
 
-        public String? UsNazwisko
+        public IQueryable<Uzytkownicy> KoUsComboBoxItems
         {
             get
             {
-                return item.UsNazwisko;
-            }
-            set
-            {
-                if (item.UsNazwisko != value)
-                {
-                    item.UsNazwisko = value;
-                    OnPropertyChanged(() => UsNazwisko);
-                }
+                return
+                    (
+                        from Uzytkownicy in notlazyzoneEntities.Uzytkownicies
+                        select Uzytkownicy
+                    ).ToList().AsQueryable();
             }
         }
 
-        public String? UsPesel
-        {
-            get
-            {
-                return item.UsPesel;
-            }
-            set
-            {
-                if (item.UsPesel != value)
-                {
-                    item.UsPesel = value;
-                    OnPropertyChanged(() => UsPesel);
-                }
-            }
-        }
+        //public String? UsImie
+        //{
+        //    get
+        //    {
+        //        return item.UsImie;
+        //    }
+        //    set
+        //    {
+        //        if (item.UsImie != value)
+        //        {
+        //            item.UsImie = value;
+        //            OnPropertyChanged(() => UsImie);
+        //        }
+        //    }
+        //}
 
-        public DateTime? UsDataRozpoczeciaOd
-        {
-            get
-            {
-                return item.UsDataRozpoczeciaOd;
-            }
-            set
-            {
-                if (item.UsDataRozpoczeciaOd != value)
-                {
-                    item.UsDataRozpoczeciaOd = value;
-                    OnPropertyChanged(() => UsDataRozpoczeciaOd);
-                }
-            }
-        }
+        //public String? UsNazwisko
+        //{
+        //    get
+        //    {
+        //        return item.UsNazwisko;
+        //    }
+        //    set
+        //    {
+        //        if (item.UsNazwisko != value)
+        //        {
+        //            item.UsNazwisko = value;
+        //            OnPropertyChanged(() => UsNazwisko);
+        //        }
+        //    }
+        //}
 
-        public DateTime? UsDataZakonczeniaDo
-        {
-            get
-            {
-                return item.UsDataZakonczeniaDo;
-            }
-            set
-            {
-                if (item.UsDataZakonczeniaDo != value)
-                {
-                    item.UsDataZakonczeniaDo = value;
-                    OnPropertyChanged(() => UsDataZakonczeniaDo);
-                }
-            }
-        }
+        //public String? UsPesel
+        //{
+        //    get
+        //    {
+        //        return item.UsPesel;
+        //    }
+        //    set
+        //    {
+        //        if (item.UsPesel != value)
+        //        {
+        //            item.UsPesel = value;
+        //            OnPropertyChanged(() => UsPesel);
+        //        }
+        //    }
+        //}
 
-        public string? UsOpis
-        {
-            get
-            {
-                return item.UsOpis;
-            }
-            set
-            {
-                if (item.UsOpis != value)
-                {
-                    item.UsOpis = value;
-                    OnPropertyChanged(() => UsOpis);
-                }
-            }
-        }
+        //public DateTime? UsDataRozpoczeciaOd
+        //{
+        //    get
+        //    {
+        //        return item.UsDataRozpoczeciaOd;
+        //    }
+        //    set
+        //    {
+        //        if (item.UsDataRozpoczeciaOd != value)
+        //        {
+        //            item.UsDataRozpoczeciaOd = value;
+        //            OnPropertyChanged(() => UsDataRozpoczeciaOd);
+        //        }
+        //    }
+        //}
 
-        public string? UsUwagi
-        {
-            get
-            {
-                return item.UsUwagi;
-            }
-            set
-            {
-                if (item.UsUwagi != value)
-                {
-                    item.UsUwagi = value;
-                    OnPropertyChanged(() => UsUwagi);
-                }
-            }
-        }
+        //public DateTime? UsDataZakonczeniaDo
+        //{
+        //    get
+        //    {
+        //        return item.UsDataZakonczeniaDo;
+        //    }
+        //    set
+        //    {
+        //        if (item.UsDataZakonczeniaDo != value)
+        //        {
+        //            item.UsDataZakonczeniaDo = value;
+        //            OnPropertyChanged(() => UsDataZakonczeniaDo);
+        //        }
+        //    }
+        //}
 
-        public bool? UsAktywny
-        {
-            get
-            {
-                return item.UsAktywny;
-            }
-            set
-            {
-                if (item.UsAktywny != value)
-                {
-                    item.UsAktywny = value;
-                    OnPropertyChanged(() => UsAktywny);
-                }
-            }
-        }
+        //public string? UsOpis
+        //{
+        //    get
+        //    {
+        //        return item.UsOpis;
+        //    }
+        //    set
+        //    {
+        //        if (item.UsOpis != value)
+        //        {
+        //            item.UsOpis = value;
+        //            OnPropertyChanged(() => UsOpis);
+        //        }
+        //    }
+        //}
+
+        //public string? UsUwagi
+        //{
+        //    get
+        //    {
+        //        return item.UsUwagi;
+        //    }
+        //    set
+        //    {
+        //        if (item.UsUwagi != value)
+        //        {
+        //            item.UsUwagi = value;
+        //            OnPropertyChanged(() => UsUwagi);
+        //        }
+        //    }
+        //}
+
+        //public bool? UsAktywny
+        //{
+        //    get
+        //    {
+        //        return item.UsAktywny;
+        //    }
+        //    set
+        //    {
+        //        if (item.UsAktywny != value)
+        //        {
+        //            item.UsAktywny = value;
+        //            OnPropertyChanged(() => UsAktywny);
+        //        }
+        //    }
+        //}
 
 
         #endregion
