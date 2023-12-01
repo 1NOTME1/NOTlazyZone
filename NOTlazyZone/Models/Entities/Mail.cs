@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace NOTlazyZone.Models.Entities;
 
+[Index("MaUsId", Name = "IX_Mail_ma_us_id")]
 public partial class Mail
 {
     [Key]

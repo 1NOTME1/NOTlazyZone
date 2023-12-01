@@ -11,7 +11,8 @@
     <UserControl.Resources>
         <ResourceDictionary Source="Styles.xaml"/>
     </UserControl.Resources>
-    <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+    <TabControl>
+        <TabItem Header="Kreator Diety">
         <Grid Style="{StaticResource StatisticGrid}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -176,5 +177,9 @@
                 </Grid>
             </GroupBox>
         </Grid>
-    </ScrollViewer>
+        </TabItem>
+        <TabItem Header="Zarządzaj Dietą">
+            <local:ShowDietView/>
+        </TabItem>
+    </TabControl>
 </UserControl>

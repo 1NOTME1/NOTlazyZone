@@ -13,14 +13,10 @@ public partial class RolaUzytkownika
     [Column("ro_id")]
     public int RoId { get; set; }
 
-    [Column("ro_us_id")]
-    public int? RoUsId { get; set; }
-
     [Column("ro_RoleName")]
     [StringLength(50)]
     public string? RoRoleName { get; set; }
 
-    [ForeignKey("RoUsId")]
-    [InverseProperty("RolaUzytkownikas")]
-    public virtual Uzytkownicy? RoUs { get; set; }
+    [InverseProperty("UsRo")]
+    public virtual ICollection<Uzytkownicy> Uzytkownicies { get; set; } = new List<Uzytkownicy>();
 }

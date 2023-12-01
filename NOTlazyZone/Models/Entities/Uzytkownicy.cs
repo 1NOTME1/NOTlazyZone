@@ -63,6 +63,9 @@ public partial class Uzytkownicy
     [Column("us_aktywny")]
     public bool? UsAktywny { get; set; }
 
+    [Column("us_ro_id")]
+    public int? UsRoId { get; set; }
+
     [InverseProperty("AdUs")]
     public virtual ICollection<Adre> Adres { get; set; } = new List<Adre>();
 
@@ -87,14 +90,18 @@ public partial class Uzytkownicy
     [InverseProperty("PoUs")]
     public virtual ICollection<Powiadomienium> Powiadomienia { get; set; } = new List<Powiadomienium>();
 
-    [InverseProperty("RoUs")]
-    public virtual ICollection<RolaUzytkownika> RolaUzytkownikas { get; set; } = new List<RolaUzytkownika>();
-
     [InverseProperty("StUs")]
     public virtual ICollection<StatystykiSilowni> StatystykiSilownis { get; set; } = new List<StatystykiSilowni>();
 
     [InverseProperty("TnUs")]
     public virtual ICollection<Telefon> Telefons { get; set; } = new List<Telefon>();
+
+    [ForeignKey("UsRoId")]
+    [InverseProperty("Uzytkownicies")]
+    public virtual RolaUzytkownika? UsRo { get; set; }
+
+    [InverseProperty("WiUs")]
+    public virtual ICollection<Wiadomosci> Wiadomoscis { get; set; } = new List<Wiadomosci>();
 
     [InverseProperty("ZaUs")]
     public virtual ICollection<Zamowienium> Zamowienia { get; set; } = new List<Zamowienium>();

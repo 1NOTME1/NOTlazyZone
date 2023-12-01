@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace NOTlazyZone.Models.Entities;
 
+[Index("PoUsId", Name = "IX_Powiadomienia_po_us_id")]
 public partial class Powiadomienium
 {
     [Key]

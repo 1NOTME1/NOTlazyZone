@@ -10,7 +10,6 @@ namespace NOTlazyZone.Models.Entities;
 public partial class Produkty
 {
     [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column("pr_id")]
     public int PrId { get; set; }
 

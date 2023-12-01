@@ -65,8 +65,15 @@
                                 <DataGridTextColumn Header="Data zapisania się na siłownie" Binding="{Binding dataRozpoczecia}"/>
                                 <DataGridTextColumn Header="Data zakończenia karnetu" Binding="{Binding dataZakonczenia}"/>
                                 <DataGridTextColumn Header="Czy Aktwyny" Binding="{Binding czyUzytkownikAktywny}"/>
-                                <DataGridTextColumn Header="Rola" Binding="{Binding typUzytkownika}"/>
+                                <DataGridTextColumn Header="Rola" Binding="{Binding rolaUzytkownika}"/>
                                 <DataGridTextColumn Header="Numer Użytkownika" Binding="{Binding numerTelefonu}"/>
+                                <DataGridTextColumn Header="Nazwa Ulicy" Binding="{Binding ulicaAdresu}"/>
+                                <DataGridTextColumn Header="Nr Domu" Binding="{Binding nrDomuAdresu}"/>
+                                <DataGridTextColumn Header="Nr Lokalu" Binding="{Binding nrLokaluAdresu}"/>
+                                <DataGridTextColumn Header="Kod Pocztowy" Binding="{Binding kodPocztowyAdresu}"/>
+                                <DataGridTextColumn Header="Miejscowosc" Binding="{Binding miejscowoscAdresu}"/>
+                                <DataGridTextColumn Header="Typ Adresu" Binding="{Binding adresTypAdresu}"/>
+                                <DataGridTextColumn Header="Aktwyny" Binding="{Binding czyAdresAktywny}"/>
                             </DataGrid.Columns>
                         </DataGrid>
 

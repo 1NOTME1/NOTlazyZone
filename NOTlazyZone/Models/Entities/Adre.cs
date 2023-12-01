@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace NOTlazyZone.Models.Entities;
 
+[Index("AdAdtId", Name = "IX_Adres_ad_adt_id")]
+[Index("AdUsId", Name = "IX_Adres_ad_us_id")]
 public partial class Adre
 {
     [Key]

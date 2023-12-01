@@ -7,6 +7,11 @@ using Microsoft.EntityFrameworkCore;
 namespace NOTlazyZone.Models.Entities;
 
 [Table("Statystyki_silowni")]
+[Index("StAdId", Name = "IX_Statystyki_silowni_st_ad_id")]
+[Index("StCwId", Name = "IX_Statystyki_silowni_st_cw_id")]
+[Index("StMaId", Name = "IX_Statystyki_silowni_st_ma_id")]
+[Index("StTnId", Name = "IX_Statystyki_silowni_st_tn_id")]
+[Index("StUsId", Name = "IX_Statystyki_silowni_st_us_id")]
 public partial class StatystykiSilowni
 {
     [Key]

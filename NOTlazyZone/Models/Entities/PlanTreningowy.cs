@@ -7,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 namespace NOTlazyZone.Models.Entities;
 
 [Table("PlanTreningowy")]
+[Index("PtCwId", Name = "IX_PlanTreningowy_pt_cw_id")]
+[Index("PtUsId", Name = "IX_PlanTreningowy_pt_us_id")]
 public partial class PlanTreningowy
 {
     [Key]
@@ -25,6 +27,9 @@ public partial class PlanTreningowy
     [Column("pt_trudnosc")]
     public int? PtTrudnosc { get; set; }
 
+    [InverseProperty("CwPt")]
+    public virtual ICollection<Cwiczenium> Cwiczenia { get; set; } = new List<Cwiczenium>();
+
     [ForeignKey("PtCwId")]
     [InverseProperty("PlanTreningowies")]
     public virtual Cwiczenium? PtCw { get; set; }
@@ -32,8 +37,4 @@ public partial class PlanTreningowy
     [ForeignKey("PtUsId")]
     [InverseProperty("PlanTreningowies")]
     public virtual Uzytkownicy? PtUs { get; set; }
-
-    [InverseProperty("CwPt")]
-    public virtual ICollection<Cwiczenium> Cwiczenia { get; set; } = new List<Cwiczenium>();
-
 }

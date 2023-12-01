@@ -1,4 +1,5 @@
-﻿using NOTlazyZone.Models.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using NOTlazyZone.Models.Entities;
 using NOTlazyZone.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -11,20 +12,12 @@ namespace NOTlazyZone.ViewModels
 {
     internal class AddListContactViewModel : JedenViewModel<Kontakty>
     {
-        public ObservableCollection<Kontakty> Kontakty { get; private set; } = new ObservableCollection<Kontakty>();
+        //public ObservableCollection<Kontakty> Kontakty { get; private set; } = new ObservableCollection<Kontakty>();
 
         public AddListContactViewModel() : base("Dodaj Cwiczenie")
         {
             item = new Kontakty();
-            LoadKontakt();
-        }
-        private void LoadKontakt()
-        {
-            var kontaktyFromDb = notlazyzoneEntities.Kontakties.ToList();
-            foreach (var prod in kontaktyFromDb)
-            {
-                Kontakty.Add(prod);
-            }
+         
         }
 
         #region Dane
@@ -57,6 +50,17 @@ namespace NOTlazyZone.ViewModels
                     ).ToList().AsQueryable();
             }
         }
+
+        public List<RolaUzytkownika> RoleComboBoxItems
+        {
+            get
+            {
+                // Przykładowe zapytanie LINQ do pobrania ról. Dostosuj do swoich potrzeb.
+                return notlazyzoneEntities.RolaUzytkownikas.ToList();
+            }
+        }
+
+
 
         //public String? UsImie
         //{

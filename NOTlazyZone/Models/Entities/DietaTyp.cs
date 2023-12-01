@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace NOTlazyZone.Models.Entities;
 
 [Table("Dieta_typ")]
+[Index("DatUsId", Name = "IX_Dieta_typ_dat_us_id")]
 public partial class DietaTyp
 {
     [Key]

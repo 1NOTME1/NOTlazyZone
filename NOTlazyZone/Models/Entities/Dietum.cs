@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace NOTlazyZone.Models.Entities;
 
+[Index("DaDatId", Name = "IX_Dieta_da_dat_id")]
+[Index("DaUsId", Name = "IX_Dieta_da_us_id")]
 public partial class Dietum
 {
     [Key]

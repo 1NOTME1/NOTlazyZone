@@ -81,6 +81,8 @@ public partial class NOTlazyZoneEntities : DbContext
 
             entity.HasOne(d => d.CwCwt).WithMany(p => p.Cwiczenia).HasConstraintName("FK__Cwiczenia__cw_cw__31EC6D26");
 
+            entity.HasOne(d => d.CwPt).WithMany(p => p.Cwiczenia).HasConstraintName("FK_Cwiczenia_PlanTreningowy");
+
             entity.HasOne(d => d.CwUs).WithMany(p => p.Cwiczenia).HasConstraintName("FK__Cwiczenia__cw_us__30F848ED");
         });
 
@@ -138,8 +140,6 @@ public partial class NOTlazyZoneEntities : DbContext
         modelBuilder.Entity<RolaUzytkownika>(entity =>
         {
             entity.HasKey(e => e.RoId).HasName("PK__RolaUzyt__55B52BD93F17149D");
-
-            entity.HasOne(d => d.RoUs).WithMany(p => p.RolaUzytkownikas).HasConstraintName("FK__RolaUzytk__ro_us__5629CD9C");
         });
 
         modelBuilder.Entity<StatystykiSilowni>(entity =>
@@ -167,11 +167,15 @@ public partial class NOTlazyZoneEntities : DbContext
         modelBuilder.Entity<Uzytkownicy>(entity =>
         {
             entity.HasKey(e => e.UsId).HasName("PK__Uzytkown__2E701A67DAD1BDA5");
+
+            entity.HasOne(d => d.UsRo).WithMany(p => p.Uzytkownicies).HasConstraintName("fk_role_id");
         });
 
         modelBuilder.Entity<Wiadomosci>(entity =>
         {
             entity.HasKey(e => e.WiId).HasName("PK__Wiadomos__0911F8635FE6D31F");
+
+            entity.HasOne(d => d.WiUs).WithMany(p => p.Wiadomoscis).HasConstraintName("fk_wiadomosci_uzytkownicy");
         });
 
         modelBuilder.Entity<Zamowienium>(entity =>

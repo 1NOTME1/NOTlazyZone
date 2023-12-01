@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace NOTlazyZone.Models.Entities;
 
+[Index("CwCwtId", Name = "IX_Cwiczenia_cw_cwt_id")]
+[Index("CwUsId", Name = "IX_Cwiczenia_cw_us_id")]
 public partial class Cwiczenium
 {
     [Key]
@@ -17,23 +19,16 @@ public partial class Cwiczenium
 
     [Column("cw_nazwa")]
     [StringLength(50)]
-    public string? CwNazwa { get; set; }
+    public string CwNazwa { get; set; }
 
     [Column("cw_cwt_id")]
     public int? CwCwtId { get; set; }
 
-    // Dodane nowe właściwości
     [Column("cw_seria")]
     public int? CwSeria { get; set; }
 
     [Column("cw_powtorzenie")]
     public int? CwPowtorzenie { get; set; }
-
-    [Column("cw_trudnosc")]
-    public int? CwTrudnosc { get; set; }
-
-    [Column("cw_opis")]
-    public string? CwOpis { get; set; }
 
     [Column("cw_ciezar", TypeName = "decimal(10, 2)")]
     public decimal? CwCiezar { get; set; }
@@ -44,17 +39,23 @@ public partial class Cwiczenium
     [Column("cw_cardio")]
     public bool? CwCardio { get; set; }
 
+    [Column("cw_trudnosc")]
+    public int? CwTrudnosc { get; set; }
+
+    [Column("cw_opis")]
+    [Unicode(false)]
+    public string? CwOpis { get; set; }
+
     [Column("cw_pt_id")]
     public int? CwPtId { get; set; }
-
-    [ForeignKey("CwPtId")]
-    [InverseProperty("Cwiczenia")]
-    public virtual PlanTreningowy? CwPt { get; set; }
-
 
     [ForeignKey("CwCwtId")]
     [InverseProperty("Cwiczenia")]
     public virtual CwiczeniaTyp? CwCwt { get; set; }
+
+    [ForeignKey("CwPtId")]
+    [InverseProperty("Cwiczenia")]
+    public virtual PlanTreningowy? CwPt { get; set; }
 
     [ForeignKey("CwUsId")]
     [InverseProperty("Cwiczenia")]

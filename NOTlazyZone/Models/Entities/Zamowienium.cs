@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace NOTlazyZone.Models.Entities;
 
+[Index("ZaPrId", Name = "IX_Zamowienia_za_pr_id")]
+[Index("ZaUsId", Name = "IX_Zamowienia_za_us_id")]
 public partial class Zamowienium
 {
     [Key]

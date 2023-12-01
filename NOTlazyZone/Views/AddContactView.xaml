@@ -9,12 +9,30 @@
     <Grid>
         <StackPanel Margin="10" >
             <Label Content="Imię:"/>
-            <TextBox Text="{Binding Path=UsImie, UpdateSourceTrigger=PropertyChanged}"/>
+            
+            <!--<TextBox Text="{Binding Path=UsImie, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Content="Nazwisko:"/>
-            <TextBox Text="{Binding Path=UsNazwisko, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Text="{Binding Path=UsNazwisko, UpdateSourceTrigger=PropertyChanged}"/>-->
 
-            <Label Content="Specjalizacja:"/>
+            <Label Content="Uzytkownik:"/>
+            <ComboBox 
+        ItemsSource="{Binding KoUsComboBoxItems}"
+        DisplayMemberPath="UsImie"
+        SelectedValuePath="UsId"
+        SelectedValue="{Binding KoUsId, Mode=TwoWay}"/> 
+
+
+            <Label Content="Uzytkownik:"/>
+            <ComboBox ItemsSource="{Binding RoleComboBoxItems}"
+          DisplayMemberPath="RoRoleName"
+          SelectedValuePath="RoId"
+          SelectedValue="{Binding WybranaRolaId, Mode=TwoWay}" />
+
+
+
+
+            <!--<Label Content="Specjalizacja:"/>
             <TextBox Text="{Binding Path=UsPesel, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Content="Doświadczenie zawodowe:"/>
@@ -30,7 +48,7 @@
             <TextBox Text="{Binding Path=UsUwagi, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Label Content="Telefon:"/>
-            <TextBox Text="{Binding Path=UsAktywny, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Text="{Binding Path=UsAktywny, UpdateSourceTrigger=PropertyChanged}"/>-->
 
             <Button Content="Dodaj" />
         </StackPanel>
