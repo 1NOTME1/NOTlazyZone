@@ -10,7 +10,28 @@
     <UserControl.Resources>
         <ResourceDictionary Source="Styles.xaml"/>
     </UserControl.Resources>
-    <Grid>
+
+    <TabControl>
+        <!-- Zakładka z danymi użytkownika -->
+        <TabItem Header="Dane Użytkownika">
+            <local:AddUserView />
+        </TabItem>
+
+        <!-- Puste zakładki -->
+        <TabItem Header="Dodaj Telefon">
+            <local:AddTelefonView />
+        </TabItem>
+
+        <TabItem Header="Dane Użytkownika">
+            <local:AddUserView />
+        </TabItem>
+
+        <TabItem Header="Dane Użytkownika">
+            <local:AddUserView />
+        </TabItem>
+    </TabControl>
+
+<!--<Grid>
         <TabControl>
             <TabItem Header="{x:Static resx:SettingResources.Profil}">
                 <Grid>
@@ -323,5 +344,5 @@
                 </Grid>
             </TabItem>
         </TabControl>
-    </Grid>
+    </Grid>-->
 </UserControl>

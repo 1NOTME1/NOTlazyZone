@@ -61,7 +61,7 @@ public partial class Uzytkownicy
     public DateTime? UsKiedyUsunal { get; set; }
 
     [Column("us_aktywny")]
-    public bool? UsAktywny { get; set; }
+    public bool UsAktywny { get; set; }
 
     [Column("us_ro_id")]
     public int? UsRoId { get; set; }

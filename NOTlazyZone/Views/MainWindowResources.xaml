@@ -55,6 +55,15 @@
         <vw:ShowDietView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:AddUserViewModel}">
+        <vw:AddUserView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AddTelefonViewModel}">
+        <vw:AddTelefonView/>
+    </DataTemplate>
+
+
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">
             <Setter.Value>
