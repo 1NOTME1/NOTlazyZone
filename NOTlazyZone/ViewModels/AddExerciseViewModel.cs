@@ -32,6 +32,43 @@ namespace NOTlazyZone.ViewModels
         //dla kazdego elementu na interfejsie ktory bedzie dodawany tworzymy wlasciwosc
 
 
+        public IQueryable<Uzytkownicy> ExUsComboBoxItems
+        {
+            get
+            {
+                return
+                    (
+                        from Uzytkownicy in notlazyzoneEntities.Uzytkownicies
+                        select Uzytkownicy
+                    ).ToList().AsQueryable();
+            }
+        }
+
+        public IQueryable<CwiczeniaTyp> CwCwtComboBoxItems
+        {
+            get
+            {
+                return
+                    (
+                        from CwiczeniaTyp in notlazyzoneEntities.CwiczeniaTyps
+                        select CwiczeniaTyp
+                    ).ToList().AsQueryable();
+            }
+        }
+
+        public IQueryable<PlanTreningowy> CwPtComboBoxItems
+        {
+            get
+            {
+                return
+                    (
+                        from PlanTreningowy in notlazyzoneEntities.PlanTreningowies
+                        select PlanTreningowy
+                    ).ToList().AsQueryable();
+            }
+        }
+
+
         public String? CwNazwa
         {
             get
@@ -143,6 +180,40 @@ namespace NOTlazyZone.ViewModels
                 }
             }
         }
+
+        public int? CwUsId
+        {
+            get
+            {
+                return item.CwUsId;
+            }
+            set
+            {
+                if (item.CwUsId != value)
+                {
+                    item.CwUsId = value;
+                    OnPropertyChanged(() => CwUsId);
+                }
+            }
+        }
+        public int? CwPtId
+        {
+            get
+            {
+                return item.CwPtId;
+            }
+            set
+            {
+                if (item.CwPtId != value)
+                {
+                    item.CwPtId = value;
+                    OnPropertyChanged(() => CwPtId);
+                }
+            }
+        }
+
+       
+
 
         public bool? CwCardio
         {

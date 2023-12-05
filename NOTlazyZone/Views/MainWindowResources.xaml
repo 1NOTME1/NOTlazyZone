@@ -26,6 +26,10 @@
     <DataTemplate DataType="{x:Type vm:ExerciseViewModel}">
         <vw:ExerciseView/>
     </DataTemplate>
+    
+    <DataTemplate DataType="{x:Type vm:AddExerciseViewModel}">
+        <vw:ShowExerciseView/>
+    </DataTemplate>
 
     <DataTemplate DataType="{x:Type vm:CaloriesCalculatorViewModel}">
         <vw:CaloriesCalculatorView/>

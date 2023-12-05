@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:NOTlazyZone.Views"
-             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:NOTlazyZone.Views" xmlns:viewmodels="clr-namespace:NOTlazyZone.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:ExerciseViewModel}"
+                     mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Height="800">
         <Grid.ColumnDefinitions>
@@ -14,7 +14,7 @@
 
         <StackPanel Grid.Column="0" Margin="10">
             <TextBlock Text="Lista Cwiczen" FontWeight="Bold" Margin="5"/>
-            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Cwiczenia}">
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Cwiczenie}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Nazwa Ćwiczenia" Binding="{Binding CwNazwa}"/>
                     <DataGridTextColumn Header="Ilość serii na ćwiczenie" Binding="{Binding CwSeria}"/>
@@ -57,32 +57,57 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
                 <Label Content="Numer Planu:" Grid.Row="0" Grid.Column="0"/>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=IdProduktu, UpdateSourceTrigger=PropertyChanged}"/>
+                <ComboBox  Grid.Row="0" Grid.Column="1"
+     ItemsSource="{Binding CwPtComboBoxItems}"
+     DisplayMemberPath="PtId"
+     SelectedValuePath="PtId"
+     SelectedValue="{Binding CwPtId, Mode=TwoWay}"/>
 
-                <Label Content="Numer Ćwiczenia:" Grid.Row="1" Grid.Column="0"/>
-                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Path=PrNazwa, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="Przypisz ćwiczenie:" Grid.Row="1" Grid.Column="0"/>
+                <ComboBox  Grid.Row="1" Grid.Column="1"
+     ItemsSource="{Binding ExUsComboBoxItems}"
+     DisplayMemberPath="UsImie"
+     SelectedValuePath="UsId"
+     SelectedValue="{Binding CwUsId, Mode=TwoWay}"/>
 
                 <Label Content="Nazwa Ćwiczenia:" Grid.Row="2" Grid.Column="0"/>
-                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=PrCena, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=CwNazwa, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <Label Content="Seria:" Grid.Row="3" Grid.Column="0"/>
-                <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Path=PrCena, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="Typ Ćwiczenia" Grid.Row="3" Grid.Column="0"/>
+                <ComboBox  Grid.Row="3" Grid.Column="1"
+     ItemsSource="{Binding CwCwtComboBoxItems}"
+     DisplayMemberPath="CwtNazwa"
+     SelectedValuePath="CwtId"
+     SelectedValue="{Binding CwCwtId, Mode=TwoWay}"/>
 
-                <Label Content="Ciężar (kg.):" Grid.Row="4" Grid.Column="0"/>
-                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Path=PrCena, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="Seria:" Grid.Row="4" Grid.Column="0"/>
+                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Path=CwSeria, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <Label Content="Przerwa pomiędzy serią (sek.):" Grid.Row="5" Grid.Column="0"/>
-                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding Path=PrCena, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="Powtórzeń:" Grid.Row="5" Grid.Column="0"/>
+                <TextBox  Grid.Row="5" Grid.Column="1" Text="{Binding Path=CwPowtorzenie, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <Label Content="Trudność Ćwiczenia:" Grid.Row="6" Grid.Column="0"/>
-                <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding Path=PrCena, UpdateSourceTrigger=PropertyChanged}"/>
+                <Label Content="Ciężar (kg.):" Grid.Row="6" Grid.Column="0"/>
+                <TextBox  Grid.Row="6" Grid.Column="1" Text="{Binding Path=CwCiezar, UpdateSourceTrigger=PropertyChanged}"/>
 
-                <Label Content="Podopieczny:" Grid.Row="7" Grid.Column="0"/>
-                <TextBox  Grid.Row="7" Grid.Column="1" Text="{Binding Path=PrCena, UpdateSourceTrigger=PropertyChanged}"/>
-                
+                <Label Content="Przerwa pomiędzy serią (sek.):" Grid.Row="7" Grid.Column="0"/>
+                <TextBox  Grid.Row="7" Grid.Column="1" Text="{Binding Path=CwPrzerwa, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Label Content="Czy Cardio:" Grid.Row="8" Grid.Column="0"/>
+                <TextBox  Grid.Row="8" Grid.Column="1" Text="{Binding Path=CwCardio, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Label Content="Trudność Ćwiczenia" Grid.Row="9" Grid.Column="0"/>
+                <TextBox  Grid.Row="9" Grid.Column="1" Text="{Binding Path=CwTrudnosc, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Label Content="Opis Ćwiczenia" Grid.Row="10" Grid.Column="0"/>
+                <TextBox  Grid.Row="10" Grid.Column="1" Text="{Binding Path=CwOpis, UpdateSourceTrigger=PropertyChanged}"/>
+
             </Grid>
             <Button Content="DODJA DO PLANU TRENINGOWEGO"  Margin="5" />
 

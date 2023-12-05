@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NOTlazyZone.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace NOTlazyZone.Views
         public ShowExerciseView()
         {
             InitializeComponent();
+            this.DataContext = new AddExerciseViewModel();
         }
     }
 }
