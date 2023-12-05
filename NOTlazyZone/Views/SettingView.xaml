@@ -22,12 +22,12 @@
             <local:AddTelefonView />
         </TabItem>
 
-        <TabItem Header="Dane Użytkownika">
-            <local:AddUserView />
+        <TabItem Header="Dodaj Mail">
+            <local:AddMailView />
         </TabItem>
 
-        <TabItem Header="Dane Użytkownika">
-            <local:AddUserView />
+        <TabItem Header="Dodaj Adres">
+            <local:AddAdresView />
         </TabItem>
     </TabControl>
 

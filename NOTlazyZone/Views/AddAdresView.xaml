@@ -1,0 +1,68 @@
+﻿<local:JedenViewBase x:Class="NOTlazyZone.Views.AddAdresView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NOTlazyZone.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Label Content="Typ Adresu:" Grid.Row="1" Grid.Column="0"/>
+        <ComboBox  Grid.Row="1" Grid.Column="1"
+     ItemsSource="{Binding AdAdtComboBoxItems}"
+     DisplayMemberPath="AdtNazwa"
+     SelectedValuePath="AdtId"
+     SelectedValue="{Binding AdAdtId, Mode=TwoWay}"/>
+
+        <Label Content="Uzytkownik:" Grid.Row="2" Grid.Column="0"/>
+        <ComboBox  Grid.Row="2" Grid.Column="1"
+     ItemsSource="{Binding AdUsComboBoxItems}"
+     DisplayMemberPath="UsImie"
+     SelectedValuePath="UsId"
+     SelectedValue="{Binding AdUsId, Mode=TwoWay}"/>
+
+        <Label Content="Adres: " Grid.Row="3" Grid.Column="0"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=AdNazwa, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Content="Ulica:" Grid.Row="4" Grid.Column="0"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=AdUlica, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Content="Nr domu:" Grid.Row="5" Grid.Column="0"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=AdNrDomu, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Content="Nr lokalu:" Grid.Row="6" Grid.Column="0"/>
+        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Path=AdNrLokalu, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Content="Kod pocztowy:" Grid.Row="7" Grid.Column="0"/>
+        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Path=AdKod, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Content="Miejscowosc:" Grid.Row="8" Grid.Column="0"/>
+        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Path=AdMiejscowosc, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Content="Opis:" Grid.Row="9" Grid.Column="0"/>
+        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Path=AdOpis, UpdateSourceTrigger=PropertyChanged}"/>
+        
+        <Label Content="Aktwyny:" Grid.Row="10" Grid.Column="0"/>
+        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Path=AdAktywny, UpdateSourceTrigger=PropertyChanged}"/>
+
+    </Grid>
+</local:JedenViewBase>

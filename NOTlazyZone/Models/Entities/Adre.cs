@@ -82,7 +82,7 @@ public partial class Adre
     public DateTime? AdKiedyUsunal { get; set; }
 
     [Column("ad_aktywny")]
-    public bool? AdAktywny { get; set; }
+    public bool AdAktywny { get; set; }
 
     [ForeignKey("AdAdtId")]
     [InverseProperty("Adres")]

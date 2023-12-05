@@ -63,6 +63,14 @@
         <vw:AddTelefonView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:AddMailViewModel}">
+        <vw:AddMailView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AddAdresViewModel}">
+        <vw:AddAdresView/>
+    </DataTemplate>
+
 
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">

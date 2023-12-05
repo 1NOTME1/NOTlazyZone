@@ -50,7 +50,7 @@ public partial class Mail
     public DateTime? MaKiedyUsunal { get; set; }
 
     [Column("ma_aktywny")]
-    public bool? MaAktywny { get; set; }
+    public bool MaAktywny { get; set; }
 
     [ForeignKey("MaUsId")]
     [InverseProperty("Mail")]
