@@ -32,15 +32,6 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1" Margin="10">
-            <TextBlock Text="Opis do planu treningowego" FontWeight="Bold" Margin="5"/>
-
-            <TextBlock Text="Dodatkowe informacje" FontWeight="Bold" Margin="5"/>
-            <TextBox  IsReadOnly="True" Margin="5"/>
-
-            <TextBlock Text="Operacje" FontWeight="Bold" Margin="5"/>
-            <Button Content="Zatwierdź zamówienie" Margin="5"  />
-            <Button Content="Anuluj zamówienie" Margin="5"  />
-
             <TextBlock Text="DODAJ ĆWICZENIE DO PLANU TRENINGOWEGO" FontWeight="Bold" Margin="5" FontSize="23"/>
             <Grid Margin="5">
                 <Grid.ColumnDefinitions>

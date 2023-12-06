@@ -29,6 +29,22 @@
         <TabItem Header="Dodaj Adres">
             <local:AddAdresView />
         </TabItem>
+
+        <TabItem Header="Dodaj Nowy Typ Adresu">
+            <local:AddAdresTypView />
+        </TabItem>
+
+        <TabItem Header="Dodaj Nowy Typ Ćwiczeń">
+            <local:AddExerciseTypeView />
+        </TabItem>
+        
+        <TabItem Header="Dodaj Nowy Typ Diety">
+            <local:AddDietTypeView />
+        </TabItem>
+
+        <TabItem Header="Dodaj Nową Role">
+            <local:AddUserRoleView />
+        </TabItem>
     </TabControl>
 
 <!--<Grid>

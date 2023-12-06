@@ -75,6 +75,22 @@
         <vw:AddAdresView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:AddAdresTypViewModel}">
+        <vw:AddAdresTypView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AddExerciseTypeViewModel}">
+        <vw:AddExerciseTypeView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AddDietTypeViewModel}">
+        <vw:AddDietTypeView/>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type vm:AddUserRoleViewModel}">
+        <vw:AddUserRoleView/>
+    </DataTemplate>
+
 
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">

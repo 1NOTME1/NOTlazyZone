@@ -36,6 +36,7 @@ namespace NOTlazyZone.ViewModels
                         IdCwiczenia = Cwiczenium.CwId,
                         nazwaCwiczenia = Cwiczenium.CwNazwa,
                         seriaCwiczenia = Cwiczenium.CwSeria,
+                        czasPlanu = Cwiczenium.CwPt.PtCzas,
                         typCwiczenia = Cwiczenium.CwCwt.CwtNazwa,
                         ciezarCwiczenia = Cwiczenium.CwCiezar,
                         przerwaCwiczenia = Cwiczenium.CwPrzerwa,

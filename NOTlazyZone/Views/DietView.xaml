@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="NOTlazyZone.Views.DietView"
+﻿<local:JedenViewBase x:Class="NOTlazyZone.Views.DietView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -44,31 +44,46 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label HorizontalAlignment="Left" Content="Preferowany rodzaj posiłków" Grid.Row="0"/>
-                    <ComboBox Grid.Row="1" Grid.Column="1">
-                        <ComboBoxItem IsSelected="True">Tradycyjne</ComboBoxItem>
-                        <ComboBoxItem>Wegetariańskie</ComboBoxItem>
-                        <ComboBoxItem>Wegańskie</ComboBoxItem>
-                        <ComboBoxItem>Bezglutenowe</ComboBoxItem>
-                    </ComboBox>
+                    <Label HorizontalAlignment="Left" Content="Rodzaj Diety:" Grid.Row="0"/>
+                        <ComboBox  Grid.Row="0" Grid.Column="1"
+ItemsSource="{Binding DaDatComboBoxItems}"
+DisplayMemberPath="DatRodzaj"
+SelectedValuePath="DatId"
+SelectedValue="{Binding DaDatId, Mode=TwoWay}"/>
 
-                    <Label HorizontalAlignment="Left" Content="Zapotrzebowanie kaloryczne" Grid.Row="2"/>
-                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ZapotrzebowanieKaloryczne}"/>
+                        <Label HorizontalAlignment="Left" Content="Dodaj posiłek:" Grid.Row="2"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding DaNazwa}"/>
 
-                    <Label HorizontalAlignment="Left" Content="Liczba posiłków dziennie" Grid.Row="4"/>
-                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding LiczbaPosilkowDziennie}"/>
+                        <Label HorizontalAlignment="Left" Content="Ilosc kalorii:" Grid.Row="3"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding DaColorie}"/>
 
-                    <CheckBox Content="Dostępne posiłki wegańskie" Grid.Row="6" Grid.ColumnSpan="2"/>
+                        <Label HorizontalAlignment="Left" Content="Ilosc białka:" Grid.Row="4"/>
+                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding DaIloscBialka}"/>
 
-                    <Label HorizontalAlignment="Left" Content="Ilość zjedzonych przekąsek dziennie" Grid.Row="7"/>
-                    <TextBox Grid.Row="8" Grid.Column="1" IsEnabled="False" Text="{Binding IloscZjedzonychPrzekasekDziennie}"/>
+                        <Label HorizontalAlignment="Left" Content="Ilosc Węglowodanów:" Grid.Row="5"/>
+                        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding DaIloscWeglowodanow}"/>
+
+                        <Label HorizontalAlignment="Left" Content="Ilosc Tłuszczy:" Grid.Row="6"/>
+                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding DaIloscTluszczy}"/>
+
+                        <Label HorizontalAlignment="Left" Content="Przypisz do użytkownika:" Grid.Row="7"/>
+                        <ComboBox  Grid.Row="7" Grid.Column="1"
+ItemsSource="{Binding DaUsComboBoxItems}"
+DisplayMemberPath="UsImie"
+SelectedValuePath="UsId"
+SelectedValue="{Binding DaUsId, Mode=TwoWay}"/>
+
+                        <!--<CheckBox Content="Dostępne posiłki wegańskie" Grid.Row="6" Grid.ColumnSpan="2"/>-->
+
+                    <!--<Label HorizontalAlignment="Left" Content="Ilość zjedzonych przekąsek dziennie" Grid.Row="7"/>
+                    <TextBox Grid.Row="8" Grid.Column="1" IsEnabled="False" Text="{Binding IloscZjedzonychPrzekasekDziennie}"/>-->
 
 
-                    <Label HorizontalAlignment="Left" Content="Zalecane produkty spożywcze" Grid.Row="9"/>
+                    <!--<Label HorizontalAlignment="Left" Content="Zalecane produkty spożywcze" Grid.Row="9"/>
                     <TextBox Grid.Row="10" Grid.ColumnSpan="2" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding ZalecaneProduktySpozywcze}"/>
 
                     <Label HorizontalAlignment="Left" Content="Unikaj produkty spożywcze" Grid.Row="11"/>
-                    <TextBox Grid.Row="12" Grid.ColumnSpan="2" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding UnikajProduktowSpozywczych}"/>
+                    <TextBox Grid.Row="12" Grid.ColumnSpan="2" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Text="{Binding UnikajProduktowSpozywczych}"/>-->
                 </Grid>
             </GroupBox>
 
@@ -182,4 +197,4 @@
             <local:ShowDietView/>
         </TabItem>
     </TabControl>
-</UserControl>
+</local:JedenViewBase>

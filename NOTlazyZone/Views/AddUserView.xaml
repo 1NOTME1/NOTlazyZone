@@ -24,36 +24,35 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Dane użytkownika 1 -->
         <Label Content="Imie:" Grid.Row="1" Grid.Column="0"/>
         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=UsImie, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <!-- Dane użytkownika 2 -->
         <Label Content="Nazwisko:" Grid.Row="2" Grid.Column="0"/>
         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsNazwisko, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <!-- Dane użytkownika 3 -->
         <Label Content="Pesel:" Grid.Row="3" Grid.Column="0"/>
         <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=UsPesel, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <!-- Dane użytkownika 4 -->
         <Label Content="Data rozpoczecia:" Grid.Row="4" Grid.Column="0"/>
         <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=UsDataRozpoczeciaOd, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <!-- Dane użytkownika 5 -->
         <Label Content="Data zakonczenia:" Grid.Row="5" Grid.Column="0"/>
         <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=UsDataZakonczeniaDo, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <!-- Dane użytkownika 5 -->
         <Label Content="Opis:" Grid.Row="6" Grid.Column="0"/>
         <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Path=UsOpis, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <!-- Dane użytkownika 5 -->
         <Label Content="Uwagi:" Grid.Row="7" Grid.Column="0"/>
         <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Path=UsUwagi, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <!-- Dane użytkownika 5 -->
-        <Label Content="Czy aktywny:" Grid.Row="8" Grid.Column="0"/>
-        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Path=UsAktywny, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Content="Rola:" Grid.Row="8" Grid.Column="0"/>
+        <ComboBox  Grid.Row="8" Grid.Column="1"
+ItemsSource="{Binding UsRoComboBoxItems}"
+DisplayMemberPath="RoRoleName"
+SelectedValuePath="RoId"
+SelectedValue="{Binding UsRoId, Mode=TwoWay}"/>
+
+        <Label Content="Czy aktywny:" Grid.Row="9" Grid.Column="0"/>
+        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Path=UsAktywny, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </local:JedenViewBase>

@@ -11,7 +11,7 @@ namespace NOTlazyZone.ViewModels
     {
         public SettingViewModel()
         {
-            base.DisplayName = "Ustawienia";
+            base.DisplayName = "Dodawanie/Zarządzanie";
         }
     }
 }

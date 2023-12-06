@@ -17,14 +17,14 @@ using System.Windows.Shapes;
 namespace NOTlazyZone.Views
 {
     /// <summary>
-    /// Interaction logic for DietView.xaml
+    /// Interaction logic for AddExerciseTypeView.xaml
     /// </summary>
-    public partial class DietView : JedenViewBase
+    public partial class AddExerciseTypeView : JedenViewBase
     {
-        public DietView()
+        public AddExerciseTypeView()
         {
             InitializeComponent();
-            this.DataContext = new DietViewModel();
+            this.DataContext = new AddExerciseTypeViewModel();
         }
     }
 }

@@ -31,6 +31,18 @@ namespace NOTlazyZone.ViewModels
 
         #region Dane
 
+        public IQueryable<RolaUzytkownika> UsRoComboBoxItems
+        {
+            get
+            {
+                return
+                    (
+                        from RolaUzytkownika in notlazyzoneEntities.RolaUzytkownikas
+                        select RolaUzytkownika
+                    ).ToList().AsQueryable();
+            }
+        }
+
         public String? UsImie
         {
             get
@@ -155,6 +167,22 @@ namespace NOTlazyZone.ViewModels
                 {
                     item.UsAktywny = value;
                     OnPropertyChanged(() => UsAktywny);
+                }
+            }
+        }
+
+        public int? UsRoId
+        {
+            get
+            {
+                return item.UsRoId;
+            }
+            set
+            {
+                if (item.UsRoId != value)
+                {
+                    item.UsRoId = value;
+                    OnPropertyChanged(() => UsRoId);
                 }
             }
         }

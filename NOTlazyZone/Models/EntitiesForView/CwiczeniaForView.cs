@@ -14,6 +14,7 @@ namespace NOTlazyZone.Models.EntitiesForView
         public string nazwaCwiczenia { get; set; }
         public string? typCwiczenia { get; set; }
         public int? seriaCwiczenia { get; set; }
+        public TimeSpan? czasPlanu { get; set; }
         //ponizsze pola beada zamist id produktu
         public decimal? ciezarCwiczenia { get; set; }
         public decimal? przerwaCwiczenia { get; set; }

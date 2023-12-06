@@ -129,15 +129,15 @@ namespace NOTlazyZone.ViewModels
         {
             return new List<CommandViewModel>
     {
-        new CommandViewModel("Statystyki", new BaseCommand(_ => ShowStatistic()), "icons/chart.png"),
+        new CommandViewModel("Dane Siłowni", new BaseCommand(_ => ShowStatistic()), "icons/chart.png"),
         new CommandViewModel("Dodaj Ćwiczenia", new BaseCommand(_ => ShowExercies()), "icons/barbell.png"),
         new CommandViewModel("Kreator Diety", new BaseCommand(_ => ShowDiet()), "icons/diet.png"),
         new CommandViewModel("Wiadomości / Poczta", new BaseCommand(_ => CreateMessage()), "icons/email.png"),
-        new CommandViewModel("Kalendarz Treningowy", new BaseCommand(_ => ShowCalendar()), "icons/calendar_1.png"),
+        new CommandViewModel("Planner Treningowy", new BaseCommand(_ => ShowCalendar()), "icons/calendar_1.png"),
         new CommandViewModel("Kalkulator Kalorii", new BaseCommand(_ => ShowCaloriesCalculator()), "icons/kcal.png"),
         new CommandViewModel("Lista Kontaktów", new BaseCommand(_ => ShowContactList()), "icons/contact_list.png"),
         new CommandViewModel("Sklep", new BaseCommand(_ => ShowShop()), "icons/shopping_cart.png"),
-        new CommandViewModel("Ustawienia", new BaseCommand(_ => ShowSettings()), "icons/settings.png"),
+        new CommandViewModel("Dodawanie/Zarządzanie", new BaseCommand(_ => ShowSettings()), "icons/settings.png"),
     };
         }
 

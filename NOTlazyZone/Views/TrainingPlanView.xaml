@@ -37,6 +37,7 @@
                     <DataGridTextColumn Header="Przerwa pomiędzy serią (sek.) " Binding="{Binding przerwaCwiczenia}"/>
                     <DataGridTextColumn Header="Trudność Ćwiczenia" Binding="{Binding trudnoscCwiczenia}"/>
                     <DataGridTextColumn Header="Podopieczny" Binding="{Binding nazwaUzytkownika}"/>
+                    <DataGridTextColumn Header="Czas trwania treningu" Binding="{Binding czasPlanu}"/>
                 </DataGrid.Columns>
             </DataGrid>
 
