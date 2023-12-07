@@ -7,52 +7,83 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <!-- Lewa sekcja dla wyświetlania danych -->
+            <ColumnDefinition Width="2*"/>
+            <!-- Prawa sekcja na kod -->
         </Grid.ColumnDefinitions>
 
-        <Label Content="Imie:" Grid.Row="1" Grid.Column="0"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=UsImie, UpdateSourceTrigger=PropertyChanged}"/>
+        <!-- Lewa sekcja dla wyświetlania danych -->
+        <StackPanel Margin="10">
+            <TextBlock Text="Wszyscy Użytkownicy" FontWeight="Bold" Margin="5"/>
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding User}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding UsId}"/>
+                    <DataGridTextColumn Header="Imie" Binding="{Binding UsImie}"/>
+                    <DataGridTextColumn Header="Nazwisko" Binding="{Binding UsNazwisko}"/>
+                    <DataGridTextColumn Header="Pesel" Binding="{Binding UsPesel}"/>
+                    <DataGridTextColumn Header="Data rozpoczecia" Binding="{Binding UsDataRozpoczeciaOd}"/>
+                    <DataGridTextColumn Header="Data zakończenia" Binding="{Binding UsDataZakonczeniaDo}"/>
+                    <DataGridTextColumn Header="Opis" Binding="{Binding UsOpis}"/>
+                    <DataGridTextColumn Header="Uwagi" Binding="{Binding UsUwagi}"/>
+                    <DataGridTextColumn Header="Czy Atkywny" Binding="{Binding UsAktywny}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
 
-        <Label Content="Nazwisko:" Grid.Row="2" Grid.Column="0"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsNazwisko, UpdateSourceTrigger=PropertyChanged}"/>
+        <!-- Prawa sekcja z kodem -->
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="WPROWADŹ NOWEGO UŻYTKOWNIKA" Grid.Row="1" Grid.Column="0"/>
+            
+            <Label Content="Imie:" Grid.Row="2" Grid.Column="0"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsImie, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Content="Pesel:" Grid.Row="3" Grid.Column="0"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=UsPesel, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Nazwisko:" Grid.Row="3" Grid.Column="0"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=UsNazwisko, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Content="Data rozpoczecia:" Grid.Row="4" Grid.Column="0"/>
-        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=UsDataRozpoczeciaOd, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Pesel:" Grid.Row="4" Grid.Column="0"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=UsPesel, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Content="Data zakonczenia:" Grid.Row="5" Grid.Column="0"/>
-        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=UsDataZakonczeniaDo, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Data rozpoczęcia:" Grid.Row="5" Grid.Column="0"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=UsDataRozpoczeciaOd, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Content="Opis:" Grid.Row="6" Grid.Column="0"/>
-        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Path=UsOpis, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Data zakończenia:" Grid.Row="6" Grid.Column="0"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Path=UsDataZakonczeniaDo, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Content="Uwagi:" Grid.Row="7" Grid.Column="0"/>
-        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Path=UsUwagi, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Opis:" Grid.Row="7" Grid.Column="0"/>
+            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Path=UsOpis, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Content="Rola:" Grid.Row="8" Grid.Column="0"/>
-        <ComboBox  Grid.Row="8" Grid.Column="1"
-ItemsSource="{Binding UsRoComboBoxItems}"
-DisplayMemberPath="RoRoleName"
-SelectedValuePath="RoId"
-SelectedValue="{Binding UsRoId, Mode=TwoWay}"/>
+            <Label Content="Uwagi:" Grid.Row="8" Grid.Column="0"/>
+            <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Path=UsUwagi, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Content="Czy aktywny:" Grid.Row="9" Grid.Column="0"/>
-        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Path=UsAktywny, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Rola:" Grid.Row="9" Grid.Column="0"/>
+            <ComboBox Grid.Row="9" Grid.Column="1"
+                  ItemsSource="{Binding UsRoComboBoxItems}"
+                  DisplayMemberPath="RoRoleName"
+                  SelectedValuePath="RoId"
+                  SelectedValue="{Binding UsRoId, Mode=TwoWay}"/>
+
+            <Label Content="Czy aktywny:" Grid.Row="10" Grid.Column="0"/>
+            <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Path=UsAktywny, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
     </Grid>
+
 </local:JedenViewBase>

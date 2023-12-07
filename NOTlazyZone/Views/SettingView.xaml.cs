@@ -18,7 +18,7 @@ namespace NOTlazyZone.Views
     /// <summary>
     /// Interaction logic for SettingView.xaml
     /// </summary>
-    public partial class SettingView : UserControl
+    public partial class SettingView : WszystkieViewBase
     {
         public SettingView()
         {

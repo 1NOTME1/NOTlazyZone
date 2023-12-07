@@ -7,27 +7,44 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Content="Dodaj Kategorie Ćwiczenia: " Grid.Row="1" Grid.Column="0"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=CwtNazwa, UpdateSourceTrigger=PropertyChanged}"/>
+        <StackPanel Margin="10">
+            <TextBlock Text="WSZYSTKIE TYPY ĆWICZEŃ" FontWeight="Bold" Margin="5"/>
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding ExerciseType}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding CwtId}"/>
+                    <DataGridTextColumn Header="Nazwa" Binding="{Binding CwtNazwa}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
 
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="WPROWADŹ TYP ĆWICZENIA" Grid.Row="0" Grid.Column="0"/>
 
+            <Label Content="Typ Ćwiczenia: " Grid.Row="1" Grid.Column="0"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=CwtNazwa, UpdateSourceTrigger=PropertyChanged}"/>
+
+        </Grid>
     </Grid>
 </local:JedenViewBase>

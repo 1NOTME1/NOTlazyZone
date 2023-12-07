@@ -7,47 +7,63 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        
-        <Label Content="Uzytkownik:" Grid.Row="1" Grid.Column="0"/>
-        <ComboBox  Grid.Row="1" Grid.Column="1"
+        <StackPanel Margin="10">
+            <TextBlock Text="Wszyscy Użytkownicy" FontWeight="Bold" Margin="5"/>
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Telefon}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding TnId}"/>
+                    <DataGridTextColumn Header="Numer Telefonu" Binding="{Binding TnNumer}"/>
+                    <DataGridTextColumn Header="Opis" Binding="{Binding AdOpis}"/>
+                    <DataGridTextColumn Header="Uwagi" Binding="{Binding AdUwagi}"/>
+                    <DataGridTextColumn Header="Aktywny" Binding="{Binding AdAktywny}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="WPROWADŹ NOWEGO UŻYTKOWNIKA" Grid.Row="0" Grid.Column="0"/>
+
+            <Label Content="Uzytkownik:" Grid.Row="1" Grid.Column="0"/>
+            <ComboBox  Grid.Row="1" Grid.Column="1"
      ItemsSource="{Binding TnUsComboBoxItems}"
      DisplayMemberPath="UsImie"
      SelectedValuePath="UsId"
      SelectedValue="{Binding TnUsId, Mode=TwoWay}"/>
 
 
-        <!-- Dane użytkownika 2 -->
-        <Label Content="Nazwisko:" Grid.Row="2" Grid.Column="0"/>
-        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=TnNumer, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Numer:" Grid.Row="2" Grid.Column="0"/>
+            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=TnNumer, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <!-- Dane użytkownika 3 -->
-        <Label Content="Pesel:" Grid.Row="3" Grid.Column="0"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=TnOpis, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Opis:" Grid.Row="3" Grid.Column="0"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=TnOpis, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <!-- Dane użytkownika 4 -->
-        <Label Content="Data rozpoczecia:" Grid.Row="4" Grid.Column="0"/>
-        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=TnUwagi, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Uwagi:" Grid.Row="4" Grid.Column="0"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=TnUwagi, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <!-- Dane użytkownika 5 -->
-        <Label Content="Data zakonczenia:" Grid.Row="5" Grid.Column="0"/>
-        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=TnAktywny, UpdateSourceTrigger=PropertyChanged}"/>
-
+            <Label Content="Aktwyny:" Grid.Row="5" Grid.Column="0"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=TnAktywny, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
     </Grid>
 </local:JedenViewBase>

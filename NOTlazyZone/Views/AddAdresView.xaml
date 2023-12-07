@@ -7,62 +7,87 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
+        <StackPanel Margin="10">
+            <TextBlock Text="WSZYSTKIE ADRESY" FontWeight="Bold" Margin="5"/>
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Adres}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding AdId}"/>
+                    <DataGridTextColumn Header="Typ Adresu" Binding="{Binding AdAdtId}"/>
+                    <DataGridTextColumn Header="Id Uzytkownika" Binding="{Binding AdUsId}"/>
+                    <DataGridTextColumn Header="Nazwa" Binding="{Binding AdNazwa}"/>
+                    <DataGridTextColumn Header="Ulica" Binding="{Binding AdUlica}"/>
+                    <DataGridTextColumn Header="Nr Domu" Binding="{Binding AdNrDomu}"/>
+                    <DataGridTextColumn Header="Nr Lokalu" Binding="{Binding AdNrLokalu}"/>
+                    <DataGridTextColumn Header="Kod Pocztowy" Binding="{Binding AdKod}"/>
+                    <DataGridTextColumn Header="Miejscowość" Binding="{Binding AdMiejscowosc}"/>
+                    <DataGridTextColumn Header="Opis" Binding="{Binding AdOpis}"/>
+                    <DataGridTextColumn Header="Aktywny" Binding="{Binding AdAktywny}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
 
-        <Label Content="Typ Adresu:" Grid.Row="1" Grid.Column="0"/>
-        <ComboBox  Grid.Row="1" Grid.Column="1"
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="WPROWADŹ NOWY ADRES" Grid.Row="0" Grid.Column="0"/>
+            <Label Content="Typ Adresu:" Grid.Row="1" Grid.Column="0"/>
+            <ComboBox  Grid.Row="1" Grid.Column="1"
      ItemsSource="{Binding AdAdtComboBoxItems}"
      DisplayMemberPath="AdtNazwa"
      SelectedValuePath="AdtId"
      SelectedValue="{Binding AdAdtId, Mode=TwoWay}"/>
 
-        <Label Content="Uzytkownik:" Grid.Row="2" Grid.Column="0"/>
-        <ComboBox  Grid.Row="2" Grid.Column="1"
+            <Label Content="Uzytkownik:" Grid.Row="2" Grid.Column="0"/>
+            <ComboBox  Grid.Row="2" Grid.Column="1"
      ItemsSource="{Binding AdUsComboBoxItems}"
      DisplayMemberPath="UsImie"
      SelectedValuePath="UsId"
      SelectedValue="{Binding AdUsId, Mode=TwoWay}"/>
 
-        <Label Content="Adres: " Grid.Row="3" Grid.Column="0"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=AdNazwa, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Adres: " Grid.Row="3" Grid.Column="0"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=AdNazwa, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Content="Ulica:" Grid.Row="4" Grid.Column="0"/>
-        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=AdUlica, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Ulica:" Grid.Row="4" Grid.Column="0"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=AdUlica, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Content="Nr domu:" Grid.Row="5" Grid.Column="0"/>
-        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=AdNrDomu, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Nr domu:" Grid.Row="5" Grid.Column="0"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=AdNrDomu, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Content="Nr lokalu:" Grid.Row="6" Grid.Column="0"/>
-        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Path=AdNrLokalu, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Nr lokalu:" Grid.Row="6" Grid.Column="0"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding Path=AdNrLokalu, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Content="Kod pocztowy:" Grid.Row="7" Grid.Column="0"/>
-        <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Path=AdKod, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Kod pocztowy:" Grid.Row="7" Grid.Column="0"/>
+            <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding Path=AdKod, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Content="Miejscowosc:" Grid.Row="8" Grid.Column="0"/>
-        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Path=AdMiejscowosc, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Miejscowosc:" Grid.Row="8" Grid.Column="0"/>
+            <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding Path=AdMiejscowosc, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Label Content="Opis:" Grid.Row="9" Grid.Column="0"/>
-        <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Path=AdOpis, UpdateSourceTrigger=PropertyChanged}"/>
-        
-        <Label Content="Aktwyny:" Grid.Row="10" Grid.Column="0"/>
-        <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Path=AdAktywny, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Opis:" Grid.Row="9" Grid.Column="0"/>
+            <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding Path=AdOpis, UpdateSourceTrigger=PropertyChanged}"/>
 
+            <Label Content="Aktwyny:" Grid.Row="10" Grid.Column="0"/>
+            <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Path=AdAktywny, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
     </Grid>
 </local:JedenViewBase>
