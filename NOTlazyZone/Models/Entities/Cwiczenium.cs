@@ -25,19 +25,19 @@ public partial class Cwiczenium
     public int? CwCwtId { get; set; }
 
     [Column("cw_seria")]
-    public int? CwSeria { get; set; }
+    public int CwSeria { get; set; }
 
     [Column("cw_powtorzenie")]
-    public int? CwPowtorzenie { get; set; }
+    public int CwPowtorzenie { get; set; }
 
     [Column("cw_ciezar", TypeName = "decimal(10, 2)")]
-    public decimal? CwCiezar { get; set; }
+    public decimal CwCiezar { get; set; }
 
     [Column("cw_przerwa", TypeName = "decimal(10, 2)")]
-    public decimal? CwPrzerwa { get; set; }
+    public decimal CwPrzerwa { get; set; }
 
     [Column("cw_cardio")]
-    public bool? CwCardio { get; set; }
+    public bool CwCardio { get; set; }
 
     [Column("cw_trudnosc")]
     public int? CwTrudnosc { get; set; }

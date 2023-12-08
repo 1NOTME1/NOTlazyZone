@@ -18,7 +18,7 @@ public partial class Powiadomienium
 
     [Column("po_nazwa")]
     [StringLength(255)]
-    public string? PoNazwa { get; set; }
+    public string PoNazwa { get; set; }
 
     [Column("po_timestamp", TypeName = "datetime")]
     public DateTime? PoTimestamp { get; set; }

@@ -16,7 +16,7 @@ public partial class AdresTyp
     [Column("adt_nazwa")]
     [StringLength(50)]
     [Unicode(false)]
-    public string? AdtNazwa { get; set; }
+    public string AdtNazwa { get; set; }
 
     [Column("adt_kto_dodal")]
     [StringLength(50)]

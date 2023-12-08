@@ -15,10 +15,10 @@ public partial class Produkty
 
     [Column("pr_nazwa")]
     [StringLength(50)]
-    public string? PrNazwa { get; set; }
+    public string PrNazwa { get; set; }
 
     [Column("pr_cena", TypeName = "decimal(10, 2)")]
-    public decimal? PrCena { get; set; }
+    public decimal PrCena { get; set; }
 
     [InverseProperty("ZaPr")]
     public virtual ICollection<Zamowienium> Zamowienia { get; set; } = new List<Zamowienium>();

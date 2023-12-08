@@ -43,7 +43,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public String? UsImie
+        public String UsImie
         {
             get
             {
@@ -59,7 +59,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public String? UsNazwisko
+        public String UsNazwisko
         {
             get
             {
@@ -75,7 +75,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public String? UsPesel
+        public String UsPesel
         {
             get
             {
@@ -91,7 +91,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public DateTime? UsDataRozpoczeciaOd
+        public DateTime UsDataRozpoczeciaOd
         {
             get
             {
@@ -107,7 +107,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public DateTime? UsDataZakonczeniaDo
+        public DateTime UsDataZakonczeniaDo
         {
             get
             {

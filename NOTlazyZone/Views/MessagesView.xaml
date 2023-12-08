@@ -293,6 +293,9 @@
                                 <Label Style="{StaticResource Label}" Content="Temat:"/>
                                 <TextBox Style="{StaticResource TextBox}" Text="{Binding Path=WiTemat, UpdateSourceTrigger=PropertyChanged}"/>
 
+                                <Label Style="{StaticResource Label}" Content="Data:"/>
+                                <TextBox Style="{StaticResource TextBox}" Text="{Binding Path=WiDataOtrzymania, UpdateSourceTrigger=PropertyChanged}"/>
+
                                 <Label Style="{StaticResource Label}" Content="Treść:"/>
                                 <TextBox Style="{StaticResource TextBox}" Text="{Binding Path=WiZawartosc, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" TextWrapping="Wrap"/>
                             </StackPanel>

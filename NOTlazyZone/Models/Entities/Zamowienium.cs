@@ -21,10 +21,10 @@ public partial class Zamowienium
     public int? ZaPrId { get; set; }
 
     [Column("za_ilosc")]
-    public int? ZaIlosc { get; set; }
+    public int ZaIlosc { get; set; }
 
     [Column("za_data_zamowienia", TypeName = "datetime")]
-    public DateTime? ZaDataZamowienia { get; set; }
+    public DateTime ZaDataZamowienia { get; set; }
 
     [ForeignKey("ZaPrId")]
     [InverseProperty("Zamowienia")]

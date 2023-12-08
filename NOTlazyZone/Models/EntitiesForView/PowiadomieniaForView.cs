@@ -12,7 +12,7 @@ namespace NOTlazyZone.Models.EntitiesForView
         public int IdPowiadomienia { get; set; }
         public DateTime? powiadomienie { get; set; }
         public int? UsId { get; set; }
-        public string? nazwaUzytkownika { get; set; }
+        public string nazwaUzytkownika { get; set; }
         public string? nazwaPowiadomienia { get; set; }
         public string? uwagi { get; set; }
         public int DaId { get; set; }

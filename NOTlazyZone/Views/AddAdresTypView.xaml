@@ -46,7 +46,7 @@
             <Label Content="Adres: " Grid.Row="1" Grid.Column="0"/>
             <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=AdtNazwa, UpdateSourceTrigger=PropertyChanged}"/>
 
-            <Label Content="Ulica:" Grid.Row="2" Grid.Column="0"/>
+            <Label Content="Aktwyny:" Grid.Row="2" Grid.Column="0"/>
             <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=AdtAktywny, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
     </Grid>

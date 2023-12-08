@@ -2,6 +2,7 @@
 
 namespace NOTlazyZone.Models
 {
+//klasa juz nie uzywana
     public class Statistic
     {
         public string NazwaSilowni { get; set; }

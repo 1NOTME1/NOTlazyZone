@@ -27,7 +27,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public string? AdtNazwa
+        public string AdtNazwa
         {
             get
             {

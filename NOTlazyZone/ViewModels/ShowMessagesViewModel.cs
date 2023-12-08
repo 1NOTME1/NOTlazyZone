@@ -32,7 +32,7 @@ namespace NOTlazyZone.ViewModels
         //dla kazdego elementu na interfejsie ktory bedzie dodawany tworzymy wlasciwosc
 
 
-        public String? WiZawartosc
+        public String WiZawartosc
         {
             get
             {
@@ -48,7 +48,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public DateTime? WiDataOtrzymania
+        public DateTime WiDataOtrzymania
         {
             get
             {
@@ -64,7 +64,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public String? WiDoOsoby
+        public String WiDoOsoby
         {
             get
             {
@@ -80,7 +80,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public String? WiTemat
+        public String WiTemat
         {
             get
             {

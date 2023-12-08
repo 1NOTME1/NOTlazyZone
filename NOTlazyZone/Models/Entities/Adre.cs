@@ -22,11 +22,11 @@ public partial class Adre
 
     [Column("ad_nazwa")]
     [StringLength(50)]
-    public string? AdNazwa { get; set; }
+    public string AdNazwa { get; set; }
 
     [Column("ad_opis")]
     [StringLength(255)]
-    public string? AdOpis { get; set; }
+    public string AdOpis { get; set; }
 
     [Column("ad_uwagi")]
     [StringLength(255)]
@@ -38,7 +38,7 @@ public partial class Adre
     [Column("ad_ulica")]
     [StringLength(200)]
     [Unicode(false)]
-    public string? AdUlica { get; set; }
+    public string AdUlica { get; set; }
 
     [Column("ad_nr_domu")]
     [StringLength(20)]
@@ -53,12 +53,12 @@ public partial class Adre
     [Column("ad_kod")]
     [StringLength(10)]
     [Unicode(false)]
-    public string? AdKod { get; set; }
+    public string AdKod { get; set; }
 
     [Column("ad_miejscowosc")]
     [StringLength(200)]
     [Unicode(false)]
-    public string? AdMiejscowosc { get; set; }
+    public string AdMiejscowosc { get; set; }
 
     [Column("ad_kto_dodal")]
     [StringLength(50)]

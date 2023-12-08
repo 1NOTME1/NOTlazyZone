@@ -17,14 +17,14 @@ using System.Windows.Shapes;
 namespace NOTlazyZone.Views
 {
     /// <summary>
-    /// Interaction logic for MessagesView.xaml
+    /// Interaction logic for AddZamowienieView.xaml
     /// </summary>
-    public partial class MessagesView : JedenViewBase
+    public partial class AddZamowienieView : JedenViewBase
     {
-        public MessagesView()
+        public AddZamowienieView()
         {
             InitializeComponent();
-            this.DataContext = new ShowMessagesViewModel();
+            this.DataContext = new addZamowienieViewModel();
         }
     }
 }

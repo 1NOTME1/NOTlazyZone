@@ -85,7 +85,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? CwSeria
+        public int CwSeria
         {
             get
             {
@@ -101,7 +101,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? CwPowtorzenie
+        public int CwPowtorzenie
         {
             get
             {
@@ -117,7 +117,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public decimal? CwCiezar
+        public decimal CwCiezar
         {
             get
             {
@@ -133,7 +133,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public decimal? CwPrzerwa
+        public decimal CwPrzerwa
         {
             get
             {
@@ -215,7 +215,7 @@ namespace NOTlazyZone.ViewModels
        
 
 
-        public bool? CwCardio
+        public bool CwCardio
         {
             get
             {

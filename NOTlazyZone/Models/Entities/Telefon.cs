@@ -19,7 +19,7 @@ public partial class Telefon
 
     [Column("tn_numer")]
     [StringLength(50)]
-    public string? TnNumer { get; set; }
+    public string TnNumer { get; set; }
 
     [Column("ad_opis")]
     [StringLength(255)]
@@ -51,7 +51,7 @@ public partial class Telefon
     public DateTime? AdKiedyUsunal { get; set; }
 
     [Column("ad_aktywny")]
-    public bool? AdAktywny { get; set; }
+    public bool AdAktywny { get; set; }
 
     [InverseProperty("StTn")]
     public virtual ICollection<StatystykiSilowni> StatystykiSilownis { get; set; } = new List<StatystykiSilowni>();

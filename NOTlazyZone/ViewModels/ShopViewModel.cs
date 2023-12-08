@@ -33,6 +33,7 @@ namespace NOTlazyZone.ViewModels
                         dataZamowienia = Zamowienium.ZaDataZamowienia,
                         nazwaProduktu = Zamowienium.ZaPr.PrNazwa,
                         cenaProduktu = Zamowienium.ZaPr.PrCena,
+                        iloscProduktow = Zamowienium.ZaIlosc,
                         nazwaUzytkownika = Zamowienium.ZaUs.UsImie+" "
                         + Zamowienium.ZaUs.UsNazwisko
 

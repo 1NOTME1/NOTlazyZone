@@ -13,7 +13,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Margin="10">
-            <TextBlock Text="Wszystkie zamówienia" FontWeight="Bold" Margin="5"/>
+            <TextBlock Text="Wszystkie Produkty" FontWeight="Bold" Margin="5"/>
             <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Produkty}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id Produktu" Binding="{Binding PrId}"/>
@@ -26,12 +26,9 @@
 
         </StackPanel>
 
-        <!-- Szczegóły wybranego zamówienia -->
-        <!-- Szczegóły wybranego zamówienia -->
         <StackPanel Grid.Column="1" Margin="10">
             <TextBlock Text="Szczegóły zamówienia" FontWeight="Bold" Margin="5"/>
             <DataGrid  AutoGenerateColumns="True" Margin="5">
-                <!-- Będzie zbindowany do bazy danych -->
             </DataGrid>
 
             <TextBlock Text="Dodatkowe informacje" FontWeight="Bold" Margin="5"/>
@@ -41,7 +38,6 @@
             <Button Content="Zatwierdź zamówienie" Margin="5"  />
             <Button Content="Anuluj zamówienie" Margin="5"  />
 
-            <!-- Sekcja do dodawania produktów -->
             <TextBlock Text="Dodaj produkt" FontWeight="Bold" Margin="5"/>
             <Grid Margin="5">
                 <Grid.ColumnDefinitions>

@@ -39,7 +39,7 @@ namespace NOTlazyZone.ViewModels
         //dla kazdego elementu na interfejsie ktory bedzie dodawany tworzymy wlasciwosc
 
 
-        public String? PrNazwa
+        public String PrNazwa
         {
             get
             {
@@ -55,7 +55,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public decimal? PrCena
+        public decimal PrCena
         {
             get
             {

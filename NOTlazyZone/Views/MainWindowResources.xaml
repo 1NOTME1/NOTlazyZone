@@ -95,6 +95,10 @@
         <vw:ShowReminderView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:addZamowienieViewModel}">
+        <vw:AddZamowienieView/>
+    </DataTemplate>
+
 
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">

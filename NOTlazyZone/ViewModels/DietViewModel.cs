@@ -68,7 +68,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? DaColorie
+        public int DaColorie
         {
             get
             {
@@ -84,7 +84,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? DaIloscBialka
+        public int DaIloscBialka
         {
             get
             {
@@ -100,7 +100,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? DaIloscWeglowodanow
+        public int DaIloscWeglowodanow
         {
             get
             {
@@ -116,7 +116,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? DaIloscTluszczy
+        public int DaIloscTluszczy
         {
             get
             {

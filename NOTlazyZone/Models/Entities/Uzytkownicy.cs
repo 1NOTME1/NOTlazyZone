@@ -15,21 +15,21 @@ public partial class Uzytkownicy
 
     [Column("us_imie")]
     [StringLength(50)]
-    public string? UsImie { get; set; }
+    public string UsImie { get; set; }
 
     [Column("us_nazwisko")]
     [StringLength(50)]
-    public string? UsNazwisko { get; set; }
+    public string UsNazwisko { get; set; }
 
     [Column("us_pesel")]
     [StringLength(11)]
-    public string? UsPesel { get; set; }
+    public string UsPesel { get; set; }
 
     [Column("us_data_rozpoczecia_od", TypeName = "datetime")]
-    public DateTime? UsDataRozpoczeciaOd { get; set; }
+    public DateTime UsDataRozpoczeciaOd { get; set; }
 
     [Column("us_data_zakonczenia_do", TypeName = "datetime")]
-    public DateTime? UsDataZakonczeniaDo { get; set; }
+    public DateTime UsDataZakonczeniaDo { get; set; }
 
     [Column("us_opis")]
     [StringLength(255)]

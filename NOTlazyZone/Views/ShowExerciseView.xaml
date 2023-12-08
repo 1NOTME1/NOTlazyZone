@@ -61,7 +61,7 @@
      SelectedValuePath="PtId"
      SelectedValue="{Binding CwPtId, Mode=TwoWay}"/>
 
-                <Label Content="Przypisz ćwiczenie:" Grid.Row="1" Grid.Column="0"/>
+                <Label Content="Przypisz użytkownika:" Grid.Row="1" Grid.Column="0"/>
                 <ComboBox  Grid.Row="1" Grid.Column="1"
      ItemsSource="{Binding ExUsComboBoxItems}"
      DisplayMemberPath="UsImie"

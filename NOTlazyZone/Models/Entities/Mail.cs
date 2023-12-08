@@ -18,7 +18,7 @@ public partial class Mail
 
     [Column("ma_nazwa")]
     [StringLength(50)]
-    public string? MaNazwa { get; set; }
+    public string MaNazwa { get; set; }
 
     [Column("ma_opis")]
     [StringLength(255)]

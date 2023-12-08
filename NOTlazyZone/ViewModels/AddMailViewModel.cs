@@ -57,7 +57,7 @@ namespace NOTlazyZone.ViewModels
 
 
 
-        public String? MaNazwa
+        public String MaNazwa
         {
             get
             {

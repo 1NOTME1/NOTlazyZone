@@ -85,7 +85,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public string? AdNazwa
+        public string AdNazwa
         {
             get
             {
@@ -101,7 +101,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public string? AdOpis
+        public string AdOpis
         {
             get
             {
@@ -151,7 +151,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public string AdNrDomu
+        public string? AdNrDomu
         {
             get
             {
@@ -167,7 +167,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public string AdNrLokalu
+        public string? AdNrLokalu
         {
             get
             {

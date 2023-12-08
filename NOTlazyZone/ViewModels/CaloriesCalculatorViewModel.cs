@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace NOTlazyZone.ViewModels
 {
+    //klasa bedzie modifykowana po wszystkich wykladach
     class CaloriesCalculatorViewModel : WorkspaceViewModel
     {
         public CaloriesCalculatorViewModel()

@@ -9,12 +9,9 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
-            <!-- Lewa sekcja dla wyświetlania danych -->
             <ColumnDefinition Width="2*"/>
-            <!-- Prawa sekcja na kod -->
         </Grid.ColumnDefinitions>
 
-        <!-- Lewa sekcja dla wyświetlania danych -->
         <StackPanel Margin="10">
             <TextBlock Text="Wszyscy Użytkownicy" FontWeight="Bold" Margin="5"/>
             <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding User}">
@@ -32,7 +29,6 @@
             </DataGrid>
         </StackPanel>
 
-        <!-- Prawa sekcja z kodem -->
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>

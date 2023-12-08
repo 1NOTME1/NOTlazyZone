@@ -29,7 +29,7 @@ namespace NOTlazyZone.ViewModels
     }
         #region Dane
 
-        public String? TnNumer
+        public String TnNumer
         {
             get
             {
@@ -77,7 +77,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public bool? TnAktywny
+        public bool TnAktywny
         {
             get
             {

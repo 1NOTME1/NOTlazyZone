@@ -15,6 +15,7 @@ namespace NOTlazyZone.Models.EntitiesForView
         //ponizsze pola beada zamist id produktu
         public string? nazwaProduktu { get; set; }
         public decimal? cenaProduktu { get; set; }
+        public int iloscProduktow { get; set; }
         public string? nazwaUzytkownika { get; set; }
         #endregion
     }
