@@ -45,6 +45,10 @@
         <TabItem Header="Dodaj Nową Role">
             <local:AddUserRoleView />
         </TabItem>
+
+        <TabItem Header="Sekcja Powiadomień">
+            <local:ShowReminderView />
+        </TabItem>
     </TabControl>
 
 <!--<Grid>

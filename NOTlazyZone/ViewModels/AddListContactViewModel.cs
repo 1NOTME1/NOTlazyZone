@@ -14,7 +14,7 @@ namespace NOTlazyZone.ViewModels
     {
         //public ObservableCollection<Kontakty> Kontakty { get; private set; } = new ObservableCollection<Kontakty>();
 
-        public AddListContactViewModel() : base("Dodaj Cwiczenie")
+        public AddListContactViewModel() : base("Dodaj Kontakt")
         {
             item = new Kontakty();
          
@@ -55,7 +55,6 @@ namespace NOTlazyZone.ViewModels
         {
             get
             {
-                // Przykładowe zapytanie LINQ do pobrania ról. Dostosuj do swoich potrzeb.
                 return notlazyzoneEntities.RolaUzytkownikas.ToList();
             }
         }

@@ -51,10 +51,10 @@
                     <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding Wlasciciel}" Style="{StaticResource StatisticTextBox}"/>
 
                     <Label Content="Adres" Grid.Column="0" Grid.Row="2"/>
-                    <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding Adres}" Style="{StaticResource StatisticTextBox}"/>
+                    <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding NazwaAdresu}" Style="{StaticResource StatisticTextBox}"/>
 
                     <Label Content="Miasta" Grid.Column="0" Grid.Row="3"/>
-                    <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Miasto}" Style="{StaticResource StatisticTextBox}"/>
+                    <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Miejscowosc}" Style="{StaticResource StatisticTextBox}"/>
 
                     <Border Grid.Column="5" Grid.Row="0" Grid.RowSpan="4" IsEnabled="False">
                         <StackPanel>
@@ -86,10 +86,10 @@
                         <StackPanel Orientation="Horizontal">
 
                             <Label Content="Adres e-mail:" Margin="0,0,40,0"/>
-                            <TextBox Text="{Binding EmailKontaktowy}" Width="200" IsEnabled="False" Style="{StaticResource StatisticTextBox}"/>
+                            <TextBox Text="{Binding Email}" Width="200" IsEnabled="False" Style="{StaticResource StatisticTextBox}"/>
 
                             <Label  Content="Numer telefonu:" Margin="0,0,10,0"/>
-                            <TextBox Text="{Binding TelefonKontaktowy}" Width="200" Style="{StaticResource StatisticTextBox}"/>
+                            <TextBox Text="{Binding Telefon}" Width="200" Style="{StaticResource StatisticTextBox}"/>
 
                         </StackPanel>
                     </StackPanel>
@@ -118,9 +118,9 @@
                     <Label HorizontalAlignment="Left" Content="Liczba klientów" Grid.Row="0"/>
                     <TextBox Grid.Row="1" IsEnabled="False" Text="{Binding LiczbaKlientow}"/>
                     <Label HorizontalAlignment="Left" Content="Średnia liczba odwiedzin tygodniowo" Grid.Row="2"/>
-                    <TextBox Grid.Row="3" Text="{Binding SredniaLiczbaOdwiedzinTygodniowo}"/>
+                    <TextBox Grid.Row="3" Text="{Binding SredniaLiczbaKlientowTygodniowo}"/>
                     <Label HorizontalAlignment="Left" Content="Najpopularniejsze zajęcia" Grid.Row="4"/>
-                    <TextBox Grid.Row="5" IsEnabled="False" Text="{Binding NajpopularniejszeZajecia}"/>
+                    <TextBox Grid.Row="5" IsEnabled="False" Text="{Binding NajpopularniejszeCwiczenia}"/>
                     <CheckBox Content="Posiłki dietetyczne dostępne" Grid.Row="6"/>
                     <Label HorizontalAlignment="Left"  Content="Ilość wykupionych karentow" Grid.Row="8"/>
                     <TextBox Grid.Row="9" IsEnabled="False" Text="{Binding NajpopularniejszeZajecia}"/>

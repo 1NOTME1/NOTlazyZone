@@ -31,7 +31,7 @@ namespace NOTlazyZone.ViewModels
                 from Rola in RolaJoin.DefaultIfEmpty()
                 select new KontaktyForView
                 {
-                    IdKontaktu = Kontakty.KoId,
+                    //IdKontaktu = Kontakty.KoId,
                     IdUzytkownika = Kontakty.KoUsId,
                     nazwaUzytkownika = Kontakty.KoUs.UsImie + " " + Kontakty.KoUs.UsNazwisko,
                     dataRozpoczecia = Kontakty.KoUs.UsDataRozpoczeciaOd,
@@ -49,6 +49,7 @@ namespace NOTlazyZone.ViewModels
                     miejscowoscAdresu = Kontakty.KoUs.Adres.Select(a => a.AdMiejscowosc).FirstOrDefault(),
                     czyAdresAktywny = Kontakty.KoUs.Adres.Select(a => a.AdAktywny).FirstOrDefault(),
                     adresTypAdresu = Kontakty.KoUs.Adres.Select(at => at.AdAdt.AdtNazwa).FirstOrDefault()
+
 
                 }
             );

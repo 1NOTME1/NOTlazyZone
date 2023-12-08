@@ -1,83 +1,225 @@
-﻿using NOTlazyZone.Helpers;
-using NOTlazyZone.Models.Context;
+﻿using Microsoft.EntityFrameworkCore;
 using NOTlazyZone.Models.Entities;
-using NOTlazyZone.ViewModel;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
 
 namespace NOTlazyZone.ViewModels
 {
     public class StatisticViewModel : WszystkieViewModel<StatystykiSilowni>
     {
-        //public ICommand ChangeCodeCommand { get; set; }
+        private string _nazwaSilowni;
+        private string _wlasciciel;
+        private int _liczbaCzlonkow;
+        private DateTime _dataZalozenia;
+        private string _stronaInternetowa;
+        private string _godzinyOtwarcia;
+        private int _liczbaKlientow;
+        private int _sredniaLiczbaKlientowTygodniowo;
+        private string _najpopularniejszeCwiczenia;
+        private bool _dostepniTrenerzyPersonalni;
+        private double _wzrostProcentowyLiczbyKlientow;
+        private string _nazwaAdresu;
+        private string _miejscowosc;
+        private string _email;
+        private string _telefon;
 
-        //public string NazwaSilowni
-        //{
-        //    get => Model.NazwaSilowni;
-        //    set
-        //    {
-        //        if (Model.NazwaSilowni != value)
-        //        {
-        //            Model.NazwaSilowni = value;
-        //            OnPropertyChanged(() => NazwaSilowni);
-        //        }
-        //    }
-        //}
-        //public string Adres 
-        //{ get => Model.Adres; set{}}
-        //public string Wlasciciel
-        //{ get => Model.Wlasciciel; set { } }
-        //public string Miasto
-        //{ get => Model.Miasto; set{}}
-        //public int LiczbaCzlonkow
-        //{ get => Model.LiczbaCzlonkow; set {}}
-        //public DateTime DataZalozenia
-        //{ get => Model.DataZalozenia; set{}}
-        //public string TelefonKontaktowy
-        //{ get => Model.TelefonKontaktowy; set{}}
-        //public string EmailKontaktowy
-        //{ get => Model.EmailKontaktowy; set{}}
-        //public string StronaInternetowa
-        //{ get => Model.StronaInternetowa; set{}}
-        //public string GodzinyOtwarcia 
-        //{ get => Model.GodzinyOtwarcia; set{}}
-        //public int LiczbaKlientow 
-        //{ get => Model.LiczbaKlientow; set{}}
-        //public int SredniaLiczbaOdwiedzinTygodniowo 
-        //{ get => Model.SredniaLiczbaOdwiedzinTygodniowo; set{}}
-        //public string NajpopularniejszeZajecia 
-        //{ get => Model.NajpopularniejszeZajecia; set{}}
-        //public bool DostepnePosilkiDietetyczne 
-        //{ get => Model.DostepnePosilkiDietetyczne; set{}}
-        //public double ProcentowyWzrostLiczbyKlientow 
-        //{ get => Model.ProcentowyWzrostLiczbyKlientow; set{}}
-        //public string OpisWzrostu 
-        //{ get => Model.OpisWzrostu; set{}}
-
-        //public Statistic Model { get; set; }
 
         #region Konstruktor
-        public StatisticViewModel() :base("StatystykiSilowni")
+        public StatisticViewModel() : base("StatystykiSilowni")
         {
-            //Model = new Statistic("NOTlazyZone", "Grochowska 32 Warszawa", "Michał Kwaśniewski", "Warszawa, Poznań, Kraków", 100, DateTime.Now, "456 645 323", "NOTlazyZone@gmail.com", "www.NOTlazyZone.com", "06:00 - 24:00", 50, 10, "Trening silowy", true, 10.5, "Opis");
-
+            load();
         }
         #endregion
 
         #region Helpers
-            public override void load()
+        public override void load()
         {
-            List = new ObservableCollection<StatystykiSilowni>
-                (
-                //z bazy danych pobieram wszystkie dane
-                    notlazyzoneEntities.StatystykiSilownis
-                );
+            var silownia = notlazyzoneEntities.StatystykiSilownis
+                .Include(s => s.StAd)
+                .Include(s => s.StMa)
+                .Include(s => s.StTn)
+
+
+                .FirstOrDefault(s => s.StId == 5);
+            if (silownia != null)
+            {
+                NazwaSilowni = silownia.StNazwaSilowni;
+                Wlasciciel = silownia.StWlasciciel;
+                LiczbaCzlonkow = silownia.StLiczbaCzlonkow;
+                DataZalozenia = silownia.StDataZalozenia;
+                StronaInternetowa = silownia.StStronaInterentowa;
+                GodzinyOtwarcia = silownia.StGodzinyOtwarcia;
+                LiczbaKlientow = silownia.StLiczbaKlientow;
+                SredniaLiczbaKlientowTygodniowo = silownia.StSredniaLiczbaOdwiedzinTygodniowo;
+                NajpopularniejszeCwiczenia = silownia.StNajpopularniejszeZajecia;
+                DostepniTrenerzyPersonalni = silownia.StDostepniTrenerzyPersonalni;
+                WzrostProcentowyLiczbyKlientow = silownia.StProcentowyWzrostLiczbyKlientow;
+                NazwaAdresu = silownia.StAd?.AdNazwa;
+                Miejscowosc = silownia.StAd?.AdMiejscowosc;
+                Email = silownia.StMa?.MaNazwa;
+                Telefon = silownia.StTn.TnNumer;
+
+
+
+
+            }
+
         }
+
+
+
+        public string NazwaSilowni
+        {
+            get { return _nazwaSilowni; }
+            set
+            {
+                _nazwaSilowni = value;
+                OnPropertyChanged(() => NazwaSilowni);
+            }
+
+        }
+
+        public string Wlasciciel
+        {
+            get { return _wlasciciel; }
+            set
+            {
+                _wlasciciel = value;
+                OnPropertyChanged(() => Wlasciciel);
+            }
+        }
+
+        public int LiczbaCzlonkow
+        {
+            get { return _liczbaCzlonkow; }
+            set
+            {
+                _liczbaCzlonkow = value;
+                OnPropertyChanged(() => LiczbaCzlonkow);
+            }
+        }
+
+        public DateTime DataZalozenia
+        {
+            get { return _dataZalozenia; }
+            set
+            {
+                _dataZalozenia = value;
+                OnPropertyChanged(() => DataZalozenia);
+            }
+        }
+
+        public string StronaInternetowa
+        {
+            get { return _stronaInternetowa; }
+            set
+            {
+                _stronaInternetowa = value;
+                OnPropertyChanged(() => _stronaInternetowa);
+            }
+        }
+
+        public string GodzinyOtwarcia
+        {
+            get { return _godzinyOtwarcia; }
+            set
+            {
+                _godzinyOtwarcia = value;
+                OnPropertyChanged(() => GodzinyOtwarcia);
+            }
+        }
+
+        public int LiczbaKlientow
+        {
+            get { return _liczbaKlientow; }
+            set
+            {
+                _liczbaKlientow = value;
+                OnPropertyChanged(() => LiczbaKlientow);
+            }
+        }
+
+        public int SredniaLiczbaKlientowTygodniowo
+        {
+            get { return _sredniaLiczbaKlientowTygodniowo; }
+            set
+            {
+                _sredniaLiczbaKlientowTygodniowo = value;
+                OnPropertyChanged(() => SredniaLiczbaKlientowTygodniowo);
+            }
+        }
+
+        public string NajpopularniejszeCwiczenia
+        {
+            get { return _najpopularniejszeCwiczenia; }
+            set
+            {
+                _najpopularniejszeCwiczenia = value;
+                OnPropertyChanged(() => NajpopularniejszeCwiczenia);
+            }
+        }
+
+        public bool DostepniTrenerzyPersonalni
+        {
+            get { return _dostepniTrenerzyPersonalni; }
+            set
+            {
+                _dostepniTrenerzyPersonalni = value;
+                OnPropertyChanged(() => DostepniTrenerzyPersonalni);
+            }
+        }
+
+        public double WzrostProcentowyLiczbyKlientow
+        {
+            get { return _wzrostProcentowyLiczbyKlientow; }
+            set
+            {
+                _wzrostProcentowyLiczbyKlientow = value;
+                OnPropertyChanged(() => WzrostProcentowyLiczbyKlientow);
+            }
+        }
+
+        public string NazwaAdresu
+        {
+            get { return _nazwaAdresu; }
+            set
+            {
+                _nazwaAdresu = value;
+                OnPropertyChanged(() => NazwaAdresu);
+            }
+        }
+
+        public string Miejscowosc
+        {
+            get { return _miejscowosc; }
+            set
+            {
+                _miejscowosc = value;
+                OnPropertyChanged(() => Miejscowosc);
+            }
+        }
+
+        public string Email
+        {
+            get { return _email; }
+            set
+            {
+                _email = value;
+                OnPropertyChanged(() => Email);
+            }
+        }
+
+        public string Telefon
+        {
+            get { return _telefon; }
+            set
+            {
+                _telefon = value;
+                OnPropertyChanged(() => Telefon);
+            }
+        }
+
+
         #endregion
 
 

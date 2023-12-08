@@ -17,14 +17,15 @@ using System.Windows.Shapes;
 namespace NOTlazyZone.Views
 {
     /// <summary>
-    /// Interaction logic for StatisticView.xaml
+    /// Interaction logic for ShowReminderView.xaml
     /// </summary>
-    public partial class StatisticView : WszystkieViewBase
+    public partial class ShowReminderView : WszystkieViewBase
     {
-        public StatisticView()
+        public ShowReminderView()
         {
             InitializeComponent();
-            this.DataContext = new StatisticViewModel();
+            this.DataContext = new ShowReminderViewModel();
+
         }
     }
 }

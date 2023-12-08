@@ -91,6 +91,10 @@
         <vw:AddUserRoleView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type vm:ShowReminderViewModel}">
+        <vw:ShowReminderView/>
+    </DataTemplate>
+
 
     <Style x:Key="MainHCCStyle" TargetType="{x:Type HeaderedContentControl}">
         <Setter Property="HeaderTemplate">

@@ -1,0 +1,31 @@
+﻿<local:WszystkieViewBase x:Class="NOTlazyZone.Views.ShowReminderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NOTlazyZone.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+            <TextBlock Text="ZGODY NA POWIADOMIENIA" FontWeight="Bold" Margin="5"/>
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id Powiadomienia" Binding="{Binding IdPowiadomienia}"/>
+                    <DataGridTextColumn Header="Powiadomienie" Binding="{Binding nazwaPowiadomienia}"/>
+                    <DataGridTextColumn Header="Czas powiadomienia" Binding="{Binding powiadomienie}"/>
+                    <DataGridTextColumn Header="Id Użytkownika" Binding="{Binding UsId}"/>
+                    <DataGridTextColumn Header="Nazwa użytkownika" Binding="{Binding nazwaUzytkownika}"/>
+                    <DataGridTextColumn Header="Uwagi" Binding="{Binding uwagi}"/>
+                    <DataGridTextColumn Header="IdDiety" Binding="{Binding DaId}"/>
+                    <DataGridTextColumn Header="IdCwiczenia" Binding="{Binding CwId}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        
+    </Grid>
+</local:WszystkieViewBase>

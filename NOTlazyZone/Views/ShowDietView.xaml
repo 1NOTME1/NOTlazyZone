@@ -12,9 +12,9 @@
                 <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id Diety" Binding="{Binding idDiety}"/>
-                    <DataGridTextColumn Header="Nazwa" Binding="{Binding nazwaDiety}"/>
-                    <DataGridTextColumn Header="Rodzaj Diety" Binding="{Binding rodzajDiety}"/>
-                    <DataGridTextColumn Header="ID Użytkownika" Binding="{Binding idUzytkownika}"/>
+                        <DataGridTextColumn Header="Nazwa" Binding="{Binding nazwaDiety}"/>
+                        <DataGridTextColumn Header="Rodzaj Diety" Binding="{Binding rodzajDiety}"/>
+                        <DataGridTextColumn Header="ID Użytkownika" Binding="{Binding idUzytkownika}"/>
                         <DataGridTextColumn Header="Kalorie" Binding="{Binding iloscKalorii}"/>
                         <DataGridTextColumn Header="Białko" Binding="{Binding iloscBialka}"/>
                         <DataGridTextColumn Header="Węglowodany" Binding="{Binding iloscWegli}"/>

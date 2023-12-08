@@ -35,41 +35,41 @@ public partial class StatystykiSilowni
 
     [Column("st_nazwa_silowni")]
     [StringLength(100)]
-    public string? StNazwaSilowni { get; set; }
+    public string StNazwaSilowni { get; set; }
 
     [Column("st_wlasciciel")]
     [StringLength(50)]
-    public string? StWlasciciel { get; set; }
+    public string StWlasciciel { get; set; }
 
     [Column("st_liczba_czlonkow")]
-    public int? StLiczbaCzlonkow { get; set; }
+    public int StLiczbaCzlonkow { get; set; }
 
     [Column("st_data_zalozenia", TypeName = "datetime")]
-    public DateTime? StDataZalozenia { get; set; }
+    public DateTime StDataZalozenia { get; set; }
 
     [Column("st_strona_interentowa")]
     [StringLength(50)]
-    public string? StStronaInterentowa { get; set; }
+    public string StStronaInterentowa { get; set; }
 
     [Column("st_godziny_otwarcia")]
     [StringLength(50)]
-    public string? StGodzinyOtwarcia { get; set; }
+    public string StGodzinyOtwarcia { get; set; }
 
     [Column("st_liczba_klientow")]
-    public int? StLiczbaKlientow { get; set; }
+    public int StLiczbaKlientow { get; set; }
 
     [Column("st_srednia_liczba_odwiedzin_tygodniowo")]
-    public int? StSredniaLiczbaOdwiedzinTygodniowo { get; set; }
+    public int StSredniaLiczbaOdwiedzinTygodniowo { get; set; }
 
     [Column("st_najpopularniejsze_zajecia")]
     [StringLength(50)]
-    public string? StNajpopularniejszeZajecia { get; set; }
+    public string StNajpopularniejszeZajecia { get; set; }
 
     [Column("st_dostepni_trenerzy_personalni")]
-    public bool? StDostepniTrenerzyPersonalni { get; set; }
+    public bool StDostepniTrenerzyPersonalni { get; set; }
 
     [Column("st_procentowy_wzrost_liczby_klientow")]
-    public double? StProcentowyWzrostLiczbyKlientow { get; set; }
+    public double StProcentowyWzrostLiczbyKlientow { get; set; }
 
     [ForeignKey("StAdId")]
     [InverseProperty("StatystykiSilownis")]
