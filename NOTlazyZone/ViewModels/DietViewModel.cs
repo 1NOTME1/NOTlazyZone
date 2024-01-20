@@ -28,6 +28,35 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
+        protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(DaNazwa):
+                    return string.IsNullOrEmpty(DaNazwa) ? "Uzupełnij nazwę" : string.Empty;
+
+                case nameof(DaColorie):
+                    return DaColorie == 0 ? "Wypełnij pole kalorii" : string.Empty;
+
+                case nameof(DaIloscBialka):
+                    return DaIloscBialka == 0 ? "Wypełnij pole białka" : string.Empty;
+
+                case nameof(DaIloscWeglowodanow):
+                    return DaIloscWeglowodanow == 0 ? "Wypełnij pole węglowodanów" : string.Empty;
+
+                case nameof(DaIloscTluszczy):
+                    return DaIloscTluszczy == 0 ? "Wypełnij pole tłusczy" : string.Empty;
+
+                case nameof(DaDatId):
+                    return DaDatId == 0 ? "Wypełnij pole rodzaju diety" : string.Empty;
+
+                case nameof(DaUsId):
+                    return DaUsId == 0 ? "Wypełnij pole uzypisania do uzytkownika" : string.Empty;
+
+                default: return string.Empty;
+            }
+        }
+
         public String DaNazwa
         {
             get
@@ -132,7 +161,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? DaDatId
+        public int DaDatId
         {
             get
             {
@@ -148,7 +177,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? DaUsId
+        public int DaUsId
         {
             get
             {

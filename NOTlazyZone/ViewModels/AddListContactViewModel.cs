@@ -23,7 +23,7 @@ namespace NOTlazyZone.ViewModels
         #region Dane
         //dla kazdego elementu na interfejsie ktory bedzie dodawany tworzymy wlasciwosc
 
-        public int? KoUsId
+        public int KoUsId
         {
             get
             {
@@ -59,9 +59,20 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
+        protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(KoUsId):
+                    return KoUsId == 0 ? "Dodaj uzytkownika do kontaktow" : string.Empty;
+
+                default: return string.Empty;
+            }
+        }
 
 
-        
+
+
 
 
         #endregion

@@ -1,4 +1,5 @@
-﻿using NOTlazyZone.Models.Entities;
+﻿using Microsoft.IdentityModel.Tokens;
+using NOTlazyZone.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -27,7 +28,20 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public string? DatRodzaj
+        protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(DatRodzaj):
+                    return DatRodzaj.IsNullOrEmpty() ? "Nie uzupełnijłeś rodzaju diety" : string.Empty;
+
+
+                default: return string.Empty;
+            }
+        }
+
+
+        public string DatRodzaj
         {
             get
             {

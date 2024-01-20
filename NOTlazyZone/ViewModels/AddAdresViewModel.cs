@@ -1,4 +1,5 @@
-﻿using NOTlazyZone.Models.Context;
+﻿using Microsoft.IdentityModel.Tokens;
+using NOTlazyZone.Models.Context;
 using NOTlazyZone.Models.Entities;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,48 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
+        protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(AdAdtId):
+                    return AdAdtId == 0 ? "Nie uzupełniłeś typu adresu" : string.Empty;
+
+                case nameof(AdUsId):
+                    return AdUsId == 0 ? "Nie przypisaleś użytkownika" : string.Empty;
+
+                case nameof(AdNazwa):
+                    return AdNazwa.IsNullOrEmpty() ? "Nie uzupełnijłeś nazwy" : string.Empty;
+
+                case nameof(AdOpis):
+                    return AdOpis.IsNullOrEmpty() ? "Nie uzupełniłeś opisu" : string.Empty;
+
+                //case nameof(AdUwagi):
+                //    return AdUwagi.IsNullOrEmpty() ? "Nie uzupełniłeś uwag" : string.Empty;
+
+                case nameof(AdUlica):
+                    return AdUlica.IsNullOrEmpty() ? "Nie uzupełniłeś ulicy" : string.Empty;
+
+                case nameof(AdNrDomu):
+                    return AdNrDomu.IsNullOrEmpty() ? "Nie uzupełniłeś numeru domu" : string.Empty;
+
+                case nameof(AdNrLokalu):
+                    return AdNrLokalu.IsNullOrEmpty() ? "Nie uzupełniłeś numeru lokalu" : string.Empty;
+
+                case nameof(AdKod):
+                    return AdKod.IsNullOrEmpty() ? "Nie uzupełniłeś kodu pocztowego" : string.Empty;
+
+                case nameof(AdMiejscowosc):
+                    return AdMiejscowosc.IsNullOrEmpty() ? "Nie uzupełniłeś miejscowosci" : string.Empty;
+
+                case nameof(AdAktywny):
+                    return !AdAktywny ? "Nie uzupełniłeś aktywności adresu" : string.Empty;
+
+
+                default: return string.Empty;
+            }
+        }
+
         public IQueryable<AdresTyp> AdAdtComboBoxItems
         {
             get
@@ -41,7 +84,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? AdAdtId
+        public int AdAdtId
         {
             get
             {
@@ -69,7 +112,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? AdUsId
+        public int AdUsId
         {
             get
             {

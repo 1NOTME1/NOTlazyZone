@@ -31,11 +31,41 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
+            protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(CwNazwa):
+                    return string.IsNullOrEmpty(CwNazwa) ? "Uzupełnij nazwę" : string.Empty;
+
+
+                case nameof(CwSeria):
+                    return CwSeria == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+
+                case nameof(CwPowtorzenie):
+                    return CwPowtorzenie == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+
+                case nameof(CwCiezar):
+                    return CwCiezar == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+
+                case nameof(CwPrzerwa):
+                    return CwPrzerwa == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+
+                case nameof(CwTrudnosc):
+                    return CwTrudnosc == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+
+                case nameof(CwCardio):
+                    return !CwCardio ? "Nie uzupełniłeś aktywności adresu" : string.Empty;
+
+                default: return string.Empty;
+            }
+        }
+
         #region Dane
         //dla kazdego elementu na interfejsie ktory bedzie dodawany tworzymy wlasciwosc
 
 
-        public String? CwNazwa
+        public String CwNazwa
         {
             get
             {
@@ -131,7 +161,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? CwTrudnosc
+        public int CwTrudnosc
         {
             get
             {

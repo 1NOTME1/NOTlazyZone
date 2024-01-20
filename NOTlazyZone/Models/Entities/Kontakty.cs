@@ -15,9 +15,9 @@ public partial class Kontakty
     public int KoId { get; set; }
 
     [Column("ko_us_id")]
-    public int? KoUsId { get; set; }
+    public int KoUsId { get; set; }
 
     [ForeignKey("KoUsId")]
     [InverseProperty("Kontakties")]
-    public virtual Uzytkownicy? KoUs { get; set; }
+    public virtual Uzytkownicy KoUs { get; set; }
 }

@@ -27,6 +27,18 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
+        protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(CwtNazwa):
+                    return string.IsNullOrEmpty(CwtNazwa) ? "Wypełnij pole nazwa" : string.Empty;
+
+
+                default: return string.Empty;
+            }
+        }
+
         public string? CwtNazwa
         {
             get

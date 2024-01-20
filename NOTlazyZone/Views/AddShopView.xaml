@@ -55,10 +55,10 @@
                 <!--<TextBox x:Name="IdProduktuTextBox" Grid.Row="0" Grid.Column="1" Text="{Binding Path=IdProduktu, UpdateSourceTrigger=PropertyChanged}"/>-->
 
                 <Label Content="Nazwa Produktu:" Grid.Row="1" Grid.Column="0"/>
-                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Path=PrNazwa, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Path=PrNazwa, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
-                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=PrCena, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=PrCena, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
             <Button Content="Dodaj produkt"  Margin="5" />
 

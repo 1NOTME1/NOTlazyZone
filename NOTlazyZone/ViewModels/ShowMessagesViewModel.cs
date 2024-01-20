@@ -29,6 +29,28 @@ namespace NOTlazyZone.ViewModels
                 Wiadomosci.Add(prod);
             }
         }
+
+        protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(WiZawartosc):
+                    return string.IsNullOrEmpty(WiZawartosc) ? "Nic nie napisałeś" : string.Empty;
+
+                case nameof(WiDataOtrzymania):
+                    return WiDataOtrzymania == DateTime.MinValue ? "Uzupełnij datę" : string.Empty;
+
+                case nameof(WiDoOsoby):
+                    return string.IsNullOrEmpty(WiDoOsoby) ? "Nie podałeś adresu" : string.Empty;
+
+                case nameof(WiTemat):
+                    return string.IsNullOrEmpty(WiTemat) ? "Nie podałeś tematu" : string.Empty;
+
+
+                default: return string.Empty;
+            }
+        }
+
         //dla kazdego elementu na interfejsie ktory bedzie dodawany tworzymy wlasciwosc
 
 

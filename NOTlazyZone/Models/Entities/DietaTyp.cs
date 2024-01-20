@@ -16,7 +16,7 @@ public partial class DietaTyp
 
     [Column("dat_rodzaj")]
     [StringLength(50)]
-    public string? DatRodzaj { get; set; }
+    public string DatRodzaj { get; set; }
 
     [Column("dat_us_id")]
     public int? DatUsId { get; set; }

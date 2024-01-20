@@ -26,7 +26,21 @@ namespace NOTlazyZone.ViewModels
                 Rola.Add(prod);
             }
         }
-        public string? RoRoleName
+
+        protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(RoRoleName):
+                    return string.IsNullOrEmpty(RoRoleName) ? "Wypełnij pole Rola" : string.Empty;
+
+                default:
+                    return string.Empty;
+            }
+
+        }
+
+        public string RoRoleName
         {
             get
             {

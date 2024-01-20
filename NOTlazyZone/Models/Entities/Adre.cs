@@ -15,10 +15,10 @@ public partial class Adre
     public int AdId { get; set; }
 
     [Column("ad_us_id")]
-    public int? AdUsId { get; set; }
+    public int AdUsId { get; set; }
 
     [Column("ad_adt_id")]
-    public int? AdAdtId { get; set; }
+    public int AdAdtId { get; set; }
 
     [Column("ad_nazwa")]
     [StringLength(50)]

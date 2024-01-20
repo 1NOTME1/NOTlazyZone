@@ -14,7 +14,7 @@ public partial class Mail
     public int MaId { get; set; }
 
     [Column("ma_us_id")]
-    public int? MaUsId { get; set; }
+    public int MaUsId { get; set; }
 
     [Column("ma_nazwa")]
     [StringLength(50)]
@@ -54,7 +54,7 @@ public partial class Mail
 
     [ForeignKey("MaUsId")]
     [InverseProperty("Mail")]
-    public virtual Uzytkownicy? MaUs { get; set; }
+    public virtual Uzytkownicy MaUs { get; set; }
 
     [InverseProperty("StMa")]
     public virtual ICollection<StatystykiSilowni> StatystykiSilownis { get; set; } = new List<StatystykiSilowni>();

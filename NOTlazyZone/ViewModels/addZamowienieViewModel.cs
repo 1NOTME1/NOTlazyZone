@@ -27,6 +27,25 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
+        protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(ZaUsId):
+                    return ZaUsId == 0 ? "Wybierz Użytkownika" : string.Empty;
+
+                case nameof(ZaPrId):
+                    return ZaPrId == 0 ? "Wybierz Produktu" : string.Empty;
+
+                case nameof(ZaIlosc):
+                    return ZaIlosc == 0 ? "Podaj ilość" : string.Empty;
+
+                case nameof(ZaDataZamowienia):
+                    return ZaDataZamowienia == DateTime.MinValue ? "Uzupełnij datę" : string.Empty;
+
+                default: return string.Empty;
+            }
+        }
         public IQueryable<Uzytkownicy> ZaUsComboBoxItems
         {
             get
@@ -38,7 +57,6 @@ namespace NOTlazyZone.ViewModels
                     ).ToList().AsQueryable();
             }
         }
-
         public IQueryable<Produkty> ZaPrComboBoxItems
         {
             get
@@ -67,7 +85,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? ZaUsId
+        public int ZaUsId
         {
             get
             {
@@ -83,7 +101,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? ZaPrId
+        public int ZaPrId
         {
             get
             {

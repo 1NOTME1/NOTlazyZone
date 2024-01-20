@@ -1,4 +1,5 @@
-﻿using NOTlazyZone.Helpers;
+﻿using Microsoft.IdentityModel.Tokens;
+using NOTlazyZone.Helpers;
 using NOTlazyZone.Models.Context;
 using NOTlazyZone.Models.Entities;
 using NOTlazyZone.ViewModel;
@@ -33,6 +34,29 @@ namespace NOTlazyZone.ViewModels
                 Produkty.Add(prod);
             }
         }
+
+        protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(PrNazwa):
+                    return PrNazwa.IsNullOrEmpty() ? "Wypełnij pole Nazwa Produktu" : string.Empty;
+
+                case nameof(PrCena):
+                    return PrCena == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+
+                default: return string.Empty;
+            }
+        }
+
+        //protected override string ValidateModel()
+        //{
+        //    string errors = string.Empty;
+        //    errors += ValidateProperty(nameof(PrNazwa));
+        //    errors += ValidateProperty(nameof(PrCena));
+
+        //    return errors;
+        //}
 
 
         #region Dane

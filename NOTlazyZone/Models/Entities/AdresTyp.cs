@@ -40,7 +40,7 @@ public partial class AdresTyp
     public DateTime? AdtKiedyUsunal { get; set; }
 
     [Column("adt_aktywny")]
-    public bool? AdtAktywny { get; set; }
+    public bool AdtAktywny { get; set; }
 
     [InverseProperty("AdAdt")]
     public virtual ICollection<Adre> Adres { get; set; } = new List<Adre>();

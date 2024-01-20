@@ -27,6 +27,25 @@ namespace NOTlazyZone.ViewModels
             Telefon.Add(prod);
         }
     }
+
+        protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(TnNumer):
+                    return string.IsNullOrEmpty(TnNumer) ? "Podaj numer telefonu" : string.Empty;
+
+                case nameof(TnAktywny):
+                    return !TnAktywny ? "Uzupełnij pole aktywności telefonu" : string.Empty;
+
+                case nameof(TnUsId):
+                    return TnUsId == 0 ? "Przypisz uzytkownika do numeru" : string.Empty;
+
+                default:
+                    return string.Empty;
+            }
+
+        }
         #region Dane
 
         public String TnNumer
@@ -105,7 +124,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? TnUsId
+        public int TnUsId
         {
             get
             {

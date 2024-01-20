@@ -15,7 +15,7 @@ public partial class Telefon
     public int TnId { get; set; }
 
     [Column("tn_us_id")]
-    public int? TnUsId { get; set; }
+    public int TnUsId { get; set; }
 
     [Column("tn_numer")]
     [StringLength(50)]
@@ -58,5 +58,5 @@ public partial class Telefon
 
     [ForeignKey("TnUsId")]
     [InverseProperty("Telefons")]
-    public virtual Uzytkownicy? TnUs { get; set; }
+    public virtual Uzytkownicy TnUs { get; set; }
 }

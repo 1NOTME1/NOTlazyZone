@@ -15,7 +15,7 @@ public partial class Cwiczenium
     public int CwId { get; set; }
 
     [Column("cw_us_id")]
-    public int? CwUsId { get; set; }
+    public int CwUsId { get; set; }
 
     [Column("cw_nazwa")]
     [StringLength(50)]
@@ -40,7 +40,7 @@ public partial class Cwiczenium
     public bool CwCardio { get; set; }
 
     [Column("cw_trudnosc")]
-    public int? CwTrudnosc { get; set; }
+    public int CwTrudnosc { get; set; }
 
     [Column("cw_opis")]
     [Unicode(false)]
@@ -51,7 +51,7 @@ public partial class Cwiczenium
 
     [ForeignKey("CwCwtId")]
     [InverseProperty("Cwiczenia")]
-    public virtual CwiczeniaTyp? CwCwt { get; set; }
+    public virtual CwiczeniaTyp CwCwt { get; set; }
 
     [ForeignKey("CwPtId")]
     [InverseProperty("Cwiczenia")]

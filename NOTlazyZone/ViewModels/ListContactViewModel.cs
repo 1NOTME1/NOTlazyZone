@@ -27,8 +27,8 @@ namespace NOTlazyZone.ViewModels
             List = new ObservableCollection<KontaktyForView>
             (
                 from Kontakty in notlazyzoneEntities.Kontakties
-                join Rola in notlazyzoneEntities.RolaUzytkownikas on Kontakty.KoUs.UsRoId equals Rola.RoId into RolaJoin
-                from Rola in RolaJoin.DefaultIfEmpty()
+                    //join Rola in notlazyzoneEntities.RolaUzytkownikas on Kontakty.KoUs.UsRoId equals Rola.RoId into RolaJoin
+                    //from Rola in RolaJoin.DefaultIfEmpty()
                 select new KontaktyForView
                 {
                     IdKontaktu = Kontakty.KoId,
@@ -38,8 +38,8 @@ namespace NOTlazyZone.ViewModels
                     dataZakonczenia = Kontakty.KoUs.UsDataRozpoczeciaOd,
                     czyUzytkownikAktywny = Kontakty.KoUs.UsAktywny,
                     numerTelefonu = Kontakty.KoUs.Telefons.Select(t => t.TnNumer).FirstOrDefault(),
-
-                    rolaUzytkownika = Rola != null ? Rola.RoRoleName : null,
+                    rolaUzytkownika = Kontakty.KoUs.UsRo.RoRoleName,
+                    //rolaUzytkownika = Rola != null ? Rola.RoRoleName : null,
                     nazwaAdresu = Kontakty.KoUs.Adres.Select(a => a.AdNazwa).FirstOrDefault(),
                     ulicaAdresu = Kontakty.KoUs.Adres.Select(a => a.AdUlica).FirstOrDefault(),
                     nrDomuAdresu = Kontakty.KoUs.Adres.Select(a => a.AdNrDomu).FirstOrDefault(),

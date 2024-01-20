@@ -50,7 +50,7 @@
                  ItemsSource="{Binding MaUsComboBoxItems}"
                  DisplayMemberPath="UsImie"
                  SelectedValuePath="UsId"
-                 SelectedValue="{Binding TnUsId, Mode=TwoWay}"/>
+                 SelectedValue="{Binding MaUsId, Mode=TwoWay}"/>
 
 
             <Label Content="Mail:" Grid.Row="2" Grid.Column="0"/>

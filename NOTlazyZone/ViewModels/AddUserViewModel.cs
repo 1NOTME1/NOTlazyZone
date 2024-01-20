@@ -28,6 +28,39 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
+        protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(UsImie):
+                    return string.IsNullOrEmpty(UsImie) ? "Wypełnij pole Imię" : string.Empty;
+
+                case nameof(UsNazwisko):
+                    return string.IsNullOrEmpty(UsNazwisko) ? "Wypełnij pole Nazwisko" : string.Empty;
+
+                case nameof(UsPesel):
+                    return string.IsNullOrEmpty(UsPesel) ? "Wypełnij pole PESEL" : string.Empty;
+
+                case nameof(UsDataRozpoczeciaOd):
+                    return UsDataRozpoczeciaOd == DateTime.MinValue ? "Uzupełnij datę" : string.Empty;
+
+                case nameof(UsDataZakonczeniaDo):
+                    return UsDataZakonczeniaDo == DateTime.MinValue ? "Uzupełnij datę" : string.Empty;
+
+
+                case nameof(UsAktywny):
+                    return !UsAktywny ? "Uzupełnij pole aktywności telefonu" : string.Empty;
+
+                case nameof(UsRoId):
+                    return UsRoId == 0 ? "Przypisz role do uzytkownika" : string.Empty;
+
+                default:
+                    return string.Empty;
+            }
+
+        }
+
+
 
         #region Dane
 

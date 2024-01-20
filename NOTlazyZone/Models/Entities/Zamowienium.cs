@@ -15,10 +15,10 @@ public partial class Zamowienium
     public int ZaId { get; set; }
 
     [Column("za_us_id")]
-    public int? ZaUsId { get; set; }
+    public int ZaUsId { get; set; }
 
     [Column("za_pr_id")]
-    public int? ZaPrId { get; set; }
+    public int ZaPrId { get; set; }
 
     [Column("za_ilosc")]
     public int ZaIlosc { get; set; }
@@ -28,9 +28,9 @@ public partial class Zamowienium
 
     [ForeignKey("ZaPrId")]
     [InverseProperty("Zamowienia")]
-    public virtual Produkty? ZaPr { get; set; }
+    public virtual Produkty ZaPr { get; set; }
 
     [ForeignKey("ZaUsId")]
     [InverseProperty("Zamowienia")]
-    public virtual Uzytkownicy? ZaUs { get; set; }
+    public virtual Uzytkownicy ZaUs { get; set; }
 }

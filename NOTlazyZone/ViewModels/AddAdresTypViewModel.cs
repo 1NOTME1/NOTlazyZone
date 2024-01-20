@@ -1,8 +1,10 @@
-﻿using NOTlazyZone.Models.Entities;
+﻿using Microsoft.IdentityModel.Tokens;
+using NOTlazyZone.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,6 +29,21 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
+        protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(AdtNazwa):
+                    return AdtNazwa.IsNullOrEmpty() ? "Nie uzupełniłeś typu adresu" : string.Empty;
+
+                case nameof(AdtAktywny):
+                    return !AdtAktywny ? "Nie uzupełniłeś aktywności adresu" : string.Empty;
+
+
+                default: return string.Empty;
+            }
+        }
+
         public string AdtNazwa
         {
             get
@@ -43,7 +60,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public bool? AdtAktywny
+        public bool AdtAktywny
         {
             get
             {

@@ -19,6 +19,7 @@ namespace NOTlazyZone
             base.OnStartup(e);
             MainWindow window = new MainWindow();
             var viewModel = new MainWindowViewModel();
+            App.Current.MainWindow = window;
             window.DataContext = viewModel;
             window.Show();
         }

@@ -19,10 +19,10 @@ public partial class Dietum
     public string DaNazwa { get; set; }
 
     [Column("da_us_id")]
-    public int? DaUsId { get; set; }
+    public int DaUsId { get; set; }
 
     [Column("da_dat_id")]
-    public int? DaDatId { get; set; }
+    public int DaDatId { get; set; }
 
     [Column("da_colorie")]
     public int DaColorie { get; set; }
@@ -38,9 +38,9 @@ public partial class Dietum
 
     [ForeignKey("DaDatId")]
     [InverseProperty("Dieta")]
-    public virtual DietaTyp? DaDat { get; set; }
+    public virtual DietaTyp DaDat { get; set; }
 
     [ForeignKey("DaUsId")]
     [InverseProperty("Dieta")]
-    public virtual Uzytkownicy? DaUs { get; set; }
+    public virtual Uzytkownicy DaUs { get; set; }
 }

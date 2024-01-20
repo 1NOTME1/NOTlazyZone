@@ -27,6 +27,25 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
+        protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(MaUsId):
+                    return MaUsId == 0 ? "Wypełnij pole uzytkownika" : string.Empty;
+
+                case nameof(MaNazwa):
+                    return string.IsNullOrEmpty(MaNazwa) ? "adres jest pusty" : string.Empty;
+
+                case nameof(MaAktywny):
+                    return !MaAktywny ? "Nie uzupełniłeś aktywności adresu mail" : string.Empty;
+
+                default:
+                    return string.Empty;
+            }
+
+        }
+
         public IQueryable<Uzytkownicy> MaUsComboBoxItems
         {
             get
@@ -39,7 +58,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? MaUsId
+        public int MaUsId
         {
             get
             {

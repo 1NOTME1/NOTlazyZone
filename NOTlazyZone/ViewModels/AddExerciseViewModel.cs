@@ -1,4 +1,5 @@
-﻿using NOTlazyZone.Models.Entities;
+﻿using Microsoft.IdentityModel.Tokens;
+using NOTlazyZone.Models.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -27,9 +28,44 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
+        protected override string ValidateProperty(string PropertyName)
+        {
+            switch (PropertyName)
+            {
+                case nameof(CwNazwa):
+                    return CwNazwa.IsNullOrEmpty() ? "Wypełnij pole Nazwa Produktu" : string.Empty;
+
+                case nameof(CwSeria):
+                    return CwSeria == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+
+                case nameof(CwPowtorzenie):
+                    return CwPowtorzenie == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+
+                case nameof(CwCiezar):
+                    return CwCiezar == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+
+                case nameof(CwPrzerwa):
+                    return CwPrzerwa == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+
+                case nameof(CwTrudnosc):
+                    return CwTrudnosc == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+
+                case nameof(CwUsId):
+                    return CwUsId == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+
+                case nameof(CwPtId):
+                    return CwPtId == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+
+                case nameof(CwCardio):
+                    return !CwCardio ? "Nie uzupełniłeś aktywności adresu" : string.Empty;
+
+                default: return string.Empty;
+            }
+        }
+
 
         #region Dane
-        //dla kazdego elementu na interfejsie ktory bedzie dodawany tworzymy wlasciwosc
+            //dla kazdego elementu na interfejsie ktory bedzie dodawany tworzymy wlasciwosc
 
 
         public IQueryable<Uzytkownicy> ExUsComboBoxItems
@@ -69,7 +105,7 @@ namespace NOTlazyZone.ViewModels
         }
 
 
-        public String? CwNazwa
+        public String CwNazwa
         {
             get
             {
@@ -149,7 +185,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? CwTrudnosc
+        public int CwTrudnosc
         {
             get
             {
@@ -181,7 +217,7 @@ namespace NOTlazyZone.ViewModels
             }
         }
 
-        public int? CwUsId
+        public int CwUsId
         {
             get
             {
