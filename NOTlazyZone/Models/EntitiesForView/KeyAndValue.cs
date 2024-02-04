@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NOTlazyZone.Models.EntitiesForView
+namespace Firma.Models.EntitiesForView
 {
-    internal class KeyAndValue
+    public class KeyAndValue
     {
+        public int Key { get; set; }
+        public string Value { get; set; }
     }
 }

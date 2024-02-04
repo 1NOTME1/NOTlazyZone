@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NOTlazyZone.Models.Entities;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace NOTlazyZone.ViewModels
@@ -39,7 +40,6 @@ namespace NOTlazyZone.ViewModels
                 .Include(s => s.StMa)
                 .Include(s => s.StTn)
 
-
                 .FirstOrDefault(s => s.StId == 5);
             if (silownia != null)
             {
@@ -58,12 +58,7 @@ namespace NOTlazyZone.ViewModels
                 Miejscowosc = silownia.StAd?.AdMiejscowosc;
                 Email = silownia.StMa?.MaNazwa;
                 Telefon = silownia.StTn.TnNumer;
-
-
-
-
             }
-
         }
 
 
@@ -217,6 +212,24 @@ namespace NOTlazyZone.ViewModels
                 _telefon = value;
                 OnPropertyChanged(() => Telefon);
             }
+        }
+
+        public override List<string> getComboboxSortList()
+        {
+            return new List<string>();
+        }
+
+        public override void sort()
+        {
+        }
+
+        public override List<string> getComboboxFindList()
+        {
+            return new List<string>();
+        }
+
+        public override void find()
+        {
         }
 
 

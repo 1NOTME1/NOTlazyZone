@@ -44,26 +44,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label Content="WPROWADŹ MAIL" Grid.Row="0" Grid.Column="0"/>
-
-            <Label Content="Uzytkownik:" Grid.Row="1" Grid.Column="0"/>
-            <ComboBox  Grid.Row="1" Grid.Column="1"
-                 ItemsSource="{Binding MaUsComboBoxItems}"
-                 DisplayMemberPath="UsImie"
-                 SelectedValuePath="UsId"
-                 SelectedValue="{Binding MaUsId, Mode=TwoWay}"/>
+            <Button Content="Dodaj Mail" Grid.Row="1" Grid.Column="0" Margin="5" Command="{Binding OpenModalMailCommand}"/>
 
 
-            <Label Content="Mail:" Grid.Row="2" Grid.Column="0"/>
-            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Path=MaNazwa, UpdateSourceTrigger=PropertyChanged}"/>
-
-            <Label Content="Opis:" Grid.Row="3" Grid.Column="0"/>
-            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=MaOpis, UpdateSourceTrigger=PropertyChanged}"/>
-
-            <Label Content="Uwagi:" Grid.Row="4" Grid.Column="0"/>
-            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=MaUwagi, UpdateSourceTrigger=PropertyChanged}"/>
-
-            <Label Content="Aktwyny:" Grid.Row="5" Grid.Column="0"/>
-            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Path=MaAktywny, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
     </Grid>
 </local:JedenViewBase>

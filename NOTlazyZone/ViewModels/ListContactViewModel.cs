@@ -14,7 +14,42 @@ namespace NOTlazyZone.ViewModels
 {
     class ListContactViewModel : WszystkieViewModel<KontaktyForView>
     {
-        
+        #region Properties
+        private string _sortField;
+        private string _findField;
+        private string _findTextBox;
+
+        public string SortField
+        {
+            get { return _sortField; }
+            set
+            {
+                _sortField = value;
+                OnPropertyChanged(() => SortField);
+            }
+        }
+
+        public string FindField
+        {
+            get { return _findField; }
+            set
+            {
+                _findField = value;
+                OnPropertyChanged(() => FindField);
+            }
+        }
+
+        public string FindTextBox
+        {
+            get { return _findTextBox; }
+            set
+            {
+                _findTextBox = value;
+                OnPropertyChanged(() => FindTextBox);
+            }
+        }
+        #endregion
+
         public ListContactViewModel() : base("Lista Kontaktow")
         {
             load();
@@ -53,12 +88,46 @@ namespace NOTlazyZone.ViewModels
                 }
             );
         }
-
-
-
-
-
         #endregion
+        public override List<string> getComboboxSortList()
+        {
+            return new List<string> { "nazwaUzytkownika", "dataRozpoczecia", "rolaUzytkownika" };
+        }
+
+        public override void sort()
+        {
+            switch (SortField)
+            {
+                case "nazwaUzytkownika":
+                    List = new ObservableCollection<KontaktyForView>(List.OrderBy(item => item.nazwaUzytkownika));
+                    break;
+                case "dataRozpoczecia":
+                    List = new ObservableCollection<KontaktyForView>(List.OrderBy(item => item.dataRozpoczecia));
+                    break;
+                case "rolaUzytkownika":
+                    List = new ObservableCollection<KontaktyForView>(List.OrderBy(item => item.rolaUzytkownika));
+                    break;
+            }
+        }
+
+        public override List<string> getComboboxFindList()
+        {
+            return new List<string> { "nazwaUzytkownika", "rolaUzytkownika" };
+        }
+
+        public override void find()
+        {
+            switch (FindField)
+            {
+                case "nazwaUzytkownika":
+                    List = new ObservableCollection<KontaktyForView>(List.Where(item => item.nazwaUzytkownika != null && item.nazwaUzytkownika.StartsWith(FindTextBox)));
+                    break;
+                case "rolaUzytkownika":
+                    List = new ObservableCollection<KontaktyForView>(List.Where(item => item.rolaUzytkownika != null && item.rolaUzytkownika.StartsWith(FindTextBox)));
+                    break;
+            }
+        }
+
     }
 
 }

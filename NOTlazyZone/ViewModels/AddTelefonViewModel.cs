@@ -1,25 +1,41 @@
-﻿using NOTlazyZone.Models.Context;
+﻿using NOTlazyZone.Helpers;
+using NOTlazyZone.Models.Context;
 using NOTlazyZone.Models.Entities;
+using NOTlazyZone.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace NOTlazyZone.ViewModels
 {
     internal class AddTelefonViewModel : JedenViewModel<Telefon>
     {
+        public ICommand OpenModalTelefonCommand { get; private set; }
         public ObservableCollection<Telefon> Telefon { get; private set; } = new ObservableCollection<Telefon>();
     #region Konstruktor
     public AddTelefonViewModel() : base("Uzytkownik")
     {
         item = new Telefon();
         LoadPhone();
-    }
-    #endregion
-    private void LoadPhone()
+        OpenModalTelefonCommand = new RelayCommand(OpenModalTelefon);
+
+        }
+        #endregion
+
+        private void OpenModalTelefon()
+        {
+            ModalPhone modalView = new ModalPhone
+            {
+                DataContext = this
+            };
+            WindowManager.OpenModalWindow(this, modalView);
+        }
+
+        private void LoadPhone()
     {
         var phoneFromDb = notlazyzoneEntities.Telefons.ToList();
         foreach (var prod in phoneFromDb)

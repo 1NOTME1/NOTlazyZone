@@ -1,24 +1,38 @@
-﻿using NOTlazyZone.Models.Entities;
+﻿using Microsoft.VisualBasic;
+using NOTlazyZone.Helpers;
+using NOTlazyZone.Models.Entities;
+using NOTlazyZone.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace NOTlazyZone.ViewModels
 {
     internal class AddUserViewModel : JedenViewModel<Uzytkownicy>
     {
-
+        public ICommand OpenModalCommand { get; private set; }
         public ObservableCollection<Uzytkownicy> User { get; private set; } = new ObservableCollection<Uzytkownicy>();
         #region Konstruktor
         public AddUserViewModel() : base("Uzytkownik")
         {
             item = new Uzytkownicy();
             LoadUser();
+            OpenModalCommand = new RelayCommand(OpenModal);
         }
         #endregion
+        private void OpenModal()
+        {
+            ModalUser modalView = new ModalUser();
+            modalView.DataContext = new AddUserViewModel();
+            WindowManager.OpenModalWindow(this, modalView);
+
+        }
+
+
         private void LoadUser()
         {
             var userFromDb = notlazyzoneEntities.Uzytkownicies.ToList();

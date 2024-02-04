@@ -1,6 +1,9 @@
 ﻿using Microsoft.IdentityModel.Tokens;
+using Microsoft.VisualBasic;
+using NOTlazyZone.Helpers;
 using NOTlazyZone.Models.Context;
 using NOTlazyZone.Models.Entities;
+using NOTlazyZone.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,18 +11,33 @@ using System.Linq;
 using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace NOTlazyZone.ViewModels
 {
     internal class AddAdresViewModel : JedenViewModel<Adre>
     {
+        public ICommand OpenModalAdresCommand { get; private set; }
         public ObservableCollection<Adre> Adres { get; private set; } = new ObservableCollection<Adre>();
         #region Konstruktor
         public AddAdresViewModel() : base("Dodaj Adres")
         {
             item = new Adre();
             LoadAdres();
+            OpenModalAdresCommand = new RelayCommand(OpenModalAdres);
         }
+
+        private void OpenModalAdres()
+        {
+            ModalAdres modalView = new ModalAdres
+            {
+                DataContext = this 
+            };
+            WindowManager.OpenModalWindow(this, modalView);
+        }
+
+
+
         #endregion
         private void LoadAdres()
         {

@@ -1,23 +1,39 @@
-﻿using NOTlazyZone.Models.Entities;
+﻿using NOTlazyZone.Helpers;
+using NOTlazyZone.Models.Entities;
+using NOTlazyZone.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace NOTlazyZone.ViewModels
 {
     internal class AddMailViewModel : JedenViewModel<Mail>
     {
+        public ICommand OpenModalMailCommand { get; private set; }
+
         public ObservableCollection<Mail> Mail { get; private set; } = new ObservableCollection<Mail>();
         #region Konstruktor
         public AddMailViewModel() : base("Dodaj Mail")
         {
             item = new Mail();
             LoadMail();
+            OpenModalMailCommand = new RelayCommand(OpenModalMail);
         }
         #endregion
+
+        private void OpenModalMail()
+        {
+            ModalMail modalView = new ModalMail
+            {
+                DataContext = this
+            };
+            WindowManager.OpenModalWindow(this, modalView);
+        }
+
         private void LoadMail()
         {
             var mailFromDb = notlazyzoneEntities.Mail.ToList();
