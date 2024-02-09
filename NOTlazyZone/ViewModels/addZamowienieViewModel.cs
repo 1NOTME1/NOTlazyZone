@@ -16,6 +16,7 @@ namespace NOTlazyZone.ViewModels
         {
             item = new Zamowienium();
             LoadZamowienie();
+            ZaDataZamowienia = DateTime.Now;
         }
 
         private void LoadZamowienie()

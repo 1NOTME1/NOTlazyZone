@@ -55,7 +55,7 @@ namespace NOTlazyZone.ViewModels
                     return !TnAktywny ? "Uzupełnij pole aktywności telefonu" : string.Empty;
 
                 case nameof(TnUsId):
-                    return TnUsId == 0 ? "Przypisz uzytkownika do numeru" : string.Empty;
+                    return (TnUsId == null || TnUsId == 0) ? "Przypisz uzytkownika do numeru" : string.Empty;
 
                 default:
                     return string.Empty;

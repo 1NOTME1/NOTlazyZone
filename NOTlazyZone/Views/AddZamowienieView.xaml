@@ -47,7 +47,7 @@
                 <TextBox  Grid.Row="3" Grid.Column="1" Text="{Binding Path=ZaIlosc, UpdateSourceTrigger=PropertyChanged}"/>
 
                 <Label Content="Data Zamówienia:" Grid.Row="4" Grid.Column="0"/>
-                <TextBox  Grid.Row="4" Grid.Column="1" Text="{Binding Path=ZaDataZamowienia, UpdateSourceTrigger=PropertyChanged}"/>
+                <DatePicker  Grid.Row="4" Grid.Column="1" Text="{Binding Path=ZaDataZamowienia, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
 
         </StackPanel>

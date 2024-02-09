@@ -34,10 +34,6 @@
             <TextBlock Text="Dodatkowe informacje" FontWeight="Bold" Margin="5"/>
             <TextBox  IsReadOnly="True" Margin="5"/>
 
-            <TextBlock Text="Operacje" FontWeight="Bold" Margin="5"/>
-            <Button Content="Zatwierdź zamówienie" Margin="5"  />
-            <Button Content="Anuluj zamówienie" Margin="5"  />
-
             <TextBlock Text="Dodaj produkt" FontWeight="Bold" Margin="5"/>
             <Grid Margin="5">
                 <Grid.ColumnDefinitions>
@@ -51,7 +47,7 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Label Content="Id Produktu:" Grid.Row="0" Grid.Column="0"/>
+                <!--<Label Content="Id Produktu:" Grid.Row="0" Grid.Column="0"/>-->
                 <!--<TextBox x:Name="IdProduktuTextBox" Grid.Row="0" Grid.Column="1" Text="{Binding Path=IdProduktu, UpdateSourceTrigger=PropertyChanged}"/>-->
 
                 <Label Content="Nazwa Produktu:" Grid.Row="1" Grid.Column="0"/>

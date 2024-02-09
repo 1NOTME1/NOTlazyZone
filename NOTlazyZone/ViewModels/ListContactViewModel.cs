@@ -1,19 +1,29 @@
-﻿using NOTlazyZone.Models.Context;
+﻿using Azure;
+using Firma.Models.EntitiesForView;
+using NOTlazyZone.Helpers;
+using NOTlazyZone.Models.BusinessLogic;
+using NOTlazyZone.Models.Context;
 using NOTlazyZone.Models.Entities;
 using NOTlazyZone.Models.EntitiesForView;
 using NOTlazyZone.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Documents;
+using System.Windows.Input;
+using System.Xml;
 
 namespace NOTlazyZone.ViewModels
 {
     class ListContactViewModel : WszystkieViewModel<KontaktyForView>
     {
+        private readonly ContactInfo contactInfo;
+        protected readonly NOTlazyZoneEntities nOTlazyZoneEntities;
+
         #region Properties
         private string _sortField;
         private string _findField;
@@ -50,10 +60,187 @@ namespace NOTlazyZone.ViewModels
         }
         #endregion
 
+        private int _liczbaKontaktow;
+
+        public int LiczbaKontaktow
+        {
+            get => _liczbaKontaktow;
+            set
+            {
+                _liczbaKontaktow = value;
+                OnPropertyChanged(() => LiczbaKontaktow);
+            }
+        }
+
+        private int? _Ilosc;
+        public int? Ilosc
+        {
+            get
+            {
+                return _Ilosc;
+            }
+            set
+            {
+                if (value != _Ilosc)
+                {
+                    _Ilosc = value;
+                    OnPropertyChanged(() => Ilosc);
+                }
+            }
+        }
+
+        private string _wybranaMiejscowosc;
+        public string WybranaMiejscowosc
+        {
+            get => _wybranaMiejscowosc;
+            set
+            {
+                if (_wybranaMiejscowosc != value)
+                {
+                    _wybranaMiejscowosc = value;
+                    OnPropertyChanged(() => WybranaMiejscowosc);
+                }
+            }
+        }
+
+
+        private int? _Ilosc2;
+        public int? Ilosc2
+        {
+            get
+            {
+                return _Ilosc2;
+            }
+            set
+            {
+                if (value != _Ilosc2)
+                {
+                    _Ilosc2 = value;
+                    OnPropertyChanged(() => Ilosc2);
+                }
+            }
+        }
+
+        private int _RolaId;
+        public int RolaId
+        {
+            get
+            {
+                return _RolaId;
+            }
+            set
+            {
+                if (value != _RolaId)
+                {
+                    _RolaId = value;
+                    OnPropertyChanged(() => RolaId);
+                }
+            }
+        }
+
+        private List<string> _miejscowosc;
+        public List<string> miejscowosc
+        {
+            get { return _miejscowosc; }
+            set
+            {
+                _miejscowosc = value;
+                OnPropertyChanged(()=> miejscowosc);
+            }
+        }
+
+        private DateTime _selectedDate;
+        public DateTime SelectedDate
+        {
+            get => _selectedDate;
+            set
+            {
+                _selectedDate = value;
+                OnPropertyChanged(() => SelectedDate);
+            }
+        }
+
+
         public ListContactViewModel() : base("Lista Kontaktow")
         {
             load();
+            nOTlazyZoneEntities = new NOTlazyZoneEntities();
+            contactInfo = new ContactInfo(nOTlazyZoneEntities);
+            SelectedDate = DateTime.Now;
+            pokazMiejscowoscClick();
         }
+
+        public IQueryable<KeyAndValue> UsRoComboBoxItems
+        {
+            get
+            {
+                return new ContactInfo(nOTlazyZoneEntities).GetRolaKeyAndValueItems();
+            }
+        }
+
+        private BaseCommand _ObliczCommand;
+        public ICommand ObliczCommand
+        {
+            get
+            {
+                if (_ObliczCommand == null)
+                {
+                    _ObliczCommand = new BaseCommand((object o) => obliczIloscClick());
+                }
+                return _ObliczCommand;
+            }
+        }
+
+        private BaseCommand _ObliczCommand2;
+        public ICommand ObliczCommand2
+        {
+            get
+            {
+                if (_ObliczCommand2 == null)
+                {
+                    _ObliczCommand2 = new BaseCommand((object o) => obliczIloscZakonczonychKarentow());
+                }
+                return _ObliczCommand2;
+            }
+        }
+
+        private BaseCommand _ObliczCommand3;
+        public ICommand ObliczCommand3
+        {
+            get
+            {
+                if (_ObliczCommand3 == null)
+                {
+                    _ObliczCommand3 = new BaseCommand((object o) => ZaladujLiczbeKontaktow());
+                }
+                return _ObliczCommand3;
+            }
+        }
+
+
+        private void obliczIloscClick()
+        {
+            Ilosc = new ContactInfo(nOTlazyZoneEntities).CountUsersByRole(RolaId);
+        }
+
+        private void pokazMiejscowoscClick()
+        {
+            miejscowosc = new ContactInfo(nOTlazyZoneEntities).Adres().ToList();
+        }
+
+        private void ZaladujLiczbeKontaktow()
+        {
+            LiczbaKontaktow = contactInfo.CountContactsByMiejscowosc(WybranaMiejscowosc);
+        }
+
+
+
+        private void obliczIloscZakonczonychKarentow()
+        {
+            Ilosc2 = new ContactInfo(nOTlazyZoneEntities).CountUsersDateEnd(SelectedDate);
+        }
+
+
 
         #region Helpers
 

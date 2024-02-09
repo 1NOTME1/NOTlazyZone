@@ -32,12 +32,16 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
                     <Grid Grid.ColumnSpan="6" Grid.Row="0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="Auto" />
@@ -55,9 +59,9 @@
                         </ComboBox>-->
                         <!--<Button Grid.Column="3" Content="Sortuj" Style="{StaticResource ListContactButton2}"/>-->
                     </Grid>
-                    <StackPanel Grid.Column="0" Margin="10">
+                    <StackPanel Grid.Column="0" Margin="0">
                         <TextBlock Text="Wszystkie Kontakty" FontWeight="Bold" Margin="5"/>
-                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}">
+                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding List}" Width="1400">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Liczba Kontaktu" Binding="{Binding IdKontaktu}"/>
                                 <DataGridTextColumn Header="Id Użytkownika" Binding="{Binding IdUzytkownika}"/>
@@ -79,172 +83,46 @@
 
 
                     </StackPanel>
-                    <!--<StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="1" Style="{StaticResource ListContactStackPanel}">
-                        <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
-                        <StackPanel Style="{StaticResource ListContactStackPanel}">
-                            <TextBlock Text="Adam Nowak" Style="{StaticResource TextBlockHeader}"/>
-                            <TextBlock Text="Specjalizacja: Trening siłowy" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Doświadczenie zawodowe: 5 lat" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Telefon: 543-432-657" Style="{StaticResource TextBlockListContract}"/>
-                            <StackPanel Orientation="Horizontal" Style="{StaticResource ListContactStackPanel}">
-                                <Button Content="Edytuj" Style="{StaticResource ListContactButton}"/>
-                                <Button Content="Usuń" Style="{StaticResource ListContactButton}"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>-->
+                    <StackPanel Grid.Column="1" Margin="10,10,-10,10" Grid.ColumnSpan="5">
 
-                    <!--<StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1" Style="{StaticResource ListContactStackPanel}">
-                        <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
-                        <StackPanel Style="{StaticResource ListContactStackPanel}">
-                            <TextBlock Text="Ewa Kowalska" Style="{StaticResource TextBlockHeader}"/>
-                            <TextBlock Text="Specjalizacja: Trening biegowy" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Doświadczenie zawodowe: 3 lata" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Telefon: 542-333-879" Style="{StaticResource TextBlockListContract}"/>
-                            <StackPanel Orientation="Horizontal" Style="{StaticResource ListContactStackPanel}">
-                                <Button Content="Edytuj" Style="{StaticResource ListContactButton}" />
-                                <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>-->
+                        <Grid Margin="10" Grid.Column="1" Grid.ColumnSpan="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
 
-                    <!--<StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="1" Style="{StaticResource ListContactStackPanel}">
-                        <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
-                        <StackPanel Style="{StaticResource ListContactStackPanel}">
-                            <TextBlock Text="Karolina Wiśniewska" Style="{StaticResource TextBlockHeader}"/>
-                            <TextBlock Text="Specjalizacja: Trening interwałowy" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Doświadczenie zawodowe: 8 lat" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Telefon: 987-456-756" Style="{StaticResource TextBlockListContract}"/>
-                            <StackPanel Orientation="Horizontal" Style="{StaticResource ListContactStackPanel}">
-                                <Button Content="Edytuj" Style="{StaticResource ListContactButton}" />
-                                <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>-->
+                            <ComboBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="3" ItemsSource="{Binding UsRoComboBoxItems}" DisplayMemberPath="Value" SelectedValuePath="Key" SelectedValue="{Binding Path=RolaId, Mode=TwoWay}"/>
+                            <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Margin="3" Content="Oblicz" Command="{Binding ObliczCommand}"/>
+                            <Label Grid.Row="2" Grid.Column="0" Content="Ilość osób z podaną rolą:" HorizontalContentAlignment="Right"/>
+                            <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" HorizontalContentAlignment="Left" Content="{Binding Ilosc}"/>
 
-                    <!--<StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Style="{StaticResource ListContactStackPanel}">
-                        <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
-                        <StackPanel Style="{StaticResource ListContactStackPanel}">
-                            <TextBlock Text="Jan Kowalski" Style="{StaticResource TextBlockHeader}"/>
-                            <TextBlock Text="Specjalizacja: Trening funkcjonalny" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Doświadczenie zawodowe: 10 lat" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Telefon: 123-456-789" Style="{StaticResource TextBlockListContract}"/>
-                            <StackPanel Orientation="Horizontal" Style="{StaticResource ListContactStackPanel}">
-                                <Button Content="Edytuj" Style="{StaticResource ListContactButton}" />
-                                <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>-->
+                            <DatePicker Grid.Row="3" Grid.Column="0" Margin="3" SelectedDate="{Binding SelectedDate}"/>
+                            <Label Grid.Row="4" Grid.Column="0" Content="Ilość osób z zakończonym karnetem:" HorizontalContentAlignment="Right" />
+                            <Label Grid.Row="4" Grid.Column="1" Content="{Binding Ilosc2}" HorizontalContentAlignment="Left"/>
+                            <Button Grid.Row="3" Grid.Column="1" Margin="3" Content="Oblicz" Command="{Binding ObliczCommand2}"/>
 
-                    <!--<StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="1" Style="{StaticResource ListContactStackPanel}">
-                        <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
-                        <StackPanel>
-                            <TextBlock Text="Monika Nowak" Style="{StaticResource TextBlockHeader}"/>
-                            <TextBlock Text="Specjalizacja: Trening odchudzający" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Doświadczenie zawodowe: 6 lat" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Telefon: 777-888-999" Style="{StaticResource TextBlockListContract}"/>
-                            <StackPanel Orientation="Horizontal" Style="{StaticResource ListContactStackPanel}">
-                                <Button Content="Edytuj"  Style="{StaticResource ListContactButton}" />
-                                <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>-->
+                            <ComboBox Grid.Row="5" Grid.Column="0" ItemsSource="{Binding miejscowosc}" SelectedItem="{Binding WybranaMiejscowosc}" HorizontalAlignment="Stretch"/>
+                            <Button Grid.Row="5" Grid.Column="1" Margin="3" Content="Oblicz" Command="{Binding ObliczCommand3}" HorizontalAlignment="Left"/>
+                            <Label Grid.Row="6" Grid.Column="0" Content="Ilość osob mieszkających w wybranej lokalizacji:" HorizontalContentAlignment="Left"/>
+                            <Label Grid.Row="6" Grid.Column="1" Content="{Binding LiczbaKontaktow}" HorizontalContentAlignment="Right"/>
+                        </Grid>
 
-                    <!--<StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Style="{StaticResource ListContactStackPanel}">
-                        <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
-                        <StackPanel>
-                            <TextBlock Text="Aleksandra Kowalczyk" Style="{StaticResource TextBlockHeader}"/>
-                            <TextBlock Text="Specjalizacja: Trening siłowy" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Doświadczenie zawodowe: 4 lata" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Telefon: 444-555-666" Style="{StaticResource TextBlockListContract}"/>
-                            <StackPanel Orientation="Horizontal" Style="{StaticResource ListContactStackPanel}">
-                                <Button Content="Edytuj"  Style="{StaticResource ListContactButton}" />
-                                <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>-->
 
-                    <!--<StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="2" Style="{StaticResource ListContactStackPanel}">
-                        <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
-                        <StackPanel>
-                            <TextBlock Text="Marek Wójcik" Style="{StaticResource TextBlockHeader}"/>
-                            <TextBlock Text="Specjalizacja: Trening kondycyjny" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Doświadczenie zawodowe: 12 lat" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Telefon: 444-444-444" Style="{StaticResource TextBlockListContract}"/>
-                            <StackPanel Orientation="Horizontal" Style="{StaticResource ListContactStackPanel}">
-                                <Button Content="Edytuj"  Style="{StaticResource ListContactButton}" />
-                                <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>-->
 
-                    <!--<StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0" Style="{StaticResource ListContactStackPanel}">
-                        <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
-                        <StackPanel>
-                            <TextBlock Text="Karol Kowalski" Style="{StaticResource TextBlockHeader}"/>
-                            <TextBlock Text="Specjalizacja: Trening interwałowy" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Doświadczenie zawodowe: 7 lat" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Telefon: 555-789-012" Style="{StaticResource TextBlockListContract}"/>
-                            <StackPanel Orientation="Horizontal" Style="{StaticResource ListContactStackPanel}">
-                                <Button Content="Edytuj"  Style="{StaticResource ListContactButton}" />
-                                <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>-->
+                    </StackPanel>
 
-                    <!--<StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Style="{StaticResource ListContactStackPanel}">
-                        <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
-                        <StackPanel>
-                            <TextBlock Text="Monika Kowalska" Style="{StaticResource TextBlockHeader}"/>
-                            <TextBlock Text="Specjalizacja: Trening biegowy" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Doświadczenie zawodowe: 2 lata" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Telefon: 555-444-555" Style="{StaticResource TextBlockListContract}"/>
-                            <StackPanel Orientation="Horizontal" Style="{StaticResource ListContactStackPanel}">
-                                <Button Content="Edytuj"  Style="{StaticResource ListContactButton}" />
-                                <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>-->
-
-                    <!--<StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" Style="{StaticResource ListContactStackPanel}">
-                        <Image Source="/Views/icons/user.png" Style="{StaticResource ImageStyleListContact}"/>
-                        <StackPanel>
-                            <TextBlock Text="Andrzej Nowak" Style="{StaticResource TextBlockHeader}"/>
-                            <TextBlock Text="Specjalizacja: Trening siłowy" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Doświadczenie zawodowe: 9 lat" Style="{StaticResource TextBlockListContract}"/>
-                            <TextBlock Text="Telefon: 987-456-756" Style="{StaticResource TextBlockListContract}"/>
-                            <StackPanel Orientation="Horizontal" Style="{StaticResource ListContactStackPanel}">
-                                <Button Content="Edytuj"  Style="{StaticResource ListContactButton}" />
-                                <Button Content="Usuń" Style="{StaticResource ListContactButton}" />
-                            </StackPanel>
-                        </StackPanel>
-                    </StackPanel>-->
-
-                    <!--<StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="3" Style="{StaticResource ListContactStackPanel}">
-
-                        <Label Content="Nazwa Produktu:" Grid.Row="1" Grid.Column="0"/>
-                        <TextBox  Grid.Row="1" Grid.Column="1" Text="{Binding Path=UsImie, UpdateSourceTrigger=PropertyChanged}"/>
-
-                        <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
-                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsNazwisko, UpdateSourceTrigger=PropertyChanged}"/>
-
-                        <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
-                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsPesel, UpdateSourceTrigger=PropertyChanged}"/>
-
-                        <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
-                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsDataRozpoczeciaOd, UpdateSourceTrigger=PropertyChanged}"/>
-
-                        <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
-                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsDataZakonczeniaDo, UpdateSourceTrigger=PropertyChanged}"/>
-
-                        <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
-                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsOpis, UpdateSourceTrigger=PropertyChanged}"/>
-
-                        <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
-                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsUwagi, UpdateSourceTrigger=PropertyChanged}"/>
-
-                        <Label Content="Cena Produktu:" Grid.Row="2" Grid.Column="0"/>
-                        <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding Path=UsAktywny, UpdateSourceTrigger=PropertyChanged}"/>
-                    </StackPanel>-->
                 </Grid>
             </ScrollViewer>
         </TabItem>

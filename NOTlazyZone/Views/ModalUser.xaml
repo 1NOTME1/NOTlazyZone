@@ -25,12 +25,12 @@
 
         <StackPanel Orientation="Horizontal">
             <Label Content="Data rozpoczęcia:" Width="150"/>
-            <TextBox Text="{Binding Path=UsDataRozpoczeciaOd, UpdateSourceTrigger=PropertyChanged}" Width="250"/>
+            <DatePicker Text="{Binding Path=UsDataRozpoczeciaOd, UpdateSourceTrigger=PropertyChanged}" Width="250"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal">
             <Label Content="Data zakończenia:" Width="150"/>
-            <TextBox Text="{Binding Path=UsDataZakonczeniaDo, UpdateSourceTrigger=PropertyChanged}" Width="250"/>
+            <DatePicker Text="{Binding Path=UsDataZakonczeniaDo, UpdateSourceTrigger=PropertyChanged}" Width="250"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal">

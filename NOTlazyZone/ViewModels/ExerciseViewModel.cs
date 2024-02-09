@@ -40,22 +40,22 @@ namespace NOTlazyZone.ViewModels
 
 
                 case nameof(CwSeria):
-                    return CwSeria == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+                    return CwSeria == 0 ? "Wypełnij pole z seria" : string.Empty;
 
                 case nameof(CwPowtorzenie):
-                    return CwPowtorzenie == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+                    return CwPowtorzenie == 0 ? "Wypełnij pole z powtorzeniem" : string.Empty;
 
                 case nameof(CwCiezar):
-                    return CwCiezar == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+                    return CwCiezar == 0 ? "Wypełnij pole z ciezarem" : string.Empty;
 
                 case nameof(CwPrzerwa):
-                    return CwPrzerwa == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+                    return CwPrzerwa == 0 ? "Wypełnij pole z przerwa pomiedyz seria" : string.Empty;
 
                 case nameof(CwTrudnosc):
-                    return CwTrudnosc == 0 ? "Wypełnij pole Cena produktu" : string.Empty;
+                    return CwTrudnosc == 0 ? "Wypełnij pole trudnosci cwiczenia" : string.Empty;
 
                 case nameof(CwCardio):
-                    return !CwCardio ? "Nie uzupełniłeś aktywności adresu" : string.Empty;
+                    return !CwCardio ? "Nie uzupełniłeś pola cardio" : string.Empty;
 
                 default: return string.Empty;
             }
@@ -112,6 +112,9 @@ namespace NOTlazyZone.ViewModels
                 }
             }
         }
+
+        
+
 
         public decimal CwCiezar
         {

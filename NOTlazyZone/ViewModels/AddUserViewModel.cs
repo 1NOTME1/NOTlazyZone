@@ -22,6 +22,9 @@ namespace NOTlazyZone.ViewModels
             item = new Uzytkownicy();
             LoadUser();
             OpenModalCommand = new RelayCommand(OpenModal);
+            UsDataRozpoczeciaOd = DateTime.Now;
+            UsDataZakonczeniaDo = DateTime.Now;
+            
         }
         #endregion
         private void OpenModal()
@@ -61,12 +64,11 @@ namespace NOTlazyZone.ViewModels
                 case nameof(UsDataZakonczeniaDo):
                     return UsDataZakonczeniaDo == DateTime.MinValue ? "Uzupełnij datę" : string.Empty;
 
-
                 case nameof(UsAktywny):
-                    return !UsAktywny ? "Uzupełnij pole aktywności telefonu" : string.Empty;
+                    return !UsAktywny ? "Uzupełnij pole aktywności" : string.Empty;
 
                 case nameof(UsRoId):
-                    return UsRoId == 0 ? "Przypisz role do uzytkownika" : string.Empty;
+                    return (UsRoId == null || UsRoId == 0) ? "Wybierz rolę użytkownika" : string.Empty;
 
                 default:
                     return string.Empty;

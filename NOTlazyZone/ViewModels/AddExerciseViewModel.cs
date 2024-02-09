@@ -1,24 +1,40 @@
 ﻿using Microsoft.IdentityModel.Tokens;
+using Microsoft.VisualBasic;
+using NOTlazyZone.Helpers;
 using NOTlazyZone.Models.Entities;
+using NOTlazyZone.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace NOTlazyZone.ViewModels
 {
     internal class AddExerciseViewModel : JedenViewModel<Cwiczenium>
     {
+        public ICommand OpenModalCommand { get; private set; }
         public ObservableCollection<Cwiczenium> Cwiczenie { get; private set; } = new ObservableCollection<Cwiczenium>();
         #region Konstruktor
         public AddExerciseViewModel() : base("Dodaj Cwiczenie")
         {
             item = new Cwiczenium();
             LoadProducts();
+            OpenModalCommand = new RelayCommand(OpenModal);
         }
         #endregion
+
+        private void OpenModal()
+        {
+            ModalExercise modalView = new ModalExercise
+            {
+                DataContext = this
+            };
+            WindowManager.OpenModalWindow(this, modalView);
+        }
+
         private void LoadProducts()
         {
             var cwiczeniaFromDb = notlazyzoneEntities.Cwiczenia.ToList();
@@ -232,6 +248,25 @@ namespace NOTlazyZone.ViewModels
                 }
             }
         }
+
+        public int? CwCwtId
+        {
+            get
+            {
+                return item.CwCwtId;
+            }
+            set
+            {
+                if (item.CwCwtId != value)
+                {
+                    item.CwCwtId = value;
+                    OnPropertyChanged(() => CwCwtId);
+                }
+            }
+        }
+
+
+
         public int? CwPtId
         {
             get

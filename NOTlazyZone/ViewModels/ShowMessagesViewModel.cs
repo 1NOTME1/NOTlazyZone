@@ -19,6 +19,7 @@ namespace NOTlazyZone.ViewModels
         {
             item = new Wiadomosci();
             LoadWiadomosci();
+            WiDataOtrzymania = DateTime.Now;
         }
         #endregion
         private void LoadWiadomosci()

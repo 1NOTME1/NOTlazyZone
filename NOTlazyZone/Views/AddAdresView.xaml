@@ -51,7 +51,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="WPROWADŹ NOWY ADRES" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-            <Button Content="Otwórz ModalAdres" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Command="{Binding OpenModalAdresCommand}" Margin="5"/>
+            <Button Content="Dodaj adres" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Command="{Binding OpenModalAdresCommand}" Margin="5"/>
 
 
         </Grid>

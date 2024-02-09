@@ -48,7 +48,7 @@ namespace NOTlazyZone.ViewModels
             switch (PropertyName)
             {
                 case nameof(MaUsId):
-                    return MaUsId == 0 ? "Wypełnij pole uzytkownika" : string.Empty;
+                    return (MaUsId == null || MaUsId == 0) ? "Wypełnij pole uzytkownika" : string.Empty;
 
                 case nameof(MaNazwa):
                     return string.IsNullOrEmpty(MaNazwa) ? "adres jest pusty" : string.Empty;
